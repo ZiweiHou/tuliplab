@@ -309,51 +309,39 @@ disadvantages of \textcolor{orange}{the team}.
 %%
 \begin{slide}[toc=,bm=]{Research at TULIP}
 \begin{itemize}
-\item
-Existing Methods - \textcolor{orange}{Feature selection}
-
-\begin{itemize}
-\item
-To distinguish two classes:
-the query point (positive) \& rest of data (negative)
+    \item 
+    Current Research Themes @ TULIP Lab
+    \begin{itemize}
+        \item 
+        \textcolor{orange}{Behavior Informatics}
+            \begin{itemize}
+                \item 
+                Periodic Behavior Mining
+                
+                \item 
+                Behavior Prediction
+            \end{itemize}
+            
+        \item 
+        \textcolor{orange}{Information Abuse Prevention}
+            \begin{itemize}
+                \item 
+                Data Compliance Checking
+                
+                \item 
+                Privacy Preservation in Data Mining  
+            \end{itemize}
+        \item 
+        \textcolor{orange}{Business Intelligence Applications}
+            \begin{itemize}
+                \item 
+                Recommender System
+                
+                \item 
+                Tourism/Hospitality Management        
+            \end{itemize}
+    \end{itemize}
 \end{itemize}
-\vspace{1cm}
-\twocolumn[
-\savevalue{lfrheight}=5cm,
-\savevalue{lfrprop}={
-linestyle=solid,framearc=.2,linewidth=1pt},
-rfrheight=\usevalue{lfrheight},
-rfrprop=\usevalue{lfrprop}
-]{
-Disadvantages
-\begin{itemize}
-\item
-\smallskip
-Positive and negative classes are \textcolor{orange}{Not} balanced.
-
-\item
-\smallskip
-\textcolor{orange}{Not} quantify the outlying degree accurately.
-
-\item
-\smallskip
-\textcolor{orange}{Not} identify group outlying aspects.
-\end{itemize}
-}
-{
-Advantages
-\begin{itemize}
-\item
-\smallskip
-Easy to operate.
-
-\item
-\smallskip
-Resolve dimensionality bias.
-\end{itemize}
-}
-\end{itemize}
-
 \end{slide}
 %%
 %%==========================================================================================
@@ -361,54 +349,20 @@ Resolve dimensionality bias.
 
 %%==========================================================================================
 %%
-\begin{slide}{Behavior Informatics}
-%Theme one - 
+\begin{slide}{Theme 1. Behavior Informatics}
+%Theme one -
 \begin{itemize}
 \item
-Existing Methods - \textcolor{orange} {Score-and-search}
+People share \textcolor{green}{news, interests} 
+and \textcolor{green}{ideas} in OSNs,
 
 \begin{itemize}
 \item
-Define an outlying score function.
-
-\item
-Search subspaces.
+though these platforms also spread 
+\textcolor{red}{email malware, rumours, gossips}
+\textcolor{red}{and malicious links}, and also leak our 
+\textcolor{red}{privacy}.
 \end{itemize}
-\bigskip
-\twocolumn[
-\savevalue{lfrheight}=5cm,
-\savevalue{lfrprop}={
-linestyle=solid,framearc=.2,linewidth=1pt},
-rfrheight=\usevalue{lfrheight},
-rfrprop=\usevalue{lfrprop}
-]{
-Disadvantages
-\begin{itemize}
-\item
-\smallskip
-Dimensionality bias.
-
-\item
-\smallskip
-Search efficiency is \textcolor{orange}{Not} high (dataset is large).
-
-\item
-\smallskip
-\textcolor{orange}{Not} identify group outlying aspects.
-\end{itemize}
-}{
-Advantages
-\begin{itemize}
-\item
-\smallskip
-Quantify the outlying degree correctly.
-
-\item
-\smallskip
-High Comprehensibility.
-
-\end{itemize}
-}
 \end{itemize}
 
 \end{slide}
@@ -420,7 +374,19 @@ High Comprehensibility.
 %%
 \begin{slide}[toc=,bm=]{The Popularity of Online Social Networks}
 
+\begin{itemize}
+\item 
+The popularity of OSNs has greatly increased in recent years
 
+\begin{itemize}
+\item
+A large amount of Internet users also use OSN services,
+
+\item
+Australia has up to 11 million Facebook users.
+\end{itemize}
+
+\end{itemize}
 \end{slide}
 %%
 %%==========================================================================================
@@ -430,76 +396,22 @@ High Comprehensibility.
 %%
 \begin{slide}[toc=,bm=]{Application of Geo Photos}
 
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
-\twocolumn
-{
-Group Outlying Aspects Mining
 \begin{itemize}
 \item
-\smallskip
-Focus on differences between \textcolor{orange}{groups}.
+There are many geotagged photos available. However :
 
-\item
-\smallskip
-\textcolor{orange}{Multiple} points.
-\medskip
-\end{itemize}
-\vspace{0.75cm}
-%\vspace{0.1cm}
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure{Testing a long text string.}
-  %\includegraphics[width=0.6\textwidth]{figures//example-basketball-projection.eps}\\
-  \caption{Group Outlying Aspects Target}\label{fig:GroupOutAspect-target}
-\end{figure}
-}
-{
-Outlying Aspects Mining
 \begin{itemize}
 \item
-Concentrates on differences between \textcolor{orange}{objects}.
+Data is noisy or misleading.
 
 \item
-\textcolor{orange}{One} point.
+Photos are taken in transit rather than at the attractions.
+
+\item
+Photo is static media, whereas, travel behavior is dynamic.
 \end{itemize}
-\bigskip
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure{Testing a long text string.}
-%  \includegraphics[width=0.5\textwidth]{figures//OutAspect_target.eps}\\
-  \caption{Outlying Aspects Target}\label{fig:OutAspect-target}
-\end{figure}
-}
+
+\end{itemize}
 
 \end{slide}
 %%
@@ -508,7 +420,30 @@ Concentrates on differences between \textcolor{orange}{objects}.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Periodic Behavior Mining}
+\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
+
+Tourist Traffic Flow in Hong Kong Metropolitan Area.
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
+
+Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip. Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. Tourism Management.
+
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
 
 
 \end{slide}
@@ -520,6 +455,48 @@ Concentrates on differences between \textcolor{orange}{objects}.
 %%
 \begin{slide}[toc=,bm=]{Periodic Behavior Mining}
 
+\begin{itemize}
+\item 
+Observed Check-in Data is usually a mixed events from different periodic behaviors
+
+\begin{itemize}
+\item
+What are Periodic?
+
+\item
+What is the period?
+
+\item
+Predict the Behavior on a particular day.
+\end{itemize}
+
+\end{itemize}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Periodic Behavior Mining}
+
+\begin{itemize}
+\item
+Observed Check-in Data is usually a mixed events from different periodic behaviors
+
+    \begin{itemize}
+    \item
+    What are Periodic?
+
+    \item
+    What is the period?
+
+    \item
+    Predict the Behavior on a particular day.
+
+    \end{itemize}
+\end{itemize}
 
 \end{slide}
 %%
@@ -530,6 +507,11 @@ Concentrates on differences between \textcolor{orange}{objects}.
 %%
 \begin{slide}[toc=,bm=]{Periodic Behavior Mining Mobility Intentions}
 
+\begin{itemize}
+\item
+CP Decomposition
+
+\end{itemize}
 
 \end{slide}
 %%
@@ -540,6 +522,34 @@ Concentrates on differences between \textcolor{orange}{objects}.
 %%
 \begin{slide}[toc=,bm=]{Periodic Behavior Mining Applications}
 
+\begin{itemize}
+\item 
+There are various applications of Periodic Behavior Mining
+
+    \begin{itemize}
+    \item
+    What is the schedule of a person on a particular day/time?
+
+    \item
+    Where to find the person on a particular day/time?
+        \begin{itemize}
+        \item
+        Police applications
+
+        \item
+        Scheduled ``Encountering'' for match making
+        \end{itemize}
+    \item
+    Timely Recommendation Systems
+        \begin{itemize}
+        \item
+        Now it is the time for you to stock rice, cooking oil, or ice cream!
+
+        \end{itemize}
+
+\end{itemize}
+
+\end{itemize}
 
 \end{slide}
 %%
@@ -548,7 +558,7 @@ Concentrates on differences between \textcolor{orange}{objects}.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{P.R. Applications - Case 1: Face Age Recognition}
+\begin{slide}[toc=,bm=]{Data Science Application - Case 1: Face Age Recognition}
 
 
 \end{slide}
@@ -558,7 +568,7 @@ Concentrates on differences between \textcolor{orange}{objects}.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{P.R. Applications - Case 2: Speech-based Emotion Detection}
+\begin{slide}[toc=,bm=]{Data Science Application - Case 2: Speech-based Emotion Detection}
 
 
 \end{slide}
@@ -568,7 +578,7 @@ Concentrates on differences between \textcolor{orange}{objects}.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{P.R. Applications - Case 3: K-Complex Detection}
+\begin{slide}[toc=,bm=]{Data Science Application - Case 3: K-Complex Detection}
 
 
 \end{slide}
@@ -578,7 +588,7 @@ Concentrates on differences between \textcolor{orange}{objects}.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{P.R. Applications - Case 4: Trajectory Analysis}
+\begin{slide}[toc=,bm=]{Data Science Application - Case 4: Trajectory Analysis}
 
 
 \end{slide}
@@ -588,7 +598,7 @@ Concentrates on differences between \textcolor{orange}{objects}.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{P.R. Applications - Case 5: Video Surveillance}
+\begin{slide}[toc=,bm=]{Data Science Application - Case 5: Video Surveillance}
 
 
 \end{slide}
@@ -605,41 +615,27 @@ Concentrates on differences between \textcolor{orange}{objects}.
 %%
 %%==========================================================================================
 
-
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Negative Association Rule Mining}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Contrast Mining}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Information Abuse Prevention}
-%Theme two - 
+\begin{slide}{Theme 2. Information Abuse Prevention}
+%Theme two -
 \begin{itemize}
 \item
-How to \textcolor{orange}{represent} the group features.
+Information Abuse:
+
 
 \begin{itemize}
 \item
-Can be affected by outlier values.
+The compromise of information 
+for which the data stakeholders are not willing to disclose.
+
 
 \item
-Can \textcolor{orange}{Not} reflect the overall distribution of group features.
+It depends on the nature of the information, 
+the involved internal or external users, 
+and the ways in which the organization grants the access to 
+or releases the information.
+
 \end{itemize}
 \end{itemize}
 
@@ -654,39 +650,19 @@ Can \textcolor{orange}{Not} reflect the overall distribution of group features.
 
 \begin{itemize}
 \item
-How to \textcolor{orange}{evaluate} the outlying degree in different aspects.
+Every user is potentially an adversary
 
 \begin{itemize}
 \item
-Need design a scoring function when necessary.
+After data is released, we cannot prevent any user from performing any type of analysis on the released data
 
 \item
-Adopting an appropriate scoring function (without dimension bias) remains a problem.
-
-\end{itemize}
-\end{itemize}
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Privacy Breach Example (1)}
+Worst case scenario
 
 \begin{itemize}
-\item
-How to \textcolor{orange}{improve} the efficiency.
-
-\begin{itemize}
-
-\item
-When the dimension of the \textcolor{orange}{data is high},
-the candidate subspace grows exponentially.
-
-\item
-It will easily go beyond the limits of the computation resources.
+\item 
+Must account for disclosure risk from any and all types of analyses
+\end{itemize}
 
 \end{itemize}
 \end{itemize}
@@ -698,7 +674,16 @@ It will easily go beyond the limits of the computation resources.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Privacy Breach Example (2)}
+\begin{slide}[toc=,bm=]{Information Privacy Applications - Case 1: Privacy Breach}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Information Privacy Applications - Case 2: Privacy Breach}
 
 
 \end{slide}
@@ -708,53 +693,12 @@ It will easily go beyond the limits of the computation resources.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Is O.S.N. a Secure Place to Show off?}
+\begin{slide}[toc=,bm=]{Information Privacy Applications - Case 3: Is O.S.N. a Secure Place to Show off?}
 
 
 \end{slide}
 %%
 %%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{I Know Where Your Cat Lives}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{AOL Dataset Debacle}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Breach of medical record}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Breach of medical record}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
 
 %%==========================================================================================
 %%
@@ -765,10 +709,127 @@ It will easily go beyond the limits of the computation resources.
 %%
 %%==========================================================================================
 
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Theme 3. Business Intelligence}
+
+\begin{itemize}
+\item 
+Tourism Data Mining
+
+\begin{itemize}
+\item
+Tourist Behavior Analysis
+
+\item
+Contrast Mining
+
+\begin{itemize}
+\item
+Outlying Aspects Mining
+
+\item
+Competitiveness Discovery
+\end{itemize}
+
+\end{itemize}
+
+\item
+Recommendation System
+
+\end{itemize}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 1: Market Segmentation Analysis}
+
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 2: Negative Association Rule Mining}
+
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 3: Contrast Mining}
+
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 4: Heterogeneous Preferences}
+
+\begin{itemize}
+\item
+User-wise biases
+
+\begin{itemize}
+\item
+Users give lower ratings when in bad mood
+
+\item
+Different scales, e.g., 4/5 star is ``OK'' for critics
+
+\item
+User interface design
+
+\end{itemize}
+
+\item
+Item-wise biases
+
+\begin{itemize}
+\item 
+The same item presented differently, 
+e.g., a movie in 3D, HD
+
+\end{itemize}
+\end{itemize}
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 5: PR-based Conditional Random Fields}
+
+
+\end{slide}
+%%
+%%==========================================================================================
 
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Our rankings}
+
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Awards}
 
 
 \end{slide}
