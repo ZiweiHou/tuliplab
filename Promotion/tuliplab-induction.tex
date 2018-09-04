@@ -112,6 +112,29 @@ basicstyle=\footnotesize\ttfamily}
 	{\todo[author=Sn,size=\tiny,inline,color=green!40]
 	{Shaoni has worked up to here.}}
 
+
+
+
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{dtklogos}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,shadows}
+%\usepackage[hidelinks,pdfencoding=auto]{hyperref}
+% Information boxes
+\newcommand*{\info}[4][4]{%
+  \node [ annotation, #3, text width = #1em,
+          inner sep = 2mm ] at (#2) {%
+  \list{$\bullet$}{\topsep=0pt\itemsep=0pt\parsep=0pt
+    \parskip=0pt\labelwidth=2pt\leftmargin=2pt
+    \itemindent=0pt\labelsep=2pt}%
+    #4
+  \endlist
+  };
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % title
 % TODO: Customize to your Own Title, Name, Address
@@ -841,6 +864,76 @@ e.g., a movie in 3D, HD
           \item \textcolor{orange}{Professional Knowledge}
         \end{enumerate}
     \end{itemize}
+\end{slide}
+
+
+
+
+\begin{slide}[toc=,bm=]{Training at TULIP}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!40,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6] {Training at TULIP} [clockwise from=180]
+    child[concept color=blue!60] {
+      node[scale=0.6] {Professional knowledge} [clockwise from=260]
+        child { node[scale=0.6] {\LaTeX} }
+        child { node[scale=0.6] (goReview) {Plan \& Progress Review }}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=blue] {
+      node[concept,scale=0.6] {Foundation (FLIP(00-05))}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=orange] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog)
+        {Reading Team} }
+      child { node[concept,scale=0.6] (Reviewteam)
+        {Review Team }}
+    }
+   ;
+    \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{%
+      \item QQ Online
+      \item At least once a month
+      \item Read material before meeting
+      \item Ask questions.
+    }
+    \info{goVersionCon.north west}{above,anchor=east,xshift=-0.5em}{%
+      \item SmartGit
+      \item GitHub
+      \item Bitbucket
+    }
+    \info{Math.north east}{above,anchor=west,xshift=0.5em}{%
+      \item Linear algebra
+      \item Probability theory
+      \item Mathematical statistics
+    }
+    \info{hand-on.north west}{above,anchor=east,xshift=-0.5em }{
+      \item Python
+      \item Apache Spark
+      \item Cloud platform
+    }
+    \info{Theo.north east}{above,anchor=west,xshift=0.5em}{
+      \item Optimization
+      \item Graph model
+    }
+    \end{tikzpicture}
+\end{center}
 \end{slide}
 
 \begin{slide}{Aiming Higher \dots}
