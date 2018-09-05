@@ -25,7 +25,7 @@
  pauseslide,
  fleqn,leqno]{powerdot}
 
-
+\usepackage{smartdiagram}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{rotating}
@@ -49,8 +49,10 @@
 \usepackage{multirow}
 \usepackage{gitinfo2}
 \usepackage{xcolor}
-
+\usepackage{multicol}
+\usepackage{ulem}
 \usepackage{todonotes}
+\usepackage{tablefootnote}
 % \usepackage{pst-rel-points}
 
 \usepackage{listings}
@@ -105,23 +107,34 @@ basicstyle=\footnotesize\ttfamily}
 %
 \newcommand{\gangli}[1]{\draftnote{blue}{GLi:}{#1}}
 \newcommand{\shaoni}[1]{\draftnote{green}{sn:}{#1}}
+\newcommand{\mengren}[1]{\draftnote{orange}{MRen:}{#1}}
+\newcommand{\xinhan}[1]{\draftnote{red}{Xhan:}{#1}}
 \newcommand{\gliMarker}
 	{\todo[author=GLi,size=\tiny,inline,color=blue!40]
 	{Gang Li has worked up to here.}}
 \newcommand{\snMarker}
 	{\todo[author=Sn,size=\tiny,inline,color=green!40]
 	{Shaoni has worked up to here.}}
+\newcommand{\mrMarker}
+	{\todo[author=MRen,size=\tiny,inline,color=orange!40]
+	{Meng Ren has worked up to here.}}
+\newcommand{\xhMarker}
+	{\todo[author=XHan,size=\tiny,inline,color=red!40]
+	{XinHan has worked up to here.}}
 
 
 
 
 
-
+\usepackage{geometry}
+\geometry{verbose,letterpaper}
+\usepackage{movie15}
+\usepackage{hyperref}
 
 \usepackage[utf8]{inputenc}
 \usepackage{dtk-logos}
 \usepackage{tikz}
-\usetikzlibrary{mindmap,shadows}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
@@ -134,6 +147,10 @@ basicstyle=\footnotesize\ttfamily}
   \endlist
   };
 }
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % title
@@ -178,8 +195,6 @@ cf={TULIP Lab: Induction},
 
 
 \section{TULIP Lab}
-
-
 %%==========================================================================================
 %%
 \begin{slide}{Director}
@@ -211,8 +226,69 @@ cf={TULIP Lab: Induction},
     \end{itemize}
 \end{slide}
 %%
-%%==========================================================================================
+%%===============================================================================
 
+
+
+%%
+%%===============================================================================
+\begin{slide}[toc=,bm=]{Director}
+\selectcolormodel{rgb}
+\begin{itemize}
+  \item A/Prof. Gang Li
+  \twocolumn[lcolwidth=0.5\linewidth,
+rcolwidth=0.5\linewidth
+]{\begin{center}
+\scalebox{0.65}{
+\smartdiagramset{distance center/other bubbles=1.5cm,}
+\smartdiagram[bubble diagram]{
+IEEE Technical \\ Committee,IEEE Task \\Force on EDM\\(Vice Chair) ,Data Mining \\and Big Data\\ Analytics\\(Vice Chair),Enterprise \\ Architecture\\and Engineering,Enterprise\\Information\\Systems%
+}}
+
+\end{center}}{\begin{center}
+\smartdiagramset{bubble center node size=5cm,distance center/other bubbles=1.5cm,}
+\scalebox{0.65}{
+
+\smartdiagram[bubble diagram]{
+Deakin, University Thesis\\ Examination\\ Committee,SEBE Faculty\\ HDR  Director,Current Director\\ for S578~/S678~/\\S778~/S779 ,Founding Director\\for S306~/\\ S777%
+}}
+
+\end{center}}
+
+\end{itemize}
+
+\end{slide}
+
+
+%%
+%%==========================================================================================
+\begin{slide}{Deakin rankings}
+\begin{table}[htbp]
+  \centering
+  \caption{Deakin Ranking}
+    \begin{tabular}{clrrrr}
+    \toprule
+      & Benchmark & \multicolumn{1}{l}{2014-15} & \multicolumn{1}{l}{2015-2016} & \multicolumn{1}{l}{2016-2017} & \multicolumn{1}{l}{2017-2018} \\ \midrule
+    \multirow{4}[0]{*}{QS\#} & World  & 360 & 324 & 355 & 293 \\
+      & National & 19 &   &   &  \\
+      & Victoria & 4 &   &   &  \\
+      & Under 50 & 50 &   &   &  \\ \midrule
+    \multirow{3}[0]{*}{THE} & World  & 325 & 301-350 & 251-300 & 301 \\
+      & National  & 13 &   &   & 17 \\
+      & Victoria & 3 &   &   &  \\ \midrule
+    \multirow{3}[0]{*}{THE<50} & World  & 59 &   &   & 43 \\
+      & National  & 7 &   &   & 8 \\
+      & Victoria & 1 &   &   &  \\ \midrule
+    \multirow{3}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
+      &   & 19 &   &   & 11 \\
+      &   & 4 &   &   &  \\ \midrule
+    \multirow{3}[0]{*}{CWTS Leiden} & World  & 284 & 325 & 314 & 226 \\
+      & National  & 11 & 17 & 17 & 11 \\
+      & Victoria & 3 &   &   &  \\ \bottomrule
+    \end{tabular}%
+  \label{tab:Deakin Ranking}%
+\end{table}%
+\end{slide}
 
 %%==========================================================================================
 %%
@@ -244,6 +320,13 @@ cf={TULIP Lab: Induction},
 %%==========================================================================================
 %%
 \begin{slide}{Organization}
+\selectcolormodel{rgb}
+\twocolumn[
+%lcolwidth=0.3\textwidth,
+%rcolwidth=0.6\textwidth
+lcolwidth=0.6\linewidth,
+rcolwidth=0.4\linewidth
+]{
 \begin{itemize}
   \item TULIP Lab
   \begin{itemize}
@@ -260,9 +343,22 @@ cf={TULIP Lab: Induction},
     \item \textcolor{orange}{Visitor:} visiting members
     \item \textcolor{orange}{Web Team:} web site maintaining and promotion team
   \end{itemize}
-\end{itemize}
+\end{itemize}}
+{
+\begin{center}
+\scalebox{0.50}{
+\smartdiagramset{planet color=orange!60,
+distance planet-satellite=5cm,planet text width=3cm,
+}
+\smartdiagram[connected constellation diagram]
+{TULIP Lab,Master,Trainee,Visitor,Web\\Team,Academy,Headquarter}}
+\end{center}
 
+
+}
+\xhMarker
 \end{slide}
+
 %%
 %%==========================================================================================
 
@@ -350,7 +446,7 @@ and \textcolor{green}{ideas} in OSNs
     }
     \subfigure{
         \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_6.eps}
-    }  
+    }
 \end{figure}
 }{
 \begin{figure}[htbp]
@@ -423,6 +519,11 @@ Photo is static media, whereas, travel behavior is dynamic.
     \centering
     \includegraphics[width=0.5\textwidth]{figures//theme1//Theme1_11.eps}
 \end{figure}
+
+\begin{center}
+   \onslide{2}{\twotonebox{\huge \textcolor{red}{?}}{\large \emph{How to mine these data for travel behaviour analysis?}}}
+\end{center}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -435,13 +536,14 @@ Tourist Traffic Flow in Hong Kong Metropolitan Area.
 %\hspace{10}
 
 \begin{figure}[htbp]
-    \subfigure{
+    \subfigure[Asian Tourist]{
         \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_12.eps}
     }
-    \subfigure{
+    \subfigure[Western Tourist]{
         \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_13.eps}
     }
 \end{figure}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -453,25 +555,22 @@ Tourist Traffic Flow in Hong Kong Metropolitan Area.
 
 \begin{figure}[htbp]
     \subfigure{
-        \includegraphics[width=0.5\textwidth]{figures//theme1//Theme1_14.eps}
+        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_14.eps}
     }
     \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_15.eps}
+        \includegraphics[width=0.2\textwidth]{figures//theme1//Theme1_15.eps}
+    }\\
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_16.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_17.eps}
     }
 \end{figure}
 
-Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip. Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. Tourism Management.
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
-
+\footnotesize{Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip.
+\emph{Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. }
+Tourism Management.}
 
 \end{slide}
 %%
@@ -486,6 +585,9 @@ Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip. Exploring the travel behaviors of
 \item
 Observed Check-in Data is usually a mixed events from different periodic behaviors
 
+\vspace{1cm}
+
+\twocolumn{
 \begin{itemize}
 \item
 What are Periodic?
@@ -495,35 +597,17 @@ What is the period?
 
 \item
 Predict the Behavior on a particular day.
+\end{itemize}}
+{
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures//theme1//Theme1_18.eps}
+\end{figure}
+}
 \end{itemize}
 
-\end{itemize}
-
-\end{slide}
-%%
-%%==========================================================================================
 
 
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Periodic Behavior Mining}
-
-\begin{itemize}
-\item
-Observed Check-in Data is usually a mixed events from different periodic behaviors
-
-    \begin{itemize}
-    \item
-    What are Periodic?
-
-    \item
-    What is the period?
-
-    \item
-    Predict the Behavior on a particular day.
-
-    \end{itemize}
-\end{itemize}
 
 \end{slide}
 %%
@@ -587,6 +671,21 @@ There are various applications of Periodic Behavior Mining
 %%
 \begin{slide}[toc=,bm=]{D.S. Case Study 1 - Face Age Recognition}
 
+\begin{figure}[htbp]
+    \subfigure{
+        \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_19.eps}
+    }\\
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_20.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_21.eps}
+    }
+\end{figure}
+
+\footnotesize{Xin Geng, Zhi-Hua Zhou, Yu Zhang, Gang Li, Honghua Dai.
+\emph{Learning from facial aging patterns for automatic age estimation. }
+Proceedings of the 14th annual ACM international conference on Multimedia, 2006}
 
 \end{slide}
 %%
@@ -597,6 +696,14 @@ There are various applications of Periodic Behavior Mining
 %%
 \begin{slide}[toc=,bm=]{D.S. Case Study 2 - Speech-based Emotion Detection}
 
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_22.eps}
+\end{figure}
+
+\footnotesize{Jia Rong, Gang Li, Yi-Ping Phoebe Chen.
+\emph{Acoustic Feature Selection for Automatic Emotion Recognition from Speech. }
+Information Processing and Management, 45(3):  315-328 2009
+}
 
 \end{slide}
 %%
@@ -625,7 +732,6 @@ There are various applications of Periodic Behavior Mining
 
 %%==========================================================================================
 %%
-<<<<<<< Updated upstream
 \begin{slide}[toc=,bm=]{D.S. Case Study (5) - Video Surveillance}
 \begin{figure}[ht]
   \includemovie[poster=figures//theme1//Theme1_23.eps,
@@ -637,20 +743,6 @@ There are various applications of Periodic Behavior Mining
 %\begin{figure}
 %  \includegraphics[width=0.7\textwidth]{figures//theme1//Theme1_23.eps}
 %\end{figure}
-=======
-\begin{slide}[toc=,bm=]{Data Science Application - Case 5: Video Surveillance}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Market Segmentation Analysis}
-
->>>>>>> Stashed changes
 
 \end{slide}
 %%
@@ -687,20 +779,41 @@ or releases the information.
 
 %%==========================================================================================
 %%
+
 \begin{slide}[toc=,bm=]{Who is an adversary?}
 
+\twocolumn[
+lcolwidth=0.5\linewidth,
+rcolwidth=0.45\linewidth
+]
+{
 \begin{itemize}
-\item
-Every user is potentially an adversary
+	\item
+	Every user is potentially an adversary
+	\begin{itemize}
+		\item
+		After data is released, we cannot prevent any user from performing any type of analysis on the released data
+		\item
+		Worst case scenario
+		\begin{itemize}
+			\item
+			Must account for disclosure risk from any and all types of analyses
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+}
+{	
+	%\begin{figure}	
+	\includegraphics[width=\linewidth]{./figures/theme2/adversary.eps}
+	%\end{figure}
+}
+	
+\end{slide}
 
-\begin{itemize}
-\item
-After data is released, we cannot prevent any user from performing any type of analysis on the released data
+%%
+%%==========================================================================================
 
-\item
-Worst case scenario
 
-<<<<<<< Updated upstream
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{I.A. Case Study (1) - Privacy Breach}
@@ -736,22 +849,13 @@ Worst case scenario
 \footnotetext[1]{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
 Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
 Journal of Travel Research, 2017.}
-=======
-\begin{itemize}
-\item
-Must account for disclosure risk from any and all types of analyses
-\end{itemize}
->>>>>>> Stashed changes
-
-\end{itemize}
-\end{itemize}
 
 \end{slide}
+
 %%
 %%==========================================================================================
 
 
-<<<<<<< Updated upstream
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{I.A. Case Study (2) - Privacy Breach}
@@ -784,10 +888,6 @@ Must account for disclosure risk from any and all types of analyses
 \footnotetext[1]{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
 Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
 Journal of Travel Research, 2017.}
-=======
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Information Privacy Applications - Case 1: Privacy Breach}
 
 \end{slide}
 %%
@@ -796,18 +896,6 @@ Journal of Travel Research, 2017.}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Information Privacy Applications - Case 2: Privacy Breach}
-
->>>>>>> Stashed changes
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-<<<<<<< Updated upstream
 \begin{slide}[toc=,bm=]{I.A. Case Study (3) - Is O.S.N. a Secure Place to Show off?}
 % - Case 3: Is O.S.N. a Secure Place to Show off?
 
@@ -816,10 +904,12 @@ Journal of Travel Research, 2017.}
 	\textbf{\large{\textcolor{orange}{Did Facebook photo trigger murder?\footnotemark[1]}}}
 	\includegraphics[width=0.7\textwidth,height=7cm]{./figures/theme2/case3.eps}
 \end{figure}
-=======
-\begin{slide}[toc=,bm=]{Information Privacy Applications - Case 3: Is O.S.N. a Secure Place to Show off?}
->>>>>>> Stashed changes
 
+
+\footnotetext[1]{Tianqing Zhu, Gang Li, Wanlei Zhou, Ping Xiong, and Cao Yuan.
+Deferentially Private Tagging Recommendation Based on Topic Model. 
+The 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD),
+May 2014, Tainan, Taiwan. }
 
 \end{slide}
 %%
@@ -829,10 +919,36 @@ Journal of Travel Research, 2017.}
 %%
 \begin{slide}[toc=,bm=]{Privacy Preserving Related Reference}
 
+\twocolumn[
+%lcolwidth=0.3\textwidth,
+%rcolwidth=0.6\textwidth
+lcolwidth=0.45\linewidth,
+rcolwidth=0.55\linewidth
+]
+{
+\begin{figure}[bhtp]
+	\includegraphics[scale=0.8]{./figures/theme2/reference.eps}
+\end{figure}
+}
+{
+\begin{itemize}
+	\item
+	\textbf{\underline{Privacy Preserving in Data Releasing}}
+	\begin{itemize}
+		\item
+		T. Zhu, G. Li, W. Zhou, P.S. Yu. \textit{Differential Privacy and Its Applications: Survey}, \textbf{\uline{IEEE Transactions on Data and Knowledge Engineering}}, 2017
+		\item
+		T. Zhu, G. Li, W. Zhou, P.S. Yu. \textit{Differential Privacy and Its Applications}, Springer 2017
+		\item
+		T. Zhu, P. Xiong, G. Li, W. Zhou. \textit{Correlated Differential Privacy: Hiding Information in Non-IID Dataset}. \textbf{\uline{IEEE Transactions on Information Forensics \& Security}}, 2015, 10(2), 229-242
+	\end{itemize}
+\end{itemize}
+}
 
 \end{slide}
 %%
 %%==========================================================================================
+
 
 %%==========================================================================================
 %%
@@ -842,7 +958,7 @@ Journal of Travel Research, 2017.}
 
 \begin{itemize}
 \item
-\underline {Tourism Data Mining}
+Tourism Data Mining
 
 \begin{itemize}
 \item
@@ -852,11 +968,13 @@ Tourist Behavior Analysis
 Contrast Mining
 
 \begin{itemize}
+
 \item
 Outlying Aspects Mining
 
 \item
 Competitiveness Discovery
+
 \end{itemize}
 
 \end{itemize}
@@ -873,14 +991,9 @@ Recommendation System
 
 %%==========================================================================================
 %%
-<<<<<<< Updated upstream
 \begin{slide}[toc=,bm=]{B.I. Case Study (1) - Market Segmentation Analysis}
 
 
-=======
-\begin{slide}[toc=,bm=]{Business Intelligence Applications \\
-\small{Case 1: Market Segmentation Analysis}}
->>>>>>> Stashed changes
 
 
 \end{slide}
@@ -890,15 +1003,10 @@ Recommendation System
 
 %%==========================================================================================
 %%
-<<<<<<< Updated upstream
 \begin{slide}[toc=,bm=]{B.I. Case Study (2) - Negative Association Rule Mining}
-  
-  
-  
-=======
-\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 2: Negative Association Rule Mining}
 
->>>>>>> Stashed changes
+
+
 
 \end{slide}
 %%
@@ -907,12 +1015,8 @@ Recommendation System
 
 %%==========================================================================================
 %%
-<<<<<<< Updated upstream
 \begin{slide}[toc=,bm=]{B.I. Case Study (3) - Contrast Mining}
 
-=======
-\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 3: Contrast Mining}
->>>>>>> Stashed changes
 
 
 \end{slide}
@@ -922,11 +1026,7 @@ Recommendation System
 
 %%==========================================================================================
 %%
-<<<<<<< Updated upstream
 \begin{slide}[toc=,bm=]{B.I. Case Study (4) - Heterogeneous Preferences}
-=======
-\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 4: Heterogeneous Preferences}
->>>>>>> Stashed changes
 
 \begin{itemize}
 \item
@@ -961,11 +1061,7 @@ e.g., a movie in 3D, HD
 
 %%==========================================================================================
 %%
-<<<<<<< Updated upstream
 \begin{slide}[toc=,bm=]{B.I. Case Study (5) - PR-based Conditional Random Fields}
-=======
-\begin{slide}[toc=,bm=]{Business Intelligence Applications - Case 5: PR-based Conditional Random Fields}
->>>>>>> Stashed changes
 
 
 \end{slide}
@@ -1213,10 +1309,40 @@ Everyone should prepare at least one question for each TULIP seminar.
 %
 \begin{slide}[toc=,bm=]{Questions?}
 
-\vspace{4.5cm}
+\vspace{1.5cm}
+%\begin{center}
+%{\twotonebox{\Huge ?}
+%{\large \emph{Any Questions}}}
+%\end{center}
 \begin{center}
-{\twotonebox{\Huge ?}
-{\large \emph{Any Questions}}}
+\selectcolormodel{rgb}
+\begin{tikzpicture}[scale=0.05, color=blue!60]
+\filldraw[blue!50] (48.656200,67.906197)..controls (48.656200,75.199203) and (43.636700,84.164101)..(26.421900,84.164101)
+    ..controls (13.507800,84.164101) and (6.457030,75.796898)..(6.457030,68.144501)
+    ..controls (6.457030,63.839802) and (9.683590,62.882801)..(11.476600,62.882801)
+    ..controls (13.507800,62.882801) and (16.378901,64.320297)..(16.378901,67.906197)
+    ..controls (16.378901,70.656197) and (14.347700,72.808601)..(11.359400,72.808601)
+    ..controls (10.640600,72.808601) and (10.402300,72.808601)..(10.160200,72.687500)
+    ..controls (12.793000,78.902298) and (19.726601,81.773399)..(26.062500,81.773399)
+    ..controls (39.570301,81.773399) and (39.570301,73.046898)..(39.570301,68.503899)
+    ..controls (39.570301,61.449200) and (37.417999,59.179699)..(35.386700,57.027302)
+    ..controls (27.257799,48.300800) and (24.628901,37.179699)..(24.628901,29.886700)
+    --(24.628901,24.148399)..controls (24.628901,21.996099) and (24.628901,21.519501)..(25.941401,21.519501)
+    ..controls (27.257799,21.519501) and (27.257799,22.355499)..(27.257799,24.507799)
+    --(27.257799,28.929701)..controls (27.257799,35.984402) and (30.128901,46.503899)..(42.203098,55.472698)
+    ..controls (45.550800,57.984402) and (48.656200,61.687500)..(48.656200,67.906197)
+    --cycle;
+\filldraw[blue!50] (31.679701,5.859380)..controls (31.679701,8.964840) and (29.050800,11.597700)..(25.941401,11.597700)
+    ..controls (22.355499,11.597700) and (20.085899,8.726560)..(20.085899,5.859380)
+    ..controls (20.085899,2.269530) and (22.953100,0.000000)..(25.824200,0.000000)
+    ..controls (29.171900,0.000000) and (31.679701,2.628910)..(31.679701,5.859380)
+    --cycle;
+\end{tikzpicture}
+\end{center}
+\pause
+\begin{center}
+{\twotonebox{}
+{\large {Any Questions}}}
 \end{center}
 
 \end{slide}
