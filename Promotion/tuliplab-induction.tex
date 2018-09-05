@@ -49,8 +49,10 @@
 \usepackage{multirow}
 \usepackage{gitinfo2}
 \usepackage{xcolor}
-
+\usepackage{multicol} 
+\usepackage{ulem} 
 \usepackage{todonotes}
+\usepackage{tablefootnote}
 % \usepackage{pst-rel-points}
 
 \usepackage{listings}
@@ -687,28 +689,37 @@ or releases the information.
 
 %%==========================================================================================
 %%
+
 \begin{slide}[toc=,bm=]{Who is an adversary?}
 
+\twocolumn[
+lcolwidth=0.5\linewidth,
+rcolwidth=0.45\linewidth
+]
+{
 \begin{itemize}
-\item
-Every user is potentially an adversary
-
-\begin{itemize}
-\item
-After data is released, we cannot prevent any user from performing any type of analysis on the released data
-
-\item
-Worst case scenario
-
-\begin{itemize}
-\item
-Must account for disclosure risk from any and all types of analyses
+	\item
+	Every user is potentially an adversary
+	\begin{itemize}
+		\item
+		After data is released, we cannot prevent any user from performing any type of analysis on the released data
+		\item
+		Worst case scenario
+		\begin{itemize}
+			\item
+			Must account for disclosure risk from any and all types of analyses
+		\end{itemize}
+	\end{itemize}
 \end{itemize}
-
-\end{itemize}
-\end{itemize}
-
+}
+{	
+	%\begin{figure}	
+	\includegraphics[width=\linewidth]{./figures/theme2/adversary.png}
+	%\end{figure}
+}
+	
 \end{slide}
+
 %%
 %%==========================================================================================
 
@@ -717,25 +728,93 @@ Must account for disclosure risk from any and all types of analyses
 %%
 \begin{slide}[toc=,bm=]{Information Privacy Applications - Case 1: Privacy Breach}
 
+%\includegraphics[width=\linewidth]{./figures/theme2/case1.jpg}
+\begin{table}
+	\fontsize{11pt}{11pt}\selectfont
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{12pt}
+	\centering
+	%\caption{Privacy breach of Singapore residents traveling overseas\protect\footnotemark[1].}
+	\item
+	TABLE 6. Privacy breach of Singapore residents traveling overseas\protect\footnotemark[1].\\[15pt]
+	\begin{tabular}{c|c|c|l|c|c}	
+	\toprule
+	ID  				&  	\textbf{User(Gender)}		& 		\textbf{Visited Destination} 		& 		\textbf{Venue} 		& 	\textbf{Date} 		&	\textbf{Time}	\\
+	\midrule
+	L{\footnotesize1}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Shanghai, China 	&	UNCO Lounge				&	25-May-2015	&	20:17\\
+	L{\footnotesize2}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Shanghai, China 	&	T8 Restaurant and Bar		&	26-May-2015	&	17:35\\
+	L{\footnotesize3}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Cannes, France 	&	Villa Mystique Resort		&	25-Jun-2015	&	11:03\\
+	L{\footnotesize4}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Paris, France 		&	Dersou Restaurant			&	27-Jun-2015	&	19:58\\
+	L{\footnotesize5}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Paris, France 		&	Ladure Pastry Shop			&	28-Jun-2015	&	14:48\\
+	L{\footnotesize6}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	London, United Kingdom 		&	L'ETO Caff			&	10-Oct-2015	&	11:01\\
+	L{\footnotesize7}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Hong Kong		&	The Ocean Club Bar			&	31-Oct-2015	&	18:47\\
+	L{\footnotesize8}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Hanoi, Vietnam		&	HOME Hanoi Restaurant			&	01-Jan-2016	&	19:04\\
+	L{\footnotesize9}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Ho Chi Minh, Vietnam		&	MGallery Hotel des Art		&	30-Jun-2016	&	19:54\\
+	L{\footnotesize10}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Ho Chi Minh, Vietnam		&	L'Usine: Cafe		&	01-Jul-2016	&	10:55\\
+	L{\footnotesize11}	&	U{\footnotesize5}(M)-U{\footnotesize6}(F)	&	Ho Chi Minh, Vietnam		&	Social Club @ Hotel Des Arts		&	01-Jul-2016	&	17:04\\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+\footnotetext[1]{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang. Tourist Activity Analysis by Leveraging Mobile Social Media Data. Journal of Travel Research, 2017.}
+
 \end{slide}
+
 %%
 %%==========================================================================================
+
+
 
 
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Information Privacy Applications - Case 2: Privacy Breach}
 
+%\includegraphics[width=\linewidth]{./figures/theme2/case2.jpg}
+
+\begin{table}
+	%\fontsize{11pt}{11pt}\selectfont
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{12pt}
+	\centering
+	%\caption{Joint check-in record indicating sensitive contrast relationship\protect\footnotemark[1].} 
+	TABLE 8. Joint check-in record indicating sensitive contrast relationship\protect\footnotemark[1].\\[15pt]
+	\begin{tabular}{c|c|l|c|c}	
+	\toprule	
+	ID  				&  	\textbf{User(Gender)}		& 		\textbf{Venue} 		& 	\textbf{Date} 		&	\textbf{Time}	\\
+	\midrule
+	C{\footnotesize1}	&	U{\footnotesize9}(M)-U{\footnotesize10}(F)	&	Zouk Night Club		&	11-Sep-2015	&	23:31\\
+	C{\footnotesize2}	&	U{\footnotesize9}(M)-U{\footnotesize11}(F)	&	Zouk Night Club		&	18-Nov-2015	&	23:50\\
+	C{\footnotesize3}	&	U{\footnotesize9}(M)-U{\footnotesize11}(F)	&	Club Luxi				&	17-Jan-2016	&	00:30\\
+	C{\footnotesize4}	&	U{\footnotesize9}(M)-U{\footnotesize11}(F)	&	Club Hollywood			&	06-Feb-2016	&	04:34\\
+	C{\footnotesize5}	&	U{\footnotesize9}(M)-U{\footnotesize10}(F)	&	Wave House Sentosa	&	12-Mar-2016	&	22:43\\
+	C{\footnotesize6}	&	U{\footnotesize9}(M)-U{\footnotesize10}(F)	&	Zouk Night Club		&	02-Jul-2016	&	00:25\\
+	C{\footnotesize7}	&	U{\footnotesize9}(M)-U{\footnotesize10}(F)	&	Zouk Night Club		&	07-Aug-2016	&	00:39\\ 
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\footnotetext[1]{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang. Tourist Activity Analysis by Leveraging Mobile Social Media Data. Journal of Travel Research, 2017.}
 
 \end{slide}
 %%
 %%==========================================================================================
 
 
+
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Information Privacy Applications - Case 3: Is O.S.N. a Secure Place to Show off?}
 
+\begin{figure}[htbp]
+	\centering
+	\textbf{\large{\textcolor{orange}{Did Facebook photo trigger murder?\footnotemark[1]}}}
+	\includegraphics[width=0.7\textwidth,height=8cm]{./figures/theme2/case3.png}
+\end{figure}
+
+
+\footnotetext[1]{Tianqing Zhu, Gang Li, Wanlei Zhou, Ping Xiong, and Cao Yuan. Deferentially Private Tagging Recommendation Based on Topic Model. The 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), May 2014, Tainan, Taiwan. }
 
 \end{slide}
 %%
@@ -745,6 +824,31 @@ Must account for disclosure risk from any and all types of analyses
 %%
 \begin{slide}[toc=,bm=]{Privacy Preserving Related Reference}
 
+\twocolumn[
+%lcolwidth=0.3\textwidth,
+%rcolwidth=0.6\textwidth
+lcolwidth=0.45\linewidth,
+rcolwidth=0.55\linewidth
+]
+{
+\begin{figure}[bhtp]
+	\includegraphics[scale=0.8]{./figures/theme2/reference.png}
+\end{figure}
+}
+{
+\begin{itemize}
+	\item
+	\textbf{\underline{Privacy Preserving in Data Releasing}}
+	\begin{itemize}
+		\item
+		T. Zhu, G. Li, W. Zhou, P.S. Yu. \textit{Differential Privacy and Its Applications: Survey}, \textbf{\uline{IEEE Transactions on Data and Knowledge Engineering}}, 2017
+		\item
+		T. Zhu, G. Li, W. Zhou, P.S. Yu. \textit{Differential Privacy and Its Applications}, Springer 2017
+		\item
+		T. Zhu, P. Xiong, G. Li, W. Zhou. \textit{Correlated Differential Privacy: Hiding Information in Non-IID Dataset}. \textbf{\uline{IEEE Transactions on Information Forensics \& Security}}, 2015, 10(2), 229-242
+	\end{itemize}
+\end{itemize}
+}
 
 \end{slide}
 %%
@@ -766,11 +870,13 @@ Tourist Behavior Analysis
 Contrast Mining
 
 \begin{itemize}
+
 \item
 Outlying Aspects Mining
 
 \item
 Competitiveness Discovery
+
 \end{itemize}
 
 \end{itemize}
