@@ -119,13 +119,15 @@ basicstyle=\footnotesize\ttfamily}
 
 
 
-
-
+\usepackage{geometry}
+\geometry{verbose,letterpaper}
+\usepackage{movie15}
+\usepackage{hyperref}
 
 \usepackage[utf8]{inputenc}
 \usepackage{dtklogos}
 \usepackage{tikz}
-\usetikzlibrary{mindmap,shadows}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
@@ -484,9 +486,6 @@ Tourism Management.}
 %%
 %%==========================================================================================
 
-
-
-
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Periodic Behavior Mining}
@@ -495,6 +494,9 @@ Tourism Management.}
 \item
 Observed Check-in Data is usually a mixed events from different periodic behaviors
 
+\vspace{1cm}
+
+\twocolumn{
 \begin{itemize}
 \item
 What are Periodic?
@@ -504,9 +506,17 @@ What is the period?
 
 \item
 Predict the Behavior on a particular day.
+\end{itemize}}
+{
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures//theme1//Theme1_18.eps}
+\end{figure}
+}
 \end{itemize}
 
-\end{itemize}
+
+
 
 \end{slide}
 %%
@@ -569,6 +579,21 @@ There are various applications of Periodic Behavior Mining
 %%
 \begin{slide}[toc=,bm=]{Data Science Application - Case 1: Face Age Recognition}
 
+\begin{figure}[htbp]
+    \subfigure{
+        \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_19.eps}
+    }\\
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_20.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_21.eps}
+    }
+\end{figure}
+
+\footnotesize{Xin Geng, Zhi-Hua Zhou, Yu Zhang, Gang Li, Honghua Dai.
+\emph{Learning from facial aging patterns for automatic age estimation. }
+Proceedings of the 14th annual ACM international conference on Multimedia, 2006}
 
 \end{slide}
 %%
@@ -579,6 +604,14 @@ There are various applications of Periodic Behavior Mining
 %%
 \begin{slide}[toc=,bm=]{Data Science Application - Case 2: Speech-based Emotion Detection}
 
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_22.eps}
+\end{figure}
+
+\footnotesize{Jia Rong, Gang Li, Yi-Ping Phoebe Chen.
+\emph{Acoustic Feature Selection for Automatic Emotion Recognition from Speech. }
+Information Processing and Management, 45(3):  315-328 2009
+}
 
 \end{slide}
 %%
@@ -608,17 +641,16 @@ There are various applications of Periodic Behavior Mining
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Data Science Application - Case 5: Video Surveillance}
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Market Segmentation Analysis}
-
+\begin{figure}[ht]
+  \includemovie[poster=figures//theme1//Theme1_23.eps,
+  inline=false,
+%  text={\small(Loading Video Surveillance.avi)}
+  ]
+  {12cm}{11cm}{figures//theme1//Video Surveillance.avi}
+\end{figure}
+%\begin{figure}
+%  \includegraphics[width=0.7\textwidth]{figures//theme1//Theme1_23.eps}
+%\end{figure}
 
 \end{slide}
 %%
