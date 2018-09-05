@@ -105,12 +105,16 @@ basicstyle=\footnotesize\ttfamily}
 %
 \newcommand{\gangli}[1]{\draftnote{blue}{GLi:}{#1}}
 \newcommand{\shaoni}[1]{\draftnote{green}{sn:}{#1}}
+\newcommand{\mengren}[1]{\draftnote{orange}{MRen:}{#1}}
 \newcommand{\gliMarker}
 	{\todo[author=GLi,size=\tiny,inline,color=blue!40]
 	{Gang Li has worked up to here.}}
 \newcommand{\snMarker}
 	{\todo[author=Sn,size=\tiny,inline,color=green!40]
 	{Shaoni has worked up to here.}}
+\newcommand{\mrMarker}
+	{\todo[author=MRen,size=\tiny,inline,color=orange!40]
+	{Meng Ren has worked up to here.}}
 
 
 
@@ -351,7 +355,7 @@ and \textcolor{green}{ideas} in OSNs
     }
     \subfigure{
         \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_6.eps}
-    }  
+    }
 \end{figure}
 }{
 \begin{figure}[htbp]
@@ -424,6 +428,11 @@ Photo is static media, whereas, travel behavior is dynamic.
     \centering
     \includegraphics[width=0.5\textwidth]{figures//theme1//Theme1_11.eps}
 \end{figure}
+
+\begin{center}
+   \onslide{2}{\twotonebox{\huge \textcolor{red}{?}}{\large \emph{How to mine these data for travel behaviour analysis?}}}
+\end{center}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -433,16 +442,16 @@ Photo is static media, whereas, travel behavior is dynamic.
 %%
 \begin{slide}[toc=,bm=]{Tourist Movement Analysis}
 Tourist Traffic Flow in Hong Kong Metropolitan Area.
-%\hspace{10}
 
 \begin{figure}[htbp]
-    \subfigure{
+    \subfigure[Asian Tourist]{
         \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_12.eps}
     }
-    \subfigure{
+    \subfigure[Western Tourist]{
         \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_13.eps}
     }
 \end{figure}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -454,29 +463,28 @@ Tourist Traffic Flow in Hong Kong Metropolitan Area.
 
 \begin{figure}[htbp]
     \subfigure{
-        \includegraphics[width=0.5\textwidth]{figures//theme1//Theme1_14.eps}
+        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_14.eps}
     }
     \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_15.eps}
+        \includegraphics[width=0.2\textwidth]{figures//theme1//Theme1_15.eps}
+    }\\
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_16.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_17.eps}
     }
 \end{figure}
 
-Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip. Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. Tourism Management.
-
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
-
+\footnotesize{Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip. 
+\emph{Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. }
+Tourism Management.}
 
 \end{slide}
 %%
 %%==========================================================================================
+
+
 
 
 %%==========================================================================================
@@ -503,33 +511,6 @@ Predict the Behavior on a particular day.
 \end{slide}
 %%
 %%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Periodic Behavior Mining}
-
-\begin{itemize}
-\item
-Observed Check-in Data is usually a mixed events from different periodic behaviors
-
-    \begin{itemize}
-    \item
-    What are Periodic?
-
-    \item
-    What is the period?
-
-    \item
-    Predict the Behavior on a particular day.
-
-    \end{itemize}
-\end{itemize}
-
-\end{slide}
-%%
-%%==========================================================================================
-
 
 %%==========================================================================================
 %%
