@@ -229,41 +229,42 @@ cf={TULIP Lab: Induction},
 %%===============================================================================
 
 
-
 %%
 %%===============================================================================
-\begin{slide}[toc=,bm=]{Director}
-\selectcolormodel{rgb}
-\begin{itemize}
-  \item A/Prof. Gang Li
-  \twocolumn[lcolwidth=0.5\linewidth,
-rcolwidth=0.5\linewidth
-]{\begin{center}
-\scalebox{0.65}{
-\smartdiagramset{distance center/other bubbles=1.5cm,}
-\smartdiagram[bubble diagram]{
-IEEE Technical \\ Committee,IEEE Task \\Force on EDM\\(Vice Chair) ,Data Mining \\and Big Data\\ Analytics\\(Vice Chair),Enterprise \\ Architecture\\and Engineering,Enterprise\\Information\\Systems%
-}}
-
-\end{center}}{\begin{center}
-\smartdiagramset{bubble center node size=5cm,distance center/other bubbles=1.5cm,}
-\scalebox{0.65}{
-
-\smartdiagram[bubble diagram]{
-Deakin, University Thesis\\ Examination\\ Committee,SEBE Faculty\\ HDR  Director,Current Director\\ for S578~/S678~/\\S778~/S779 ,Founding Director\\for S306~/\\ S777%
-}}
-
-\end{center}}
-
-\end{itemize}
-
-\end{slide}
-
-
+%\begin{slide}[toc=,bm=]{Director}
+%\selectcolormodel{rgb}
+%\begin{itemize}
+%  \item A/Prof. Gang Li
+%  \twocolumn[lcolwidth=0.5\linewidth,
+%rcolwidth=0.5\linewidth
+%]{\begin{center}
+%\scalebox{0.65}{
+%\smartdiagramset{distance center/other bubbles=1.5cm,}
+%\smartdiagram[bubble diagram]{
+%IEEE Technical \\ Committee,IEEE Task \\Force on EDM\\(Vice Chair) ,Data Mining \\and Big Data\\ Analytics\\(Vice Chair),Enterprise \\ Architecture\\and Engineering,Enterprise\\Information\\Systems%
+%}}
+%
+%\end{center}}{\begin{center}
+%\smartdiagramset{bubble center node size=5cm,distance center/other bubbles=1.5cm,}
+%\scalebox{0.65}{
+%
+%\smartdiagram[bubble diagram]{
+%Deakin, University Thesis\\ Examination\\ Committee,SEBE Faculty\\ HDR  Director,Current Director\\ for S578~/S678~/\\S778~/S779 ,Founding Director\\for S306~/\\ S777%
+%}}
+%\end{center}}
+%\end{itemize}
+%
+%\end{slide}
 %%
 %%==========================================================================================
+
+
+%%==========================================================================================
+%%
 \begin{slide}{Deakin rankings}
 \begin{table}[htbp]
+  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\belowcaptionskip}{12pt}
   \centering
   \caption{Deakin Ranking}
     \begin{tabular}{clrrrr}
@@ -271,24 +272,27 @@ Deakin, University Thesis\\ Examination\\ Committee,SEBE Faculty\\ HDR  Director
       & Benchmark & \multicolumn{1}{l}{2014-15} & \multicolumn{1}{l}{2015-2016} & \multicolumn{1}{l}{2016-2017} & \multicolumn{1}{l}{2017-2018} \\ \midrule
     \multirow{4}[0]{*}{QS\#} & World  & 360 & 324 & 355 & 293 \\
       & National & 19 &   &   &  \\
-      & Victoria & 4 &   &   &  \\
-      & Under 50 & 50 &   &   &  \\ \midrule
+      & Under 50 & 50 &   &   &  \\
+      \midrule
     \multirow{3}[0]{*}{THE} & World  & 325 & 301-350 & 251-300 & 301 \\
       & National  & 13 &   &   & 17 \\
-      & Victoria & 3 &   &   &  \\ \midrule
+       \midrule
     \multirow{3}[0]{*}{THE<50} & World  & 59 &   &   & 43 \\
       & National  & 7 &   &   & 8 \\
-      & Victoria & 1 &   &   &  \\ \midrule
+       \midrule
     \multirow{3}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
-      &   & 19 &   &   & 11 \\
-      &   & 4 &   &   &  \\ \midrule
+      & National  & 19 &   &   & 11 \\
+       \midrule
     \multirow{3}[0]{*}{CWTS Leiden} & World  & 284 & 325 & 314 & 226 \\
       & National  & 11 & 17 & 17 & 11 \\
-      & Victoria & 3 &   &   &  \\ \bottomrule
-    \end{tabular}%
-  \label{tab:Deakin Ranking}%
-\end{table}%
+       \bottomrule
+    \end{tabular}
+  \label{tab:Deakin Ranking}
+\end{table}
 \end{slide}
+%%
+%%==========================================================================================
+
 
 %%==========================================================================================
 %%
@@ -353,8 +357,6 @@ distance planet-satellite=5cm,planet text width=3cm,
 \smartdiagram[connected constellation diagram]
 {TULIP Lab,Master,Trainee,Visitor,Web\\Team,Academy,Headquarter}}
 \end{center}
-
-
 }
 \xhMarker
 \end{slide}
@@ -363,12 +365,12 @@ distance planet-satellite=5cm,planet text width=3cm,
 %%==========================================================================================
 
 
-\section{Research @ TULIP}
+\section{Research Themes}
 
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Research at TULIP}
+\begin{slide}[toc=,bm=]{Research Themes}
 \begin{itemize}
     \item<1->
     Research Themes @ TULIP Lab
@@ -497,7 +499,7 @@ Australia has up to 11 million Facebook users.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Application of Geo Photos}
+\begin{slide}[toc=,bm=]{Case study (1) - Application of Geo Photos}
 
 \begin{itemize}
 \item
@@ -521,7 +523,8 @@ Photo is static media, whereas, travel behavior is dynamic.
 \end{figure}
 
 \begin{center}
-   \onslide{2}{\twotonebox{\huge \textcolor{red}{?}}{\large \emph{How to mine these data for travel behaviour analysis?}}}
+   \onslide{2}{\twotonebox{\huge \textcolor{red}{?}}
+   {\large {How to mine these data for travel behaviour analysis?}}}
 \end{center}
 
 \end{slide}
@@ -531,50 +534,24 @@ Photo is static media, whereas, travel behavior is dynamic.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
+\begin{slide}[toc=,bm=]{Case study (2) - Tourist Movement Analysis}
 Tourist Traffic Flow in Hong Kong Metropolitan Area.
 %\hspace{10}
 
 \begin{figure}[htbp]
     \subfigure[Asian Tourist]{
-        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_12.eps}
+        \includegraphics[width=0.35\textwidth]{figures//theme1//Theme1_12.eps}
     }
     \subfigure[Western Tourist]{
-        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_13.eps}
+        \includegraphics[width=0.35\textwidth]{figures//theme1//Theme1_13.eps}
     }
 \end{figure}
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
-
-\begin{figure}[htbp]
-    \subfigure{
-        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_14.eps}
-    }
-    \subfigure{
-        \includegraphics[width=0.2\textwidth]{figures//theme1//Theme1_15.eps}
-    }\\
-    \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_16.eps}
-    }
-    \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_17.eps}
-    }
-\end{figure}
-
 \begin{thebibliography}{}
 \bibitem{}
 \small{Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip.
 Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos.
 Tourism Management.}
 \end{thebibliography}
-
 \end{slide}
 %%
 %%==========================================================================================
@@ -582,7 +559,31 @@ Tourism Management.}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Periodic Behavior Mining}
+%\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
+%
+%\begin{figure}[htbp]
+%    \subfigure{
+%        \includegraphics[width=0.35\textwidth]{figures//theme1//Theme1_14.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.17\textwidth]{figures//theme1//Theme1_15.eps}
+%    }\\
+%    \subfigure{
+%        \includegraphics[width=0.26\textwidth]{figures//theme1//Theme1_16.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.26\textwidth]{figures//theme1//Theme1_17.eps}
+%    }
+%\end{figure}
+%
+%\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case study (3) - Periodic Behavior Mining}
 
 \begin{itemize}
 \item
@@ -616,7 +617,7 @@ Predict the Behavior on a particular day.
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Periodic Behavior Mining Mobility Intentions}
+\begin{slide}[toc=,bm=]{Case study (4) - Periodic Behavior Mining Mobility Intentions}
 
 \begin{itemize}
 \item
@@ -631,7 +632,7 @@ CP Decomposition
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Periodic Behavior Mining Applications}
+\begin{slide}[toc=,bm=]{Case study (5) - Periodic Behavior Mining Applications}
 
 \begin{itemize}
 \item
@@ -655,11 +656,9 @@ There are various applications of Periodic Behavior Mining
         \begin{itemize}
         \item
         Now it is the time for you to stock rice, cooking oil, or ice cream!
-
         \end{itemize}
 
 \end{itemize}
-
 \end{itemize}
 
 \end{slide}
@@ -669,7 +668,7 @@ There are various applications of Periodic Behavior Mining
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{D.S. Case Study 1 - Face Age Recognition}
+\begin{slide}[toc=,bm=]{D.S. Case Study (1) - Face Age Recognition}
 
 \begin{figure}[htbp]
     \subfigure{
@@ -697,7 +696,7 @@ Proceedings of the 14th annual ACM international conference on Multimedia, 2006}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{D.S. Case Study 2 - Speech-based Emotion Detection}
+\begin{slide}[toc=,bm=]{D.S. Case Study (2) - Speech-based Emotion Detection}
 
 \begin{figure}
   \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_22.eps}
@@ -717,7 +716,8 @@ Information Processing and Management, 45(3):  315-328 2009}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{D.S. Case Study 3 - K-Complex Detection}
+\begin{slide}[toc=,bm=]{D.S. Case Study (3) - K-Complex Detection}
+
 
 
 \end{slide}
@@ -766,7 +766,6 @@ Information Abuse:
 \item
 The compromise of information
 for which the data stakeholders are not willing to disclose.
-
 
 \item
 It depends on the nature of the information,
