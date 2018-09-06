@@ -263,27 +263,27 @@ cf={TULIP Lab: Induction},
 %%
 \begin{slide}{Deakin rankings}
 \begin{table}[htbp]
-  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\abovecaptionskip}{-2pt}
   \setlength{\belowcaptionskip}{12pt}
   \centering
   \caption{Deakin Ranking}
     \begin{tabular}{clrrrr}
     \toprule
       & Benchmark & \multicolumn{1}{l}{2014-15} & \multicolumn{1}{l}{2015-2016} & \multicolumn{1}{l}{2016-2017} & \multicolumn{1}{l}{2017-2018} \\ \midrule
-    \multirow{4}[0]{*}{QS\#} & World  & 360 & 324 & 355 & 293 \\
+    \multirow{3}[0]{*}{QS\#} & World  & 360 & 324 & 355 & 293 \\
       & National & 19 &   &   &  \\
       & Under 50 & 50 &   &   &  \\
       \midrule
-    \multirow{3}[0]{*}{THE} & World  & 325 & 301-350 & 251-300 & 301 \\
+    \multirow{2}[0]{*}{THE} & World  & 325 & 301-350 & 251-300 & 301 \\
       & National  & 13 &   &   & 17 \\
        \midrule
-    \multirow{3}[0]{*}{THE<50} & World  & 59 &   &   & 43 \\
+    \multirow{2}[0]{*}{THE<50} & World  & 59 &   &   & 43 \\
       & National  & 7 &   &   & 8 \\
        \midrule
-    \multirow{3}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
+    \multirow{2}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
       & National  & 19 &   &   & 11 \\
        \midrule
-    \multirow{3}[0]{*}{CWTS Leiden} & World  & 284 & 325 & 314 & 226 \\
+    \multirow{2}[0]{*}{CWTS Leiden} & World  & 284 & 325 & 314 & 226 \\
       & National  & 11 & 17 & 17 & 11 \\
        \bottomrule
     \end{tabular}
@@ -370,41 +370,103 @@ distance planet-satellite=5cm,planet text width=3cm,
 
 %%==========================================================================================
 %%
+%\begin{slide}[toc=,bm=]{Research Themes}
+%\begin{itemize}
+%    \item<1->
+%    Research Themes @ TULIP Lab
+%    \begin{enumerate}
+%        \item<2->
+%        \textcolor{orange}{Behavior Informatics}
+%            \begin{itemize}
+%                \item<2->
+%                Behavior Pattern Analysis
+%
+%                \item<2->
+%                Periodic Behavior Mining
+%            \end{itemize}
+%
+%        \item<3->
+%        \textcolor{orange}{Information Abuse Prevention}
+%            \begin{itemize}
+%                \item<3->
+%                Data Compliance Checking
+%
+%                \item<3->
+%                Privacy Preservation in Data Mining
+%            \end{itemize}
+%        \item<4->
+%        \textcolor{orange}{Business Intelligence Applications}
+%            \begin{itemize}
+%                \item<4->
+%                Recommender System
+%
+%                \item<4->
+%                Tourism and Hospitality Management
+%            \end{itemize}
+%    \end{enumerate}
+%\end{itemize}
+%\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
 \begin{slide}[toc=,bm=]{Research Themes}
-\begin{itemize}
-    \item<1->
-    Research Themes @ TULIP Lab
-    \begin{enumerate}
-        \item<2->
-        \textcolor{orange}{Behavior Informatics}
-            \begin{itemize}
-                \item<2->
-                Behavior Pattern Analysis
+\selectcolormodel{rgb}
 
-                \item<2->
-                Periodic Behavior Mining
-            \end{itemize}
+\onslide*{-1}
+{
+\vspace{1.6cm}
+\begin{center}
+\scalebox{0.7}{
+\smartdiagramset{distance center/other bubbles=1.5cm,}
+\smartdiagram[bubble diagram]{
+Research \\ Themes,
+Behavior \\ Informatics,
+Information \\ Abuse Prevention,
+Business \\Intelligence \\Applications
+}}
+\end{center}
+}
 
-        \item<3->
-        \textcolor{orange}{Information Abuse Prevention}
-            \begin{itemize}
-                \item<3->
-                Data Compliance Checking
+\onslide*{2, 2-}
+{
+\scalebox{0.6}{
+\smartdiagramset{distance center/other bubbles=1.5cm,}
+\smartdiagram[bubble diagram]{
+Behavior \\ Informatics,
+Periodic \\Behavior Mining,
+Behavior \\Prediction
+}}
+}
 
-                \item<3->
-                Privacy Preservation in Data Mining
-            \end{itemize}
-        \item<4->
-        \textcolor{orange}{Business Intelligence Applications}
-            \begin{itemize}
-                \item<4->
-                Recommender System
+\onslide*{3, 3-}
+{
+\begin{center}
+\scalebox{0.6}{
+\smartdiagramset{distance center/other bubbles=1.5cm,}
+\smartdiagram[bubble diagram]{
+Information \\ Abuse Prevention,
+Data Compliance\\ Checking,
+Privacy \\Preservation \\in Data Mining
+}}
+\end{center}
+}
 
-                \item<4->
-                Tourism and Hospitality Management
-            \end{itemize}
-    \end{enumerate}
-\end{itemize}
+\onslide*{4, 4-}
+{
+\begin{flushright}
+\scalebox{0.56}{
+\smartdiagramset{distance center/other bubbles=1.5cm,}
+\smartdiagram[bubble diagram]{
+Business \\Intelligence \\Applications,
+Recommender \\System,
+Tourism/Hospitality \\Management
+}}
+\end{flushright}
+}
+
 \end{slide}
 %%
 %%==========================================================================================
