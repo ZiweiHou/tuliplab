@@ -310,26 +310,26 @@ distance planet-satellite=5cm,planet text width=3cm,
   \setlength{\abovecaptionskip}{-2pt}
   \setlength{\belowcaptionskip}{12pt}
   \centering
-  \caption{Deakin Ranking}
+  %\caption{Deakin Ranking}
     \begin{tabular}{clrrrr}
     \toprule
       & Benchmark & \multicolumn{1}{l}{2014-15} & \multicolumn{1}{l}{2015-2016} & \multicolumn{1}{l}{2016-2017} & \multicolumn{1}{l}{2017-2018} \\ \midrule
+    \multirow{2}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
+      & National  & 19 &   &   & 10 \\
+      \midrule  
+    \multirow{2}[0]{*}{CWTS Leiden} & World  & 284 & 325 & 314 & 226 \\
+      & National  & 11 & 17 & 17 & 11 \\
+      \midrule    
     \multirow{3}[0]{*}{QS\#} & World  & 360 & 324 & 355 & 293 \\
       & National & 19 &   &   &  \\
       & Under 50 & 50 &   &   &  \\
       \midrule
     \multirow{2}[0]{*}{THE} & World  & 325 & 301-350 & 251-300 & 301 \\
       & National  & 13 &   &   & 17 \\
-       \midrule
+      \midrule
     \multirow{2}[0]{*}{THE<50} & World  & 59 &   &   & 43 \\
       & National  & 7 &   &   & 8 \\
-       \midrule
-    \multirow{2}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
-      & National  & 19 &   &   & 11 \\
-       \midrule
-    \multirow{2}[0]{*}{CWTS Leiden} & World  & 284 & 325 & 314 & 226 \\
-      & National  & 11 & 17 & 17 & 11 \\
-       \bottomrule
+      \bottomrule
     \end{tabular}
   \label{tab:Deakin Ranking}
 \end{table}
@@ -697,7 +697,8 @@ Predict the Behavior on a particular day.
 \begin{itemize}
 \item
 CP Decomposition
-
+\end{itemize}
+\vspace{0.5cm}
 \twocolumn{
 \begin{figure}[htbp]
     \includegraphics[width=0.8\textwidth]{figures//theme1//cpd_1.eps}
@@ -711,32 +712,21 @@ $y_{r_i, t_j, d_k} = \frac{Count(r_i, t_j, d_k)}{\sum_{q=1}^L Count(r_q, t_j, d_
 }
 
 \onslide*{2, 2-}{
-\begin{center}
+%\begin{center}
 \begin{figure}[htbp]
-    \includegraphics[width=0.3\textwidth]{figures//theme1//cpd_2.eps}
+    \subfigure{
+    \includegraphics[width=0.29\textwidth]{figures//theme1//pbm_6.eps}
+    }
+    \subfigure{
+    \includegraphics[width=0.32\textwidth]{figures//theme1//cpd_2.eps}
+    
+    }
+    \subfigure{
+    \includegraphics[width=0.2\textwidth]{figures//theme1//pbm_7.eps}
+    }
 \end{figure}
-\end{center}
+%\end{center}
 }
-
-%\onslide*{3, 3-}{
-%\begin{flushleft}
-%\begin{figure}[htbp]
-%    \subfigure{
-%        \includegraphics[width=0.3\textwidth]{figures//theme1//cpd_3.eps}
-%    }\\
-%    \subfigure{
-%        \includegraphics[width=0.3\textwidth]{figures//theme1//cpd_4.eps}
-%    }\\
-%    \subfigure{
-%        \includegraphics[width=0.3\textwidth]{figures//theme1//cpd_5.eps}
-%    }
-%\end{figure}
-%\end{flushleft}
-%}
-
-
-\end{itemize}
-
 \end{slide}
 %%
 %%==========================================================================================
