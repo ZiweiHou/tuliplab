@@ -18,12 +18,12 @@
 
 \documentclass[
  size=14pt,
- paper=smartboard,      %a4paper, smartboard, screen
- mode=present, 		    %present, handout, print
- display=slides, 	%slidesnotes, notes, slides
- style=tuliplab,  	    %TULIP Lab style
+ paper=smartboard,  %a4paper, smartboard, screen
+ mode=present, 		%present, handout, print
+ display=slides, 	% slidesnotes, notes, slides
+ style=tuliplab,  	% TULIP Lab style
  pauseslide,
- fleqn,leqno]{powerdot}
+ fleqn,leqno]{powerdot}{}
 
 \usepackage{smartdiagram}
 \usepackage{amssymb}
@@ -1158,22 +1158,121 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (1) - Market Segmentation Analysis}
+\begin{slide}[toc=,bm=]{Case Study (1) - Market Segmentation Analysis}
 
-\begin{figure}[htbp]
-	\subfigure{
-		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_1.eps}
-	}
-	\subfigure{
-		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_2.eps}
-	}
-\end{figure}
+%\begin{figure}[htbp]
+%	\subfigure{
+%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_1.eps}
+%	}
+%	\subfigure{
+%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_2.eps}
+%	}
+%\end{figure}
 
-
-\footnote{Gang Li, Rob Law, Jinlong Wang.  
-\emph{Analyzing International Travelers' Profile with Self-Organizing Maps. }
-Journal of travel \& tourism marketing, 2010, 27(2): 113-131.
+\twocolumn{
+	\begin{figure}
+%		\begin{overprint}
+		\onslide*{1, 1-}{
+			\put(-100,50){
+				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_1.eps}
+			}
+		}
+		\onslide*{3, 3-}{
+			\put(-100,50){
+				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_2.eps}
+			}
+%			\parbox[10,9]{5em}{Fully packaged}
+%			\parbox[-80,9]{5em}{Fully packaged}
+		}
+		\onslide*{5, 5-}{
+			\put(-100,50){
+				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_3.eps}
+			}		
+%			\parbox[30,0]{5em}{Partially packaged}
+%			\parbox[18,6]{5em}{Partially packaged}
+		}
+		\onslide*{9, 9-}{
+			\put(-100,50){
+				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_4.eps}
+			}
+%			\parbox[0,10]{5em}{old}
+%
+		}
+		\onslide*{11, 11-}{
+			\put(-100,50){
+				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_5.eps}
+			}
+%			\parbox[10,10]{5em}{High income}
+%			\parbox[20,10]{5em}{High income}
+		}
+%		\end{overprint}
+	\end{figure}
 }
+{
+\centering
+	\begin{figure}
+%		\begin{overprint}
+		\onslide*{2, 2-}{
+			\put(-110,80){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_2.eps}
+			}
+		}
+		\onslide*{4, 4-}{
+			\put(-100,70){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_3.eps}
+			}
+		}
+		\onslide*{6, 6-}{
+			\put(-90,60){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_4.eps}
+			}
+		}
+		\onslide*{7, 7-}{
+			\put(-80,50){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_5.eps}
+			}
+		}
+		\onslide*{8, 8-}{
+			\put(-70,40){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_6.eps}
+			}
+		}
+		\onslide*{10, 10-}{
+			\put(-60,30){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_7.eps}
+			}
+		}
+		\onslide*{12, 12-}{
+			\put(-50,20){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_8.eps}
+			}
+		}
+		\onslide*{13, 13-}{
+			\put(-40,10){
+				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_9.eps}
+			}
+		}
+		\onslide*{14, 14-}{
+			\put(-30,0){
+			\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_10.eps}
+				}	
+		}
+%		\end{overprint}
+	\end{figure}
+}
+
+\bibliographystyle{plain}
+\bibliography{tulip.bib}
+\cite{LLW10J03}
+
+
+%\begin{thebibliography}{}
+%	\bibitem{}
+%	\small{Gang Li, Rob Law, Jinlong Wang.  
+%		Analyzing International Travelers' Profile with Self-Organizing Maps.
+%		Journal of travel \& tourism marketing, 2010.}
+%\end{thebibliography}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -1181,15 +1280,45 @@ Journal of travel \& tourism marketing, 2010, 27(2): 113-131.
 
 %%==========================================================================================
 %%
+<<<<<<< Updated upstream
 \begin{slide}{Case Study (2) - Negative Association Rule Mining}
+=======
+\begin{slide}[toc=,bm=]{Case Study (2) - Negative Association Rule Mining}
+\selectcolormodel{rgb}
+\tikzstyle{block} = [rectangle, draw=orange, text width=7em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\begin{tikzpicture}[node distance =4cm, auto]
+	\node[block](generateItem){Generating Targeted Item-set};
+	\node[block, left of=generateItem](initialTransData){Transcation Data};
+	\node[block, below of=initialTransData](initialUserItem){User specified Target Item};
+	\node[block, below of=generateItem](candiNegItem){Candidate Interesting\textbf{Negative}Item-set};
+	\node[block, below of=candiNegItem](interNegItem){Interesting Negative Item-set};
+	\node[block, right of=interNegItem](negRule){Negative Rules};
+	\node[block, right of=generateItem](candiPosItem){Candidate Interesting\textbf{Positive}Item-set};
+	\node[block, right of=candiPosItem](interPosItem){Interesting Positive Item-set};
+	\node[block, below of=interPosItem](posRule){Positive Rules};
+	\node[block, below of=posRule](report){Reporting Rules};
+	
+	\path[line](initialTransData) -- (generateItem);
+	\path[line](initialUserItem) -- (generateItem);
+	\path[line](generateItem) -- (candiPosItem);
+	\path[line](candiPosItem) -- (interPosItem);
+	\path[line](interPosItem) -- (posRule);
+	\path[line](posRule) -- (report);
+	\path[line](generateItem) -- (candiNegItem);
+	\path[line](candiNegItem) -- (interNegItem);
+	\path[line](interNegItem) -- (negRule);
+	\path[line](negRule) -- (report);
+\end{tikzpicture}
+>>>>>>> Stashed changes
 
-\begin{figure}
-	\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_2_1.eps}
-\end{figure}
+\begin{thebibliography}{}
+	\bibitem{}
+	\small{Jia Rong, Huy Quan Vu, Rob Law, Gang Li.  
+		A Behavioral Analysis of Web Sharers and Browsers in Hong Kong using Targeted Association Rule Mining. 
+		Tourism Management, 2012.}
+\end{thebibliography}
 
-\footnote{Jia Rong, Huy Quan Vu, Rob Law, Gang Li.  
-\emph{A Behavioral Analysis of Web Sharers and Browsers in Hong Kong using Targeted Association Rule Mining. }
-Tourism Management, 2012, 33(4): 731-740.}
 
 \end{slide}
 %%
@@ -1241,9 +1370,13 @@ Tourism Management, 2012, 33(4): 731-740.}
 		
 	\end{figure}
 \end{itemize}
-\footnote{Rosanna Leung, Jia Rong, Gang Li, Rob Law.  
-\emph{Personality Differences and Hotel Web Design Study Using Targeted Positive and Negative Association Rule Mining. }
-Journal of Hospitality Marketing \& Management, 2013, 22(7): 701-727.}
+
+\begin{thebibliography}{}
+	\bibitem{}
+	\small{Rosanna Leung, Jia Rong, Gang Li, Rob Law.  
+		Personality Differences and Hotel Web Design Study Using Targeted Positive and Negative Association Rule Mining.
+		Journal of Hospitality Marketing \& Management, 2013.}
+\end{thebibliography}
 
 \end{slide}
 %%
@@ -1293,9 +1426,12 @@ e.g., a movie in 3D, HD
 	\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_1.eps}
 \end{figure}
 
-\footnote{Shaowu Liu, Gang Li, Truyen Tran, Yuan Jiang. 
-\emph{Preference Relation-based Markov Random Fields. }
-Asian Conference on Machine Learning (ACML),  November, 2015, Hong Kong, China}
+\begin{thebibliography}{}
+	\bibitem{}
+	\small{Shaowu Liu, Gang Li, Truyen Tran, and Yuan Jiang. 
+		Preference Relation-based Markov Random Fields. 
+		Machine Learning, 2016, 1-24.}
+\end{thebibliography}
 
 \end{slide}
 %%
