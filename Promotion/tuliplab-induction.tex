@@ -21,7 +21,7 @@
  paper=smartboard,  %a4paper, smartboard, screen
  mode=present, 		%present, handout, print
  display=slides, 	% slidesnotes, notes, slides
- %style=tuliplab,  	% TULIP Lab style
+ style=tuliplab,  	% TULIP Lab style
  pauseslide,
  fleqn,leqno]{powerdot}{}
 
@@ -573,7 +573,7 @@ Australia has up to 11 million Facebook users.
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (1) - Tourist Movement Analysis}
+\begin{slide}[toc=,bm=]{Case Study (1) - Tourist Movement Analysis}
 
 \begin{itemize}
 \item
@@ -658,7 +658,7 @@ Tourism Management.}
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (2) - Periodic Behavior Mining}
+\begin{slide}[toc=,bm=]{Case Study (2) - Periodic Behavior Mining}
 
 \begin{itemize}
 \item
@@ -782,7 +782,7 @@ There are various applications of Periodic Behavior Mining
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (3) - Face Age Recognition}
+\begin{slide}[toc=,bm=]{Case Study (3) - Face Age Recognition}
 
 \begin{figure}[htbp]
     \subfigure{
@@ -810,7 +810,7 @@ Proceedings of the 14th annual ACM international conference on Multimedia, 2006}
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (4) - Speech Based Emotion Detection}
+\begin{slide}[toc=,bm=]{Case Study (4) - Speech Based Emotion Detection}
 
 \begin{figure}
   \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_22.eps}
@@ -830,37 +830,46 @@ Information Processing and Management, 45(3):  315-328 2009}
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (5) - K Complex Detection}
+\begin{slide}[toc=,bm=]{Case Study (5) - K Complex Detection}
 \begin{itemize}
 \item Sleep Stage Identification
 \begin{itemize}
 \item<2->
-Rapid Eye Movement (REM) Sleep
+\small{Rapid Eye Movement (REM) Sleep}
 \begin{itemize}
 \item<2->
-A normal stage of sleep characterized by the rapid movement of the eyes
-(is relatively easily discernible in PSG)
+\small{A normal stage of sleep characterized by the rapid movement of the eyes
+(is relatively easily discernible in PSG)}
 \item<2->
-20\%-25\% of total sleep time in human adults, memorable dream
+\small{20\%-25\% of total sleep time in human adults, memorable dream}
 \end{itemize}
 \item<3->
 {Non-REM Sleep}
 \begin{itemize}
 \item<3->
-\textbf{$N_1$}: slow eye movement, hypnic jerks at beginning, believe fully awake
+\small{\textbf{$N_1$}: slow eye movement, hypnic jerks at beginning, believe fully awake}
 \item<3->
-\textbf{$N_2$}: non eye movement, rare dreaming, easily awaken
+\small{\textbf{$N_2$}: non eye movement, rare dreaming, easily awaken}
 \item<3->
-\textbf{$N_3$}: deep sleep, sometimes dreaming, but disconnected, less vivid
+\small{\textbf{$N_3$}: deep sleep, sometimes dreaming, but disconnected, less vivid}
+%\end{itemize}
+
+\begin{figure}
+  \begin{flushleft}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=0.4\textwidth]{figures//theme1//kcd.eps}
+  \end{flushleft}
+\end{figure}
 \end{itemize}
+
 \item<4->
 General sleep order in cycles of REM and NREM:
 $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 \begin{itemize}
 \item<4->
-Early in the night, a greater amount of deep sleep (N3)
+\small{Early in the night, a greater amount of deep sleep (N3)}
 \item<4->
-Later in the night, REM sleep increases, and before natural awakening
+\small{Later in the night, REM sleep increases, and before natural awakening}
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -879,7 +888,7 @@ IEEE Transactions on SMC(lC), PP(99): 1-13.}
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (6) - Trajectory Analysis}
+\begin{slide}[toc=,bm=]{Case Study (6) - Trajectory Analysis}
 \begin{figure}[htbp]
   \includegraphics[width=1.0\textwidth]{figures//theme1//dsa_3.eps}
 \end{figure}
@@ -893,13 +902,13 @@ Knowledge and Information Systems (KAIS), pp. 1-25, 2011.}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (6) - Video Surveillance}
+\begin{slide}[toc=,bm=]{Case Study (6) - Trajectory Analysis}
 \begin{figure}[ht]
  \includemovie[poster=figures//theme1//Theme1_23.eps,
   inline=false,
 %  text={\small(Loading Video Surveillance.avi)}
   ]
-  {12cm}{11cm}{figures//theme1//Video Surveillance.avi}
+  {12cm}{11cm}{figures//theme1//vs.avi}
 \end{figure}
 %\begin{figure}
 %  \includegraphics[width=0.7\textwidth]{figures//theme1//Theme1_23.eps}
@@ -978,7 +987,7 @@ rcolwidth=0.45\linewidth
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (1) - Is O.S.N. a Secure Place to Show off?}
+\begin{slide}[toc=,bm=]{Case Study (1) - Is O.S.N. a Secure Place to Show off?}
 % - Case 3: Is O.S.N. a Secure Place to Show off?
 
 \begin{figure}[htbp]
@@ -1001,7 +1010,7 @@ May 2014, Tainan, Taiwan.}
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (2) - Privacy Breach}
+\begin{slide}[toc=,bm=]{Case Study (2) - Privacy Breach}
 
 %\includegraphics[width=\linewidth]{./figures/theme2/case1.jpg}
 \begin{table}
@@ -1015,23 +1024,23 @@ May 2014, Tainan, Taiwan.}
 	\toprule
 	ID  	&  	\textbf{User(Gender)}		& 		\textbf{Visited Destination} 		& 		\textbf{Venue} 		& 	\textbf{Date} 		&	\textbf{Time}	\\
 	\midrule
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$L_1$	&	$U_5$(M)-$U_6$(F)	&	Shanghai, China 	&	UNCO Lounge				&	25-May-2015	&	20:17\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$L_2$	&	$U_5$(M)-$U_6$(F)	&	Shanghai, China 	   &	T8 Restaurant and Bar		&	26-May-2015	&	17:35\\
 	$L_3$	&	$U_5$(M)-$U_6$(F)	&	Cannes, France 	       &	Villa Mystique Resort		&	25-Jun-2015	&	11:03\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$L_4$	&	$U_5$(M)-$U_6$(F)	&	Paris, France 		   &	Dersou Restaurant			&	27-Jun-2015	&	19:58\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$L_5$	&	$U_5$(M)-$U_6$(F)	&	Paris, France 		   &	Ladure Pastry Shop			&	28-Jun-2015	&	14:48\\
 	$L_6$	&	$U_5$(M)-$U_6$(F)	&	London, United Kingdom &	L'ETO Caff			&	10-Oct-2015	&	11:01\\
 	$L_7$	&	$U_5$(M)-$U_6$(F)	&	Hong Kong		       &	The Ocean Club Bar			&	31-Oct-2015	&	18:47\\
 	$L_8$	&	$U_5$(M)-$U_6$(F)	&	Hanoi, Vietnam		   &	HOME Hanoi Restaurant			&	01-Jan-2016	&	19:04\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$L_9$	&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	MGallery Hotel des Art		&	30-Jun-2016	&	19:54\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$L_{10}$&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	L'Usine: Cafe		&	01-Jul-2016	&	10:55\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$L_{11}$&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	Social Club @ Hotel Des Arts		&	01-Jul-2016	&	17:04\\
 	\bottomrule
 	\end{tabular}
@@ -1071,16 +1080,16 @@ Journal of Travel Research, 2017.}
 	\toprule	
 	ID  	&  	\textbf{User(Gender)}& 	\textbf{Venue} 		& 	\textbf{Date} 	&	\textbf{Time}	\\
 	\midrule
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$C_1$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	11-Sep-2015	    &	23:31\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$C_2$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	18-Nov-2015	    &	23:50\\
 	$C_3$	&	$U_9$(M)-$U_{10}$(F)	 &	Club Luxi			&	17-Jan-2016	    &	00:30\\
 	$C_4$	&	$U_9$(M)-$U_{10}$(F)	 &	Club Hollywood		&	06-Feb-2016     &	04:34\\
 	$C_5$	&	$U_9$(M)-$U_{10}$(F)	 &	Wave House Sentosa	&	12-Mar-2016	    &	22:43\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$C_6$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	02-Jul-2016	    &	00:25\\
-	\rowcolor{orange}
+	%\rowcolor{orange}
 	$C_7$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	07-Aug-2016	    &	00:39\\
 	\bottomrule
 	\end{tabular}
@@ -1175,7 +1184,7 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (1) - Market Segmentation Analysis}
+\begin{slide}[toc=,bm=]{Case Study (1) - Market Segmentation Analysis}
 
 %\begin{figure}[htbp]
 %	\subfigure{
@@ -1297,7 +1306,7 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (2) - Negative Association Rule Mining}
+\begin{slide}[toc=,bm=]{Case Study (2) - Negative Association Rule Mining}
 \selectcolormodel{rgb}
 \usetikzlibrary{positioning}
 \tikzstyle{block} = [rectangle, draw=orange, fill= orange!20, text width=5em, text centered, rounded corners, minimum height=4em,font=\small]
@@ -1376,7 +1385,7 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (3) - Contrast Mining}
+\begin{slide}[toc=,bm=]{Case Study (3) - Contrast Mining}
 
 
 	
@@ -1450,7 +1459,7 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (4) - PR Based Conditional Random Fields}
+\begin{slide}[toc=,bm=]{Case Study (4) - PR Based Conditional Random Fields}
 
 \begin{itemize}
 	\item  \textbf{Heterogeneous Preferences}
