@@ -53,6 +53,9 @@
 \usepackage{ulem}
 \usepackage{todonotes}
 \usepackage{tablefootnote}
+\usepackage{threeparttable}
+\usepackage[numbers]{natbib}
+\usepackage{bibentry}
 % \usepackage{pst-rel-points}
 
 \usepackage{listings}
@@ -1158,7 +1161,7 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (1) - Market Segmentation Analysis}
+\begin{slide}{Case Study (1) - Market Segmentation Analysis}
 
 %\begin{figure}[htbp]
 %	\subfigure{
@@ -1213,58 +1216,58 @@ Recommendation System
 	\begin{figure}
 %		\begin{overprint}
 		\onslide*{2, 2-}{
-			\put(-110,80){
+			\put(-110,90){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_2.eps}
 			}
 		}
 		\onslide*{4, 4-}{
-			\put(-100,70){
+			\put(-100,80){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_3.eps}
 			}
 		}
 		\onslide*{6, 6-}{
-			\put(-90,60){
+			\put(-90,70){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_4.eps}
 			}
 		}
 		\onslide*{7, 7-}{
-			\put(-80,50){
+			\put(-80,60){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_5.eps}
 			}
 		}
 		\onslide*{8, 8-}{
-			\put(-70,40){
+			\put(-70,50){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_6.eps}
 			}
 		}
 		\onslide*{10, 10-}{
-			\put(-60,30){
+			\put(-60,40){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_7.eps}
 			}
 		}
 		\onslide*{12, 12-}{
-			\put(-50,20){
+			\put(-50,30){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_8.eps}
 			}
 		}
 		\onslide*{13, 13-}{
-			\put(-40,10){
+			\put(-40,20){
 				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_9.eps}
 			}
 		}
 		\onslide*{14, 14-}{
-			\put(-30,0){
+			\put(-30,10){
 			\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_10.eps}
 				}	
 		}
 %		\end{overprint}
 	\end{figure}
 }
-
+\vspace*{-30pt}
+\def\bibfont\footnotesize
 \bibliographystyle{plain}
-\bibliography{tulip.bib}
-\cite{LLW10J03}
-
+\nobibliography{tulip}
+\bibentry{LLW10J03}
 
 %\begin{thebibliography}{}
 %	\bibitem{}
@@ -1280,20 +1283,25 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (2) - Negative Association Rule Mining}
+\begin{slide}{Case Study (2) - Negative Association Rule Mining}
 \selectcolormodel{rgb}
-\tikzstyle{block} = [rectangle, draw=orange, text width=7em, text centered, rounded corners, minimum height=4em]
+\usetikzlibrary{positioning}
+\tikzstyle{block} = [rectangle, draw=orange, fill= orange!20, text width=5em, text centered, rounded corners, minimum height=4em,font=\small]
 \tikzstyle{line} = [draw, -latex']
-\begin{tikzpicture}[node distance =4cm, auto]
-	\node[block](generateItem){Generating Targeted Item-set};
-	\node[block, left of=generateItem](initialTransData){Transcation Data};
+\tikzstyle{note} = [rectangle, text width=8em, text centered, rounded corners, minimum height=0.5em,font=\footnotesize]
+\begin{center}
+	\begin{tikzpicture}[node distance = 3cm and 7cm, auto]
+	\node[block](initialTransData){Transcation Data};
+	\node[block,right of=initialTransData](candiPosItem){Candidate Interesting \textbf{Positive} Item-set};
 	\node[block, below of=initialTransData](initialUserItem){User specified Target Item};
-	\node[block, below of=generateItem](candiNegItem){Candidate Interesting\textbf{Negative}Item-set};
-	\node[block, below of=candiNegItem](interNegItem){Interesting Negative Item-set};
+	\node[block,right of=initialUserItem](generateItem){Generating Targeted Item-set};
+	
+	\node[block, below of=generateItem](candiNegItem){Candidate Interesting \textbf{Negative} Item-set};
+	\node[block, right of=candiNegItem](interNegItem){Interesting Negative Item-set};
 	\node[block, right of=interNegItem](negRule){Negative Rules};
-	\node[block, right of=generateItem](candiPosItem){Candidate Interesting\textbf{Positive}Item-set};
+	
 	\node[block, right of=candiPosItem](interPosItem){Interesting Positive Item-set};
-	\node[block, below of=interPosItem](posRule){Positive Rules};
+	\node[block, right of=interPosItem](posRule){Positive Rules};
 	\node[block, below of=posRule](report){Reporting Rules};
 	
 	\path[line](initialTransData) -- (generateItem);
@@ -1306,14 +1314,47 @@ Recommendation System
 	\path[line](candiNegItem) -- (interNegItem);
 	\path[line](interNegItem) -- (negRule);
 	\path[line](negRule) -- (report);
-\end{tikzpicture}
-
-\begin{thebibliography}{}
-	\bibitem{}
-	\small{Jia Rong, Huy Quan Vu, Rob Law, Gang Li.  
-		A Behavioral Analysis of Web Sharers and Browsers in Hong Kong using Targeted Association Rule Mining. 
-		Tourism Management, 2012.}
-\end{thebibliography}
+	\begin{scope}[node distance = 1.5cm, auto]
+	\node[note, above of=candiPosItem](candiPosItemNote){$Sup(A\cup B)\geq min\_ sup$};
+	\node[note, above of=interPosItem](interPosItemNote){$lever(A\cup B)\geq <min\_ lever$};
+	\node[note, above of=posRule](posRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};
+	\node[note, below of=candiNegItem](candiNegItemNote){$Sup(A\cup B)<min\_ sup$};
+	\node[note, below of=interNegItem](interNegItemNote){$lever(A\cup \sim B)\geq <min\_ lever$};
+	\node[note, below of=negRule](negRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};	
+	\end{scope}
+	
+	%	\info{candiPosItem.north}{above,anchor=south,yshift=0.5em}{%
+	%		\item \small{$Sup(A\cup B)\geq min_sup$}
+	%	}
+	%	\info{interPosItem.north}{above,anchor=south,yshift=-0.5em}{%
+	%		\item \small{$lever(A\cup B)\geq <min_lever$}
+	%	}
+	%	\info{posRule.north}{above,anchor=south,yshift=0.5em}{%
+	%		\item \small{$confi(A\to \sim B)\geq <min_confi$}
+	%	}
+	%	\info{candiNegItem.west}{above,anchor=east,xshift=-0.5em}{%
+	%		\item \small{$Sup(A\cup B)<min_sup$}
+	%	}
+	%		\info{interNegItem.south}{above,anchor=north,yshift=-0.5em}{%
+	%		\item \small{$lever(A\cup \sim B)\geq <min_lever$}
+	%	}
+	%		\info{negRule.south}{above,anchor=north,yshift=-0.5em}{%
+	%		\item \small{$confi(A\to \sim B)\geq <min_confi$}
+	%	}
+	\end{tikzpicture}
+\end{center}
+\vspace*{-15pt}
+\def\bibfont\footnotesize
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\bibentry{RVLL11J06}
+%
+%\begin{thebibliography}{}
+%	\bibitem{}
+%	\small{Jia Rong, Huy Quan Vu, Rob Law, Gang Li.  
+%		A Behavioral Analysis of Web Sharers and Browsers in Hong Kong using Targeted Association Rule Mining. 
+%		Tourism Management, 2012.}
+%\end{thebibliography}
 \end{slide}
 %%
 %%==========================================================================================
@@ -1323,15 +1364,15 @@ Recommendation System
 %%
 \begin{slide}{Case Study (3) - Contrast Mining}
 
-\begin{itemize}
-	\item Contrast Targeted Rules Algorithm (CTR):
-	\vspace{0.5cm}
+
 	
 	\twocolumn[lcolwidth=0.55\linewidth,
 	rcolwidth=0.45\linewidth
 	]{
 
-		
+\begin{itemize}
+	\item Contrast Targeted Rules Algorithm (CTR):
+	\vspace{0.5cm}		
 		\begin{itemize}
 			\item
 			Detect the changes of rules strength
@@ -1342,35 +1383,51 @@ Recommendation System
 			future potential.
 			
 		\end{itemize}
+	\end{itemize}
 	}
 	{
-		\begin{figure}[htbp]
-			\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_3_1.eps}
-		\end{figure}
+		\begin{center}
+			\begin{figure}[htbp]
+				\includegraphics[height=0.75\textheight]{figures//theme3//Theme3_3_1.eps}
+			\end{figure}
+		\end{center}
+		
 	}
-	
+\vspace*{-40pt}
+	\twocolumn[lcolwidth=0.6\linewidth,rcolwidth=0.4\linewidth,colsep=0.001\linewidth]{
 	\begin{figure}[htbp]
 		\onslide*{2, 2-}
 		{
 			\subfigure{
 				\includegraphics[height=0.65\textheight]{figures//theme3//Theme3_3_2.eps}
 			}
-		}\hspace{5mm}
-		\onslide*{3, 3-}{
-			\subfigure{
-				\includegraphics[height=0.65\textheight]{figures//theme3//Theme3_3_3.eps}
-			}
 		}
-		
-	\end{figure}
-\end{itemize}
 
-\begin{thebibliography}{}
-	\bibitem{}
-	\small{Rosanna Leung, Jia Rong, Gang Li, Rob Law.  
-		Personality Differences and Hotel Web Design Study Using Targeted Positive and Negative Association Rule Mining.
-		Journal of Hospitality Marketing \& Management, 2013.}
-\end{thebibliography}
+	\end{figure}
+	}
+	{
+		\begin{figure}
+			
+			\onslide*{3, 3-}{
+				\subfigure{
+					\includegraphics[height=0.65\textheight]{figures//theme3//Theme3_3_3.eps}
+				}
+			}	
+		\end{figure}
+
+	}
+\vspace*{\fill}
+\def\bibfont\footnotesize
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\bibentry{LRLL13J04}
+
+%\begin{thebibliography}{}
+%	\bibitem{}
+%	\small{Rosanna Leung, Jia Rong, Gang Li, Rob Law.  
+%		Personality Differences and Hotel Web Design Study Using Targeted Positive and Negative Association Rule Mining.
+%		Journal of Hospitality Marketing \& Management, 2013.}
+%\end{thebibliography}
 
 \end{slide}
 %%
@@ -1379,34 +1436,69 @@ Recommendation System
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (4) - Heterogeneous Preferences}
+\begin{slide}{Case Study (4) - PR Based Conditional Random Fields}
 
 \begin{itemize}
-\item
-User-wise biases
+	\item  \textbf{Heterogeneous Preferences}
 
 \begin{itemize}
-\item
-Users give lower ratings when in bad mood
+	\item \textbf{User-wise biases}
+	\setlength\itemsep{-0.5em}
+\begin{itemize}
+	\setlength\itemsep{-0.3em}
+	\item Users give lower ratings when in bad mood
 
-\item
-Different scales, e.g., 4/5 star is ``OK'' for critics
+	\item Different scales, e.g., 4/5 $($ Shown in Table 3$)$ star is ``OK'' for critics
 
-\item
-User interface design
+	\item User interface design
 
 \end{itemize}
 
-\item
-Item-wise biases
+\item \textbf{Item-wise biases}
 
+	\setlength\itemsep{-0.5em}
 \begin{itemize}
-\item
-The same item presented differently,
+
+	\item The same item presented differently,
 e.g., a movie in 3D, HD
 
 \end{itemize}
 \end{itemize}
+\end{itemize}
+
+\vspace*{-45pt}
+\begin{table}[h]
+	\fontsize{11pt}{11pt}\selectfont
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{1pt}
+	\centering
+	\caption{the user-item rating matrix.}
+	\begin{threeparttable}
+			\begin{tabular}{l|c|c|c|c}	
+			\toprule
+			\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
+			\midrule
+			Bob	&	3	&	2 	&	4	&	5	\\
+			Justin	&	?	&	5   &	2	&	?	\\
+			John	&	4	&	4 	&	2	&	1	\\
+			Larry	&	3	&	3 	&	4	&	2	\\
+			Cindy	&	4	&	3 	&	4	&	1	\\
+			Paul	&	2	&	3 	&	4	&	?	\\
+			David	&	3 \tnote{1}	&	? \tnote{2}	&	4	&	1	\\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\item[1] Rating
+			\item[2] No rating Question: will David like 2012?
+		\end{tablenotes}...
+	\end{threeparttable}
+
+\end{table}
+
+\begin{tablenotes}
+	\item[1] Rating
+	\item[2] No rating Question: will David like 2012?
+\end{tablenotes}
 \end{slide}
 %%
 %%==========================================================================================
@@ -1414,18 +1506,22 @@ e.g., a movie in 3D, HD
 
 %%==========================================================================================
 %%
-\begin{slide}{Case Study (5) - PR Based Conditional Random Fields}
+\begin{slide}[toc=,bm=]{Case Study (4) - PR Based Conditional Random Fields}
 
 \begin{figure}
 	\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_1.eps}
 \end{figure}
 
-\begin{thebibliography}{}
-	\bibitem{}
-	\small{Shaowu Liu, Gang Li, Truyen Tran, and Yuan Jiang.
-		Preference Relation-based Markov Random Fields.
-		Machine Learning, 2016, 1-24.}
-\end{thebibliography}
+\def\bibfont\footnotesize
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\bibentry{LLTJ16J02}
+%\begin{thebibliography}{}
+%	\bibitem{}
+%	\small{Shaowu Liu, Gang Li, Truyen Tran, and Yuan Jiang.
+%		Preference Relation-based Markov Random Fields.
+%		Machine Learning, 2016, 1-24.}
+%\end{thebibliography}
 
 \end{slide}
 %%
