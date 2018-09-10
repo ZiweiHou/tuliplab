@@ -57,6 +57,8 @@
 \usepackage[numbers]{natbib}
 \usepackage{bibentry}
 % \usepackage{pst-rel-points}
+\usepackage{pgfplots}
+\usepackage{verbatim}
 
 \usepackage{listings}
 \lstset{frameround=fttt,
@@ -664,12 +666,9 @@ Tourist Traffic Flow in Hong Kong Metropolitan Area.
         \includegraphics[width=0.35\textwidth]{figures//theme1//Theme1_13.eps}
     }
 \end{figure}
-\begin{thebibliography}{1*}
-\bibitem{1*}
-\small{Huy Quan Vu, Gang Li, Rob Law, Ben Haobin Yip.
-Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos.
-Tourism Management.}
-\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\footnotesize\bibentry{VLLY15J07}
 \end{slide}
 %%
 %%==========================================================================================
@@ -835,12 +834,9 @@ Proceedings of the 14th annual ACM international conference on Multimedia, 2006}
   \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_22.eps}
 \end{figure}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Jia Rong, Gang Li, Yi-Ping Phoebe Chen.
-Acoustic Feature Selection for Automatic Emotion Recognition from Speech.
-Information Processing and Management, 45(3):  315-328 2009}
-\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\footnotesize\bibentry{RLC09J02}
 
 \end{slide}
 %%
@@ -895,11 +891,10 @@ $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 %\begin{thebibliography}{1*}
 %\bibitem{1*}
 \onslide*{4}
-\footnotesize{Vu, Quan; Li, Gang; Sukhorukova, Nadezda;
-Beliakov, Gleb; Liu, Shaowu; et al.
-K-complex Detection using a Hybrid-Synergic Machine Learning method.
-IEEE Transactions on SMC(lC), PP(99): 1-13.}
-%\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\footnotesize\bibentry{VLSBLPAU12J03}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -1669,12 +1664,6 @@ e.g., a movie in 3D, HD
 \bibliographystyle{plain}
 \nobibliography{tulip}
 \footnotesize\bibentry{LLTJ16J02}
-%\begin{thebibliography}{}
-%	\bibitem{}
-%	\small{Shaowu Liu, Gang Li, Truyen Tran, and Yuan Jiang.
-%		Preference Relation-based Markov Random Fields.
-%		Machine Learning, 2016, 1-24.}
-%\end{thebibliography}
 
 \end{slide}
 %%
@@ -1683,10 +1672,14 @@ e.g., a movie in 3D, HD
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{TULIP Lab Publications}
+\onslide*{-1}
+{\vspace{1.5cm}
 \begin{table}
+\fontsize{11pt}{11pt}\selectfont
     \begin{tabular}{c|c c c|c c c}
     \toprule
-\cmidrule{1-1}    \multirow{2}[4]{*}{Year} & \multicolumn{3}{c|}{SCI/SSCI Journals} & \multicolumn{3}{c}{Referred Conferences} \\
+\cmidrule{1-1}    \multirow{2}[4]{*}{Year} & \multicolumn{3}{c|}{SCI/SSCI Journals} &
+\multicolumn{3}{c}{Referred Conferences} \\
 \cmidrule{2-7}          & Q1(-71\%) & Q2(-18\%) & Q3(-11\%) & A(-16\%) & B(-9\%) & C(-75\%) \\
     \midrule
     2018  & 7     & 1     & 2     & 0     & 1     & 4 \\
@@ -1705,14 +1698,101 @@ e.g., a movie in 3D, HD
     \bottomrule
     \end{tabular}
 \end{table}
+}
+
+\onslide*{2}
+{\vspace{1.5cm}
+\begin{center}
+\selectcolormodel{rgb}
+\begin{tikzpicture}
+    \begin{axis}[
+        title={SCI/SSCI Journals},
+        %xlabel={right: $years$},
+        ylabel=number of papers,
+        ytick={0,2,4,6,8,10,12,14},
+        x tick label style={rotate=75,anchor=east},
+        legend pos=north west]
+    \addplot[mark=*,blue!50] plot coordinates {
+    (2006,0)(2007,1)(2008,3)(2009,2)(2010,5)(2011,9)
+    (2012,5)(2013,12)(2014,12)(2015,11)(2016,6)(2017,9)(2018,10)
+    };
+
+    \addlegendentry{\tiny{SCI/SSCI Journals}}
+
+    \addplot[color=orange,mark=square]
+    plot coordinates {
+    (2006,2)(2007,3)(2008,6)(2009,4)(2010,3)(2011,2)(2012,7)
+    (2013,7)(2014,4)(2015,3)(2016,5)(2017,6)(2018,5)
+        };
+    \addlegendentry{\tiny{Referred Conferences}}
+    \end{axis}
+    \end{tikzpicture}
+\end{center}    
+}
+
 \end{slide}
 %%
 %%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Awards}
+\vspace{2.2cm}
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{ r | l | l  r }
+    \toprule
+    \multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
+    \midrule
+    \textbf{2018} & KSEM 2018 Best Paper Award & Shaoni Wang &  \\
+
+    \textbf{2017} & IFITT Journal Paper of The Year Award (1st Prize) & Huy Quan Vu &  \\
+
+    \textbf{2016} & IEEE TrustCom 2016 Best Student Paper Award & Na Pang &  \\
+
+    \textbf{2015} & IFITT Journal Paper of The Year Award (3rd Prize) & Huy Quan Vu &  \\
+
+    \textbf{2014} & Best Student Paper Award & Tianqing Zhu &  \\
+
+    \textbf{2012} & 2012 ACM ASONAM Best Paper Award & Yongli Ren &  \\
+
+    \textbf{2007} & Springer Nightingale Prize & Jingyu Hou &  \\
+    \bottomrule
+    \end{tabular}
+  \label{tab:addlabel}
+\end{table}
+
+\end{slide}
+%%
+%%==========================================================================================
+
 
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Awards}
 
+\begin{figure}[htbp]
+    \centering
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018B.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018A.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2016A.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2014.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2012.eps}
+    }
+    \subfigure{
+        \includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2007.eps}
+    }
+\end{figure}
 
 \end{slide}
 %%
