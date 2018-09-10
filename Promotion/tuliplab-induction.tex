@@ -533,71 +533,41 @@ distance planet-satellite=5cm,planet text width=3cm,
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Research Themes}
+\begin{center}
+
 \selectcolormodel{rgb}
-
-\onslide*{-1}
-{
-\vspace{1.6cm}
-\begin{center}
-\scalebox{0.7}{
-\smartdiagramset{distance center/other bubbles=1.5cm,}
-\smartdiagram[bubble diagram]{
-Research \\ Themes,
-Behavior \\ Informatics,
-Data \\ Privacy,
-Business \\Intelligence \\Applications
-}}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=pink!40,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=7em,inner sep=0pt},
+  ]
+  node[root,scale=0.6] {Research Themes} [clockwise from=180]
+    child[concept color=green!60] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pre){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Behavior Prediction}}
+    }
+     child[concept color=blue] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Data Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Privacy Preservation in Data Mining}}
+    }
+    child[concept color=orange] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism/Hospitality Management}}
+    }
+   ;
+    \end{tikzpicture}
 \end{center}
-}
-
-\onslide*{2, 2-}
-{
-\scalebox{0.6}{
-\smartdiagramset{distance center/other bubbles=1.5cm,}
-\smartdiagram[bubble diagram]{
-Behavior \\ Informatics,
-Periodic \\Behavior Mining,
-Behavior \\Prediction
-}}
-}
-
-\onslide*{3, 3-}
-{
-\begin{center}
-\scalebox{0.6}{
-\smartdiagramset{distance center/other bubbles=1.5cm,}
-\smartdiagram[bubble diagram]{
-Data \\ Privacy,
-Data Compliance\\ Checking,
-Privacy \\Preservation \\in Data Mining
-}}
-\end{center}
-}
-
-\onslide*{4, 4-}
-{
-\begin{flushright}
-\scalebox{0.56}{
-\smartdiagramset{distance center/other bubbles=1.5cm,}
-\smartdiagram[bubble diagram]{
-Business \\Intelligence \\Applications,
-Recommender \\System,
-Tourism/Hospitality \\Management
-}}
-\end{flushright}
-}
-%%==========================================l================================================
-\begin{note}
-There are three research themes:
-Behavior Informatics,
-Data Privacy and
-Business Intelligence Applications.
-Behavior Informatics including Periodic Behavior Mining and Behavior Prediction.
-\end{note}
-%%==========================================l================================================
 \end{slide}
 %%
-%%==========================================l================================================
+%%==========================================================================================
 
 
 %%==========================================================================================
@@ -744,30 +714,6 @@ Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged 
 Tourism Management.}
 \end{thebibliography}
 \end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-%\begin{slide}[toc=,bm=]{Tourist Movement Analysis}
-%
-%\begin{figure}[htbp]
-%    \subfigure{
-%        \includegraphics[width=0.35\textwidth]{figures//theme1//Theme1_14.eps}
-%    }
-%    \subfigure{
-%        \includegraphics[width=0.17\textwidth]{figures//theme1//Theme1_15.eps}
-%    }\\
-%    \subfigure{
-%        \includegraphics[width=0.26\textwidth]{figures//theme1//Theme1_16.eps}
-%    }
-%    \subfigure{
-%        \includegraphics[width=0.26\textwidth]{figures//theme1//Theme1_17.eps}
-%    }
-%\end{figure}
-%
-%\end{slide}
 %%
 %%==========================================================================================
 
@@ -1021,15 +967,8 @@ Knowledge and Information Systems (KAIS), pp. 1-25, 2011.}
 
 \begin{slide}[toc=,bm=]{Case Study (6) - Trajectory Analysis}
 \begin{figure}[ht]
-\includemovie[poster=figures//theme1//Theme1_23.eps,
-inline=false,
-%  text={\small(Loading Video Surveillance.avi)}
-]
-{12cm}{11cm}{figures//theme1//vs.avi}
+  \includemovie[poster=figures//theme1//Theme1_23.eps,inline=false]{12cm}{11cm}{figures//theme1//vs.avi}
 \end{figure}
-%\begin{figure}
-%  \includegraphics[width=0.7\textwidth]{figures//theme1//Theme1_23.eps}
-%\end{figure}
 \end{slide}
 %%
 %%==========================================================================================
