@@ -85,7 +85,8 @@ basicstyle=\footnotesize\ttfamily}
 % \usepackage{auto-pst-pdf}
 % package to show source code
 
-\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+%\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+\definecolor{antiquebrass}{rgb}{0.8, 0.58, 0.46}
 \newlength{\pixel}\setlength\pixel{0.000714285714\slidewidth}
 \setlength{\TPHorizModule}{\slidewidth}
 \setlength{\TPVertModule}{\slideheight}
@@ -497,7 +498,7 @@ distance planet-satellite=5cm,planet text width=3cm,
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=pink!40,text=white,
+  \path[mindmap,concept color=black!40,text=white,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -506,9 +507,9 @@ distance planet-satellite=5cm,planet text width=3cm,
     level 2 concept/.append style={font=\sf,text width=7em,inner sep=0pt},
   ]
   node[root,scale=0.6] {Research Themes} [clockwise from=180]
-    child[concept color=green!60] {
+    child[concept color=blue!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
-        child { node[scale=0.6] (pre){Periodic Behavior Mining}}
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Behavior Prediction}}
     }
      child[concept color=blue] {
@@ -524,6 +525,13 @@ distance planet-satellite=5cm,planet text width=3cm,
    ;
     \end{tikzpicture}
 \end{center}
+%%==========================================================================================
+\begin{note}
+Behavior Informatics: Periodic Behavior Mining, Behavior Prediction\\
+Information Abuse Prevention: Data Compliance Checking, Privacy Preservation in Data Mining\\
+Business Intelligence Applications: Recommender System, Tourism/Hospitality Management
+\end{note}
+%%==========================================================================================
 \end{slide}
 %%
 %%==========================================================================================
@@ -814,12 +822,9 @@ There are various applications of Periodic Behavior Mining
     }
 \end{figure}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Xin Geng, Zhi-Hua Zhou, Yu Zhang, Gang Li, Honghua Dai.
-Learning from facial aging patterns for automatic age estimation.
-Proceedings of the 14th annual ACM international conference on Multimedia, 2006}
-\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\footnotesize\bibentry{GZZLD06C04}
 
 \end{slide}
 %%
@@ -906,9 +911,10 @@ $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 \begin{figure}[htbp]
   \includegraphics[width=1.0\textwidth]{figures//theme1//dsa_3.eps}
 \end{figure}
-\footnotesize{Xiaofeng Wang, Gang Li, Guang Jiang, Zhongzhi Shi.
-Semantic Trajectory based Event Detection and Event Pattern Mining,
-Knowledge and Information Systems (KAIS), pp. 1-25, 2011.}
+
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\footnotesize\bibentry{WLLS13J11}
 \end{slide}
 %%
 %%==========================================================================================
@@ -1003,13 +1009,9 @@ rcolwidth=0.45\linewidth
 	\includegraphics[width=0.7\textwidth,height=7cm]{./figures/theme2/case3.eps}
 \end{figure}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Tianqing Zhu, Gang Li, Wanlei Zhou, Ping Xiong, and Cao Yuan.
-Deferentially Private Tagging Recommendation Based on Topic Model. 
-The 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD),
-May 2014, Tainan, Taiwan.}
-\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\footnotesize\bibentry{ZLZXY14C04}
 
 \end{slide}
 %%
@@ -1053,12 +1055,9 @@ May 2014, Tainan, Taiwan.}
 	\end{tabular}	
 \end{table}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
-Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
-Journal of Travel Research, 2017.}
-\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tulip}
+\footnotesize\bibentry{VLLZ17J05}
 
 \end{slide}
 \fi
@@ -1140,13 +1139,6 @@ Journal of Travel Research, 2017.}
 	
 \end{table}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
-Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
-Journal of Travel Research, 2017.}
-\end{thebibliography}
-
 \end{slide}
 %%
 %%==========================================================================================
@@ -1217,13 +1209,6 @@ Journal of Travel Research, 2017.}
 		
 	\end{tabular}
 \end{table}
-
-\begin{thebibliography}{}
-\bibitem{}
-\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
-Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
-Journal of Travel Research, 2017.}
-\end{thebibliography}
 
 \end{slide}
 %%
@@ -1414,13 +1399,6 @@ Recommendation System
 \nobibliography{tulip}
 \footnotesize\bibentry{LLW10J03}
 
-%\begin{thebibliography}{}
-%	\bibitem{}
-%	\small{Gang Li, Rob Law, Jinlong Wang.  
-%		Analyzing International Travelers' Profile with Self-Organizing Maps.
-%		Journal of travel \& tourism marketing, 2010.}
-%\end{thebibliography}
-
 \end{slide}
 %%
 %%==========================================================================================
@@ -1496,13 +1474,7 @@ Recommendation System
 %\renewcommand{\bibfont}{\scriptsize}
 \nobibliography{tulip}
 \footnotesize\bibentry{RVLL11J06}
-%
-%\begin{thebibliography}{}
-%	\bibitem{}
-%	\small{Jia Rong, Huy Quan Vu, Rob Law, Gang Li.  
-%		A Behavioral Analysis of Web Sharers and Browsers in Hong Kong using Targeted Association Rule Mining. 
-%		Tourism Management, 2012.}
-%\end{thebibliography}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -1511,8 +1483,6 @@ Recommendation System
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Case Study (3) - Contrast Mining}
-
-
 	
 	\twocolumn[lcolwidth=0.55\linewidth,
 	rcolwidth=0.45\linewidth
@@ -1569,13 +1539,6 @@ Recommendation System
 \bibliographystyle{plain}
 \nobibliography{tulip}
 \footnotesize\bibentry{RVLL11J06}
-
-%\begin{thebibliography}{}
-%	\bibitem{}
-%	\small{Rosanna Leung, Jia Rong, Gang Li, Rob Law.  
-%		Personality Differences and Hotel Web Design Study Using Targeted Positive and Negative Association Rule Mining.
-%		Journal of Hospitality Marketing \& Management, 2013.}
-%\end{thebibliography}
 
 \end{slide}
 %%
@@ -1727,7 +1690,7 @@ e.g., a movie in 3D, HD
     \addlegendentry{\tiny{Referred Conferences}}
     \end{axis}
     \end{tikzpicture}
-\end{center}    
+\end{center}
 }
 
 \end{slide}
@@ -1933,6 +1896,19 @@ e.g., a movie in 3D, HD
     }
     \end{tikzpicture}
 \end{center}
+%%==========================================================================================
+\begin{note}
+Professional knowledge: \LaTeX, Version Control Systems 
+(SmartGit  GitHub Bitbucket), Plan \& Progress Review, References Management\\
+Foundational Knowledge: FLIP(00): Data Science,
+FLIP(01): Advanced Data Science,
+FLIP(02): Modern Data Science,
+FLIP(03): Deep Learning,
+FLIP(04): Learning Theory (I),
+FLIP(05): Learning Theory (II)\\
+Research Skills: Review Team, Reading Team
+\end{note}
+%%==========================================================================================
 \end{slide}
 %%
 %%==========================================================================================
