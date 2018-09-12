@@ -59,6 +59,7 @@
 % \usepackage{pst-rel-points}
 \usepackage{pgfplots}
 \usepackage{verbatim}
+\usepackage{fontawesome}
 
 \usepackage{listings}
 \lstset{frameround=fttt,
@@ -108,7 +109,7 @@ basicstyle=\footnotesize\ttfamily}
 
 
 \newcommand{\draftnote}[3]{
-	\todo[author=#2,color=#1!30,size=\footnotesize]{\textsf{#3}}	}
+	\todo[author=#2,color=#1!30,size=\footnotesize]{\textsf{#3}}}
 % TODO: add yourself here:
 %
 \newcommand{\gangli}[1]{\draftnote{blue}{GLi:}{#1}}
@@ -405,22 +406,22 @@ distance planet-satellite=5cm,planet text width=3cm,
   \setlength{\belowcaptionskip}{12pt}
   \centering
 %  \caption{Deakin Ranking in Major Ranking}
-    \begin{tabular}{l|c|cccr}
+    \begin{tabular}{l|c|cccc}
     \toprule
-      & Benchmark & \multicolumn{1}{l}{2014-15} & \multicolumn{1}{l}{2015-2016} & \multicolumn{1}{l}{2016-2017} & \multicolumn{1}{l}{2017-2018} \\ \midrule
-    \multirow{2}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
+      & \textbf{Benchmark} & \multicolumn{1}{l}{\textbf{2014-15}} & \multicolumn{1}{l}{\textbf{2015-2016}} & \multicolumn{1}{l}{\textbf{2016-2017}} & \multicolumn{1}{l}{\textbf{2017-2018}} \\ \midrule
+    \multirow{2}[0]{*}{\textbf{ARWU}} & World & 401-500 & 301-400 & 201-300 & 201 \\
       & National  & 19 &   &   & 10 \\
       \midrule
-    \multirow{2}[0]{*}{CWTS Leiden} & World  & 284 & 325 & 314 & 226 \\
+    \multirow{2}[0]{*}{\textbf{CWTS Leiden}} & World  & 284 & 325 & 314 & 226 \\
       & National  & 11 & 17 & 17 & 11 \\
       \midrule
-    \multirow{2}[0]{*}{QS\#} & World  & 360 & 324 & 355 & 293 \\
+    \multirow{2}[0]{*}{\textbf{QS\#}} & World  & 360 & 324 & 355 & 293 \\
       & National & 19 &   &   &  \\
       \midrule
-    \multirow{2}[0]{*}{THE} & World  & 325 & 301-350 & 251-300 & 301 \\
+    \multirow{2}[0]{*}{\textbf{THE} } & World  & 325 & 301-350 & 251-300 & 301 \\
       & National  & 13 &   &   & 17 \\
       \midrule
-    \multirow{2}[0]{*}{THE<50} & World  & 59 &   &   & 43 \\
+    \multirow{2}[0]{*}{\textbf{THE<50}} & World  & 59 &   &   & 43 \\
       & National  & 7 &   &   & 8 \\
       \bottomrule
     \end{tabular}
@@ -435,27 +436,19 @@ distance planet-satellite=5cm,planet text width=3cm,
 
 %%==========================================================================================
 %%
-%\begin{slide}{TULIP Lab}
-%
-%\begin{itemize}
-%  \item \textcolor{orange}{Homepage:} \href{https://weibo.com/tulipacademy}{https://weibo.com/tulipacademy}
-%  \begin{itemize}
-%    \item Twitter: tulipacademy
-%    \item Weibo: \href{https://weibo.com/tulipacademy}{https://weibo.com/tulipacademy}
-%  \end{itemize}
-%  \item \textcolor{orange}{Github:} \href{https://github.com/tulip-lab}{https://github.com/tulip-lab}
-%  \item \textcolor{orange}{Tulip Calendar:}
-%  \begin{itemize}
-%    \item\href{https://calendar.google.com/calendar/embed?src=1trnk46p4gae8ev410ku57sba4\%40group.calendar.google.com\&ctz=Australia\%2FSydney
-%}{https://calendar.google.com/calendar/embed?src=1trnk46p4gae8ev410ku57sba4\%40group.calendar.google.com\&ctz=Australia\%2FSydney
-%}
-%    \item\href{https://calendar.google.com/calendar/ical/1trnk46p4gae8ev410ku57sba4\%40group.calendar.google.com/public/basic.ics
-%}{https://calendar.google.com/calendar/ical/1trnk46p4gae8ev410ku57sba4\%40group.calendar.google.com/public/basic.ics
-%}
-%  \end{itemize}
-%\end{itemize}
-%
-%\end{slide}
+\begin{slide}{TULIP Lab}
+\begin{itemize}
+  \item \textcolor{orange}{\faHome:} \href{https://weibo.com/tulipacademy}{https://weibo.com/tulipacademy}
+  \begin{itemize}
+    \item \faTwitter: tulipacademy
+    \item \faWeibo: \href{https://weibo.com/tulipacademy}{https://weibo.com/tulipacademy}
+  \end{itemize}
+  \item \textcolor{orange}{\faGithub:} \href{https://github.com/tulip-lab}{https://github.com/tulip-lab}
+  \item \textcolor{orange}{\faCalendar:}
+  \href{https://calendar.google.com/calendar/embed?src=1trnk46p4gae8ev410ku57sba4\%40group.calendar.google.com\&ctz=Australia\%2FSydney
+}{https://calendar.google.com/calendar}
+\end{itemize}
+\end{slide}
 %%
 %%==========================================================================================
 
@@ -1325,35 +1318,33 @@ rcolwidth=0.65\linewidth
 %%
 
 \begin{slide}{Theme 3. Business Intelligence}
-
-\begin{itemize}
-\item
-Tourism Data Mining
-
-\begin{itemize}
-\item
-Tourist Behavior Analysis
-
-\item
-Contrast Mining
-
-\begin{itemize}
-
-\item
-Outlying Aspects Mining
-
-\item
-Competitiveness Discovery
-
-\end{itemize}
-
-\end{itemize}
-
-\item
-Recommendation System
-
-\end{itemize}
-
+	
+	\begin{itemize}
+		\item Tourism Data Mining
+		
+		\begin{itemize}
+			\item Tourist Behavior Analysis
+			
+			\item Contrast Mining
+			
+			\begin{itemize}
+				
+				\item Outlying Aspects Mining
+				
+				\item Competitiveness Discovery
+				
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\item Recommendation System
+		\begin{itemize}
+			\item Group package recommendation
+			\item Heterogeneous Preferences
+		\end{itemize}
+		
+	\end{itemize}
+	
 \end{slide}
 %%
 %%==========================================================================================
@@ -1638,30 +1629,22 @@ Recommendation System
 		\caption{the user-item rating matrix.}
 		\begin{threeparttable}
 			\begin{tabular}{l|c|c|c|c}	
-			\toprule
-			\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
-			\midrule
-			Bob	&	3	&	2 	&	4	&	5	\\
-			Justin	&	?	&	5   &	2	&	?	\\
-			John	&	4	&	4 	&	2	&	1	\\
-			Larry	&	3	&	3 	&	4	&	2	\\
-			Cindy	&	4	&	3 	&	4	&	1	\\
-			Paul	&	2	&	3 	&	4	&	?	\\
-			David	&	3 \tnote{1}	&	? \tnote{2}	&	4	&	1	\\
-			\bottomrule
-		\end{tabular}
-		\begin{tablenotes}
-			\item[1] Rating
-			\item[2] No rating Question: will David like 2012?
-		\end{tablenotes}
-	\end{threeparttable}
-
-\end{table}
-
-\begin{tablenotes}
-	\item[1] Rating
-	\item[2] No rating Question: will David like 2012?
-\end{tablenotes}
+				\toprule
+				\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
+				\midrule
+				Bob	&	3	&	2 	&	4	&	5	\\
+				Justin	&	?	&	5   &	2	&	?	\\
+				John	&	4	&	4 	&	2	&	1	\\
+				Larry	&	3	&	3 	&	4	&	2	\\
+				Cindy	&	4	&	3 	&	4	&	1	\\
+				Paul	&	2	&	3 	&	4	&	?	\\
+				David	&	3	&	?	&	4	&	1	\\
+				\bottomrule
+			\end{tabular}
+		\end{threeparttable}
+		
+	\end{table}
+	
 \end{slide}
 %%
 %%==========================================================================================
@@ -1670,15 +1653,24 @@ Recommendation System
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Case Study (4) - PR Based Conditional Random Fields}
-
-\begin{figure}
-	\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_1.eps}
-\end{figure}
-
-\bibliographystyle{plain}
-\nobibliography{tuliplab}
-\footnotesize\bibentry{LLTJ16J02}
-
+	
+	\begin{figure}[htbp]
+		
+		%\captionsetup[subfigure]{labelformat=empty}
+		%	\subfigure[Graph of user \textit{u}]{
+		%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_5_1.eps}
+		%	}
+		%	\subfigure[Graph of user \textit{v}]{
+		%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_5_2.eps}
+		%	}
+		\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_3.eps}
+		
+	\end{figure}
+	
+	\bibliographystyle{plain}
+	\nobibliography{tuliplab}
+	\footnotesize\bibentry{LLTJ16J02}
+	
 \end{slide}
 
 %%
