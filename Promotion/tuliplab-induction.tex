@@ -462,29 +462,29 @@ distance planet-satellite=5cm,planet text width=3cm,
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!40,text=white,
+  \path[mindmap,concept color=blue!50,text=white,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
     level 1 concept/.append style={font=\bfseries,
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
-    level 2 concept/.append style={font=\sf,text width=7em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
-  node[root,scale=0.6] {Research Themes} [clockwise from=180]
-    child[concept color=blue!60] {
+  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
+    child[concept color=orange!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Behavior Prediction}}
     }
-     child[concept color=blue] {
+     child[concept color=blue!60] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Data Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Privacy Preservation in Data Mining}}
     }
-    child[concept color=orange] {
+    child[concept color=blue!60] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
-      child{node[concept,scale=0.6](t/hm){Tourism/Hospitality Management}}
+      child{node[concept,scale=0.6](t/hm){Tourism / Hospitality Management}}
     }
    ;
     \end{tikzpicture}
@@ -500,6 +500,86 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 %%
 %%==========================================================================================
 
+
+%%==========================================================================================
+%%
+\begin{slide}{Research Themes}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=blue!50,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
+  ]
+  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
+    child[concept color=blue!60] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Behavior Prediction}}
+    }
+     child[concept color=orange!60] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Data Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Privacy Preservation in Data Mining}}
+    }
+    child[concept color=blue!60] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism / Hospitality Management}}
+    }
+   ;
+    \end{tikzpicture}
+\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}{Research Themes}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=blue!50,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
+  ]
+  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
+    child[concept color=blue!60] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Behavior Prediction}}
+    }
+     child[concept color=blue!60] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Data Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Privacy Preservation in Data Mining}}
+    }
+    child[concept color=orange!60] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism / Hospitality Management}}
+    }
+   ;
+    \end{tikzpicture}
+\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
 
 %%==========================================================================================
 %%
@@ -1749,79 +1829,79 @@ e.g., a movie in 3D, HD
 \section{Training @ TULIP}
 
 
+%%%==========================================================================================
+%%%
+%\begin{slide}{Roadmap}
+%\begin{itemize}
+%  \item \textcolor{orange}{Professional knowledge}
+%    \begin{itemize}
+%          \item \LaTeX{},
+%                Version Control System (\texttt{SmartGit Github Bitbucket})
+%          \item Plan \& Progress Review
+%          \item References Management
+%        \end{itemize}
+%  \item \textcolor{orange}{Foundational Knowledge}
+%    \begin{itemize}
+%      \item FLIP (00)\texttildelow FLIP (05)
+%    \end{itemize}
+%  \item \textcolor{orange}{Research Skills}
+%    \begin{itemize}
+%      \item Review Team
+%      \item Reading Team
+%        \begin{itemize}
+%          \item QQ Online
+%          \item At least once a month
+%          \item Read material before meeting,
+%                ask questions.
+%        \end{itemize}
+%    \end{itemize}
+%\end{itemize}
+%%\gangli{this seems close to that mind map}
+%\end{slide}
+%%%
+%%%==========================================================================================
+
+
+%%%==========================================================================================
+%%%
+%\begin{slide}[toc=,bm=]{Training at TULIP}
+%    \begin{itemize}
+%      \item Learning content (FLIP (00)\texttildelow FLIP (05))
+%        \begin{enumerate}
+%          \item \textcolor{orange}{Mathematics}
+%            \begin{itemize}
+%              \item Linear algebra,
+%                    Probability theory,
+%                    Mathematical statistics
+%            \end{itemize}
+%          \item \textcolor{orange}{Hand-on Skills}
+%            \begin{itemize}
+%              \item Python,
+%                    Apache Spark,
+%                    Cloud platform
+%            \end{itemize}
+%          \item \textcolor{orange}{Learning theoretical knowledge}
+%            \begin{itemize}
+%              \item Optimization,
+%                    Graph model
+%            \end{itemize}
+%          \item \textcolor{orange}{Professional Knowledge}
+%        \end{enumerate}
+%    \end{itemize}
+%\end{slide}
+%%%
+%%%==========================================================================================
+
+
 %%==========================================================================================
 %%
 \begin{slide}{Roadmap}
-\begin{itemize}
-  \item \textcolor{orange}{Professional knowledge}
-    \begin{itemize}
-          \item \LaTeX{},
-                Version Control System (\texttt{SmartGit Github Bitbucket})
-          \item Plan \& Progress Review
-          \item References Management
-        \end{itemize}
-  \item \textcolor{orange}{Foundational Knowledge}
-    \begin{itemize}
-      \item FLIP (00)\texttildelow FLIP (05)
-    \end{itemize}
-  \item \textcolor{orange}{Research Skills}
-    \begin{itemize}
-      \item Review Team
-      \item Reading Team
-        \begin{itemize}
-          \item QQ Online
-          \item At least once a month
-          \item Read material before meeting,
-                ask questions.
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
-%\gangli{this seems close to that mind map}
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Training at TULIP}
-    \begin{itemize}
-      \item Learning content (FLIP (00)\texttildelow FLIP (05))
-        \begin{enumerate}
-          \item \textcolor{orange}{Mathematics}
-            \begin{itemize}
-              \item Linear algebra,
-                    Probability theory,
-                    Mathematical statistics
-            \end{itemize}
-          \item \textcolor{orange}{Hand-on Skills}
-            \begin{itemize}
-              \item Python,
-                    Apache Spark,
-                    Cloud platform
-            \end{itemize}
-          \item \textcolor{orange}{Learning theoretical knowledge}
-            \begin{itemize}
-              \item Optimization,
-                    Graph model
-            \end{itemize}
-          \item \textcolor{orange}{Professional Knowledge}
-        \end{enumerate}
-    \end{itemize}
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Roadmap}
 \begin{center}
 
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!40,text=white,
+  \path[mindmap,concept color=blue!40,text=white,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -1829,22 +1909,22 @@ e.g., a movie in 3D, HD
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
-  node[root,scale=0.6] {Training at TULIP} [clockwise from=180]
-    child[concept color=blue!60] {
+  node[root,scale=0.6, concept color=blue!50,text=white] {Training at TULIP} [clockwise from=180]
+    child[concept color=orange!60] {
       node[scale=0.6] {Professional knowledge} [clockwise from=260]
         child { node[scale=0.6] {\LaTeX} }
         child { node[scale=0.6] (goReview) {Plan \& Progress Review }}
         child { node[scale=0.6] (goRefrences ){References Management}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=blue] {
+     child[concept color=blue!60] {
       node[concept,scale=0.6] {Foundation (FLIP(00-05))}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=orange] {
+    child[concept color=blue!60] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog)
@@ -1853,30 +1933,10 @@ e.g., a movie in 3D, HD
         {Review Team }}
     }
    ;
-    \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{%
-      \item QQ Online
-      \item At least once a month
-      \item Read material before meeting
-      \item Ask questions.
-    }
     \info{goVersionCon.north west}{above,anchor=east,xshift=-0.5em}{%
       \item SmartGit
       \item GitHub
       \item Bitbucket
-    }
-    \info{Math.north east}{above,anchor=west,xshift=0.5em}{%
-      \item Linear algebra
-      \item Probability theory
-      \item Statistical inference
-    }
-    \info{hand-on.north west}{above,anchor=east,xshift=-0.5em }{
-      \item Python
-      \item Apache Spark
-      \item Cloud platform
-    }
-    \info{Theo.north east}{above,anchor=west,xshift=0.5em}{
-      \item Optimization
-      \item Graphical model
     }
     \end{tikzpicture}
 \end{center}
@@ -1893,6 +1953,120 @@ FLIP(05): Learning Theory (II)\\
 Research Skills: Review Team, Reading Team
 \end{note}
 %%==========================================================================================
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Roadmap}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=blue!40,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, concept color=blue!50,text=white] {Training at TULIP} [clockwise from=180]
+    child[concept color=blue!60] {
+      node[scale=0.6] {Professional knowledge} [clockwise from=260]
+        child { node[scale=0.6] {\LaTeX} }
+        child { node[scale=0.6] (goReview) {Plan \& Progress Review }}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=orange!60] {
+      node[concept,scale=0.6] {Foundation (FLIP(00-05))}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=blue!60] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog)
+        {Reading Team} }
+      child { node[concept,scale=0.6] (Reviewteam)
+        {Review Team }}
+    }
+   ;
+    \info{Math.north east}{above,anchor=west,xshift=0.5em}{%
+      \item Linear algebra
+      \item Probability theory
+      \item Statistical inference
+    }
+    \info{hand-on.north west}{above,anchor=east,xshift=-0.5em }{
+      \item Python
+      \item Apache Spark
+      \item Cloud platform
+    }
+    \info{Theo.north east}{above,anchor=west,xshift=0.5em}{
+      \item Optimization
+      \item Graphical model
+    }
+    \end{tikzpicture}
+\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Roadmap}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=blue!40,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, concept color=blue!50,text=white] {Training at TULIP} [clockwise from=180]
+    child[concept color=blue!60] {
+      node[scale=0.6] {Professional knowledge} [clockwise from=260]
+        child { node[scale=0.6] {\LaTeX} }
+        child { node[scale=0.6] (goReview) {Plan \& Progress Review }}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=blue!60] {
+      node[concept,scale=0.6] {Foundation (FLIP(00-05))}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=orange!60] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog)
+        {Reading Team} }
+      child { node[concept,scale=0.6] (Reviewteam)
+        {Review Team }}
+    }
+   ;
+    \info{TeXampleBlog.north east}{above,anchor=south,yshift=0.5em}{%
+      \item QQ Online
+      \item At least once a month
+      \item Read material before meeting
+      \item Ask questions.
+    }
+    \end{tikzpicture}
+\end{center}
+
 \end{slide}
 %%
 %%==========================================================================================
