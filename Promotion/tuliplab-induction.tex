@@ -194,7 +194,7 @@ Gang Li
 
 % Customize the setting of slides
 \pdsetup{
-% TODO: Customize the left footer, and right footer
+% TODO: Customize tlhe left footer, and right footer
 rf=\href{http://www.tulip.org.au}{
 Last Changed by: \textsc{\gitCommitterName}\ \gitVtagn-\gitAbbrevHash\ (\gitAuthorDate)
 },
@@ -723,10 +723,14 @@ Photos are static media; whereas, travel behavior is dynamic
 
 %\hspace{10}
 \begin{figure}[htbp]
-    \subfigure[Asian Tourist]{
+    \subfigure
+    {\small{Asian Tourist}}
+    {
         \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_12.eps}
     }
-    \subfigure[Western Tourist]{
+    \subfigure
+    {\small{Western Tourist}}
+    {
         \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_13.eps}
     }
 \end{figure}
@@ -834,7 +838,7 @@ Photos are static media; whereas, travel behavior is dynamic
 
 \begin{itemize}
 \item
-There are various applications of \emph{Periodic Behavior Mining}
+There are various applications of \texttt{Periodic Behavior Mining}
 
     \begin{itemize}
     \item
@@ -931,12 +935,9 @@ There are various applications of \emph{Periodic Behavior Mining}
 \small{\textbf{$N_3$}: deep sleep, sometimes dreaming, but disconnected, less vivid}
 %\end{itemize}
 
-\begin{figure}
-  \begin{flushleft}
-  % Requires \usepackage{graphicx}
+\begin{flushleft}
   \includegraphics[width=0.4\textwidth]{figures//theme1//kcd.eps}
-  \end{flushleft}
-\end{figure}
+\end{flushleft}
 \end{itemize}
 
 \item<4->
@@ -950,12 +951,9 @@ $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 \end{itemize}
 \end{itemize}
 \end{itemize}
-
-\onslide*{4}
 \bibliographystyle{plain}
 \nobibliography{tuliplab}
 \footnotesize\bibentry{VLSBLPAU12J03}
-
 \end{slide}
 %%
 %%==========================================================================================
@@ -1061,13 +1059,13 @@ rcolwidth=0.45\linewidth
 	\includegraphics[width=0.7\textwidth,height=7cm]{./figures/theme2/case3.eps}
 \end{figure}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Tianqing Zhu, Gang Li, Wanlei Zhou, Ping Xiong, and Cao Yuan.
-Deferentially Private Tagging Recommendation Based on Topic Model. 
-The 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD),
-May 2014, Tainan, Taiwan.}
-\end{thebibliography}
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Tianqing Zhu, Gang Li, Wanlei Zhou, Ping Xiong, and Cao Yuan.
+%Deferentially Private Tagging Recommendation Based on Topic Model. 
+%The 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD),
+%May 2014, Tainan, Taiwan.}
+%\end{thebibliography}
 
 \bibliographystyle{plain}
 \nobibliography{tuliplab}
@@ -1199,12 +1197,9 @@ May 2014, Tainan, Taiwan.}
 	
 \end{table}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
-Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
-Journal of Travel Research, 2017.}
-\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLLZ17J05}
 
 \end{slide}
 %%
