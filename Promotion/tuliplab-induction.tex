@@ -220,13 +220,16 @@ cf={TULIP Lab: Induction},
 %%==========================================================================================
 %%
 \begin{slide}{Director}
+  \twocolumn[lcolwidth=0.7\linewidth,
+rcolwidth=0.3\linewidth
+]{
     \begin{itemize}
       \item A/Prof. Gang Li
       \begin{itemize}
         \item \textcolor{orange}{IEEE Technical Committee}
          \begin{itemize}
            \item IEEE Task Force on EDM (Vice chair)
-           \item Data Mining and Big Data Analytics (Vice Chair 2017-2018)
+           \item Data Mining and Big Data Analytics (Vice Chair)
            \item Enterprise Architecture and Engineering
            \item Enterprise Information Systems
          \end{itemize}
@@ -236,16 +239,20 @@ cf={TULIP Lab: Induction},
             \item SEBE Faculty HDR Director
             \item Director for
                 \begin{itemize}
-                  \item S578/S678/S778/S779 (Master of Information Technology)
+                  \item \small{578/S678/S778/S779 (Master of Information Technology)}
                 \end{itemize}
             \item Founding Director for
                 \begin{itemize}
-                  \item S306 (Bachelor of Computer Science)
-                  \item S777 (Master of Data Science)
+                  \item \small{S306 (Bachelor of Computer Science)}
+                  \item \small{S777 (Master of Data Science)}
                 \end{itemize}
           \end{itemize}
       \end{itemize}
-    \end{itemize}
+    \end{itemize}}
+    {\begin{flushleft}
+       \includegraphics[width=0.8\textwidth]{figures//li//2014gangli.eps}
+     \end{flushleft}
+    }
 \end{slide}
 %%
 %%===============================================================================
@@ -1306,33 +1313,35 @@ rcolwidth=0.65\linewidth
 %%
 
 \begin{slide}{Theme 3. Business Intelligence}
-	
-	\begin{itemize}
-		\item Tourism Data Mining
-		
-		\begin{itemize}
-			\item Tourist Behavior Analysis
-			
-			\item Contrast Mining
-			
-			\begin{itemize}
-				
-				\item Outlying Aspects Mining
-				
-				\item Competitiveness Discovery
-				
-			\end{itemize}
-			
-		\end{itemize}
-		
-		\item Recommendation System
-		\begin{itemize}
-			\item Group package recommendation
-			\item Heterogeneous Preferences
-		\end{itemize}
-		
-	\end{itemize}
-	
+
+\begin{itemize}
+\item
+Tourism Data Mining
+
+\begin{itemize}
+\item
+Tourist Behavior Analysis
+
+\item
+Contrast Mining
+
+\begin{itemize}
+
+\item
+Outlying Aspects Mining
+
+\item
+Competitiveness Discovery
+
+\end{itemize}
+
+\end{itemize}
+
+\item
+Recommendation System
+
+\end{itemize}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -1617,22 +1626,30 @@ rcolwidth=0.65\linewidth
 		\caption{the user-item rating matrix.}
 		\begin{threeparttable}
 			\begin{tabular}{l|c|c|c|c}	
-				\toprule
-				\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
-				\midrule
-				Bob	&	3	&	2 	&	4	&	5	\\
-				Justin	&	?	&	5   &	2	&	?	\\
-				John	&	4	&	4 	&	2	&	1	\\
-				Larry	&	3	&	3 	&	4	&	2	\\
-				Cindy	&	4	&	3 	&	4	&	1	\\
-				Paul	&	2	&	3 	&	4	&	?	\\
-				David	&	3	&	?	&	4	&	1	\\
-				\bottomrule
-			\end{tabular}
-		\end{threeparttable}
-		
-	\end{table}
-	
+			\toprule
+			\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
+			\midrule
+			Bob	&	3	&	2 	&	4	&	5	\\
+			Justin	&	?	&	5   &	2	&	?	\\
+			John	&	4	&	4 	&	2	&	1	\\
+			Larry	&	3	&	3 	&	4	&	2	\\
+			Cindy	&	4	&	3 	&	4	&	1	\\
+			Paul	&	2	&	3 	&	4	&	?	\\
+			David	&	3 \tnote{1}	&	? \tnote{2}	&	4	&	1	\\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\item[1] Rating
+			\item[2] No rating Question: will David like 2012?
+		\end{tablenotes}
+	\end{threeparttable}
+
+\end{table}
+
+\begin{tablenotes}
+	\item[1] Rating
+	\item[2] No rating Question: will David like 2012?
+\end{tablenotes}
 \end{slide}
 %%
 %%==========================================================================================
@@ -1641,24 +1658,15 @@ rcolwidth=0.65\linewidth
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Case Study (4) - PR Based Conditional Random Fields}
-	
-	\begin{figure}[htbp]
-		
-		%\captionsetup[subfigure]{labelformat=empty}
-		%	\subfigure[Graph of user \textit{u}]{
-		%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_5_1.eps}
-		%	}
-		%	\subfigure[Graph of user \textit{v}]{
-		%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_5_2.eps}
-		%	}
-		\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_3.eps}
-		
-	\end{figure}
-	
-	\bibliographystyle{plain}
-	\nobibliography{tuliplab}
-	\footnotesize\bibentry{LLTJ16J02}
-	
+
+\begin{figure}
+	\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_1.eps}
+\end{figure}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{LLTJ16J02}
+
 \end{slide}
 
 %%
