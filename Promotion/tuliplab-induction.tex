@@ -129,9 +129,6 @@ basicstyle=\footnotesize\ttfamily}
 	{XinHan has worked up to here.}}
 
 
-
-
-
 \usepackage{geometry}
 \geometry{verbose,letterpaper}
 \usepackage{movie15}
@@ -140,7 +137,7 @@ basicstyle=\footnotesize\ttfamily}
 \usepackage[utf8]{inputenc}
 \usepackage{dtk-logos}
 \usepackage{tikz}
-\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,positioning}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
@@ -179,7 +176,6 @@ basicstyle=\footnotesize\ttfamily}
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % title
 % TODO: Customize to your Own Title, Name, Address
@@ -207,10 +203,6 @@ cf={TULIP Lab: Induction},
 \begin{document}
 
 \maketitle
-
-%\begin{slide}{Overview}
-%\tableofcontents[content=sections]
-%\end{slide}
 
 
 %%==========================================================================================
@@ -323,9 +315,7 @@ distance planet-satellite=5cm,planet text width=3cm,
 {TULIP Lab,Master,Trainee,Visitor,Web\\Team,Academy,Headquarter}}
 \end{center}
 }
-\xhMarker
 \end{slide}
-
 %%
 %%==========================================================================================
 
@@ -387,7 +377,7 @@ distance planet-satellite=5cm,planet text width=3cm,
     [Web Team, inner color=col2in, outer color=col2out]
     [Trainee, inner color=col3in, outer color=col3out
       [Headquarter]
-      [Master]           
+      [Master]
       [Visitor]
     ]
     [Alumni, inner color =col7in, outer color = col7out ]
@@ -400,14 +390,13 @@ distance planet-satellite=5cm,planet text width=3cm,
 
 %%==========================================================================================
 %%
-=======
 \begin{slide}{Deakin Rankings}
 \begin{table}[htbp]
   \setlength{\abovecaptionskip}{-2pt}
   \setlength{\belowcaptionskip}{12pt}
   \centering
-  %\caption{Deakin Ranking}
-    \begin{tabular}{clrrrr}
+%  \caption{Deakin Ranking in Major Ranking}
+    \begin{tabular}{l|c|cccr}
     \toprule
       & Benchmark & \multicolumn{1}{l}{2014-15} & \multicolumn{1}{l}{2015-2016} & \multicolumn{1}{l}{2016-2017} & \multicolumn{1}{l}{2017-2018} \\ \midrule
     \multirow{2}[0]{*}{ARWU} & World & 401-500 & 301-400 & 201-300 & 201 \\
@@ -918,10 +907,9 @@ There are various applications of \emph{Periodic Behavior Mining}
 \small{Rapid Eye Movement (REM) Sleep}
 \begin{itemize}
 \item<2->
-\small{A normal stage of sleep characterized by the rapid movement of the eyes
-(is relatively easily discernible in PSG)}
+\small{A normal stage of sleep characterized by the rapid movement of the eyes)}
 \item<2->
-\small{20\%-25\% of total sleep time in human adults, memorable dream}
+\small{$20\%-25\%$ of total sleep time in human adults, memorable dream}
 \end{itemize}
 \item<3->
 {Non-REM Sleep}
@@ -1058,8 +1046,6 @@ rcolwidth=0.45\linewidth
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Case Study (1) - Is O.S.N. a Secure Place to Show off?}
-% - Case 3: Is O.S.N. a Secure Place to Show off?
-
 \begin{figure}[htbp]
 	\centering
 	\textbf{\large{\textcolor{orange}{Did Facebook photo trigger murder?}}}
@@ -1073,6 +1059,7 @@ rcolwidth=0.45\linewidth
 \end{slide}
 %%
 %%==========================================================================================
+
 
 %%==========================================================================================
 %%
@@ -1343,11 +1330,6 @@ Competitiveness Discovery
 
 \item
 Recommendation System
-\begin{itemize}
-	\item 
-\end{itemize}
-Group package recommendation
-Heterogeneous Preferences
 
 \end{itemize}
 
@@ -1660,17 +1642,25 @@ e.g., a movie in 3D, HD
 			Larry	&	3	&	3 	&	4	&	2	\\
 			Cindy	&	4	&	3 	&	4	&	1	\\
 			Paul	&	2	&	3 	&	4	&	?	\\
-			David	&	3	&	?	&	4	&	1	\\
+			David	&	3 \tnote{1}	&	? \tnote{2}	&	4	&	1	\\
 			\bottomrule
 		\end{tabular}
+		\begin{tablenotes}
+			\item[1] Rating
+			\item[2] No rating Question: will David like 2012?
+		\end{tablenotes}
 	\end{threeparttable}
 
 \end{table}
 
+\begin{tablenotes}
+	\item[1] Rating
+	\item[2] No rating Question: will David like 2012?
+\end{tablenotes}
 \end{slide}
 %%
 %%==========================================================================================
-                                 
+
 
 %%==========================================================================================
 %%
@@ -1679,7 +1669,7 @@ e.g., a movie in 3D, HD
 \begin{figure}
 	\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_1.eps}
 \end{figure}
-                                                                                
+
 \bibliographystyle{plain}
 \nobibliography{tuliplab}
 \footnotesize\bibentry{LLTJ16J02}
@@ -1691,7 +1681,7 @@ e.g., a movie in 3D, HD
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{TULIP Lab Publications}
+\begin{slide}{Research Publications}
 \onslide*{-1}
 {\vspace{1.5cm}
 \begin{table}
@@ -1700,7 +1690,7 @@ e.g., a movie in 3D, HD
     \toprule
 \cmidrule{1-1}    \multirow{2}[4]{*}{Year} & \multicolumn{3}{c|}{SCI/SSCI Journals} &
 \multicolumn{3}{c}{Referred Conferences} \\
-\cmidrule{2-7}          & Q1(71\%) & Q2(18\%) & Q3(11\%) & A(16\%) & B(9\%) & C(75\%) \\
+\cmidrule{2-7}          & Q1 (71\%) & Q2 (18\%) & Q3 (11\%) & A (16\%) & B (9\%) & C (75\%) \\
     \midrule
     2018  & 9     & 1     & 2     & 0     & 1     & 4 \\
     2017  & 6     & 2     & 1     & 0     & 0     & 6 \\
@@ -1736,14 +1726,14 @@ e.g., a movie in 3D, HD
     (2006,0)(2007,1)(2008,3)(2009,2)(2010,5)(2011,9)
     (2012,5)(2013,12)(2014,12)(2015,11)(2016,6)(2017,9)(2018,12)
     };
-                        
+
     \addlegendentry{\tiny{SCI/SSCI Journals}}
 
     \addplot[color=orange,mark=square]
-    plot coordinates {        
+    plot coordinates {
     (2006,2)(2007,3)(2008,6)(2009,4)(2010,3)(2011,2)(2012,7)
     (2013,7)(2014,4)(2015,3)(2016,5)(2017,6)(2018,5)
-        };
+    };
     \addlegendentry{\tiny{Referred Conferences}}
     \end{axis}
     \end{tikzpicture}
@@ -1757,11 +1747,11 @@ e.g., a movie in 3D, HD
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Awards}
+\begin{slide}{Research Awards}
 \vspace{2.2cm}
 \begin{table}[htbp]
   \centering
-    \begin{tabular}{ r | l | l  r }
+    \begin{tabular}{ r | l | r  r }
     \toprule
     \multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
     \midrule
@@ -1773,11 +1763,11 @@ e.g., a movie in 3D, HD
 
     \textbf{2015} & IFITT Journal Paper of The Year Award (3rd Prize) & Huy Quan Vu &  \\
 
-    \textbf{2014} & Best Student Paper Award & Tianqing Zhu &  \\
+    \textbf{2014} & PAKDD 2014 Best Student Paper Award & Tianqing Zhu &  \\
 
-    \textbf{2012} & 2012 ACM ASONAM Best Paper Award & Yongli Ren &  \\
+    \textbf{2012} & ACM ASONAM 2012  Best Paper Award & Yongli Ren &  \\
 
-    \textbf{2007} & Springer Nightingale Prize & Jingyu Hou &  \\
+    \textbf{2007} & MBEC 2007 Springer Nightingale Prize & Jingyu Hou &  \\
     \bottomrule
     \end{tabular}
   \label{tab:addlabel}
@@ -1790,31 +1780,48 @@ e.g., a movie in 3D, HD
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Awards}
-
-\begin{figure}[htbp]
-    \centering
-    \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018B.eps}
-    }
-    \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018A.eps}
-    }
-    \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2016A.eps}
-    }
-    \subfigure{
-        \includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2014.eps}
-    }
-    \subfigure{
-        \includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2012.eps}
-    }
-    \subfigure{
-        \includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2007.eps}
-    }
-\end{figure}
-
-\end{slide}
+%\begin{slide}[toc=,bm=]{Research Awards}
+%
+%\begin{figure}
+%%		\begin{overprint}
+%		\onslide*{2, 2-}{
+%			\put(-280,90){
+%				\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018B.eps}
+%			}
+%		}
+%		\onslide*{2, 2-}{
+%			\put(-100,90){
+%				\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018A.eps}
+%			}
+%		}
+%		\onslide*{2, 2-}{
+%			\put(80,90){
+%				\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016A.eps}
+%			}
+%		}
+%		\onslide*{3, 3-}{
+%			\put(-160,-40){
+%				\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2012.eps}
+%			}
+%		}
+%		\onslide*{3, 3-}{
+%			\put(30,-40){
+%				\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2007.eps}
+%			}
+%		}
+%		\onslide*{4, 4-}{
+%			\put(-250,-80){
+%				\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016B.eps}
+%			}
+%		}
+%		\onslide*{4, 4-}{
+%			\put(80,-80){
+%				\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2014.eps}
+%			}
+%		}
+%	\end{figure}
+%
+%\end{slide}
 %%
 %%==========================================================================================
 
@@ -1993,7 +2000,7 @@ Research Skills: Review Team, Reading Team
     \info{Math.north east}{above,anchor=west,xshift=0.5em}{%
       \item Linear algebra
       \item Probability theory
-      \item Mathematical statistics
+      \item Statistical inference
     }
     \info{hand-on.north west}{above,anchor=east,xshift=-0.5em }{
       \item Python
@@ -2002,7 +2009,7 @@ Research Skills: Review Team, Reading Team
     }
     \info{Theo.north east}{above,anchor=west,xshift=0.5em}{
       \item Optimization
-      \item Graph model
+      \item Graphical model
     }
     \end{tikzpicture}
 \end{center}
@@ -2088,7 +2095,7 @@ Research Skills: Review Team, Reading Team
               \item Meeting with Gang Leader twice a week (Research)
               \item Complete  FLIP (04)\texttildelow FLIP (05)
             \end{enumerate}
-         \end{itemize}                                   
+         \end{itemize}
        \end{itemize}
 
     \end{itemize}
@@ -2097,19 +2104,19 @@ Research Skills: Review Team, Reading Team
 %%==========================================================================================
 
 
-%%===============================$==========================================================
+%%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Aiming Higher \dots}
 \begin{center}
 \selectcolormodel{rgb}
 \smartdiagramset{
 %set color list={blue,blue!60,orange},
-priority arrow width=2cm,
+priority arrow width=2.3cm,
 priority arrow height advance=4cm,
-description text width=12cm,
+description text width=13cm,
 descriptive items y sep = 3.3
 }
-\smartdiagram[priority descriptive diagram]{TULIP Academy:
+\smartdiagram[priority descriptive diagram]{Flipper:
 \begin{enumerate}
 \item Complete FLIP (00)\texttildelow FLIP (01) with test on Kaggle projects;
          \item Read materials before every TULIP Seminar and ask questions;
@@ -2118,7 +2125,7 @@ descriptive items y sep = 3.3
          \item Complete  FLIP (02)\texttildelow FLIP (03) with Kaggle projects
          \item Presentation at TULIP Seminar
          \item SmartGit \, Bitbucket and Mendeley
-         \end{enumerate},Infinity:\begin{enumerate}
+         \end{enumerate},$\infty$:\begin{enumerate}
          \item Research meeting with supervisor twice a week
          \item Complete FLIP (04) \texttildelow FLIP (05)
          \end{enumerate}}
@@ -2128,7 +2135,7 @@ descriptive items y sep = 3.3
 %%==========================================================================================
 
 
-\section{Rules in TULIP}
+%\section{Rules in TULIP}
 
 
 %%==========================================================================================
@@ -2139,12 +2146,12 @@ descriptive items y sep = 3.3
 \begin{itemize}
 
 \item<1->
-{TULIP Academy}
+{Flipper}
 
 \begin{itemize}
 \item
 You must not be absent from the meeting without permission.
-         
+
 \item
 Xi'an group members must attend the seminar in the Lab,
 and NOT online.
@@ -2154,7 +2161,7 @@ Collaborate with team members, rather than attacking each other.
 \end{itemize}
 
 \item<2->
-{FLIP Study}
+{Trainee}
 
 \begin{itemize}
 \item
@@ -2165,7 +2172,7 @@ All FLIP materials are confidential, and you should not circulate it outside.
 \end{itemize}
 
 \item<3->
-{Research}
+{$\infty$}
 
 \begin{itemize}
 \item
@@ -2216,10 +2223,10 @@ rcolwidth=0.65\linewidth
 \vspace{\stretch{1}}
 Associate Professor Gang Li\\
 School of Information Technology\\
-Deakin University, Geelong, Australia
+Deakin University, Australia
 \begin{description}
- \item[Email] \href{mailto:gangli@acm.org}
- {\textsc{\footnotesize{gangli@acm.org}}}
+ \item[Email] \href{mailto:gangli@tulip.org.au}
+ {\textsc{\footnotesize{gangli@tulip.org.au}}}
 
  \item[Lab] \href{http://www.tulip.org.au}
  {\textsc{\footnotesize{Team for Universal Learning and Intelligent Processing}}}
