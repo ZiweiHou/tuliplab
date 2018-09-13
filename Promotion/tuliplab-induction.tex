@@ -333,6 +333,9 @@ distance planet-satellite=5cm,planet text width=3cm,
 %%==========================================================================================
 %%
 
+%%==========================================================================================
+%%
+
 \begin{slide}{Organization}
 \selectcolormodel{rgb}
 \pgfkeys{/forest,
@@ -359,43 +362,34 @@ distance planet-satellite=5cm,planet text width=3cm,
       l sep+=12.5pt,
       edge path={
         \noexpand\path[color=linecol, rounded corners=5pt,
-          >={Stealth[length=10pt]}, line width=1pt, ->, \forestoption{edge}]
+          >={Stealth[length=11pt]}, line width=1pt, ->, \forestoption{edge}]
           (!u.parent anchor) -- +(0,-5pt) -|
           (.child anchor)\forestoption{edge label};
         },
       where level={3}{tier=tier3}{},
-      where level={0}{l sep-=15pt}{},
-      where level={1}{
-        if n={1}{
-          edge path={
-            \noexpand\path[color=linecol, rounded corners=5pt,
-              >={Stealth[length=10pt]}, line width=1pt, ->,
-              \forestoption{edge}]
-              (!u.west) -| (.child anchor)\forestoption{edge label};
-            },
-        }{
-          edge path={
-            \noexpand\path[color=linecol, rounded corners=5pt,
-              >={Stealth[length=10pt]}, line width=1pt, ->,
-              \forestoption{edge}]
-              (!u.east) -| (.child anchor)\forestoption{edge label};
-            },
-        }
-      }{},
+      where level={0}{l sep-=5pt}{},
+      where level={1}{}{},
   }
-  [Academy, inner color=col1in, outer color=col1out
+    [Academy, inner color=col1in, outer color=col1out
+    [Visitor]
+    [Flipper
+    [Traninee
+        [[FLIP01]
+          [\dots]
+          [FLIP05]
+        ]
+    ]]
+    [Headquarter
+        [China]
+        [India]]
+    [Alumni, inner color =col7in, outer color = col7out]
     [Web Team, inner color=col2in, outer color=col2out]
-    [Trainee, inner color=col3in, outer color=col3out
-      [Headquarter]
-      [Master]
-      [Visitor]
-    ]
-    [Alumni, inner color =col7in, outer color = col7out ]
   ]
 \end{forest}
 \end{slide}
 %%
 %%==========================================================================================
+
 
 
 %%==========================================================================================
@@ -2184,10 +2178,10 @@ Associate Professor Gang Li\\
 School of Information Technology\\
 Deakin University, Australia
 \begin{description}
- \item[Email] \href{mailto:gangli@tulip.org.au}
+ \item[\faEnvelope] \href{mailto:gangli@tulip.org.au}
  {\textsc{\footnotesize{gangli@tulip.org.au}}}
 
- \item[Lab] \href{http://www.tulip.org.au}
+ \item[\faHome] \href{http://www.tulip.org.au}
  {\textsc{\footnotesize{Team for Universal Learning and Intelligent Processing}}}
 \end{description}
 }
@@ -2197,3 +2191,4 @@ Deakin University, Australia
 \end{document}
 
 \endinput
+
