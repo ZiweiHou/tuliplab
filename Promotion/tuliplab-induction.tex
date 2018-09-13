@@ -373,7 +373,7 @@ distance planet-satellite=5cm,planet text width=3cm,
     [Academy %inner color=col1in, outer color=col1out
     [Visitor]
     [Flipper
-    [Traninee
+    [Trainee
         [[FLIP01]
           [\dots]
           [FLIP05]
@@ -394,12 +394,12 @@ distance planet-satellite=5cm,planet text width=3cm,
 
 %%==========================================================================================
 %%
-\begin{slide}{Deakin Rankings}
+\begin{slide}[toc=,bm=]{Deakin Rankings}
 \begin{table}[htbp]
-  \setlength{\abovecaptionskip}{-2pt}
+  \setlength{\abovecaptionskip}{-21pt}
   \setlength{\belowcaptionskip}{12pt}
   \centering
-%  \caption{Deakin Ranking in Major Ranking}
+  \caption{Major Rankings of Deakin University}
     \begin{tabular}{l|c|cccc}
     \toprule
       & \textbf{Benchmark} & \multicolumn{1}{l}{\textbf{2014-15}} & \multicolumn{1}{l}{\textbf{2015-2016}} & \multicolumn{1}{l}{\textbf{2016-2017}} & \multicolumn{1}{l}{\textbf{2017-2018}} \\ \midrule
@@ -452,53 +452,6 @@ distance planet-satellite=5cm,planet text width=3cm,
 %%==========================================================================================
 %%
 \begin{slide}{Research Themes}
-\begin{center}
-
-\selectcolormodel{rgb}
-   \begin{tikzpicture}[ every annotation/.style = {draw,
-                     fill = white}]
-  \path[mindmap,concept color=blue!50,text=white,
-    every node/.style={concept},
-    root/.style    = {concept color=black!40,
-      font=\Large\bfseries,text width=10em},
-    level 1 concept/.append style={font=\bfseries,
-      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
-    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
-  ]
-  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
-    child[concept color=orange!60] {
-      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
-        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
-        child { node[scale=0.6] (bp) {Behavior Prediction}}
-    }
-     child[concept color=blue!60] {
-      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
-      child{node[concept,scale=0.6](dcc){Data Compliance Checking}}
-      child{node[concept,scale=0.6](privacy){Privacy Preservation in Data Mining}}
-    }
-    child[concept color=blue!60] {
-      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
-      child{node[concept,scale=0.6](rs){Recommender System} }
-      child{node[concept,scale=0.6](t/hm){Tourism / Hospitality Management}}
-    }
-   ;
-    \end{tikzpicture}
-\end{center}
-%%==========================================================================================
-\begin{note}
-Behavior Informatics: Periodic Behavior Mining, Behavior Prediction\\
-Information Abuse Prevention: Data Compliance Checking, Privacy Preservation in Data Mining\\
-Business Intelligence Applications: Recommender System, Tourism/Hospitality Management
-\end{note}
-%%==========================================================================================
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Research Themes}
 \begin{center}
 
 \selectcolormodel{rgb}
@@ -573,7 +526,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     child[concept color=blue!60] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
-      child{node[concept,scale=0.6](t/hm){Tourism / Hospitality Management}}
+      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
     }
    ;
     \end{tikzpicture}
@@ -585,7 +538,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 
 %%==========================================================================================
 %%
-\begin{slide}{Research Themes}
+\begin{slide}[toc=,bm=]{Research Themes}
 \begin{center}
 
 \selectcolormodel{rgb}
@@ -613,7 +566,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     child[concept color=orange!60] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
-      child{node[concept,scale=0.6](t/hm){Tourism / Hospitality Management}}
+      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
     }
    ;
     \end{tikzpicture}
@@ -741,9 +694,9 @@ Photos are static media; whereas, travel behavior is dynamic
    {\large {How to mine these data for travel behaviour analysis?}}}
 \end{center}
 
-\bibliographystyle{plain}
-\nobibliography{tuliplab}
-\footnotesize\bibentry{VLLY15J07}
+%\bibliographystyle{plain}
+%\nobibliography{tuliplab}
+%\footnotesize\bibentry{VLLY15J07}
 
 \end{slide}
 %%
@@ -956,10 +909,10 @@ There are various applications of \texttt{Periodic Behavior Mining}
 \begin{slide}[toc=,bm=]{Case Study (4) - Speech Based Emotion Detection}
 
 \begin{itemize}
-  \item Detect the emotion based on acoustic signal without sematic analysis
+  \item Language-independent emotion detection
 
   \begin{itemize}
-    \item Language-independent emotion detection
+    \item Detect the emotion based on acoustic signal without sematic analysis
 
   \end{itemize}
 \end{itemize}
@@ -1755,6 +1708,9 @@ rcolwidth=0.65\linewidth
 \onslide*{-1}
 {\vspace{1cm}
 \begin{table}
+\setlength{\abovecaptionskip}{-25pt}
+\setlength{\belowcaptionskip}{12pt}
+\caption{Publications from TULIP Lab}
 \fontsize{13pt}{14pt}\selectfont
     \begin{tabular}{c|c c c|c c c}
     \toprule
@@ -1781,10 +1737,10 @@ rcolwidth=0.65\linewidth
 }
 
 \onslide*{2}
-{\vspace{1.5cm}
+{\vspace{0.1cm}
 \begin{center}
 \selectcolormodel{rgb}
-\scalebox{1.5}{
+\scalebox{1.4}{
 \begin{tikzpicture}
     \begin{axis}[
         title={\small{SCI/SSCI Journals}},
@@ -1823,7 +1779,10 @@ rcolwidth=0.65\linewidth
 \begin{slide}{Research Awards}
 \vspace{2.2cm}
 \begin{table}[htbp]
+\setlength{\abovecaptionskip}{-25pt}
+\setlength{\belowcaptionskip}{12pt}
   \centering
+  \caption{Awards from TULIP Lab}
     \begin{tabular}{ r | l | r  r }
     \toprule
     \multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
@@ -1901,7 +1860,7 @@ rcolwidth=0.65\linewidth
 
 %%%==========================================================================================
 %%%
-\begin{slide}[toc=,bm=]{Expectations}
+\begin{slide}{Expectations}
 \begin{enumerate}
 \item<1-> 3 years in the team
     \begin{itemize}
@@ -1995,7 +1954,9 @@ rcolwidth=0.65\linewidth
 %%==========================================================================================
 %%
 \begin{slide}{Roadmap}
-\begin{center}
+%\begin{center}
+\setlength{\abovecaptionskip}{-15pt}
+\setlength{\belowcaptionskip}{12pt}
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
@@ -2031,36 +1992,21 @@ rcolwidth=0.65\linewidth
       child { node[concept,scale=0.6] (write){Presenting}}
     }
    ;
-    \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
-      \item FLIP (00): Data Science
-      \item FLIP (01): Advanced Data Science
-      \item FLIP (02): Modern Data Science
-      \item FLIP (03): Deep Learning
-      \item FLIP (04): Learning Theory (I)
-      \item FLIP (05): Learning Theory (II)
-    }
-%    \info{hand-on.north west}{above,anchor=east,xshift=-0.5em }{}
-
-%    \info{Theo.north east}{above,anchor=west,xshift=0.5em}{
-%      \item FLIP(00): Data Science
-%      \item FLIP(01): Advanced Data Science
-%      \item FLIP(02): Modern Data Science
-%      \item FLIP(03): Deep Learning
-%      \item FLIP(04): Learning Theory (I)
-%      \item FLIP(05): Learning Theory (II)
+%    \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
+%      \item FLIP (00): Data Science
+%      \item FLIP (01): Advanced Data Science
+%      \item FLIP (02): Modern Data Science
+%      \item FLIP (03): Deep Learning
+%      \item FLIP (04): Learning Theory (I)
+%      \item FLIP (05): Learning Theory (II)
 %    }
-%    \info{TeXampleBlog.north east}{above,anchor=west,xshift=0.5em}{%
-%      \item QQ Online
-%      \item At least once a month
-%      \item Read material before meeting
-%      \item Ask questions.
+%    \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
+%      \item FLIP (06): Reading Team
+%      \item FLIP (07): Review Team
+%      \item FLIP (X): $\infty$
 %    }
-    \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
-      \item FLIP (06): Reading Team
-      \item FLIP (07): Review Team
-    }
     \end{tikzpicture}
-\end{center}
+%\end{center}
 %%==========================================================================================
 \begin{note}
 Professional knowledge: \LaTeX, Version Control Systems
@@ -2074,6 +2020,129 @@ FLIP(05): Learning Theory (II)\\
 Research Skills: Review Team, Reading Team
 \end{note}
 %%==========================================================================================
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Roadmap}
+%\begin{center}
+\setlength{\abovecaptionskip}{-15pt}
+%\setlength{\belowcaptionskip}{12pt}
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!40,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=9em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Training at TULIP} [clockwise from=187]
+    child[concept color=blue!60] {
+      node[scale=0.6] {Professional Skills} [clockwise from=290]
+        child { node[scale=0.6] (goReview) {Time Management}}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] {\LaTeX}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=orange!60] {
+      node[concept,scale=0.6] {FLIP}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=blue!60] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
+      child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+      child { node[concept,scale=0.6] (present){Writing}}
+      child { node[concept,scale=0.6] (write){Presenting}}
+    }
+   ;
+    \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
+      \item FLIP (00): Data Science
+      \item FLIP (01): Advanced Data Science
+      \item FLIP (02): Modern Data Science
+      \item FLIP (03): Deep Learning
+      \item FLIP (04): Learning Theory (I)
+      \item FLIP (05): Learning Theory (II)
+    }
+ %   \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
+%      \item FLIP (06): Reading Team
+%      \item FLIP (07): Review Team
+%      \item FLIP (X): $\infty$
+%    }
+    \end{tikzpicture}
+%\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Roadmap}
+%\begin{center}
+\setlength{\abovecaptionskip}{-15pt}
+%\setlength{\belowcaptionskip}{12pt}
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!40,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=9em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Training at TULIP} [clockwise from=187]
+    child[concept color=blue!60] {
+      node[scale=0.6] {Professional Skills} [clockwise from=290]
+        child { node[scale=0.6] (goReview) {Time Management}}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] {\LaTeX}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=blue!60] {
+      node[concept,scale=0.6] {FLIP}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=orange!60] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
+      child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+      child { node[concept,scale=0.6] (present){Writing}}
+      child { node[concept,scale=0.6] (write){Presenting}}
+    }
+   ;
+%    \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
+%      \item FLIP (00): Data Science
+%      \item FLIP (01): Advanced Data Science
+%      \item FLIP (02): Modern Data Science
+%      \item FLIP (03): Deep Learning
+%      \item FLIP (04): Learning Theory (I)
+%      \item FLIP (05): Learning Theory (II)
+%    }
+    \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
+      \item FLIP (06): Reading Team
+      \item FLIP (07): Review Team
+      \item FLIP (X): $\infty$
+    }
+    \end{tikzpicture}
+%\end{center}
+
 \end{slide}
 %%
 %%==========================================================================================
