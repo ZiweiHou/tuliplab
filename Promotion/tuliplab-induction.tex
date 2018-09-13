@@ -144,8 +144,8 @@ basicstyle=\footnotesize\ttfamily}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
-  \node [ annotation, #3, text width = #1em,
-          inner sep = 2mm ] at (#2) {%
+  \node [ annotation, #3, text width = 3.5cm,
+          inner sep = 1.5mm ] at (#2) {%
   \list{$\bullet$}{\topsep=0pt\itemsep=0pt\parsep=0pt
     \parskip=0pt\labelwidth=2pt\leftmargin=2pt
     \itemindent=0pt\labelsep=2pt}%
@@ -416,7 +416,7 @@ distance planet-satellite=5cm,planet text width=3cm,
       & National  & 11 & 17 & 17 & 11 \\
       \midrule
     \multirow{2}[0]{*}{\textbf{QS\#}} & World  & 360 & 324 & 355 & 293 \\
-      & National & 19 &   &   &  \\
+      & National & 19 &   &   & 17 \\
       \midrule
     \multirow{2}[0]{*}{\textbf{THE} } & World  & 325 & 301-350 & 251-300 & 301 \\
       & National  & 13 &   &   & 17 \\
@@ -1833,17 +1833,17 @@ rcolwidth=0.65\linewidth
     \begin{itemize}
         \item one \textcolor{orange}{CCF C} publication
         \item one $Q_1$ journal publication
-    \end{itemize}    
+    \end{itemize}
 \item<2-> PhD in the team
     \begin{itemize}
         \item transactions publications, impact factor added up to 5
-        \item one \textcolor{orange}{CCF B} publication and 
+        \item one \textcolor{orange}{CCF B} publication and
         one \textcolor{orange}{CCF A} publication
-    \end{itemize}                
+    \end{itemize}
 \item<3-> post doc in the team
-    \begin{itemize}    
+    \begin{itemize}
     \item annually one \textcolor{orange}{CCF B} or \textcolor{orange}{A} publication
-    \item $Q_1$ journal * 4 
+    \item $Q_1$ journal * 4
     \end{itemize}
 \end{enumerate}
 \end{slide}
@@ -1953,9 +1953,9 @@ rcolwidth=0.65\linewidth
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
-      child { node[concept,scale=0.6] (Reviewteam){Review}}
-      child { node[concept,scale=0.6] (present){Presentation}}
-      child { node[concept,scale=0.6] (write){Writing}}
+      child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+      child { node[concept,scale=0.6] (present){Writing}}
+      child { node[concept,scale=0.6] (write){Presenting}}
     }
    ;
     \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
@@ -1983,8 +1983,8 @@ rcolwidth=0.65\linewidth
 %      \item Ask questions.
 %    }
     \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
-      \item Reading Team
-      \item Review Team
+      \item FLIP (06): Reading Team
+      \item FLIP (07): Review Team
     }
     \end{tikzpicture}
 \end{center}
@@ -2076,74 +2076,52 @@ descriptive items y sep = 3.3
 %%
 \begin{slide}{Regulations}
 
-%\begin{center}
-%\begin{itemize}
-%
-%\item<1->
-%{Flipper}
-%
-%\begin{itemize}
-%\item
-%You must not be absent from the meeting without permission.
-%
-%\item
-%Xi'an group members must attend the seminar in the Lab,
-%and NOT online.
-%
-%\item
-%Collaborate with team members, rather than attacking each other.
-%\end{itemize}
-%
-%\item<2->
-%{Trainee}
-%
-%\begin{itemize}
-%\item
-%All FLIP students need to pass the corresponding prerequisite.
-%
-%\item
-%All FLIP materials are confidential, and you should not circulate it outside.
-%\end{itemize}
-%
-%\item<3->
-%{$\infty$}
-%
-%\begin{itemize}
-%\item
-%\texttt{SmartGit}, \texttt{Bitbucket}, \texttt{Mendeley},
-%update PPR in time.
-%
-%\item
-%Actively discuss research work in the group meeting, and TULIP Seminar.
-%
-%\item
-%Everyone should prepare at least one question for each TULIP seminar.
-%\end{itemize}
-%\end{itemize}
-%\end{center}
 \begin{center}
-\selectcolormodel{rgb}
-\smartdiagramset{
-%set color list={blue,blue!60,orange},
-priority arrow width=2.3cm,
-priority arrow height advance=4cm,
-description text width=15cm,
-descriptive items y sep = 3.1
-}
-\smartdiagram[priority descriptive diagram]{TULIP Academy
-\begin{enumerate}
-\item You can't be absent from the meeting without permission
-         \item Xi'an group members must attend the seminar in the lab but not online
-         \item Collaborate with team members rather than attacking each other
-\end{enumerate}, FLIP Study \begin{enumerate}
-         \item All FLIP students need to pass the corresponding prerequisite
-         \item All FLIP materials are confidential \, you can't circulate them outside
-         \end{enumerate}, Research \begin{enumerate}
-         \item \texttt{SmartGit} \, \texttt{Bitbucket} \, \texttt{Mendeley} \, and update PPR in time
-         \item Actively discuss research work in the group meeting and TULIP seminar
-         \item Everyone should prepare at least one question for each TULIP seminar
-\end{enumerate}}
+\begin{itemize}
+
+\item<1->
+{Flipper}
+
+\begin{itemize}
+\item
+You must not be absent from the meeting without permission.
+
+\item
+Xi'an group members must attend the seminar in the Lab,
+and NOT online.
+
+\item
+Collaborate with team members, rather than attacking each other.
+\end{itemize}
+
+\item<2->
+{Trainee}
+
+\begin{itemize}
+\item
+All FLIP students need to pass the corresponding prerequisite.
+
+\item
+All FLIP materials are confidential, and you should not circulate it outside.
+\end{itemize}
+
+\item<3->
+{$\infty$}
+
+\begin{itemize}
+\item
+\texttt{SmartGit}, \texttt{Bitbucket}, \texttt{Mendeley},
+update PPR in time.
+
+\item
+Actively discuss research work in the group meeting, and TULIP Seminar.
+
+\item
+Everyone should prepare at least one question for each TULIP seminar.
+\end{itemize}
+\end{itemize}
 \end{center}
+
 \end{slide}
 %%
 %%==========================================================================================
