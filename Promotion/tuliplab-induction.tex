@@ -1487,49 +1487,50 @@ rcolwidth=0.65\linewidth
 %%
 \begin{slide}[toc=,bm=]{Case Study (2) - Negative Association Rule Mining}
 	\selectcolormodel{rgb}
-	\usetikzlibrary{positioning}
-	\tikzstyle{block} = [rectangle, draw=orange, fill= orange!20, text width=7em, text centered, rounded corners, minimum height=4em,font=\small]
-	\tikzstyle{line} = [draw, -latex']
-	\tikzstyle{note} = [rectangle, text width=10em, text centered, rounded corners, minimum height=0.5em,font=\footnotesize]
-	\vspace*{-20pt}
-	\begin{center}
-		\begin{tikzpicture}[node distance = 1cm and 1.5cm, auto]
-		\node[block](initialTransData){Transcation Data};
-		\node[block,right= of initialTransData](candiPosItem){Candidate Interesting \textbf{Positive} Item-set};
-		\node[block, below= of initialTransData](initialUserItem){User specified Target Item};
-		\node[block,right= of initialUserItem](generateItem){Generating Targeted Item-set};
-		
-		\node[block, below= of generateItem](candiNegItem){Candidate Interesting \textbf{Negative} Item-set};
-		\node[block, right= of candiNegItem](interNegItem){Interesting Negative Item-set};
-		\node[block, right= of interNegItem](negRule){Negative Rules};
-		
-		\node[block, right= of candiPosItem](interPosItem){Interesting Positive Item-set};
-		\node[block, right= of interPosItem](posRule){Positive Rules};
-		\node[block, below= of posRule](report){Reporting Rules};
-		
-		\path[line](initialTransData) -- (generateItem);
-		\path[line](initialUserItem) -- (generateItem);
-		\path[line](generateItem) -- (candiPosItem);
-		\path[line](candiPosItem) -- (interPosItem);
-		\path[line](interPosItem) -- (posRule);
-		\path[line](posRule) -- (report);
-		\path[line](generateItem) -- (candiNegItem);
-		\path[line](candiNegItem) -- (interNegItem);
-		\path[line](interNegItem) -- (negRule);
-		\path[line](negRule) -- (report);
-		
-		\begin{scope}[node distance = 0.5cm, auto]
-		\node[note, above= of candiPosItem](candiPosItemNote){$Sup(A\cup B)\geq min\_ sup$};
-		\node[note, above= of interPosItem](interPosItemNote){$lever(A\cup B)\geq <min\_ lever$};
-		\node[note, above= of posRule](posRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};
-		\node[note, below= of candiNegItem](candiNegItemNote){$Sup(A\cup B)<min\_ sup$};
-		\node[note, below= of interNegItem](interNegItemNote){$lever(A\cup \sim B)\geq <min\_ lever$};
-		\node[note, below= of negRule](negRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};	
-		\end{scope}
-		
-		
-		\end{tikzpicture}
-	\end{center}
+\usetikzlibrary{positioning}
+\tikzstyle{block} = [rectangle, draw=orange, fill= orange!20, text width=7em, text centered, rounded corners, minimum height=4em,font=\small]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{note} = [rectangle, text width=10em, text centered, rounded corners, minimum height=0.5em,font=\footnotesize]
+\vspace*{-20pt}
+\begin{center}
+	\begin{tikzpicture}[node distance = 1cm and 1.5cm, auto]
+	\node[block](generateItem){Generating Targeted Item-set};
+	\node[block,above left=0.3cm and 1.5cm of generateItem ](initialTransData){Transcation Data};
+	\node[block,above= of generateItem](candiPosItem){Candidate Interesting \textbf{Positive} Item-set};
+	\node[block, below left=0.3cm and 1.5cm of generateItem](initialUserItem){User specified Target Item};
+	
+	
+	\node[block, below= of generateItem](candiNegItem){Candidate Interesting \textbf{Negative} Item-set};
+	\node[block, right= of candiNegItem](interNegItem){Interesting Negative Item-set};
+	\node[block, right= of interNegItem](negRule){Negative Rules};
+	
+	\node[block, right= of candiPosItem](interPosItem){Interesting Positive Item-set};
+	\node[block, right= of interPosItem](posRule){Positive Rules};
+	\node[block, below= of posRule](report){Reporting Rules};
+	
+	\path[line](initialTransData) -- (generateItem);
+	\path[line](initialUserItem) -- (generateItem);
+	\path[line](generateItem) -- (candiPosItem);
+	\path[line](candiPosItem) -- (interPosItem);
+	\path[line](interPosItem) -- (posRule);
+	\path[line](posRule) -- (report);
+	\path[line](generateItem) -- (candiNegItem);
+	\path[line](candiNegItem) -- (interNegItem);
+	\path[line](interNegItem) -- (negRule);
+	\path[line](negRule) -- (report);
+	
+	\begin{scope}[node distance = 0.2cm, auto]
+	\node[note, above= of candiPosItem](candiPosItemNote){$Sup(A\cup B)\geq min\_ sup$};
+	\node[note, above= of interPosItem](interPosItemNote){$lever(A\cup B)\geq <min\_ lever$};
+	\node[note, above= of posRule](posRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};
+	\node[note, below= of candiNegItem](candiNegItemNote){$Sup(A\cup B)<min\_ sup$};
+	\node[note, below= of interNegItem](interNegItemNote){$lever(A\cup \sim B)\geq <min\_ lever$};
+	\node[note, below= of negRule](negRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};	
+	\end{scope}
+	
+	
+	\end{tikzpicture}
+\end{center}
 	%\vspace*{-15pt}
 	
 	\bibliographystyle{plain}
