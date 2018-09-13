@@ -148,7 +148,7 @@ basicstyle=\footnotesize\ttfamily}
           inner sep = 1.5mm ] at (#2) {%
   \list{$\bullet$}{\topsep=0pt\itemsep=0pt\parsep=0pt
     \parskip=0pt\labelwidth=2pt\leftmargin=2pt
-    \itemindent=0pt\labelsep=2pt}%
+    \itemindent=0pt\labelsep=0pt}%
     #4
   \endlist
   };
@@ -451,7 +451,7 @@ distance planet-satellite=5cm,planet text width=3cm,
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Research Themes}
+\begin{slide}{Research Themes}
 \begin{center}
 
 \selectcolormodel{rgb}
@@ -498,7 +498,54 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 
 %%==========================================================================================
 %%
-\begin{slide}{Research Themes}
+\begin{slide}[toc=,bm=]{Research Themes}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=blue!50,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
+  ]
+  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
+    child[concept color=orange!60] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Group Anomaly Detection}}
+    }
+     child[concept color=blue!60] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
+    }
+    child[concept color=blue!60] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
+    }
+   ;
+    \end{tikzpicture}
+\end{center}
+%%==========================================================================================
+\begin{note}
+Behavior Informatics: Periodic Behavior Mining, Behavior Prediction\\
+Information Abuse Prevention: Data Compliance Checking, Privacy Preservation in Data Mining\\
+Business Intelligence Applications: Recommender System, Tourism/Hospitality Management
+\end{note}
+%%==========================================================================================
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Research Themes}
 \begin{center}
 
 \selectcolormodel{rgb}
@@ -516,12 +563,12 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     child[concept color=blue!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
-        child { node[scale=0.6] (bp) {Behavior Prediction}}
+        child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
      child[concept color=orange!60] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
-      child{node[concept,scale=0.6](dcc){Data Compliance Checking}}
-      child{node[concept,scale=0.6](privacy){Privacy Preservation in Data Mining}}
+      child{node[concept,scale=0.6](dcc){Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
     child[concept color=blue!60] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
@@ -556,12 +603,12 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     child[concept color=blue!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
-        child { node[scale=0.6] (bp) {Behavior Prediction}}
+        child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
      child[concept color=blue!60] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
-      child{node[concept,scale=0.6](dcc){Data Compliance Checking}}
-      child{node[concept,scale=0.6](privacy){Privacy Preservation in Data Mining}}
+      child{node[concept,scale=0.6](dcc){Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
     child[concept color=orange!60] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
@@ -694,6 +741,10 @@ Photos are static media; whereas, travel behavior is dynamic
    {\large {How to mine these data for travel behaviour analysis?}}}
 \end{center}
 
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLLY15J07}
+
 \end{slide}
 %%
 %%==========================================================================================
@@ -719,9 +770,7 @@ Photos are static media; whereas, travel behavior is dynamic
     }
 \end{figure}
 
-\bibliographystyle{plain}
-\nobibliography{tuliplab}
-\footnotesize\bibentry{VLLY15J07}
+
 
 \end{slide}
 %%
@@ -906,6 +955,14 @@ There are various applications of \texttt{Periodic Behavior Mining}
 %%
 \begin{slide}[toc=,bm=]{Case Study (4) - Speech Based Emotion Detection}
 
+\begin{itemize}
+  \item Detect the emotion based on acoustic signal without sematic analysis
+
+  \begin{itemize}
+    \item Language-independent emotion detection
+
+  \end{itemize}
+\end{itemize}
 \begin{figure}
   \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_22.eps}
 \end{figure}
@@ -989,7 +1046,7 @@ $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 
 \begin{slide}[toc=,bm=]{Case Study (6) - Trajectory Analysis}
 \begin{figure}[ht]
-  \includemovie[poster=figures//theme1//Theme1_23.eps,inline=false]{12cm}{11cm}{figures//theme1//vs.avi}
+  \includemovie[poster=figures//theme1//Theme1_23.eps,inline=false]{13cm}{10cm}{figures//theme1//vs.avi}
 \end{figure}
 \end{slide}
 %%
@@ -1283,12 +1340,9 @@ rcolwidth=0.45\linewidth
 	\end{tabular}
 \end{table}
 
-\begin{thebibliography}{}
-\bibitem{}
-\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
-Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
-Journal of Travel Research, 2017.}
-\end{thebibliography}
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLLZ17J05}
 
 \end{slide}
 %%
