@@ -339,15 +339,15 @@ distance planet-satellite=5cm,planet text width=3cm,
 \begin{slide}{Organization}
 \selectcolormodel{rgb}
 \pgfkeys{/forest,
-  rect/.append style   = {rectangle, rounded corners = 2pt,
+  rect/.append style   = { rounded corners = 2pt,
                          inner color = col6in, outer color = col6out},
-  ellip/.append style  = {ellipse, inner color = col5in,
+  ellip/.append style  = { inner color = col5in,
                           outer color = col5out},
-  orect/.append style  = {rect, font = \sffamily\bfseries\LARGE,
+  orect/.append style  = { font = \sffamily\bfseries\LARGE,
                          text width = 325pt, text centered,
                          minimum height = 10pt, outer color = col7out,
                          inner color=col7in},
-  oellip/.append style = {ellip, inner color = col8in, outer color = col8out,
+  oellip/.append style = { inner color = col8in, outer color = col8out,
                           font = \sffamily\bfseries\large, text centered}}
 \begin{forest}
   for tree={
@@ -373,7 +373,7 @@ distance planet-satellite=5cm,planet text width=3cm,
     [Academy %inner color=col1in, outer color=col1out
     [Visitor]
     [Flipper
-    [Trainee
+    [Traninee
         [[FLIP01]
           [\dots]
           [FLIP05]
@@ -434,8 +434,8 @@ distance planet-satellite=5cm,planet text width=3cm,
 \begin{itemize}
   \item \textcolor{orange}{\faHome:} \href{http://www.tulip.org.au}{http://www.tulip.org.au}
   \begin{itemize}
-    \item \faTwitter: tulipacademy
-    \item \faWeibo: \href{https://weibo.com/tulipacademy}{https://weibo.com/tulipacademy}
+    \item \textcolor{orange}{\faTwitter}: tulipacademy
+    \item \textcolor{orange}{\faWeibo}: \href{https://weibo.com/tulipacademy}{https://weibo.com/tulipacademy}
   \end{itemize}
   \item \textcolor{orange}{\faGithub:} \href{https://github.com/tulip-lab}{https://github.com/tulip-lab}
   \item \textcolor{orange}{\faCalendar:}
@@ -2205,6 +2205,7 @@ descriptive items y sep = 3.3
          \item Research meeting with supervisor twice a week
          \item Complete FLIP (04) \texttildelow FLIP (05)
          \end{enumerate}}
+         \xhMarker
 \end{center}
 \end{slide}
 %%
@@ -2301,10 +2302,10 @@ Associate Professor Gang Li\\
 School of Information Technology\\
 Deakin University, Australia
 \begin{description}
- \item[\faEnvelope] \href{mailto:gangli@tulip.org.au}
+ \item[\textcolor{orange}{\faEnvelope}] \href{mailto:gangli@tulip.org.au}
  {\textsc{\footnotesize{gangli@tulip.org.au}}}
 
- \item[\faHome] \href{http://www.tulip.org.au}
+ \item[\textcolor{orange}{\faHome}] \href{http://www.tulip.org.au}
  {\textsc{\footnotesize{Team for Universal Learning and Intelligent Processing}}}
 \end{description}
 }
