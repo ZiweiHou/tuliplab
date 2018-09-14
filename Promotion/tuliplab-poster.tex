@@ -29,7 +29,7 @@
 \usepackage[tikz]{bclogo}
 \usepackage{lipsum}
 \usepackage{amsmath}
-
+\usepackage{fontawesome}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage[absolute]{textpos}
@@ -41,8 +41,7 @@
 %\usepackage[math]{iwona}
 \usepackage[math]{kurier}
 \usepackage[T1]{fontenc}
-
-
+\usepackage{tikz}
 %% add your packages here
 \usepackage{hyperref}
 % for random text
@@ -50,7 +49,46 @@
 \usepackage[english]{babel}
 \usepackage[pangram]{blindtext}
 
+\usepackage{forest}
+\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
+
+%% aiming high
+%\usepackage{smartdiagram}
+%\usetikzlibrary{shapes.symbols}
+%
+%\tikzset{description title/.append style={
+%    signal,
+%    signal to=north,
+%    signal from=south,
+%    yshift=0.5cm,
+%  }
+%}
+
+
+
+\colorlet{mygreen}{green!75!black}
+\colorlet{col1in}{red!30}
+\colorlet{col1out}{red!40}
+\colorlet{col2in}{mygreen!40}
+\colorlet{col2out}{mygreen!50}
+\colorlet{col3in}{blue!30}
+\colorlet{col3out}{blue!40}
+\colorlet{col4in}{mygreen!20}
+\colorlet{col4out}{mygreen!30}
+\colorlet{col5in}{blue!10}
+\colorlet{col5out}{blue!20}
+\colorlet{col6in}{blue!20}
+\colorlet{col6out}{blue!30}
+\colorlet{col7out}{orange}
+\colorlet{col7in}{orange!50}
+\colorlet{col8out}{orange!40}
+\colorlet{col8in}{orange!20}
+\colorlet{linecol}{blue!60}
+
 \colorlet{backgroundcolor}{blue!10}
+
+
+
 
  % Title, Author, Institute
 \title{Team for Universal Learning and Intelligent Processing}
@@ -96,84 +134,118 @@
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 \block{TULIP Lab}{
-    Many real world applications call for one important function
-    of identifying the set of features
-    on which the interested object is most distinguished from others.
-    Usually,
-    this object is termed as the query object,
-    and the set of features are referred to as the \emph{subspaces} or \emph{aspects}.
-    Accordingly,
-    this research problem is referred to as
-    \emph{outlying aspects mining},
-    which is different from \emph{outlier detection}.
+\selectcolormodel{rgb}
+\pgfkeys{/forest,
+  rect/.append style   = { rounded corners = 2pt,
+                         inner color = col6in, outer color = col6out},
+  ellip/.append style  = { inner color = col5in,
+                          outer color = col5out},
+  orect/.append style  = { font = \sffamily\bfseries\LARGE,
+                         text width = 325pt, text centered,
+                         minimum height = 10pt, outer color = col7out,
+                         inner color=col7in},
+  oellip/.append style = { inner color = col8in, outer color = col8out,
+                          font = \sffamily\bfseries\large, text centered}}
+\begin{forest}
+  for tree={
+      font=\sffamily\bfseries,
+      line width=1pt,
+      draw=linecol,
+      ellip,
+      align=center,
+      child anchor=north,
+      parent anchor=south,
+      drop shadow,
+      l sep+=12.5pt,
+      edge path={
+        \noexpand\path[color=linecol, rounded corners=5pt,
+          >={Stealth[length=11pt]}, line width=1pt, ->, \forestoption{edge}]
+          (!u.parent anchor) -- +(0,-5pt) -|
+          (.child anchor)\forestoption{edge label};
+        },
+      where level={3}{tier=tier3}{},
+      where level={0}{l sep-=5pt}{},
+      where level={1}{}{},
+  }
+    [TULIP Academy %inner color=col1in, outer color=col1out
+    [Visitor]
+    [Flipper
+    [Trainee
+        [[FLIP (00)]
+          [\dots]
+          [FLIP (05)]
+        ]
+    ]]
+    [TULIP Lab
+        [Australia]
+        [China]
+        [India]]
+    [Alumni] %inner color =col7in, outer color = col7out]
+    [Web Team] %, inner color=col2in, outer color=col2out]
+  ]
+\end{forest}
   	
-  	\begin{description}
-  	\item[Outlying Aspects Mining] aims to identify a subspace
-    which makes the query object most outlying,
-    rather than verifying whether it is an outlier or not.
-    The task of \emph{Outlying Aspects Mining}
-    is to explain which aspects make the query object most different.
-  	
-  	\item[Outlier Detection] aims to identify all possible outliers in the dataset,
-    without explaining why or how they are different.
-    Hence,
-    the outlying aspects mining is also referred to
-    \emph{outlier interpretation}
-    or \emph{object explanation}.
-  	\end{description}
+\begin{description}
+\item[Official Websites]
+  \begin{itemize}
+    \item \textcolor{orange}{\faHome:} \url{http://www.tulip.org.au}
+    \item \textcolor{orange}{\faGithub:} \url{https://github.com/tulip-lab}
+  \end{itemize}
 
-  	In this paper,
-    we extend the task of \emph{outlying aspects mining} to the \emph{group} level,
-    formalize the research problem of \emph{group outlying aspects mining},
-    and propose a novel algorithm named GOAM to solve the
-    \emph{group outlying aspects mining} problem.
+\item[Social Media]
+  \begin{itemize}
+    \item \textcolor{orange}{\faTwitter:} \href{https://twitter.com/tulipacademy}{tulipacademy}
+    \item \textcolor{orange}{\faWeibo:} \href{https://weibo.com/tulipacademy}{tulipacademy}
+    \item \textcolor{orange}{\faRedditAlien:} \url{https://www.reddit.com/r/tulipacademy}
+  \end{itemize}
+
+
+\item[Internal Services]
+  \begin{itemize}
+   \item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
+   \item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
+   \item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal)
+  \end{itemize}
+
+\end{description}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Research @ TULIP -   Theme 1}{
+\block{Research @ TULIP -   Theme 1.Behavior Informatics}{
 \begin{itemize}
     \item
-    %\emph{Group Outlying Aspects Mining}
-    It aims to \emph{identify a subset of aspects (or subspace)
-    which makes the query group, rather than the single object,
-    obviously different}.
-    What we are interested in the task of \emph{group outlying aspects mining}
-    is to explain which aspects make the query group distinctive
-    different from the other groups.
+    Case Study(1). Tourist Movement Analysis
 
     \item
-    \emph{Group Outlying Aspects Mining},
-    \emph{Outlying Aspects Mining} and
-    \emph{Outlier Detection} are different with each other.
+    Case Study(2). Periodic Behavior Mining
+    
+    \item 
+    Case Study(3). Face Age Recognition
+    
+    \item
+    Case Study(4). Speech Based Emotion Detection
+    
+    \item
+    Case Study(5). K Complex Detection
+    
+    \item
+    Case Study(6). Trajectory Analysis  
 \end{itemize}
 
-\begin{center}
-    \begin{minipage}{0.3\linewidth}
-    \centering
-    \begin{tikzfigure}
-    \missingfigure[figcolor=white]{Testing figcolor}
-    {\small{Group Outlying Aspects Mining}}
-    \end{tikzfigure}%
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.3\linewidth}
-    \centering
-    \begin{tikzfigure}
-    \missingfigure[figcolor=white]{Testing figcolor}
-    {\small{Outlying Aspects Mining}}
-    \end{tikzfigure}%
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.3\linewidth}
-    \centering
-    \begin{tikzfigure}
-    \missingfigure[figcolor=white]{Testing figcolor}
-    {\small{Outlier Detection}}
-    \end{tikzfigure}%
-    \end{minipage}
-\end{center}
+%\begin{figure}[htbp]
+%    \subfigure[Asian Tourist]
+%    {
+%        \includegraphics[height=0.4\textwidth,width=0.34\textwidth]{figures//theme1//Theme1_12.eps}
+%    }
+%    \subfigure[Western Tourist]
+%    {
+%        \includegraphics[height=0.4\textwidth,width=0.34\textwidth]{figures//theme1//Theme1_13.eps}
+%    }
+%\end{figure}
+
+
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
@@ -189,65 +261,15 @@
 
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Research @ TULIP -   Theme 2}{
-  	We propose the \emph{GOAM} algorithm to solve the research problem of
-    \emph{Group Outlying Aspects Mining}.
-  	The \emph{GOAM} algorithm includes three major steps.
-%    1) Group Feature Extraction,
-%    2) Outlying Degree Scoring, and
-%    3) Outlying Aspects Identification.
-  	
-\begin{tikzfigure}%[Overall architecture of \emph{GOAM} algorithm]
-%  \includegraphics[width=0.8\linewidth]{figures//framework.pdf}
-    \missingfigure[figcolor=white]{Testing figcolor}
-\end{tikzfigure}
-		
-\begin{description}
-  	\item[Group Feature Extraction]
-  	Let $f_1$, $f_2$, $f_3$ represent three features of $G_q$.
-    We count the frequency of each value for one feature.
-    Then use the histogram to represent each feature.
-    Similarly,
-    we can extract other features for each group.
-
-%    \item
-%    The histogram of $G_q$ on three features are as follows.
-\end{description}
-
-\begin{center}
-    \begin{minipage}{0.3\linewidth}
-    \centering
-    \begin{tikzfigure}
-    \missingfigure[figcolor=white]{Testing figcolor}
-    {\small{Histogram of $G_q$ on $f_1$}}
-    \end{tikzfigure}%
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.3\linewidth}
-    \centering
-    \begin{tikzfigure}
-    \missingfigure[figcolor=white]{Testing figcolor}
-    {\small{Histogram of $G_q$ on $f_2$}}
-    \end{tikzfigure}%
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.3\linewidth}
-    \centering
-    \begin{tikzfigure}
-    \missingfigure[figcolor=white]{Testing figcolor}
-    {\small{Histogram of $G_q$ on $f_3$}}
-    \end{tikzfigure}%
-    \end{minipage}
-\end{center}
-\begin{description}
-\item[Outlying Degree Scoring]
-    In this step,
-    we first calculate the \emph{earth mover distance} (EMD) of one feature among different groups.
-    The earth mover distance reflects the minimum mean distance
-    between groups on one feature.
-    So,
-    we utilize the EMD to measure the difference between groups of each feature.
-\end{description}
+\block{Research @ TULIP -   Theme 2.Data Privacy}{
+\begin{itemize}
+  \item
+  Case Study(1). Is O.S.N. a Secure Place to Show off?
+  
+  \item
+  Case Study(2). Privacy Breach
+  
+\end{itemize}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
@@ -257,32 +279,24 @@
  %Second column with first block's top edge aligned with with previous column's top.
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Research @ TULIP -   Theme 3}{
-\begin{description}
-    \item
-    Second,
-    based on the \emph{earth move distance},
-    we calculate the outlying degree.
-\end{description}
+\block{Research @ TULIP -   Theme 3. Business Intelligence}{
+\begin{itemize}
+  \item
+  Case Study(1). Market Segmentation Analysis
 
-\begin{tikzfigure}%[Overall architecture of \emph{GOAM} algorithm]
-    \missingfigure[figcolor=white]{Testing figcolor}
-\end{tikzfigure}
-  where $G_q$ is the query group,
-  $n$ is the number of compare groups,
-  and $h_{k_s}$ is the histogram representation of $G_k$ in the subspace $s$.
+  \item
+  Case Study(2). Negative Association Rule Mining
+  
+  \item
+  Case Study(3). Contrast Mining
+  
+  \item 
+  Case Study(4). PR Based Conditional Random Fields
 
-\begin{description}
-  	\item[Outlying Aspects Identification]
-    In this step,
-    based on the value of outlying degree
-    we will identify the group outlying aspects.
-    If a feature's outlying degree is greater than a threshold,
-    the more likely the feature is group outlying aspect.
-    When the dimensionality of features is high,
-    we adopt a stage-wise candidate subspace construction strategy to
-    alleviate the exponential explosion.
-\end{description}
+\end{itemize}
+
+
+
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 % Second column - first block
@@ -368,17 +382,34 @@ lower \{free throw percentage\}, \{free throws attempted\}.
 \block[titlewidthscale=1, bodywidthscale=1]
 {Training @ TULIP}
 {
-\begin{description}
-  \item[Problem Definition]
-  Formalize the problem of Group Outlying Aspects Mining by extending outlying aspects mining.
-
-  \item[GOAM algorithm]
-  Propose GOAM algorithm to solve the \emph{Group}\\
-  \emph{Outlying Aspects Mining} problem.
-
-  \item[Strategies]
-  Utilize the pruning strategies to \\ reduce time complexity.
-\end{description}
+%\begin{center}
+%\selectcolormodel{rgb}
+%\smartdiagramset{description title width=2cm,
+%set color list={blue!40,blue!30,orange!40},
+%description title text width=1.75cm,
+%descriptive items y sep=3.5cm,
+%description text width=12cm,
+%module minimum height=.4cm}
+%
+%\smartdiagram[descriptive diagram]{
+%{\textbf{$\infty$}, \begin{enumerate}
+%         \item Proactively meet with supervisor twice per week
+%         \item Proactively present and criticize at \textit{TULIP Seminar}
+%         \item FLIP (04-05) and FLIP (06-07) completion
+%         \item Act as FLIP team leaders and update materials annually
+%         \end{enumerate}},
+%{\textbf{Trainee}, \begin{enumerate}
+%         \item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+%         \item Feedback and suggestions on FLIP
+%         \item Present at \textit{TULIP Seminar}
+%         \end{enumerate}},
+%{\textbf{Flipper},\begin{enumerate}
+%         \item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+%		 \item Keep FLIP materials confidential without distribution
+%         \item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+%         \item Attend \textit{TULIP Seminar} with preparation and questions
+%         \end{enumerate}},}
+%\end{center}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
@@ -426,7 +457,7 @@ Acknowledgement
 \end{minipage}
 \begin{minipage}{0.7\linewidth}
 { \centering
- \large{\textcolor{blue!80}{Welcome to \emph{Team for Universal Learning and 
+ \large{\textcolor{blue!80}{Welcome to \emph{Team for Universal Learning and
  Intelligent Processing}!}}
 }
 \end{minipage}
