@@ -144,7 +144,7 @@ basicstyle=\footnotesize\ttfamily}
 \usepackage[utf8]{inputenc}
 \usepackage{dtk-logos}
 \usepackage{tikz}
-\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
@@ -1438,52 +1438,52 @@ rcolwidth=0.65\linewidth
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (1) - Negative Association Rule Mining}
+\begin{slide}[toc=,bm=]{Case Study (2) - Negative Association Rule Mining}
 	\selectcolormodel{rgb}
-\usetikzlibrary{positioning}
-\tikzstyle{block} = [rectangle, draw=orange, fill= orange!20, text width=7em, text centered, rounded corners, minimum height=4em,font=\small]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{note} = [rectangle, text width=10em, text centered, rounded corners, minimum height=0.5em,font=\footnotesize]
-\vspace*{-20pt}
-\begin{center}
-	\begin{tikzpicture}[node distance = 1cm and 1.5cm, auto]
-	\node[block](generateItem){Generating Targeted Item-set};
-	\node[block,above left=0.3cm and 1.5cm of generateItem ](initialTransData){Transcation Data};
-	\node[block,above= of generateItem](candiPosItem){Candidate Interesting \textbf{Positive} Item-set};
-	\node[block, below left=0.3cm and 1.5cm of generateItem](initialUserItem){User specified Target Item};
-	
-	
-	\node[block, below= of generateItem](candiNegItem){Candidate Interesting \textbf{Negative} Item-set};
-	\node[block, right= of candiNegItem](interNegItem){Interesting Negative Item-set};
-	\node[block, right= of interNegItem](negRule){Negative Rules};
-	
-	\node[block, right= of candiPosItem](interPosItem){Interesting Positive Item-set};
-	\node[block, right= of interPosItem](posRule){Positive Rules};
-	\node[block, below= of posRule](report){Reporting Rules};
-	
-	\path[line](initialTransData) -- (generateItem);
-	\path[line](initialUserItem) -- (generateItem);
-	\path[line](generateItem) -- (candiPosItem);
-	\path[line](candiPosItem) -- (interPosItem);
-	\path[line](interPosItem) -- (posRule);
-	\path[line](posRule) -- (report);
-	\path[line](generateItem) -- (candiNegItem);
-	\path[line](candiNegItem) -- (interNegItem);
-	\path[line](interNegItem) -- (negRule);
-	\path[line](negRule) -- (report);
-	
-	\begin{scope}[node distance = 0.2cm, auto]
-	\node[note, above= of candiPosItem](candiPosItemNote){$Sup(A\cup B)\geq min\_ sup$};
-	\node[note, above= of interPosItem](interPosItemNote){$lever(A\cup B)\geq <min\_ lever$};
-	\node[note, above= of posRule](posRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};
-	\node[note, below= of candiNegItem](candiNegItemNote){$Sup(A\cup B)<min\_ sup$};
-	\node[note, below= of interNegItem](interNegItemNote){$lever(A\cup \sim B)\geq <min\_ lever$};
-	\node[note, below= of negRule](negRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};	
-	\end{scope}
-	
-	
-	\end{tikzpicture}
-\end{center}
+	\usetikzlibrary{positioning}
+	\tikzstyle{block} = [rectangle, draw=orange, fill= orange!20, text width=7em, text centered, rounded corners, minimum height=4em,font=\small]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{note} = [rectangle, text width=10em, text centered, rounded corners, minimum height=0.5em,font=\footnotesize]
+	\vspace*{-20pt}
+	\begin{center}
+		\begin{tikzpicture}[node distance = 1cm and 1.5cm, auto]
+		\node[block](generateItem){Generating Targeted Item-set};
+		\node[block,above left=0.3cm and 1.5cm of generateItem ](initialTransData){Transcation Data};
+		\node[block,above= of generateItem](candiPosItem){Candidate Interesting \textbf{Positive} Item-set};
+		\node[block, below left=0.3cm and 1.5cm of generateItem](initialUserItem){User specified Target Item};
+		
+		
+		\node[block, below= of generateItem](candiNegItem){Candidate Interesting \textbf{Negative} Item-set};
+		\node[block, right= of candiNegItem](interNegItem){Interesting Negative Item-set};
+		\node[block, right= of interNegItem](negRule){Negative Rules};
+		
+		\node[block, right= of candiPosItem](interPosItem){Interesting Positive Item-set};
+		\node[block, right= of interPosItem](posRule){Positive Rules};
+		\node[block, below= of posRule](report){Reporting Rules};
+		
+		\path[line](initialTransData) -- (generateItem);
+		\path[line](initialUserItem) -- (generateItem);
+		\path[line](generateItem) -- (candiPosItem);
+		\path[line](candiPosItem) -- (interPosItem);
+		\path[line](interPosItem) -- (posRule);
+		\path[line](posRule) -- (report);
+		\path[line](generateItem) -- (candiNegItem);
+		\path[line](candiNegItem) -- (interNegItem);
+		\path[line](interNegItem) -- (negRule);
+		\path[line](negRule) -- (report);
+		
+		\begin{scope}[node distance = 0.2cm, auto]
+		\node[note, above= of candiPosItem](candiPosItemNote){$Sup(A\cup B)\geq min\_ sup$};
+		\node[note, above= of interPosItem](interPosItemNote){$lever(A\cup B)\geq <min\_ lever$};
+		\node[note, above= of posRule](posRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};
+		\node[note, below= of candiNegItem](candiNegItemNote){$Sup(A\cup B)<min\_ sup$};
+		\node[note, below= of interNegItem](interNegItemNote){$lever(A\cup \sim B)\geq <min\_ lever$};
+		\node[note, below= of negRule](negRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};	
+		\end{scope}
+		
+		
+		\end{tikzpicture}
+	\end{center}
 	%\vspace*{-15pt}
 	
 	\bibliographystyle{plain}
@@ -1497,72 +1497,112 @@ rcolwidth=0.65\linewidth
 
 %%==========================================================================================
 %%
-%\begin{slide}[toc=,bm=]{Case Study (2) - Contrast Mining}
-	%	
-	%	\twocolumn[lcolwidth=0.55\linewidth,
-	%	rcolwidth=0.45\linewidth
-	%	]{
-	%
-	%\begin{itemize}
-	%	\item Contrast Targeted Rules Algorithm (CTR)
-	%	\vspace{0.5cm}		
-	%		\begin{itemize}
-	%			\item
-	%			Detect the changes of rules strength
-	%			between differences year data set
-	%			
-	%			\item
-	%			Tracing  the trend for predicting
-	%			future potential
-	%			
-	%		\end{itemize}
-	%	\end{itemize}
-	%	}
-	%	{
-	%		\begin{center}
-	%			\begin{figure}[htbp]
-	%				\includegraphics[height=0.75\textheight]{figures//theme3//Theme3_3_1.eps}
-	%			\end{figure}
-	%		\end{center}
-	%		
-	%	}
-	%\vspace*{-40pt}
-	%	\twocolumn[lcolwidth=0.6\linewidth,rcolwidth=0.4\linewidth,colsep=0.001\linewidth]{
-	%	\begin{figure}[htbp]
-	%		\onslide*{2, 2-}
-	%		{
-	%			\subfigure{
-	%				\includegraphics[height=0.65\textheight]{figures//theme3//Theme3_3_2.eps}
-	%			}
-	%		}
-	%
-	%	\end{figure}
-	%	}
-	%	{
-	%		\begin{figure}
-	%			
-	%			\onslide*{3, 3-}{
-	%				\subfigure{
-	%					\includegraphics[height=0.65\textheight]{figures//theme3//Theme3_3_3.eps}
-	%				}
-	%			}	
-	%		\end{figure}
-	%
-	%	}
-	%\vspace*{\fill}
-	%
-	%\bibliographystyle{plain}
-	%\nobibliography{tuliplab}
-	%\footnotesize\bibentry{RVLL11J06}
-	%
-%\end{slide}
+\begin{slide}[toc=,bm=]{Case Study (3) - Contrast Mining}
+	\selectcolormodel{rgb}
+	\usetikzlibrary{positioning}
+	\tikzstyle{contrast} = [rectangle, draw=black,fill=blue!20, text width=4em, text centered,  minimum height=6em, minimum width=4.5em,font=\small]
+	\tikzstyle{block} = [rectangle, text width=2em, text centered, minimum width=3em, minimum height=1em, font=\large]
+	\tikzstyle{vecArrow} = [thick, fill=blue!10, decoration={markings,mark=at position 1 with {\arrow[semithick]{open triangle 60}}}, double distance=1.4pt, shorten >= 5.5pt, preaction = {decorate}, postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
+	
+	
+	
+	\begin{itemize}
+		\item Contrast Targeted Rules Algorithm (CTR)
+		\vspace{0.5cm}		
+		\begin{itemize}
+			\item
+			Detect the changes of rules strength between differences year data set
+			
+			\onslide*{3,3-}{
+				\item
+				Tracing  the trend for predicting future potential
+			}
+		\end{itemize}
+	\end{itemize}
+	\vspace{2cm}
+	
+	\begin{center}
+		\begin{tikzpicture}[node distance = 0.3cm, auto]
+		\onslide*{2,2-}{	
+			\node[contrast](contrast1){\\~\\Contrast\\~\\ \footnotesize{Version 2015}};
+			\node[block, right= of contrast1](vs){V.S};
+			\node[contrast, right= of vs](contrast2){\\~\\Contrast\\~\\ \footnotesize{Version 2018}};}
+		\onslide*{4,4-}{
+			\node[contrast, right=3cm of contrast2, draw=black](contrast3){\\~\\Contrast\\~\\ \footnotesize{Version 2019}};
+			
+			\draw[vecArrow] (contrast2) to node[above] {Predict} (contrast3) ;
+			
+		}
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	
+	
+	\vspace*{\fill}
+	\bibliographystyle{plain}
+	\nobibliography{tuliplab}
+	\footnotesize\bibentry{RVLL11J06}
+	
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (4) - PR Based Conditional Random Fields}
+	\begin{itemize}
+		\item \textbf{Heterogeneous Source}
+		
+		\vspace{0.5cm}
+		\twocolumn[lcolwidth=0.45\linewidth,rcolwidth=0.6\linewidth,colsep=0.001\linewidth]{
+			\begin{itemize}
+				\item Last decade has seen a growing trend towards creating and managing more profiles in \textit{Online Social Networks} 
+			\end{itemize}
+		}{
+			\begin{figure}
+				\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_4_1.eps}
+			\end{figure}
+		}
+		\onslide*{2, 2-}{
+			\begin{itemize}
+				
+				\item A source can be heterogeneous to itself
+				
+			\end{itemize}
+		}
+		\vspace*{5pt}
+		
+		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
+			
+			\begin{center}
+				\onslide*{3, 3-}{
+					\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_4_2.eps}
+				}
+			\end{center}
+			
+		}{
+			\begin{figure}
+				\onslide*{4, 4-}{
+					\includegraphics[width=0.6\textwidth]{figures//theme3//Theme3_4_3.eps}
+				}
+			\end{figure}
+		}
+	\end{itemize}
+	
+	\bibliographystyle{plain}
+	\nobibliography{tuliplab}
+	\footnotesize\bibentry{LLTJ16J02}
+	
+	
+\end{slide}
 %%
 %%==========================================================================================
 
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (2) - PR Based Conditional Random Fields}
+\begin{slide}[toc=,bm=]{Case Study (4) - PR Based Conditional Random Fields}
 	
 	\begin{itemize}
 		\item  \textbf{Heterogeneous Preferences}
@@ -1592,30 +1632,6 @@ rcolwidth=0.65\linewidth
 		\end{itemize}
 	\end{itemize}
 	
-	\vspace*{-45pt}
-	\begin{table}[h]
-		\fontsize{11pt}{11pt}\selectfont
-		\setlength{\abovecaptionskip}{0pt}
-		\setlength{\belowcaptionskip}{1pt}
-		\centering
-		\caption{the user-item rating matrix}
-		\begin{threeparttable}
-			\begin{tabular}{l|c|c|c|c}	
-				\toprule
-				\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
-				\midrule
-				Bob	&	3	&	2 	&	4	&	5	\\
-				Justin	&	?	&	5   &	2	&	?	\\
-				John	&	4	&	4 	&	2	&	1	\\
-				Larry	&	3	&	3 	&	4	&	2	\\
-				Cindy	&	4	&	3 	&	4	&	1	\\
-				Paul	&	2	&	3 	&	4	&	?	\\
-				David	&	3	&	?	&	4	&	1	\\
-				\bottomrule
-			\end{tabular}
-		\end{threeparttable}
-		
-	\end{table}
 	
 \end{slide}
 %%
@@ -1624,7 +1640,7 @@ rcolwidth=0.65\linewidth
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (2) - PR Based Conditional Random Fields}
+\begin{slide}[toc=,bm=]{Case Study (4) - PR Based Conditional Random Fields}
 	
 	\begin{figure}[htbp]
 		
@@ -1639,11 +1655,10 @@ rcolwidth=0.65\linewidth
 		
 	\end{figure}
 	
-	\bibliographystyle{plain}
-	\nobibliography{tuliplab}
-	\footnotesize\bibentry{LLTJ16J02}
+
 	
 \end{slide}
+
 
 %%
 %%==========================================================================================
