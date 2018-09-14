@@ -61,6 +61,9 @@
 \usepackage{verbatim}
 \usepackage{fontawesome}
 
+%\usepackage{graphicx}
+\usepackage{animate}
+
 \usepackage{listings}
 \lstset{frameround=fttt,
 frame=trBL,
@@ -81,6 +84,7 @@ basicstyle=\footnotesize\ttfamily}
   pdfpagemode={FullScreen},
   pdfborder={0 0 0}
 }
+
 
 
 % \usepackage{auto-pst-pdf}
@@ -153,6 +157,19 @@ basicstyle=\footnotesize\ttfamily}
   \endlist
   };
 }
+
+% aiming high
+\usepackage{smartdiagram}
+\usetikzlibrary{shapes.symbols}
+
+\tikzset{description title/.append style={
+    signal,
+    signal to=north,
+    signal from=south,
+    yshift=0.5cm,
+  }
+}
+
 
 %forest
 \usepackage{forest}
@@ -2119,28 +2136,59 @@ Research Skills: Review Team, Reading Team
 \begin{slide}[toc=,bm=]{Aim High, Soar High \dots}
 \begin{center}
 \selectcolormodel{rgb}
-\smartdiagramset{
-%set color list={blue,blue!60,orange},
-priority arrow width=2.3cm,
-priority arrow height advance=4cm,
-description text width=13cm,
-descriptive items y sep = 3.3
-}
-\smartdiagram[priority descriptive diagram]{Flipper
-\begin{enumerate}
-\item Complete FLIP (00)\texttildelow FLIP (01) with test on Kaggle projects
-         \item Read materials before every TULIP Seminar and ask questions
-         \item Learn \LaTeX{}
-         \item Schedule work and progress using PPR \end{enumerate}, Trainee \begin{enumerate}
-         \item Complete  FLIP (02)\texttildelow FLIP (03) with Kaggle projects
+\smartdiagramset{description title width=2cm,
+set color list={blue!40,blue!30,blue!20},
+description title text width=1.75cm,
+descriptive items y sep=3.5cm,
+description text width=12cm,
+module minimum height=1.25cm}
+
+\smartdiagram[descriptive diagram]{
+{$\infty$, \begin{enumerate}
+         \item Research meeting with supervisor twice a week
+         \item Complete FLIP (04) and FLIP (05)
+         \end{enumerate}},
+{Trainee, \begin{enumerate}
+         \item Complete  FLIP (02) FLIP (03) with Kaggle projects
          \item Presentation at TULIP Seminar
          \item SmartGit \, Bitbucket and Mendeley
-         \end{enumerate},$\infty$ \begin{enumerate}
-         \item Research meeting with supervisor twice a week
-         \item Complete FLIP (04) \texttildelow FLIP (05)
-         \end{enumerate}}
-         \xhMarker
+         \end{enumerate}},
+%\vspace{0.5cm}
+{Flipper,\begin{enumerate}
+\item Complete FLIP (00) FLIP (01) with test on Kaggle projects
+         \item Read materials before every TULIP Seminar and ask questions
+         \item Learn \LaTeX{}
+         \item Schedule work and progress using PPR \end{enumerate}},}
 \end{center}
+
+
+
+%\begin{center}
+%\selectcolormodel{rgb}
+%\smartdiagramset{
+%%set color list={blue,blue!60,orange},
+%priority arrow width=2.3cm,
+%priority arrow height advance=4cm,
+%description text width=13cm,
+%descriptive items y sep = 3.3
+%}
+%\smartdiagram[priority descriptive diagram]{Flipper
+%\begin{enumerate}
+%\item Complete FLIP (00)\texttildelow FLIP (01) with test on Kaggle projects
+%         \item Read materials before every TULIP Seminar and ask questions
+%         \item Learn \LaTeX{}
+%         \item Schedule work and progress using PPR \end{enumerate}, Trainee \begin{enumerate}
+%         \item Complete  FLIP (02)\texttildelow FLIP (03) with Kaggle projects
+%         \item Presentation at TULIP Seminar
+%         \item SmartGit \, Bitbucket and Mendeley
+%         \end{enumerate},$\infty$ \begin{enumerate}
+%         \item Research meeting with supervisor twice a week
+%         \item Complete FLIP (04) \texttildelow FLIP (05)
+%         \end{enumerate}}
+%         \xhMarker
+%\end{center}
+
+
 \end{slide}
 %%
 %%==========================================================================================
