@@ -145,10 +145,10 @@ basicstyle=\footnotesize\ttfamily}
 % Information boxes
 \newcommand*{\info}[4][4]{%
   \node [ annotation, #3, text width = 3.5cm,
-          inner sep = 1.5mm ] at (#2) {%
-  \list{$\bullet$}{\topsep=0pt\itemsep=0pt\parsep=0pt
-    \parskip=0pt\labelwidth=2pt\leftmargin=2pt
-    \itemindent=0pt\labelsep=0pt}%
+          inner sep = 0.3em ] at (#2) {%
+  \list{$\bullet$}{\topsep=-3pt\itemsep=0pt\parsep=1pt
+    \parskip=1pt\labelwidth=0pt\leftmargin=1pt
+    \itemindent=1pt\labelsep=1pt}%
     #4
   \endlist
   };
@@ -362,7 +362,7 @@ rcolwidth=0.3\linewidth
 \item[Official Websites]
   \begin{itemize}
     \item \textcolor{orange}{\faHome:} \url{http://www.tulip.org.au}
-    \item \textcolor{orange}{\faGithub:} \url{https://github.com/tulip-lab} 
+    \item \textcolor{orange}{\faGithub:} \url{https://github.com/tulip-lab}
   \end{itemize}
 
 \item[Social Media]
@@ -376,9 +376,9 @@ rcolwidth=0.3\linewidth
 \item[Internal Services]
   \begin{itemize}
    \item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
-   \item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}  
-   \item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal) 
-  \end{itemize}  
+   \item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
+   \item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal)
+  \end{itemize}
 
 \end{description}
 \end{slide}
@@ -396,7 +396,7 @@ rcolwidth=0.3\linewidth
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=blue!50,text=white,
+  \path[mindmap,concept color=black!50,text=white,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -404,7 +404,7 @@ rcolwidth=0.3\linewidth
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
-  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
+  node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
     child[concept color=orange!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
@@ -443,7 +443,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=blue!50,text=white,
+  \path[mindmap,concept color=black!50,text=white,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -451,7 +451,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
-  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
+  node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
     child[concept color=blue!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
@@ -483,7 +483,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=blue!50,text=white,
+  \path[mindmap,concept color=black!50,text=white,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -491,7 +491,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
-  node[root,scale=0.6,concept color=blue!50, text=white] {Research Themes} [clockwise from=180]
+  node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
     child[concept color=blue!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
@@ -874,12 +874,12 @@ There are various applications of \textit{Periodic Behavior Mining}
 \begin{itemize}
 \item Sleep Stage Identification
 \begin{itemize}
-\item 
+\item
 \small{Rapid Eye Movement (REM) Sleep}
 \begin{itemize}
-\item 
+\item
 \small{A normal stage of sleep characterized by the rapid movement of the eyes)}
-\item 
+\item
 \small{$20\%-25\%$ of total sleep time in human adults, memorable dream}
 \end{itemize}
 \item<2->
@@ -938,7 +938,7 @@ $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 
 \begin{slide}[toc=,bm=]{Case Study (6) - Trajectory Analysis}
 \begin{figure}[ht]
-  \includemovie[poster=figures//theme1//Theme1_23.eps,inline=false]{13cm}{10cm}{figures//theme1//vs.avi}
+  \includemovie[poster=figures//theme1//Theme1_23.eps,inline=true]{12cm}{10cm}{figures//theme1//vs.avi}
 \end{figure}
 \end{slide}
 %%
@@ -1797,21 +1797,21 @@ rcolwidth=0.65\linewidth
         \item $1$ \textcolor{orange}{CCF C} conference (or above) publication
         \item $1$ $Q_1$ journal paper
     \end{itemize}
-    
+
 \item[PhD Students]
     \begin{itemize}
         \item $2$ \textcolor{orange}{CCF B} conference (or above) papers
-        \item $1 \backsim 3$ ACM/IEEE Transactions, 
+        \item $1 \backsim 3$ ACM/IEEE Transactions,
         with impact factors added up to $5$
     \end{itemize}
 
 \item[Post-doctoral Research Fellows]
     \begin{itemize}
     \item \textit{annually} $1$ \textcolor{orange}{CCF B} conference (or above) paper
-    \item \textit{annually} $4$ $Q_1$ journal papers, 
+    \item \textit{annually} $4$ $Q_1$ journal papers,
      with at least $1$ ACM/IEEE Transactions paper
     \end{itemize}
-    
+
 \end{description}
 \end{slide}
 %%%
@@ -1902,7 +1902,7 @@ rcolwidth=0.65\linewidth
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
-  node[root,scale=0.6, text=white] {Training at TULIP} [clockwise from=187]
+  node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
     child[concept color=orange!60] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
@@ -1975,7 +1975,7 @@ Research Skills: Review Team, Reading Team
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
-  node[root,scale=0.6, text=white] {Training at TULIP} [clockwise from=187]
+  node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
     child[concept color=blue!60] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
@@ -2037,7 +2037,7 @@ Research Skills: Review Team, Reading Team
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
-  node[root,scale=0.6, text=white] {Training at TULIP} [clockwise from=187]
+  node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
     child[concept color=blue!60] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
