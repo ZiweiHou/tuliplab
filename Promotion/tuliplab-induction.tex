@@ -1508,45 +1508,66 @@ rcolwidth=0.65\linewidth
 \begin{slide}[toc=,bm=]{Case Study (2) - Contrast Mining}
 	\selectcolormodel{rgb}
 	\usetikzlibrary{positioning}
-	\tikzstyle{contrast} = [rectangle, draw=black,fill=blue!20, text width=4em, text centered,  minimum height=6em, minimum width=4.5em,font=\small]
-	\tikzstyle{block} = [rectangle, text width=2em, text centered, minimum width=3em, minimum height=1em, font=\large]
+	\tikzstyle{contrast} = [rectangle, draw=black,fill=blue!20, text width=2em, text centered,  minimum height=5em, minimum width=3em,font=\small]
+	\tikzstyle{block} = [rectangle, text width=2em, text centered, minimum width=3em, minimum height=1em, font=\small]
 	\tikzstyle{vecArrow} = [thick, fill=blue!10, decoration={markings,mark=at position 1 with {\arrow[semithick]{open triangle 60}}}, double distance=1.4pt, shorten >= 5.5pt, preaction = {decorate}, postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 	
-	
-	
+
 	\begin{itemize}
 		\item Contrast Targeted Rules Algorithm (CTR)
-		\vspace{0.5cm}		
-		\begin{itemize}
-			\item
-			Detect the changes of rules strength between differences year data set
-			
-			\onslide*{3,3-}{
-				\item
-				Tracing  the trend for predicting future potential
+
+		\vspace{1.5cm}	
+
+		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
+			\begin{itemize}
+				\item 	
+				Detect the changes of rules strength between 
+				differences year data set
+				
+			\end{itemize}
+		}{
+			\begin{center}
+			\begin{tikzpicture}[node distance = 0.3cm, auto]
+			\onslide*{2,2-}{	
+				\node[contrast](contrast1){\\ \textbf{2015}};
+				\node[block, right= of contrast1](contrast){\footnotesize Contrast};
+				\node[contrast, right= of contrast](contrast2){\\ \textbf{2018}};
 			}
-		\end{itemize}
-	\end{itemize}
-	\vspace{2cm}
+			
+			\end{tikzpicture}
+			\end{center}	
+		}
 	
-	\begin{center}
-		\begin{tikzpicture}[node distance = 0.3cm, auto]
-		\onslide*{2,2-}{	
-			\node[contrast](contrast1){\\~\\Contrast\\~\\ \footnotesize{Version 2015}};
-			\node[block, right= of contrast1](vs){V.S};
-			\node[contrast, right= of vs](contrast2){\\~\\Contrast\\~\\ \footnotesize{Version 2018}};}
-		\onslide*{4,4-}{
-			\node[contrast, right=3cm of contrast2, draw=black](contrast3){\\~\\Contrast\\~\\ \footnotesize{Version 2019}};
-			
-			\draw[vecArrow] (contrast2) to node[above] {Predict} (contrast3) ;
-			
+	
+		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
+			\begin{itemize}
+				\item 	
+				\onslide*{3,3-}{
+					\item
+					Tracing  the trend for predicting 
+					future potential
+				}
+			\end{itemize}
+		}{
+			\begin{center}
+				\begin{tikzpicture}[node distance = 0.3cm, auto]
+				\onslide*{4,4-}{
+					\node[contrast](contrast3){\\ \textbf{2016}};
+					
+					\node[contrast, right= of contrast3](contrast4){\\ \textbf{2017}};
+					\node[contrast, right= of contrast4](contrast5){\\ \textbf{2018}};
+					\node[contrast, right= 1.5cm of contrast5](contrast6){\\ \textbf{2019}};
+					
+					\draw[vecArrow] (contrast5) to node[above] {Predict} (contrast6) ;
+					
+				}
+				
+				\end{tikzpicture}
+			\end{center}		
 		}
 		
-		\end{tikzpicture}
-	\end{center}	
 	
-	
-	
+	\end{itemize}
 	\vspace*{\fill}
 	\bibliographystyle{plain}
 	\nobibliography{tuliplab}
@@ -1585,19 +1606,26 @@ rcolwidth=0.65\linewidth
 			
 			\begin{center}
 				\onslide*{3, 3-}{
-					\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_4_2.eps}
+					\begin{large}
+						\Large \textcolor{yellow}\faStar \faStar \faStar \faStar \faStar 
+					\end{large}
+					10 years ago
 				}
 			\end{center}
 			
 		}{
-			\begin{figure}
+			\begin{center}
 				\onslide*{4, 4-}{
-					\includegraphics[width=0.6\textwidth]{figures//theme3//Theme3_4_3.eps}
+					\begin{large}
+						\Large \textcolor{blue}\faArrowRight \faThumbsOUp \faThumbsODown
+					\end{large}
+					~Present
 				}
-			\end{figure}
+			\end{center}
 		}
 	\end{itemize}
-	
+
+	\vspace*{\fill}
 	\bibliographystyle{plain}
 	\nobibliography{tuliplab}
 	\footnotesize\bibentry{LLTJ16J02}
@@ -1612,6 +1640,31 @@ rcolwidth=0.65\linewidth
 %%
 \begin{slide}[toc=,bm=]{Case Study (3) - PR Based Conditional Random Fields}
 	
+%			\begin{table}[h]
+%		\fontsize{11pt}{11pt}\selectfont
+%		\setlength{\abovecaptionskip}{0pt}
+%		\setlength{\belowcaptionskip}{1pt}
+%		\centering
+%		\caption{the user-item rating matrix.}
+%		\label{table:pr}
+%		\begin{threeparttable}
+%			\begin{tabular}{l|c|c|c|c}	
+%				\toprule
+%				\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
+%				\midrule
+%				Bob	&	3	&	2 	&	4	&	5	\\
+%				Justin	&	?	&	5   &	2	&	?	\\
+%				John	&	4	&	4 	&	2	&	1	\\
+%				Larry	&	3	&	3 	&	4	&	2	\\
+%				Cindy	&	4	&	3 	&	4	&	1	\\
+%				Paul	&	2	&	3 	&	4	&	?	\\
+%				David	&	3	&	?	&	4	&	1	\\
+%				\bottomrule
+%			\end{tabular}
+%		\end{threeparttable}
+%		
+%	\end{table}
+
 	\begin{itemize}
 		\item  \textbf{Heterogeneous Preferences}
 		
@@ -1622,7 +1675,7 @@ rcolwidth=0.65\linewidth
 				%	\setlength\itemsep{-0.3em}
 				\item Users give lower ratings when in bad mood
 				
-				\item Different scales, e.g., 4/5 $($ Shown in Table 3$)$ star is ``OK'' for critics
+				\item Different scales, e.g., 4/5 star is ``OK'' for critics
 				
 				\item User interface design
 				
@@ -1639,7 +1692,7 @@ rcolwidth=0.65\linewidth
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
-	
+
 	
 \end{slide}
 %%
@@ -2063,80 +2116,7 @@ Research Skills: Review Team, Reading Team
 \begin{center}
 \selectcolormodel{rgb}
 \smartdiagramset{description title width=2cm,
-set color list={blue!40,blue!30,orange!40},
-description title text width=1.75cm,
-descriptive items y sep=3.5cm,
-description text width=12cm,
-module minimum height=.4cm}
-
-\smartdiagram[descriptive diagram]{
-{\textbf{$\infty$}, \begin{enumerate}
-         \item Proactively meet with supervisor twice per week
-         \item Proactively present and criticize at \textit{TULIP Seminar}
-         \item FLIP (04-05) and FLIP (06-07) completion
-         \item Act as FLIP team leaders and update materials annually
-         \end{enumerate}},
-{\textbf{Trainee}, \begin{enumerate}
-         \item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-         \item Feedback and suggestions on FLIP
-         \item Present at \textit{TULIP Seminar}
-         \end{enumerate}},
-{\textbf{Flipper},\begin{enumerate}
-         \item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-		 \item Keep FLIP materials confidential without distribution
-         \item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-         \item Attend \textit{TULIP Seminar} with preparation and questions
-         \end{enumerate}},}
-\end{center}
-
-\end{slide}
-%%
-%%==========================================================================================
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Aim High, Soar High \dots}
-\begin{center}
-\selectcolormodel{rgb}
-\smartdiagramset{description title width=2cm,
-set color list={blue!40,orange!40,blue!20},
-description title text width=1.75cm,
-descriptive items y sep=3.5cm,
-description text width=12cm,
-module minimum height=.4cm}
-
-\smartdiagram[descriptive diagram]{
-{\textbf{$\infty$}, \begin{enumerate}
-         \item Proactively meet with supervisor twice per week
-         \item Proactively present and criticize at \textit{TULIP Seminar}
-         \item FLIP (04-05) and FLIP (06-07) completion
-         \item Act as FLIP team leaders and update materials annually
-         \end{enumerate}},
-{\textbf{Trainee}, \begin{enumerate}
-         \item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-         \item Feedback and suggestions on FLIP
-         \item Present at \textit{TULIP Seminar}
-         \end{enumerate}},
-{\textbf{Flipper},\begin{enumerate}
-         \item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-		 \item Keep FLIP materials confidential without distribution
-         \item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-         \item Attend \textit{TULIP Seminar} with preparation and questions
-         \end{enumerate}},}
-\end{center}
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Aim High, Soar High \dots}
-\begin{center}
-\selectcolormodel{rgb}
-\smartdiagramset{description title width=2cm,
-set color list={orange!40,blue!30,blue!20},
+set color list={blue!40,blue!30,blue!20},
 description title text width=1.75cm,
 descriptive items y sep=3.5cm,
 description text width=12cm,
