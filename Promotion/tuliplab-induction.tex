@@ -422,17 +422,17 @@ rcolwidth=0.3\linewidth
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
-    child[concept color=orange!60] {
+    child[concept color=orange!70] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=blue!60] {
+     child[concept color=blue!40] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
       child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
@@ -469,17 +469,17 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=orange!60] {
+     child[concept color=orange!70] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
       child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
@@ -509,17 +509,17 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=blue!60] {
+     child[concept color=blue!40] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=orange!60] {
+    child[concept color=orange!70] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
       child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
@@ -534,21 +534,33 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 
 %%==========================================================================================
 %%
-%\begin{slide}{Theme 1. Behavior Informatics}
-%%Theme one -
-%\begin{itemize}
-%\item
-%People share \textcolor{blue!50}{news, interests}
-%and \textcolor{blue!50}{ideas} in OSNs
-%
-%\begin{itemize}
-%\item
-%\textbf{though} these platforms also spread
-%\textcolor{orange}{email malware, rumours, gossips}
-%\textcolor{orange}{and malicious links}, and may even leak our
-%\textcolor{orange}{privacy}.
-%\end{itemize}
-%\end{itemize}
+\begin{slide}{Theme 1. Behavior Informatics}
+%Theme one -
+\begin{itemize}
+\item
+People share \textcolor{blue!50}{news, interests}
+and \textcolor{blue!50}{ideas} in OSNs
+
+\begin{itemize}
+\item
+\textbf{though} these platforms also spread
+\textcolor{orange}{email malware, rumours, gossips}
+\textcolor{orange}{and malicious links}, and may even leak our
+\textcolor{orange}{privacy}.
+\end{itemize}
+
+\item The popularity of OSNs has greatly increased in recent years
+
+\begin{itemize}
+\item
+A large amount of Internet users also use OSN services
+
+\item
+Australia has up to $11$ million Facebook users
+\end{itemize}
+
+
+\end{itemize}
 %
 %\twocolumn{
 %\begin{figure}[htbp]
@@ -578,7 +590,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 %\end{figure}
 %}
 %
-%\end{slide}
+\end{slide}
 %%
 %%==========================================================================================
 
@@ -588,8 +600,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 %\begin{slide}[toc=,bm=]{Theme 1. Behavior Informatics}
 %
 %\begin{itemize}
-%\item
-%The popularity of OSNs has greatly increased in recent years
+%\item The popularity of OSNs has greatly increased in recent years
 %
 %\begin{itemize}
 %\item
@@ -642,17 +653,20 @@ Photos are static media; whereas, travel behavior is dynamic
 \end{itemize}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures//theme1//Theme1_11.eps}
+    \includegraphics[height=0.26\textwidth,width=0.5\textwidth]{figures//theme1//Theme1_11.eps}
 \end{figure}
 
 \begin{center}
-   \onslide{2}{\twotonebox{\huge \textcolor{orange}{?}}
-   {\large {How to mine these data for travel behaviour analysis?}}}
+   \onslide{2}{
+   \put(-200,90){
+   {\twotonebox{\huge \textcolor{orange}{?}}
+   {\large {How to mine these data for travel behaviour analysis?}}
+   }}}
 \end{center}
 
-%\bibliographystyle{plain}
-%\nobibliography{tuliplab}
-%\footnotesize\bibentry{VLLY15J07}
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLLY15J07}
 
 \end{slide}
 %%
@@ -671,15 +685,13 @@ Photos are static media; whereas, travel behavior is dynamic
 \begin{figure}[htbp]
     \subfigure[Asian Tourist]
     {
-        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_12.eps}
+        \includegraphics[height=0.4\textwidth,width=0.34\textwidth]{figures//theme1//Theme1_12.eps}
     }
     \subfigure[Western Tourist]
     {
-        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_13.eps}
+        \includegraphics[height=0.4\textwidth,width=0.34\textwidth]{figures//theme1//Theme1_13.eps}
     }
 \end{figure}
-
-
 
 \end{slide}
 %%
@@ -710,9 +722,6 @@ Predict the behavior of a person on a particular day
     \centering
     \includegraphics[width=0.6\textwidth]{figures//theme1//Theme1_18.eps}
 \end{figure}
-%}
-
-%}
 
 
 \end{slide}
@@ -862,7 +871,7 @@ There are various applications of \textit{Periodic Behavior Mining}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (4) - Speech Based Emotion Detection}
+\begin{slide}[toc=,bm=]{Case Study (3) - Speech Based Emotion Detection}
 
 \begin{itemize}
   \item Language-independent emotion detection
@@ -887,7 +896,7 @@ There are various applications of \textit{Periodic Behavior Mining}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (5) - K Complex Detection}
+\begin{slide}[toc=,bm=]{Case Study (4) - K Complex Detection}
 \begin{itemize}
 \item Sleep Stage Identification
 \begin{itemize}
@@ -936,7 +945,7 @@ $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (6) - Trajectory Analysis}
+\begin{slide}[toc=,bm=]{Case Study (5) - Trajectory Analysis}
 \begin{figure}[htbp]
   \includegraphics[width=1.0\textwidth]{figures//theme1//dsa_3.eps}
 \end{figure}
@@ -952,7 +961,7 @@ $N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
 %%==========================================================================================
 %%
 
-\begin{slide}[toc=,bm=]{Case Study (6) - Trajectory Analysis}
+\begin{slide}[toc=,bm=]{Case Study (5) - Trajectory Analysis}
 \begin{figure}[ht]
   \includemovie[poster=figures//theme1//Theme1_23.eps,inline=false]{12cm}{10cm}{figures//theme1//vs.avi}
 \end{figure}
@@ -1556,7 +1565,7 @@ rcolwidth=0.65\linewidth
 		\vspace{0.5cm}
 		\twocolumn[lcolwidth=0.45\linewidth,rcolwidth=0.6\linewidth,colsep=0.001\linewidth]{
 			\begin{itemize}
-				\item Last decade has seen a growing trend towards creating and managing more profiles in \textit{Online Social Networks} 
+				\item Last decade has seen a growing trend towards creating and managing more profiles in \textit{Online Social Networks}
 			\end{itemize}
 		}{
 			\begin{figure}
@@ -1743,7 +1752,7 @@ rcolwidth=0.65\linewidth
 \setlength{\abovecaptionskip}{-25pt}
 \setlength{\belowcaptionskip}{12pt}
   \centering
-  \caption{TULIP Lab Research Awards}
+ % \caption{TULIP Lab Research Awards}
     \begin{tabular}{ r | l | r  r }
     \toprule
     \multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
@@ -1869,21 +1878,21 @@ rcolwidth=0.65\linewidth
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-    child[concept color=orange!60] {
+    child[concept color=orange!70] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
         child { node[scale=0.6] (goRefrences ){References Management}}
         child { node[scale=0.6] {\LaTeX}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=blue!60] {
+     child[concept color=blue!40] {
       node[concept,scale=0.6] {FLIP}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
@@ -1942,21 +1951,21 @@ Research Skills: Review Team, Reading Team
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
         child { node[scale=0.6] (goRefrences ){References Management}}
         child { node[scale=0.6] {\LaTeX}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=orange!60] {
+     child[concept color=orange!70] {
       node[concept,scale=0.6] {FLIP}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
@@ -2004,21 +2013,21 @@ Research Skills: Review Team, Reading Team
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-    child[concept color=blue!60] {
+    child[concept color=blue!40] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
         child { node[scale=0.6] (goRefrences ){References Management}}
         child { node[scale=0.6] {\LaTeX}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=blue!60] {
+     child[concept color=blue!40] {
       node[concept,scale=0.6] {FLIP}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=orange!60] {
+    child[concept color=orange!70] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
