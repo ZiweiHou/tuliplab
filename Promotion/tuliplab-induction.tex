@@ -1549,9 +1549,9 @@ rcolwidth=0.65\linewidth
 	\tikzstyle{contrast} = [rectangle, draw=black,fill=blue!20, text width=2em, text centered,  minimum height=5em, minimum width=3em,font=\small]
 	\tikzstyle{block} = [rectangle, text width=2em, text centered, minimum width=3em, minimum height=1em, font=\small]
 	\tikzstyle{vecArrow} = [thick, fill=blue!10, 
-		decoration={markings,mark=at position 1 with {\arrow[semithick]{open triangle 60}}}, 
-		double distance=1.4pt, shorten >= 5.5pt, preaction = {decorate}, 
-		postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
+	decoration={markings,mark=at position 1 with {\arrow[semithick]{open triangle 60}}}, 
+	double distance=1.4pt, shorten >= 5.5pt, preaction = {decorate}, 
+	postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 	
 	
 	\begin{itemize}
@@ -1564,7 +1564,6 @@ rcolwidth=0.65\linewidth
 				\item 	
 				Detect the changes of rules strength between
 				differences year data set
-				
 			\end{itemize}
 		}{
 			\begin{center}
@@ -1579,16 +1578,18 @@ rcolwidth=0.65\linewidth
 			\end{center}	
 		}
 		
+		\vspace{1.5cm}
 		
 		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
-			\begin{itemize}
-				\item 	
-				\onslide*{3,3-}{
+			\onslide*{3,3-}{
+				\begin{itemize}
+					
 					\item
 					Tracing  the trend for predicting
 					future potential
-				}
-			\end{itemize}
+					
+				\end{itemize}
+			}
 		}{
 			\begin{center}
 				\begin{tikzpicture}[node distance = 0.3cm, auto]
@@ -1647,20 +1648,21 @@ rcolwidth=0.65\linewidth
 			\begin{center}
 				\onslide*{3, 3-}{
 					\begin{large}
-						\Large \textcolor{yellow}\faStar \faStar \faStar \faStar \faStar
-					\end{large}
+						
+						\Large \textcolor{yellow}\faStar \textcolor{yellow}\faStar \textcolor{yellow}\faStar \textcolor{yellow}\faStar \textcolor{yellow}\faStar 
+					\end{large} \\~\\
+					
 					10 years ago
 				}
 			\end{center}
 		}{
-			\begin{center}
-				\onslide*{4, 4-}{
-					\begin{large}
-						\Large \textcolor{blue}\faArrowRight \faThumbsOUp \faThumbsODown
-					\end{large}
-					~Present
-				}
-			\end{center}
+			\onslide*{4, 4-}{
+				\begin{large}
+					\Large \textcolor{blue}\faArrowRight \faThumbsOUp \faThumbsODown
+				\end{large} \\~\\
+				~Present
+			}
+			
 		}
 	\end{itemize}
 	
@@ -1671,6 +1673,7 @@ rcolwidth=0.65\linewidth
 	
 	
 \end{slide}
+
 %%
 %%==========================================================================================
 
