@@ -194,7 +194,7 @@ basicstyle=\footnotesize\ttfamily}
 \colorlet{col8in}{orange!20}
 \colorlet{linecol}{blue!60}
 
-
+\definecolor{mynodecolor}{RGB}{198,191,234}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % title
@@ -429,12 +429,12 @@ rcolwidth=0.3\linewidth
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=blue!40] {
+     child[concept color= mynodecolor] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=blue!40] {
+    child[concept color= mynodecolor] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
       child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
@@ -471,7 +471,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
-    child[concept color=blue!40] {
+    child[concept color=mynodecolor] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
@@ -481,7 +481,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=blue!40] {
+    child[concept color=mynodecolor] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
       child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
@@ -511,12 +511,12 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
-    child[concept color=blue!40] {
+    child[concept color=mynodecolor] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=blue!40] {
+     child[concept color=mynodecolor] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
@@ -2064,14 +2064,14 @@ rcolwidth=0.65\linewidth
         child { node[scale=0.6] {\LaTeX}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=blue!40] {
+     child[concept color=mynodecolor] {
       node[concept,scale=0.6] {FLIP}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=blue!40] {
+    child[concept color=mynodecolor] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
