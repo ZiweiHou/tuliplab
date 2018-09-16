@@ -5,18 +5,18 @@
 \setmainfont[Ligatures=TeX]{Adobe Garamond Pro}
 \usetikzlibrary{fadings}
 \tikzfading[name=fade right,
-left color=transparent!10,
+left color=transparent!0,
 right color=transparent!100]
 \setlength\parindent{0pt}
 \begin{document}
 \begin{tikzpicture}[overlay,remember picture]
   \node[anchor=east,inner sep=0pt] (pic) at (current page.east)
-    {\includegraphics[height=\pdfpageheight]{map}};
+    {\includegraphics[height=\pdfpageheight]{figures//invitation//map}};
   \fill[white,path fading=fade right] (pic.north west) rectangle (pic.south east);
   \coordinate (pin) at (12,-2.5);
   %\filldraw[ultra thick,draw=red,fill=red!50] (pin) -- ++(70:.5) arc (-20:200:.18) -- cycle;
-  \filldraw[ultra thick,draw=red,fill=red!50] (pin) -- ++(70:.5) arc (-20:200:.18) -- cycle;
-  \path (pin) -- ++(0,.5) node[draw,fill,red,circle,inner sep=1pt] {};
+  %\filldraw[ultra thick,draw=red,fill=red!50] (pin) -- ++(70:.5) arc (-20:200:.18) -- cycle;
+%  \path (pin) -- ++(0,.5) node[draw,fill,red,circle,inner sep=1pt] {};
 \end{tikzpicture}%
 \colorlet{backgroundcolor}{blue!50}
 \obeylines%
@@ -24,9 +24,9 @@ right color=transparent!100]
 \bigbreak
 \textit{%
   Dear friends,
-  
+
   We'd love to invite you to our meeting.
-  
+
   Sincerly, TULIP Lab. \
 }
 
@@ -34,7 +34,7 @@ right color=transparent!100]
 \vspace{6pt}
 {\addfontfeatures{Scale=1.4,LetterSpace=3}\scshape }
 \textit{%
-  September 23\/\rlap{,}\textsuperscript{th} 2018  18\kern.5pt:\kern.5pt00 
+  September 23\/\rlap{,}\textsuperscript{th} 2018  18\kern.5pt:\kern.5pt00
 }
 \medbreak
 {\addfontfeatures{Scale=1.4,LetterSpace=3}\scshape  Schedule}
@@ -56,8 +56,8 @@ right color=transparent!100]
   Y.Lei (Text)
   X.Han (Video)
   M.Ren (M.C.)}
-\vspace{2pt}
-\includegraphics[width=4cm]{logos/tulip-wordmark.eps}  
+\vspace{10pt}
+\includegraphics[width=4cm]{logos/tulip-wordmark.eps}
 }
 
 \end{document}
