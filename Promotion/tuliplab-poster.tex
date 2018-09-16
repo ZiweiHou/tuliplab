@@ -255,6 +255,51 @@
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+\block{Traning Mind Map}{
+\begin{center}
+\scalebox{0.9}{
+\setlength{\abovecaptionskip}{-15pt}
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=orange!70,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=orange!70,
+      font=\Large\bfseries,text width=9em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt, level distance=6em},
+  ]
+  node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
+    child[concept color=blue!40] {
+      node[scale=0.6] {Professional Skills} [clockwise from=290]
+        child { node[scale=0.6] (goReview) {Time Management}}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] {\LaTeX}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=blue!40] {
+      node[concept,scale=0.6] {FLIP}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=blue!40] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
+      child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+      child { node[concept,scale=0.6] (present){Writing}}
+      child { node[concept,scale=0.6] (write){Presenting}}
+    }
+   ;
+    \end{tikzpicture}}
+\end{center}
+}
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
