@@ -50,22 +50,29 @@
 \usepackage[pangram]{blindtext}
 
 \usepackage{forest}
+%\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
+
+\usepackage[utf8]{inputenc}
+\usepackage{dtk-logos}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings}
+%\usepackage[hidelinks,pdfencoding=auto]{hyperref}
+% Information boxes
+\newcommand*{\info}[4][4]{%
+  \node [ annotation, #3, text width = 3.5cm,
+          inner sep = 0.3em ] at (#2) {%
+  \list{$\bullet$}{\topsep=-3pt\itemsep=0pt\parsep=1pt
+    \parskip=1pt\labelwidth=0pt\leftmargin=1pt
+    \itemindent=1pt\labelsep=1pt}%
+    #4
+  \endlist
+  };
+}
+
+%forest
+\usepackage{forest}
 \usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
-
-%% aiming high
-%\usepackage{smartdiagram}
-%\usetikzlibrary{shapes.symbols}
-%
-%\tikzset{description title/.append style={
-%    signal,
-%    signal to=north,
-%    signal from=south,
-%    yshift=0.5cm,
-%  }
-%}
-
-
-
 \colorlet{mygreen}{green!75!black}
 \colorlet{col1in}{red!30}
 \colorlet{col1out}{red!40}
@@ -86,8 +93,6 @@
 \colorlet{linecol}{blue!60}
 
 \colorlet{backgroundcolor}{blue!10}
-
-
 
 
  % Title, Author, Institute
@@ -213,103 +218,40 @@
 
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Research @ TULIP -   Theme 1.Behavior Informatics}{
+\block{Research mind map}{
 
-\begin{itemize}
-\item
-People share \textcolor{blue}{news, interests}
-and \textcolor{blue}{ideas} in OSNs
-
-\begin{itemize}
-\item
-though these platforms also spread
-\textcolor{orange}{email malware, rumours, gossips}
-\textcolor{orange}{and malicious links}, and may even leak our
-\textcolor{orange}{privacy}.
-\end{itemize}
-
-\item The popularity of OSNs has greatly increased in recent years
-
-\begin{itemize}
-\item
-A large amount of Internet users also use OSN services
-
-\item
-Australia has up to $11$ million Facebook users
-\end{itemize}
-
-\item Case Study
-
-\begin{enumerate}
-    \item
-    Tourist Movement Analysis
-
-    \twocolumn{
-    \begin{minipage}{0.3\linewidth}
-      \centering
-      \includegraphics[scale=0.6]{figures//theme1//Theme1_12.eps}
-      {Asian Tourist}
-    \end{minipage}
+\begin{minipage}{0.9\linewidth}
+\begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!50,text=white,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=8em,inner sep=0pt,level distance=6em},
+  ]
+  node[root,scale=0.6, text=white] {Research Themes} [clockwise from=190]
+    child[concept color=blue!40] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-    {
-    \begin{minipage}{0.3\linewidth}
-      \centering
-      \includegraphics[scale=0.6]{figures//theme1//Theme1_13.eps}
-      {Western Tourist}
-    \end{minipage}
+     child[concept color=blue!40] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
+    child[concept color=blue!40] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
+    }
+;
+\end{tikzpicture}
 
+\end{minipage}
 
-    \item
-    Periodic Behavior Mining
-
-    \item
-    Speech Based Emotion Detection
-    
-  \begin{itemize}
-    \item Language-independent emotion detection
-
-  \begin{itemize}
-    \item Detect the emotion based on acoustic signals without semantic analysis
-
-  \end{itemize}
-  \begin{minipage}{0.3\linewidth}
-    \begin{tikzfigure}
-	  \includegraphics[scale=1]{figures//theme1//Theme1_22.eps}
-    \end{tikzfigure}
-  \end{minipage}
-
-  \end{itemize}
-
-    \item
-    K Complex Detection
-
-    \begin{minipage}{0.3\linewidth}
- 	 	\begin{tikzfigure}
-			\includegraphics[scale=1.2]{figures//theme1//kcd.eps}
-		 \end{tikzfigure}
-	\end{minipage}
-
-        \begin{itemize}
-
-        \item
-        Sleep Stage Identification
-
-        \begin{enumerate}
-          \item Rapid Eye Movement (REM) Sleep
-          \item {Non-REM Sleep}
-          \item General sleep order in cycles of REM and NREM:\\
-                    $N_1 \rightarrow N_2
-                    \rightarrow N_3 \rightarrow N_2
-                    \rightarrow REM$
-        \end{enumerate}
-
-        \end{itemize}
-
-    \item
-    Trajectory Analysis
-\end{enumerate}    
-\end{itemize}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
@@ -341,7 +283,7 @@ Australia has up to $11$ million Facebook users
 %\end{description}
 \vspace{.2cm}
 
-\item 
+\item
 Case Study
 
 \begin{enumerate}
