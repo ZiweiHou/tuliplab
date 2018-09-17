@@ -48,7 +48,7 @@
 \usepackage{lipsum}
 \usepackage[english]{babel}
 \usepackage[pangram]{blindtext}
-
+\usepackage{smartdiagram}
 \usepackage{forest}
 %\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
 
@@ -56,7 +56,7 @@
 \usepackage{dtk-logos}
 \usepackage{tikz}
 
-\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings,positioning}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
@@ -71,6 +71,9 @@
 }
 
 \definecolor{mynodecolor}{RGB}{198,191,234}
+
+%\pgfdeclarelayer{backgroundlayer}
+%\pgfdeclarelayer{notelayer}
 
 %forest
 \usepackage{forest}
@@ -327,182 +330,82 @@
 \column{0.5}
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Research @ TULIP -   Theme 2.Data Privacy}{
-
-%\begin{description}
-	\begin{itemize}
-		\item
-		{Information Abuse}
- 			 \begin{itemize}
-   				 \item The compromise of information for which the data stakeholders are not willing to disclose.
-				 \item It depends on the nature of the information, the involved internal or external users, and the ways in which the organization rants the access to or releases the information.
-				 \item Every user is potentially an adversary. Once the data is released, we cannot prevent any user from performing any type of analysis on it.
-		 		%The worst case scenario is that we must account for disclosure risk from any and all types of analyses.	
-  			\end{itemize}
+\block[titleleft]{Aim High}{
+	\begin{center}
+%		
+%		\selectcolormodel{rgb}
+		
+%		\smartdiagramset{description title width=2cm,
+%			set color list={blue!40,blue!30,blue!20},
+%			description title text width=1.75cm,
+%			descriptive items y sep=3.5cm,
+%			description text width=12cm,
+%			module minimum height=.4cm}
+		
+		
+%		\smartdiagram[descriptive diagram]{
+%			{\textbf{$\infty$}, \begin{enumerate}
+%					\item Proactively meet with supervisor twice per week
+%					\item Proactively present and criticize at \textit{TULIP Seminar}
+%					\item FLIP (04-05) and FLIP (06-07) completion
+%					\item Act as FLIP team leaders and update materials annually
+%			\end{enumerate}},
+%			{\textbf{Trainee}, \begin{enumerate}
+%					\item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+%					\item Feedback and suggestions on FLIP
+%					\item Present at \textit{TULIP Seminar}
+%			\end{enumerate}},
+%			{\textbf{Flipper},\begin{enumerate}
+%					\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+%					\item Keep FLIP materials confidential without distribution
+%					\item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+%					\item Attend \textit{TULIP Seminar} with preparation and questions
+%			\end{enumerate}},}
+%		\smartdiagram[descriptive diagram]{
+%			{Style,{Define shapes, colors, shading,
+%					and line styles for nodes and arrows}},
+%			{Position, {Place nodes using a matrix,
+%					relative or absolute positioning}},
+%			{Relation, Insert edges or arrows
+%				between selected nodes},
+%			{Label, Add labels on edges or arrows}}
+	\end{center}
 	
-%\end{description}
-\vspace{.2cm}
-
-\item
-Case Study
-
-\begin{enumerate}
-	\item
-  	Is O.S.N. a Secure Place to Show off?
-	\vspace{.1cm}
-	
-  	\begin{minipage}{0.69\linewidth}	
-		\centering
-		\textbf{\large{\textcolor{orange}{Did Facebook photo trigger murder?}}}	
-		\vspace{.1cm}
-		\begin{description}
-			\item
-			{\textcolor{blue!60}{Aubrey Whelan, INQUIRER STAFF WRITER\\
-			LAST UPDATED: Tuesday, October 13, 2015, 5:18 PM\\
-			POSTED: Tuesday, October 13, 2015, 7:26 AM}}
-		\end{description}		
-	\end{minipage}	
-  	\begin{minipage}{0.3\linewidth}
- 	 	\begin{tikzfigure}
-			\includegraphics[scale=0.7]{./figures/theme2/case3_1.eps}
-		 \end{tikzfigure}
-	\end{minipage}	
-	
-	\fbox{
-	\centering
-
-	\parbox{0.95\linewidth}{
-		\small{
-		\begin{description}
-			\item Last week,Tony Harris, a 50-year-old electronics repairman, uploaded a photo to his Facebook page - something different from his standard fare of videos and memes and images of his three children.
-		\end{description}
-		\begin{description}
-			\item This one showed his wife, Amber Crane grinning up at the camera, clutching thick stacks of cash in both hands. More money sat piled in her lap.
-		\end{description}
-		\begin{description}
-			\item ``I misplaced \$60,000.00. I hope my wife didn't go shopping with it,'' the caption joked.
-		\end{description}
-		\begin{description}
-			\item ``Stop playing,''a friend wrote back.
-		\end{description}
-		\begin{description}
-			\item Precisely a week later about 11:30 at night, police said three young people walked into his home on the 1100 block of South Ruby Street in Kingsessing, where he has lived for decades.
-		\end{description}
-		}}
-	}
-
-	\vspace{.2cm}
-	
-  	\item
- 	Privacy Breach
- 	 \vspace{.1cm}
-% 	 \begin{description}
-%    		\item
-%		\centering	
-%    		Privacy breach of Singapore residents traveling overseas
-% 		 \end{description}
-% 	 \begin{minipage}{\linewidth}
-%  		\centering
-%  		\fontsize{24pt}{24pt}\selectfont
-% 		 \begin{tabular}{c|c|l|l|c|c}	
-%			\toprule
-%			ID  	&  	\textbf{User(Gender)}		& 		\textbf{Visited Destination} 		& 		\textbf{Venue} 		& 	\textbf{Date} 		&	\textbf{Time}	\\
-%			\midrule	
-%			$L_1$	&	$U_5$(M)-$U_6$(F)	&	Shanghai, China 	   &	UNCO Lounge		&	25-May-2015	&	20:17\\
-%			$L_2$	&	$U_5$(M)-$U_6$(F)	&	Shanghai, China 	   &	T8 Restaurant and Bar		&	26-May-2015	&	17:35\\
-%			$L_3$	&	$U_5$(M)-$U_6$(F)	&	Cannes, France 	       &	Villa Mystique Resort		&	25-Jun-2015	&	11:03\\	
-%			$L_4$	&	$U_5$(M)-$U_6$(F)	&	Paris, France 		   &	Dersou Restaurant			&	27-Jun-2015	&	19:58\\
-%			$L_5$	&	$U_5$(M)-$U_6$(F)	&	Paris, France 		   &	Ladure Pastry Shop			&	28-Jun-2015	&	14:48\\
-%			$L_6$	&	$U_5$(M)-$U_6$(F)	&	London, United Kingdom &	L'ETO Caff			&	10-Oct-2015	&	11:01\\
-%			$L_7$	&	$U_5$(M)-$U_6$(F)	&	Hong Kong		       &	The Ocean Club Bar			&	31-Oct-2015	&	18:47\\
-%			$L_8$	&	$U_5$(M)-$U_6$(F)	&	Hanoi, Vietnam		   &	HOME Hanoi Restaurant			&	01-Jan-2016	&	19:04\\
-%			$L_9$	&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	MGallery Hotel des Art		&	30-Jun-2016	&	19:54\\
-%			$L_{10}$	&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	L'Usine: Cafe		&	01-Jul-2016	&	10:55\\
-%			$L_{11}$	&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	Social Club @ Hotel Des Arts		&	01-Jul-2016	&	17:04\\
-%			\bottomrule
-% 		 \end{tabular}
-%  	\end{minipage}
-  	\vspace{.1cm}
- 	 \begin{description}
-   		 \item
-		 \centering
-    		Joint check-in record indicating sensitive contrast relationship
-  	 \end{description}
-  	 \begin{minipage}{\linewidth}
-  		 \centering
- 		  \fontsize{24pt}{24pt}\selectfont
-  		 \begin{tabular}{c | c  | p{9cm} | p{6cm}  | p{3cm}}	
-			\toprule	
-			ID  	&  	\textbf{User(Gender)}& 	\textbf{Venue} 		& 	\textbf{Date} 	&	\textbf{Time}	\\
-			\midrule
-			$C_1$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	11-Sep-2015	    &	23:31\\
-			$C_2$	&	$U_9$(M)-$U_{11}$(F)	 &	Zouk Night Club		&	18-Nov-2015	    &	23:50\\
-			$C_3$	&	$U_9$(M)-$U_{11}$(F)	 &	Club Luxi			&	17-Jan-2016	    &	00:30\\
-			$C_4$	&	$U_9$(M)-$U_{11}$(F)	 &	Club Hollywood		&	06-Feb-2016     &	04:34\\
-			$C_5$	&	$U_9$(M)-$U_{10}$(F)	 &	Wave House Sentosa	&	12-Mar-2016	    &	22:43\\
-			$C_6$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	02-Jul-2016	    &	00:25\\
-			$C_7$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	07-Aug-2016	    &	00:39\\
-			\bottomrule
-  		 \end{tabular}
-  	 \end{minipage}
-\end{enumerate}
-
-\end{itemize}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-
-
-% SECOND column
-
- %Second column with first block's top edge aligned with with previous column's top.
-
-%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Research @ TULIP -   Theme 3. Business Intelligence}{
-
-
-\begin{itemize}
-		\item Tourism Data Mining
-		
+% Second column - first block
+\block[titleleft]{Graduation Requirement}
+{
+	\begin{description}
+		\item[Honors or Master Students] \hfill 
 		\begin{itemize}
-			\item Tourist Behavior Analysis
-			
-			\item Contrast Mining
-			
+			\item $1$ \textcolor{orange}{CCF C} (or above) conference publication
+			\item $1$ \textcolor{orange}{$Q_1$ journal} paper
+		\end{itemize}
+		\begin{description}
+			\item[Deakin PhD Scholarship]  \hfill
+%			$\overbrace{\text{Flipper} \rightarrow \text{Trainee} \rightarrow}^{\text{1 year}} 
+%			\overbrace{\text{Infinity} \rightarrow \cdots \rightarrow }^{\text{2 years}} \infty$
 			\begin{itemize}
-				
-				\item Outlying Aspects Mining
-				
-				\item Competitiveness Discovery
-				
+				\item $2$ \textcolor{orange}{$Q_1$ journal} papers as the first author
+				\item \textit{IELTS} overall $6.5$ with no band below $6$
 			\end{itemize}
-			
-		\end{itemize}
-		
-		\item Recommendation System
-		\begin{itemize}
-			\item Group package recommendation
-			\item Heterogeneous Preferences
-		\end{itemize}
-		
-  \item Case Study
+		\end{description}
+	\item[PhD Students] \hfill 
+	 \begin{itemize}
+		\item $1$ research proposal
+		\item $2$ \textcolor{orange}{CCF B} (or above) conference papers
+		\item $1$ \textasciitilde{} $3$ \textcolor{orange}{ACM/IEEE Transactions},
+		with impact factors added up to $5$
+	\end{itemize}
+	\item[Post-doctoral Research Fellows] \hfill 
+	\begin{itemize}
+		\item \textit{annually} $1$ \textcolor{orange}{CCF B} (or above) conference paper
+		\item \textit{annually} $4$ \textcolor{orange}{$Q_1$ journal} papers,
+		with at least $1$ \textcolor{orange}{ACM/IEEE Transactions} paper
+	\end{itemize}
 
-
-    \begin{enumerate}
-      \item
-      Case Study(1). Market Segmentation Analysis
-
-      \item
-      Case Study(2). Negative Association Rule Mining
-
-      \item
-      Case Study(3). Contrast Mining
-
-      \item
-      Case Study(4). PR Based Conditional Random Fields
-
-    \end{enumerate}
-\end{itemize}
-
+	\end{description}
 
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
