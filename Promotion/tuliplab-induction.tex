@@ -409,7 +409,7 @@ rcolwidth=0.3\linewidth
 
 %%==========================================================================================
 %%
-\begin{slide}{Research Themes}
+\begin{slide}[toc=,bm=]{Research Themes}
 \begin{center}
 
 \selectcolormodel{rgb}
@@ -634,45 +634,45 @@ Australia has up to $11$ million Facebook users
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Case Study (1) - Tourist Movement Analysis}
-
-\begin{itemize}
-\item
-There are many geotagged photos available.
-However
-
-\begin{itemize}
-\item
-Data can be noisy or misleading
-
-\item
-Photos are taken in transit rather than at the attractions
-
-\item
-Photos are static media; whereas travel behavior is dynamic
-\end{itemize}
-
-\end{itemize}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
-\end{figure}
-
+%\begin{slide}[toc=,bm=]{Case Study (1) - Tourist Movement Analysis}
+%
+%\begin{itemize}
+%\item
+%There are many geotagged photos available.
+%However
+%
+%\begin{itemize}
+%\item
+%Data can be noisy or misleading
+%
+%\item
+%Photos are taken in transit rather than at the attractions
+%
+%\item
+%Photos are static media; whereas travel behavior is dynamic
+%\end{itemize}
+%
+%\end{itemize}
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
+%\end{figure}
+%
 %\begin{thebibliography}{}
 %\bibitem{}
 %\small{Vu, Huy Quan and Li, Gang and Law, Rob and Yip, Ben Haobin.
 %Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. 
 %Tourism Management, 2015.}
 %\end{thebibliography}
-\onslide*{1,-1}{
-\bibliographystyle{plain}
-\nobibliography{tuliplab}
-\footnotesize\bibentry{VLLY15J07}
-}
-
-\end{slide}
+%\onslide*{1,-1}{
+%\bibliographystyle{plain}
+%\nobibliography{tuliplab}
+%\footnotesize\bibentry{VLLY15J07}
+%}
+%
+%\end{slide}
 %%
-%%==========================================================================================
+%==========================================================================================
 
 %%==========================================================================================
 %%
@@ -693,21 +693,30 @@ Photos are taken in transit rather than at the attractions
 \item
 Photos are static media; whereas travel behavior is dynamic
 \end{itemize}
-
 \end{itemize}
+
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
+    \subfigure{
+        \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
+    }
+    \subfigure{
+    \onslide{2}{
+%   \put(-200,90){
+    {\twotonebox{\huge \textcolor{orange}{?}}
+    {\large {How to mine these data for travel behaviour analysis?}}
+    }
+   %}
+   }}
 \end{figure}
 
-\begin{center}
-   \onslide{1}{
-   \put(-200,90){
-   {\twotonebox{\huge \textcolor{orange}{?}}
-   {\large {How to mine these data for travel behaviour analysis?}}
-   }}}
-
-\end{center}
+\onslide*{2,2-}{
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLLY15J07}
+}
+%\end{center}
 
 \end{slide}
 %%
@@ -1765,7 +1774,7 @@ rcolwidth=0.65\linewidth
 		}
 	\end{itemize}
 
-\onslide*{-1,1}{
+%\onslide{4}{
 %\begin{thebibliography}{}
 %\bibitem{}
 %\small{Liu, Shaowu and Li, Gang and Tran, Truyen and and Jiang, Yuan.
@@ -1774,11 +1783,15 @@ rcolwidth=0.65\linewidth
 %\end{thebibliography}
 
 	
-\vspace*{\fill}
+%\vspace*{\fill}
+
+%}
+
+\onslide*{4,4-}{
 \bibliographystyle{plain}
 \nobibliography{tuliplab}
-\footnotesize\bibentry{LLTJ16J02}}
-	
+\footnotesize\bibentry{LLTJ16J02}
+}	
 	
 \end{slide}
 
@@ -1842,6 +1855,7 @@ rcolwidth=0.65\linewidth
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
+
 	
 	
 \end{slide}
@@ -2282,7 +2296,7 @@ Research Skills: Review Team, Reading Team
 \begin{center}
 \selectcolormodel{rgb}
 \smartdiagramset{description title width=2cm,
-set color list={blue!40,blue!30,orange!40},
+set color list={blue!40,blue!30,orange!70},
 description title text width=1.75cm,
 descriptive items y sep=3.5cm,
 description text width=12cm,
@@ -2319,7 +2333,7 @@ module minimum height=.4cm}
 \begin{center}
 \selectcolormodel{rgb}
 \smartdiagramset{description title width=2cm,
-set color list={blue!40,orange!40,blue!20},
+set color list={blue!40,orange!70,blue!20},
 description title text width=1.75cm,
 descriptive items y sep=3.5cm,
 description text width=12cm,
@@ -2356,7 +2370,7 @@ module minimum height=.4cm}
 \begin{center}
 \selectcolormodel{rgb}
 \smartdiagramset{description title width=2cm,
-set color list={orange!40,blue!30,blue!20},
+set color list={orange!70,blue!30,blue!20},
 description title text width=1.75cm,
 descriptive items y sep=3.5cm,
 description text width=12cm,
