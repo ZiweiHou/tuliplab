@@ -149,7 +149,18 @@ basicstyle=\footnotesize\ttfamily}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
-  \node [ annotation, #3, text width = 3.5cm,
+  \node [ annotation, #3, text width = 3.35cm,
+          inner sep = 0.3em ] at (#2) {%
+  \list{$\bullet$}{\topsep=-3pt\itemsep=0pt\parsep=1pt
+    \parskip=1pt\labelwidth=0pt\leftmargin=1pt
+    \itemindent=1pt\labelsep=1pt}%
+    #4
+  \endlist
+  };
+}
+
+\newcommand*{\infoo}[4][4]{%
+  \node [ annotation, #3, text width = 2.7cm,
           inner sep = 0.3em ] at (#2) {%
   \list{$\bullet$}{\topsep=-3pt\itemsep=0pt\parsep=1pt
     \parskip=1pt\labelwidth=0pt\leftmargin=1pt
@@ -2028,9 +2039,15 @@ $\overbrace{\text{Flipper} \rightarrow \text{Trainee} \rightarrow}^{\text{1 year
 %%==========================================================================================
 %%
 \begin{slide}{Roadmap}
-%\begin{center}
-\setlength{\abovecaptionskip}{-15pt}
-\setlength{\belowcaptionskip}{12pt}
+\twocolumn[
+lcolwidth=0.05\linewidth,
+rcolwidth=0.95\linewidth
+]
+{
+}
+{
+\setlength{\abovecaptionskip}{-3cm}
+\setlength{\belowcaptionskip}{3cm}
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
@@ -2066,21 +2083,8 @@ $\overbrace{\text{Flipper} \rightarrow \text{Trainee} \rightarrow}^{\text{1 year
       child { node[concept,scale=0.6] (write){Presenting}}
     }
    ;
-%    \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
-%      \item FLIP (00): Data Science
-%      \item FLIP (01): Advanced Data Science
-%      \item FLIP (02): Modern Data Science
-%      \item FLIP (03): Deep Learning
-%      \item FLIP (04): Learning Theory (I)
-%      \item FLIP (05): Learning Theory (II)
-%    }
-%    \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
-%      \item FLIP (06): Reading Team
-%      \item FLIP (07): Review Team
-%      \item FLIP (X): $\infty$
-%    }
     \end{tikzpicture}
-%\end{center}
+}
 %%==========================================================================================
 \begin{note}
 Professional knowledge: \LaTeX, Version Control Systems
@@ -2101,8 +2105,14 @@ Research Skills: Review Team, Reading Team
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Roadmap}
-%\begin{center}
-\setlength{\abovecaptionskip}{-15pt}
+\twocolumn[
+lcolwidth=0.05\linewidth,
+rcolwidth=0.95\linewidth
+]
+{
+}
+{
+%\setlength{\abovecaptionskip}{-15pt}
 %\setlength{\belowcaptionskip}{12pt}
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
@@ -2148,7 +2158,8 @@ Research Skills: Review Team, Reading Team
       \item FLIP (05): Learning Theory (II)
     }
     \end{tikzpicture}
-%\end{center}
+}
+
 
 \end{slide}
 %%
@@ -2158,8 +2169,14 @@ Research Skills: Review Team, Reading Team
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Roadmap}
-%\begin{center}
-\setlength{\abovecaptionskip}{-15pt}
+\twocolumn[
+lcolwidth=0.05\linewidth,
+rcolwidth=0.95\linewidth
+]
+{
+}
+{
+%\setlength{\abovecaptionskip}{-15pt}
 %\setlength{\belowcaptionskip}{12pt}
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
@@ -2196,22 +2213,13 @@ Research Skills: Review Team, Reading Team
       child { node[concept,scale=0.6] (write){Presenting}}
     }
    ;
-%    \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
-%      \item FLIP (00): Data Science
-%      \item FLIP (01): Advanced Data Science
-%      \item FLIP (02): Modern Data Science
-%      \item FLIP (03): Deep Learning
-%      \item FLIP (04): Learning Theory (I)
-%      \item FLIP (05): Learning Theory (II)
-%    }
-    \info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
+    \infoo{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
       \item FLIP (06): Reading Team
       \item FLIP (07): Review Team
       \item FLIP (X): $\infty$
     }
     \end{tikzpicture}
-%\end{center}
-
+}
 \end{slide}
 %%
 %%==========================================================================================
