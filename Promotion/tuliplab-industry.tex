@@ -23,9 +23,9 @@
  display=slides, 	% slidesnotes, notes, slides
  style=tuliplab,  	% TULIP Lab style
  pauseslide,
- fleqn,leqno]{powerdot}
+ fleqn,leqno]{powerdot}{}
 
-
+\usepackage{smartdiagram}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{rotating}
@@ -49,9 +49,20 @@
 \usepackage{multirow}
 \usepackage{gitinfo2}
 \usepackage{xcolor}
-
+\usepackage{multicol}
+\usepackage{ulem}
 \usepackage{todonotes}
+\usepackage{tablefootnote}
+\usepackage{threeparttable}
+\usepackage[numbers]{natbib}
+\usepackage{bibentry}
 % \usepackage{pst-rel-points}
+\usepackage{pgfplots}
+\usepackage{verbatim}
+\usepackage{fontawesome}
+
+%\usepackage{graphicx}
+\usepackage{animate}
 
 \usepackage{listings}
 \lstset{frameround=fttt,
@@ -68,17 +79,19 @@ basicstyle=\footnotesize\ttfamily}
 
 \usepackage{hyperref}
 \hypersetup{ % TODO: PDF meta Data
-  pdftitle={Presentation Title},
+  pdftitle={TULIP Lab},
   pdfauthor={Gang Li},
   pdfpagemode={FullScreen},
   pdfborder={0 0 0}
 }
 
 
+
 % \usepackage{auto-pst-pdf}
 % package to show source code
 
-\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+%\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+\definecolor{antiquebrass}{rgb}{0.8, 0.58, 0.46}
 \newlength{\pixel}\setlength\pixel{0.000714285714\slidewidth}
 \setlength{\TPHorizModule}{\slidewidth}
 \setlength{\TPVertModule}{\slideheight}
@@ -100,50 +113,116 @@ basicstyle=\footnotesize\ttfamily}
 
 
 \newcommand{\draftnote}[3]{
-	\todo[author=#2,color=#1!30,size=\footnotesize]{\textsf{#3}}	}
+	\todo[author=#2,color=#1!30,size=\footnotesize]{\textsf{#3}}}
 % TODO: add yourself here:
 %
 \newcommand{\gangli}[1]{\draftnote{blue}{GLi:}{#1}}
 \newcommand{\shaoni}[1]{\draftnote{green}{sn:}{#1}}
+\newcommand{\mengren}[1]{\draftnote{orange}{MRen:}{#1}}
+\newcommand{\xinhan}[1]{\draftnote{red}{Xhan:}{#1}}
 \newcommand{\gliMarker}
 	{\todo[author=GLi,size=\tiny,inline,color=blue!40]
 	{Gang Li has worked up to here.}}
 \newcommand{\snMarker}
 	{\todo[author=Sn,size=\tiny,inline,color=green!40]
 	{Shaoni has worked up to here.}}
+\newcommand{\mrMarker}
+	{\todo[author=MRen,size=\tiny,inline,color=orange!40]
+	{Meng Ren has worked up to here.}}
+\newcommand{\xhMarker}
+	{\todo[author=XHan,size=\tiny,inline,color=red!40]
+	{XinHan has worked up to here.}}
+\newcommand{\zhMarker}
+{\todo[author=ZHou,size=\tiny,inline,color=purple!40]
+	{Ziwei Hou has worked up to here.}}
+
+\usepackage{geometry}
+\geometry{verbose,letterpaper}
+\usepackage{movie15}
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage{dtk-logos}
+\usepackage{tikz}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings}
+%\usepackage[hidelinks,pdfencoding=auto]{hyperref}
+% Information boxes
+\newcommand*{\info}[4][4]{%
+  \node [ annotation, #3, text width = 3.5cm,
+          inner sep = 0.3em ] at (#2) {%
+  \list{$\bullet$}{\topsep=-3pt\itemsep=0pt\parsep=1pt
+    \parskip=1pt\labelwidth=0pt\leftmargin=1pt
+    \itemindent=1pt\labelsep=1pt}%
+    #4
+  \endlist
+  };
+}
+
+% aiming high
+\usepackage{smartdiagram}
+\usetikzlibrary{shapes.symbols}
+
+\tikzset{description title/.append style={
+    signal,
+    signal to=north,
+    signal from=south,
+    yshift=0.5cm,
+  }
+}
+
+
+%forest
+\usepackage{forest}
+\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
+
+\colorlet{mygreen}{green!75!black}
+\colorlet{col1in}{red!30}
+\colorlet{col1out}{red!40}
+\colorlet{col2in}{mygreen!40}
+\colorlet{col2out}{mygreen!50}
+\colorlet{col3in}{blue!30}
+\colorlet{col3out}{blue!40}
+\colorlet{col4in}{mygreen!20}
+\colorlet{col4out}{mygreen!30}
+\colorlet{col5in}{blue!10}
+\colorlet{col5out}{blue!20}
+\colorlet{col6in}{blue!20}
+\colorlet{col6out}{blue!30}
+\colorlet{col7out}{orange}
+\colorlet{col7in}{orange!50}
+\colorlet{col8out}{orange!40}
+\colorlet{col8in}{orange!20}
+\colorlet{linecol}{blue!60}
+
+\definecolor{mynodecolor}{RGB}{198,191,234}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % title
 % TODO: Customize to your Own Title, Name, Address
 %
-\title{Group Outlying Aspects Mining}
+\title{Recent Research Work in TULIP Lab}
 \author{
-Shaoni Wang, Haiyang Xia, Gang Li, Jianlong Tan
+Gang Li
 \\
-\\Xi'an Shiyou University
-\\Deakin University
-\\Chinese Academy of Sciences
+\\School of Information Technology
+\\Deakin University, Australia
 }
 \date{\gitCommitterDate}
 
 
 % Customize the setting of slides
 \pdsetup{
-% TODO: Customize the left footer, and right footer
+% TODO: Customize tlhe left footer, and right footer
 rf=\href{http://www.tulip.org.au}{
 Last Changed by: \textsc{\gitCommitterName}\ \gitVtagn-\gitAbbrevHash\ (\gitAuthorDate)
 },
-cf={Group Outlying Aspects Mining},
+cf={TULIP Academy},
 }
 
 
 \begin{document}
 
 \maketitle
-
-%\begin{slide}{Overview}
-%\tableofcontents[content=sections]
-%\end{slide}
 
 
 %%==========================================================================================
@@ -154,1534 +233,389 @@ cf={Group Outlying Aspects Mining},
 %%
 %%==========================================================================================
 
-
-\section{Problem Definition}
-
-
 %%==========================================================================================
 %%
-\begin{slide}{Outlying Aspects Mining}
-\begin{center}
-\twotonebox{\rotatebox{90}{Defn}}{\parbox{.86\textwidth}
-{Outlying Aspects Mining aims to
-identify the outstanding features of the query object.
-\begin{itemize}
-\item A teacher may be interested in the \textcolor{orange}{characteristics} that
-make \textcolor{orange}{one student} \textcolor{orange}{distinctive} from others.
-\item NBA coaches would prefer to
-find out the strengths and weaknesses of the player (a query object).
-\end{itemize}
-}}
-
-\end{center}
-\bigskip
-\begin{center}
-\begin{tabular}{c| c c c c }
-\toprule
-Player & \texttt{3PT\%}  & \texttt{FTA} & \texttt{FT\%} & \texttt{To} \\
-\midrule
-$P_1$
-&  {$65$} &  {$4$} &  {$33$} &  {$8$} \\
-$P_2$
-&  {$78$} &  {$1$}&  {$65$}&  {$5$} \\
-$P_3$
-&  {$58$} &  {$6$} &  {$46$} &  {$3$} \\
-$P_4$
-&  {$68$} &  {$1.2$}&  {$85$}&  {$6.2$} \\
-$P_5$
-&  {$58$} &  {$6.2$} &  {$36$} &  {$3.4$}\\
-\bottomrule
-\end{tabular}
-\end{center}
-\bigskip
-
-%%==========================================================================================
-\begin{note}
-First, I will introduce the problem definition.
-In the real life,
-a teacher may be interested in the characteristics that
-make one student obvious different from others.
-Or,
-NBA sports coaches would prefer to
-know the advantages and disadvantages of one player.
-Here, the player can be regarded as a query object.
-
-For example, team A has five players,
-each player has four features.
-The NBA sports coaches may want to know the features of
-player $1$ that are different from others.
-
-The above example can be seen as outlying aspects mining.
-The main purpose of outlying aspects mining is to identify
-the outstanding features of the query object.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Outlying Aspects Mining vs Outlier Detection}
-\begin{center}
-\begin{tabular}{c| c c c c }
-\toprule
-%\centering
-Player & \texttt{3PT\%}  & \texttt{FTA} & \texttt{FT\%} & \texttt{To} \\
-\midrule
-$P_1$
-&  {$65$} &  {$4$} &  {$33$} &  {$8$} \\
-$P_2$
-&  {$78$} &  {$1$}&  {$65$}&  {$5$} \\
-$P_3$
-&  {$58$} &  {$6$} &  {$46$} &  {$3$} \\
-$P_4$
-&  {$68$} &  {$1.2$}&  {$85$}&  {$6.2$} \\
-$P_5$
-&  {$58$} &  {$6.2$} &  {$36$} &  {$3.4$}\\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\bigskip
-
-\twocolumn[
-\savevalue{lfrheight}=4.6cm,
-\savevalue{lfrprop}={
-linestyle=solid,framearc=.2,linewidth=1pt},
-rfrheight=\usevalue{lfrheight},
-rfrprop=\usevalue{lfrprop}
-]{
-Outlying Aspects Mining
-\begin{itemize}
-\item
-\smallskip
-Explain the distinctive \textcolor{orange}{aspects} of the query object.
-\smallskip
-\item
-\smallskip
-The query object may (or may not) be an outlier.
-\end{itemize}
-}{
-Outlier Detection
-\begin{itemize}
-\item
-\smallskip
-Find out \textcolor{orange}{all} unusual
-\textcolor{orange}{objects} in the whole dataset.
-\smallskip
-\item
-\smallskip
-\textcolor{orange}{No} explanation on how they are different.
-\end{itemize}
-}
-
-%%==========================================================================================
-\begin{note}
-Based on the above example,
-I will compare the differences
-between outlying aspects mining and outlier detection.
-
-Outlying aspects mining aims to
-explain the distinctive aspects of the query object.
-The query object may or may not be an outlier.
-In contrast,
-Outlier detection aims to discover all possible
-outlying objects in the dataset.
-Without explaining how and why they are different.
-
-Let's go back to the NBA example,
-in that example,
-the output of the outlying aspects mining may be
-a combination of four features,
-but the output of the outlier detection may be any of those five players.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Group Outlying Aspects Mining}
-\twotonebox {\rotatebox{90}{Defn}}{\parbox{.88\textwidth}
-{
-{\textcolor{orange}{Group outlying aspects mining} aims to
-identify the outstanding features of the group of query object.
-\begin{itemize}
-\item
-Doctors desire to identify the merits \& demerits between
-\textcolor{orange}{a group of cancer patients} and normal people.
-\item
-NBA coaches are passionate about exploring the obvious advantages \&
-disadvantages of \textcolor{orange}{the team}.
-\end{itemize}
-}
-}}
-
-\vspace{1.5cm}
-
-\twocolumn{
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure{Testing.}
-  %\includegraphics[width=0.6\textwidth]{figures//demical.eps}\\
-  \caption{Medical}\label{fig:demical}
-\end{figure}
-}{
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure{Testing.}
-  %\includegraphics[width=0.6\textwidth]{figures//NBA_team.eps}\\
-  \caption{NBA-Team}\label{fig:timg}
-\end{figure}
-}
-
-%%==========================================================================================
-\begin{note}
-However,
-there is such a phenomenon in real life.
-Doctors desire to identify the characteristics between
-a group of cancer patients and normal people.
-NBA coaches are passionate about exploring the obvious strengths and
-weaknesses of the team compared with other teams.
-
-Based on such a phenomenon in the real life,
-we proposed the concept of group outlying aspects mining.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Problem Formalization}
-\twotonebox {\rotatebox{90}{Defn}}{\parbox{.88\textwidth}
-{
-{\textcolor{orange}{Group outlying aspects mining} aims to identify
-the \textcolor{orange}{top-k group outlying subspace $s \subseteq F$} in
-which the query group $G_q$ is \textcolor{orange} {distinctive with other groups}.
-\begin{itemize}
-\item
-$G = \{G_q, G_2, G_3,..., G_n\}$ $\Leftrightarrow$ a set of groups.
-\item
-$G_q$ $\Leftrightarrow$ the query group.
-\item
-Other groups $\Leftrightarrow$ comparison groups.
-\item
-Each object in the group has $d$ features $F = \{f_1, f_2, ..., f_d\}$.
-\end{itemize}
-}
-}}
-
-%%==========================================================================================
-\begin{note}
-Next,
-let me talk about the concept of group outlying aspects mining.
-
-For example,
-Dataset $G$ has $n$ groups.
-$G_q$ is the query group.
-and other groups are comparison groups.
-Each object in the group has d features $F = $ $f_1$, $f_2$, $f_3$ to $f_d$.
-The group outlying aspects mining is to identify the top-k group outlying subspaces,
-which are different from other groups.
-
-What does the top-k group outlying subspaces mean?
-Next, I will explain it.
-\end{note}
-
-%%==========================================================================================
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Term Definition}
-\begin{itemize}
-\item
-Top-k group outlying subspaces
-
-\begin{itemize}
-\item
-$\rho_s(\cdot)$ $\Rightarrow$ outlying scoring function.
-
-\item
-$\rho_s(\cdot)$ quantifies the outlying degree of the
-query group $G_q$ in the subspace $s$.
-
-\item
-Order by DESC using scoring function $\rho(\cdot)$
-to identify top K group outlying subspaces.
-\end{itemize}
-\end{itemize}
-
-\begin{figure}[htbp]
-    \centering
-    \subfigure[Original Feature Spaces]{
-      \selectcolormodel{rgb}
-      \missingfigure[figwidth=5.5cm]{Test.}
-        %\includegraphics[width=0.3\textwidth]{figures//example-basketball-original.eps}
-        \label{fig:basketball-original}
-    }
-    \subfigure[Group Outlying Spaces]{
-       \selectcolormodel{rgb}
-       \missingfigure[figwidth=5.5cm]{Test.}
-        %\includegraphics[width=0.3\textwidth]{figures//example-basketball-projection.eps}
-        \label{fig:basketball-projection}
-    }
-    \subfigure[Another Subspaces]{
-      \selectcolormodel{rgb}
-      \missingfigure[figwidth=5.5cm]{Test.}
-        %\includegraphics[width=0.28\textwidth]{figures//basketball-another-subspaces.eps}
-        \label{fig:basketball-projection1}
-    }
-%    \caption{Histogram representation of a group on three single features}
-    \label{fig:Basketball-Example}
-\end{figure}
-
-%%==========================================================================================
-\begin{note}
-We use $\rho_s(\cdot)$ to describe an outlying scoring function.
-$\rho_s(\cdot)$ quantifies the outlying degree of the query group in a subspaces $s$.
-In addition,
-we use the scoring function to make a descending order and at last
-filter out the top k group outlying subspaces.
-It is obvious that the outlying subspaces make the
-query group different from other groups.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Term Definition}
-\begin{itemize}
-\item
-Trivial Outlying Features
-
-\begin{itemize}
-\item
-\smallskip
-One-dimension subspaces.
-
-\item
-${G_q}$'s outlying degree $\rho(\cdot)$ $>$ $\alpha$.
-\end{itemize}
-\end{itemize}
-\begin{table}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{$\alpha = 4$}
-
-\begin{tabular}{  c  |  c }
-\toprule
-\centering
-\texttt{Feature}  & \texttt{Outlying Degree}  \\
-\midrule
- {\textcolor{orange}{\{$F_1$\}}} & $4.351$ \\
- {\{$F_3, F_4$\}}                & $4.024$ \\
- {\{$F_2, F_4$\}}                & $2.318$ \\
- {\{$F_2$\}}                     & $2.002$ \\
- {\{$F_3$\}}                     & $1.028$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-%%==========================================================================================
-\begin{note}
-In order to identify the top-k outlying subspaces,
-we categorize the features into $2$ non-overlapping groups,
-trivial outlying features and non-trivial outlying subspaces.
-
-First, let me introduce the trivial outlying features.
-
-Trivial outlying features are one-dimension subspaces.
-In the subspace,
-the query group's outlying degree is larger than the threshold $\alpha$.
-
-We can see from table $1$,
-when the specified threshold $\alpha = 4$,
-the trivial outlying feature is \{$F_1$\}.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Term Definition}
-\begin{itemize}
-\item
-Non-Trivial Outlying Subspaces
-\begin{itemize}
-\item
-\smallskip
-Multi-dimension subspaces.
-
-\item
-\smallskip
-${G_q}$'s outlying degree $\rho(\cdot)$ $>$ $\alpha$.
-\end{itemize}
-\end{itemize}
-
-\begin{table}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{$\alpha = 4$}
-
-\begin{tabular}{  c  |  c }
-\toprule
-\centering
-\texttt{Feature}  & \texttt{Outlying Degree}  \\
-\midrule
- {\{$F_1$\}}                           & $4.351$ \\
- {\textcolor{orange}{\{$F_3, F_4$\}}}  & $4.024$ \\
- {\{$F_2, F_4$\}}                      & $2.318$ \\
- {\{$F_2$\}}                           & $2.002$ \\
- {\{$F_3$\}}                           & $1.028$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-%%==========================================================================================
-\begin{note}
-Next,
-I will introduce the non-trivial outlying subspaces.
-Non-Trivial outlying subspaces are multi-dimension subspaces.
-In the subspace,
-the query group's outlying degree is larger than the threshold $\alpha$.
-
-Table $2$ shows that,
-when the threshold $\alpha$ equal four,
-the non-trivial outlying subspace is \{$F_3$, $F_4$\}.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-\section{Related Work and Challenges}
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Related Work - Outlying Aspects Mining}
-%Related Work - Outlying Aspects Mining
-\begin{itemize}
-\item
-Existing Methods - \textcolor{orange}{Feature selection}
-
-\begin{itemize}
-\item
-To distinguish two classes:
-the query point (positive) \& rest of data (negative)
-\end{itemize}
-\vspace{1cm}
-\twocolumn[
-\savevalue{lfrheight}=5cm,
-\savevalue{lfrprop}={
-linestyle=solid,framearc=.2,linewidth=1pt},
-rfrheight=\usevalue{lfrheight},
-rfrprop=\usevalue{lfrprop}
-]{
-Disadvantages
-\begin{itemize}
-\item
-\smallskip
-Positive and negative classes are \textcolor{orange}{Not} balanced.
-
-\item
-\smallskip
-\textcolor{orange}{Not} quantify the outlying degree accurately.
-
-\item
-\smallskip
-\textcolor{orange}{Not} identify group outlying aspects.
-\end{itemize}
-}
-{
-Advantages
-\begin{itemize}
-\item
-\smallskip
-Easy to operate.
-
-\item
-\smallskip
-Resolve dimensionality bias.
-\end{itemize}
-}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-Let me introduce two existing methods:
-Feature selection and score-and-search.
-
-For feature selection,
-the query point can be regarded as positive class and
-the rest of the data can be regarded as negative class,
-selected the features that best distinguish the two classes.
-
-The advantages of this method are easy to operate,
-and it's able to resolve dimensionality bias.
-However, it has some drawbacks.
-Firstly,
-positive and negative classes are Not balanced,
-secondly,
-it can't quantify the outlying degree correctly.
-Most importantly,
-it doesn't identify group outlying aspects.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Related Work - Outlying Aspects Mining}
-
-\begin{itemize}
-\item
-Existing Methods - \textcolor{orange} {Score-and-search}
-
-\begin{itemize}
-\item
-Define an outlying score function.
-
-\item
-Search subspaces.
-\end{itemize}
-\bigskip
-\twocolumn[
-\savevalue{lfrheight}=5cm,
-\savevalue{lfrprop}={
-linestyle=solid,framearc=.2,linewidth=1pt},
-rfrheight=\usevalue{lfrheight},
-rfrprop=\usevalue{lfrprop}
-]{
-Disadvantages
-\begin{itemize}
-\item
-\smallskip
-Dimensionality bias.
-
-\item
-\smallskip
-Search efficiency is \textcolor{orange}{Not} high (dataset is large).
-
-\item
-\smallskip
-\textcolor{orange}{Not} identify group outlying aspects.
-\end{itemize}
-}{
-Advantages
-\begin{itemize}
-\item
-\smallskip
-Quantify the outlying degree correctly.
-
-\item
-\smallskip
-High Comprehensibility.
-
-\end{itemize}
-}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-For score-and-search method,
-it defines an outlying score function,
-and then searches for each subspace until it finds out a subspace that
-makes the query point show the best score.
-
-The advantages of this method are:
-first, it enables to quantify the outlying degree accurately.
-Besides, its comprehensibility is high.
-
-While the disadvantages include three main aspects:
-the first one is it has dimensionality bias;
-Additionally, its search efficiency is low.
-Last but not least, it doesn't identify group outlying aspects.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{}
-\twocolumn
-{
-Group Outlying Aspects Mining
-\begin{itemize}
-\item
-\smallskip
-Focus on differences between \textcolor{orange}{groups}.
-
-\item
-\smallskip
-\textcolor{orange}{Multiple} points.
-\medskip
-\end{itemize}
-\vspace{0.75cm}
-%\vspace{0.1cm}
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure{Testing a long text string.}
-  %\includegraphics[width=0.6\textwidth]{figures//example-basketball-projection.eps}\\
-  \caption{Group Outlying Aspects Target}\label{fig:GroupOutAspect-target}
-\end{figure}
-}
-{
-Outlying Aspects Mining
-\begin{itemize}
-\item
-Concentrates on differences between \textcolor{orange}{objects}.
-
-\item
-\textcolor{orange}{One} point.
-\end{itemize}
-\bigskip
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure{Testing a long text string.}
-%  \includegraphics[width=0.5\textwidth]{figures//OutAspect_target.eps}\\
-  \caption{Outlying Aspects Target}\label{fig:OutAspect-target}
-\end{figure}
-}
-
-%%==========================================================================================
-\begin{note}
-In this research paper,
-we proposed the group outlying aspects mining.
-Now,
-let me summarize the differences between group outlying aspects mining and outlying aspects mining.
-
-Group outlying aspects mining mainly focuses on the differences between groups.
-But outlying aspects mining mainly concentrates on the differences between objects.
-The target of group outlying aspects mining can be seen as many points.
-While the target of outlying aspects mining can be regarded as one point.
-
-In the NBA example,
-group outlying aspects mining focuses on the advantages
-or disadvantages of one team,
-however,
-outlying aspects mining focuses on the advantages or disadvantages of one player.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Challenges (1)}
-%Challenges (1)
-\begin{itemize}
-\item
-How to \textcolor{orange}{represent} the group features.
-
-\begin{itemize}
-\item
-Can be affected by outlier values.
-
-\item
-Can \textcolor{orange}{Not} reflect the overall distribution of group features.
-\end{itemize}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-Based on current existing methods,
-there still remains some research challenges.
-
-The first one is how to represent the group features
-based on the features of the individuals in the group.
-
-Although the arithmetic mean of all elements
-in each feature can describe the features of one group.
-It can be affected by outlier values,
-and can't reflect the entire distribution of group features.L
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Challenges (2)}
-
-\begin{itemize}
-\item
-How to \textcolor{orange}{evaluate} the outlying degree in different aspects.
-
-\begin{itemize}
-\item
-Need design a scoring function when necessary.
-
-\item
-Adopting an appropriate scoring function (without dimension bias) remains a problem.
-
-\end{itemize}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-The second challenge is how to evaluate the outlying degree of
-the query group between different aspects.
-
-In that case,
-we need to design a scoring function to measure the outlying degree.
-But adopting an appropriate scoring function without dimension bias still remains a problem.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Challenges (3)}
-
-\begin{itemize}
-\item
-How to \textcolor{orange}{improve} the efficiency.
-
-\begin{itemize}
-
-\item
-When the dimension of the \textcolor{orange}{data is high},
-the candidate subspace grows exponentially.
-
-\item
-It will easily go beyond the limits of the computation resources.
-
-\end{itemize}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-The third challenge is how to improve efficiency.
-
-To be specific,
-when the dimension of data is high,
-the candidate subspace increase dramatically,
-so that it is very easy to exceed the limit of computer resources.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-\section{GOAM Algorithm}
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{}
-
-Framework of GOAM algorithm:
-
-\bigskip
-
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure{Testing a long text string.}
-%  \includegraphics[width=0.55\textwidth]{figures//framework1.eps}\\
-  \caption{Framework of GOAM Algorithm} \label{framework}
-\end{figure}
-
-%%==========================================================================================
-\begin{note}
-In order to tackle the above issues,
-GOAM algorithm is involved.
-
-Let's have a look at the framework of this algorithm.
-The first step is to use the histogram to represent the group features
-based on all individuals in the group.
-
-Following that,
-we utilize the earth mover distances to measure the
-outlying degree between groups.
-This is the second step:
-outlying degree scoring.
-
-The last step is to identify the outlying aspects.
-
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Step One - Group Feature Extraction}
-%Step One - Group Feature Extraction}
-\begin{itemize}
-\item
-\smallskip
-Suppose $f_1$, $f_2$, $f_3$ are three features of $G_q$.
-
-$f_1$: \{$x_1, x_2, x_3, x_4, x_5, x_2, x_3, x_4, x_1, x_2$\} \\
-
-$f_2$: \{$y_2, y_2, y_1, y_2, y_3, y_3, y_5, y_4, y_4, y_2$\} \\
-
-$f_3$: \{$z_1, z_4, z_2, z_4, z_5, z_3, z_1, z_2, z_4, z_2$\} \\
-\end{itemize}
-
-\begin{figure}[htbp]
-    \centering
-    \subfigure[$f_1$]{
-        \selectcolormodel{rgb}
-        \missingfigure[figwidth=5.5cm]{Test.}
-        %\includegraphics[width=0.25\textwidth]{figures//frequency-distribution-feature1.eps}
-        \label{fig:fre-dis-f1}
-    }
-    \subfigure[$f_2$]{
-        \selectcolormodel{rgb}
-        \missingfigure[figwidth=5.5cm]{Test.}
-        \label{fig:fre-dis-f2}
-    }
-    \subfigure[$f_3$]{
-        \selectcolormodel{rgb}
-        \missingfigure[figwidth=5.5cm]{Test.}
-        \label{fig:fre-dis-f3}
-    }
-    \caption{Histogram of $G_q$ on three features}
-    \label{fig:fre-dis-each-feature}
-\end{figure}
-
-%%==========================================================================================
-\begin{note}
-Now, let me specifically explain what each step means.
-The first step is group feature extraction.
-we can take one group extraction as an example.
-
-We suppose to use $f_1$, $f_2$, $f_3$ to represent three features of $G_q$.
-The values of $f_1$ are {$x_1$, $x_2$, $x_3$, $x_4$} and so on.
-And the values of $f_2$ are {$y_2$, $y_2$, $y_1$, $x_2$} and so on.
-
-For feature $f_1$,
-we use the histogram to illustrate feature $f_1$ after
-counting the frequency of each value,
-as show in figure 6 (a).
-
-Similarly,
-we can also extract other features of the group
-according to feature $f_1$.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Step Two - Outlying Degree Scoring}
-%Step Two - Outlying Degree Scoring
-\begin{itemize}
-\item
-Calculate Earth Mover Distance
-
-\begin{itemize}
-\item
-Represent one feature among different groups
-
-\item
-Purpose: calculate the minimum mean distance
-\end{itemize}
-
-\begin{figure}
-   \selectcolormodel{rgb}
-   \missingfigure{Make a sketch of the structure of a trebuchet.}
-%  \includegraphics[width=0.4\textwidth]{figures//example3.eps}\\
-   \caption{EMD of one feature}\label{EMD}
-\end{figure}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-The second step is outlying degree scoring,
-which is to evaluate the outlying degree between the target group and competitive groups.
-
-First,
-we calculate the earth mover distance of one feature in different groups.
-
-The earth mover distance reflects the minimum mean distance between
-the target group and other groups on one feature.
-
-Later on,
-we utilize the EMD to measure the differences between groups.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Step Two - Outlying Degree Scoring}
-
-\begin{itemize}
-\item
-Calculate the outlying degree
-
-\vspace{1.2cm}
-
-\begin{centering}
-
-$ OD(G_q) = \sum_{1}^{n}EDM(h_{q_s}, h_{k_s}) $
-
-\end{centering}
-
-\begin{itemize}
-\item
-n $\Leftrightarrow$ the number of contrast groups.
-
-\item
-$h_{k_s}$  $\Leftrightarrow$ the histogram representation of $G_k$ in the subspace s.
-
-\end{itemize}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-Base on the earth mover distance,
-we can calculate the outlying degree using the formula shown on the screen.
-
-This formula is the outlying degree scoring function,
-n represents the number of competitive groups.
-$h_{k_s}$ is the histogram of $G_k$ in the subspace s.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Step Three - Outlying Aspects Identification}
-%Step Three - Outlying Aspects Identification
-\begin{itemize}
-\item
-Identify group outlying aspects mining based on the value
-of outlying degree.
-
-\item
-The greater the outlying degree is,
-the more likely it is group outlying aspect.
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-Next,
-let me talk about the third step.
-
-In this step,
-we identify the group outlying aspects according to the value of the outlying degree.
-
-If a feature's outlying degree is greater,
-it is more likely to be a group outlying aspect.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Pseudo code}
-
-\begin{itemize}
-\item
-Pseudo code of GOAM algorithm
-
-\end{itemize}
-
-\begin{figure}
-  \centering
-  \selectcolormodel{rgb}
-  \missingfigure[figwidth=16cm]{Testing a long text string}
-  %\includegraphics[width=0.75\textwidth]{figures//GOAM.eps}\\
-  %\caption{GOAM Algorithm}\label{OS-Identification}
-\end{figure}
-
-%%==========================================================================================
-\begin{note}
-Last,
-we use the outlying degree to identify the specific group outlying aspects.
-
-The pseudo code of GOAM algorithm is as follows.
-The input is the group data,
-the output is outlying aspects of specific group ($G_1$).
-
-The details of the algorithm I will use an example to explain.
-\end{note}
-
-%%==========================================================================================
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Illustration}
-% Outlying Aspects Identification
-\begin{table}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{Original Dataset}
-\begin{tabular}{ccccc | ccccc}
-  \toprule
-  $G_1$ & $F_1$ & $F_2$ & $F_3$ & $F_4$ & $G_2$ & $F_1$ & $F_2$ & $F_3$ & $F_4$ \\
-  \midrule
-   &10 & 8 & 9 & 8 & &7 & 7 & 6 & 6 \\
-   &9  & 9 & 7 & 9 & &8 & 9 & 9 & 8 \\
-   &8  & 10& 8 & 8 & &6 & 7 & 8 & 9  \\
-   &8  & 8 & 6 & 7 & &7 & 7 & 7 & 8  \\
-   &9  & 9 & 9 & 8 & &8 & 6 & 6 & 7  \\
-   \midrule
-   $G_3$ & $F_1$ & $F_2$ & $F_3$ & $F_4$ & $G_4$ & $F_1$ & $F_2$ & $F_3$ & $F_4$ \\
-   \midrule
-   &8 & 10 & 8 & 8 & &9 & 8 & 8 & 8\\
-   &9 & 9  & 7 & 9 & &7 & 7 & 7 & 9\\
-   &10& 9  & 10& 7 & &8 & 6 & 6 & 8\\
-   &9 & 10 & 8 & 6 & &9 & 8 & 8 & 7\\
-   &9 & 9  & 7 & 9 & &8 & 7 & 9 & 8\\
-  \bottomrule
-\end{tabular}
-\end{table}
-
-%%==========================================================================================
-\begin{note}
-Next,
-let me use an example to explain GOAM algorithm.
-
-Suppose we have four groups.
-Each group has four features,
-and
-the specific values are shown in table $3$.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Illustration}
-
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\begin{table}
-\caption{outlying degree of each possible subspaces}
-
-\begin{tabular}{c|c|c|c}
-  \toprule
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4}
-  Feature & Outlying Degree & Feature & Outlying Degree \\
-  \midrule
-  \textcolor{orange}{\{$F_1$\}}  & 4.351  & \{$F_2, F_3$\}  & 4.023 \\
-  \{$F_2$\}  & 2.012                      & \textcolor{orange}{\{$F_3, F_4$\}} & 4.324 \\
-  \{$F_3$\}  & 1.392                      & \{$F_2, F_4$\} & 2.018 \\
-  \{$F_4$\}  & 2.207                      & \{$F_2, F_3, F_4$\} & 2.012 \\
-  \bottomrule
-\end{tabular}
-\end{table}
-
-\bigskip
-
-\twocolumn{
-\begin{itemize}
-\item
-Search process:\\
-$OD(\{$$F_1$$\}) > \alpha$, save to $T_1$.\\
-$OD(\{$$F_2$$\}) < \alpha$, save to $C_1$.\\
-$OD(\{$$F_3$$\}) < \alpha$, save to $C_2$. \\
-$OD(\{$$F_4$$\}) < \alpha$, save to $C_3$. \\
-\end{itemize}}
-{
-\vspace{.75cm}
-$OD(\{$$F_2, F_3$$\}) > \alpha$, save to $N_1$. \\
-$OD(\{$$F_3, F_4$$\}) > \alpha$, save to $N_2$. \\
-$OD(\{$$F_2, F_4$$\}) < \alpha$, remove. \\
-$OD(\{$$F_2, F_3, F_4$$\}) < \alpha$, remove. \\
-}
-%Sort $N_i$ in descending order,
-%add subspace with top-k outlying degree in $N_i$ to $O_k$
-
-%%==========================================================================================
-\begin{note}
-According to the outlying degree scoring function,
-we can get the outlying degree of each possible subspace.
-
-So that we can filter out the candidate subspaces.
-Next is to sort the candidate subspaces in
-descending order and then we pick out the top-k subspaces.
-
-The result is as shown in table $4$.
-As a result,
-the top-1 group outlying aspect is \{$F_1$\}.
-The top-2 group outlying aspects include
-trivial feature \{$F_1$\},
-and non-trivial subspace \{$F_3, F_4$\}.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Strengths of GOAM Algorithm}
-\begin{itemize}
-\item
-\textcolor{orange}{Reduction of Complexity}
-
-\begin{itemize}
-\item
-Bottom-up search strategy.
-
-\item
-Reduce the size of candidate subspaces.
-
-\end{itemize}
-
-\item
-\textcolor{orange}{Efficiency}
-
-\begin{itemize}
-\item
-Before: $O(2^d)$  \\
-Now:    $O(d*n^{2})$
-
-\end{itemize}
-\end{itemize}
-
-%%==========================================================================================
-\begin{note}
-In terms of the strengths of GOAM algorithm.
-
-I would like to talk about two main advantages of this algorithm.
-First is the reduction of complexity.
-GOAM algorithm utilizes the bottom up search method;
-what's more,
-it can reduce the size of candidate subspaces.
-
-Second is efficiency.
-The previous time complexity is O($2^d$);
-however,
-current time complexity if only O($d*n^2$).
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-\section{Evaluation Results}
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Evaluation}
-
-\begin{center}
-\begin{itemize}
-
-\item
-\smallskip
-\large
-{$Accuracy = \frac{P}{T}$ \\
-P: Identified outlying aspects \\
-
-T: Real outlying aspects}
-
-\end{itemize}
-\end{center}
-
-%%==========================================================================================
-\begin{note}
-Before showing the experiment results,
-I will introduce the evaluation of the experiment.
-
-We use accuracy formula to make comparisons between GOAM algorithm
-and outlying aspect mining method.
-In the accuracy formula,
-P stands for identified outlying aspects;
-and T means the real outlying aspects.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{Synthetic Dataset}
-
-\begin{itemize}
-\item Synthetic Dataset and Ground Truth
-\end{itemize}
-
-\begin{table}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{Synthetic Dataset and Ground Truth}
-
-\begin{tabular}{p{2.8cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}}
-\hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-  Query group  & $\mathbf{F_1}$ & $\mathbf{F_2}$ & $F_3$ & $\mathbf{F_4}$ & $F_5$ & $F_6$ & $F_7$ & $F_8$\\
-\hline
-  $i_1$   & \bf{10} & \bf{8}  & 9  & \bf{7}  & 7 & 6 & 6  & 8\\
-  $i_2$   & \bf{9}  & \bf{9}  & 7  & \bf{8}  & 9 & 9 & 8  & 9\\
-  $i_3$   & \bf{8}  & \bf{10} & 8  & \bf{9}  & 6 & 8 & 7  & 8\\
-  $i_4$   & \bf{8}  & \bf{8}  & 6  & \bf{7}  & 8 & 8 & 6  & 7\\
-  $i_5$   & \bf{9}  & \bf{9}  & 9  & \bf{7}  & 7 & 7 & 8  & 8\\
-  $i_6$   & \bf{8}  & \bf{10} & 8  & \bf{8}  & 6 & 6 & 8  & 7\\
-  $i_7$   & \bf{9}  & \bf{9}  & 7  & \bf{9}  & 8 & 8 & 8  & 7\\
-  $i_8$   & \bf{10} & \bf{9}  & 10 & \bf{7}  & 7 & 7 & 7  & 7\\
-  $i_9$   & \bf{9}  & \bf{10} & 8  & \bf{8}  & 7 & 6 & 7  & 7\\
-  $i_{10}$& \bf{9}  & \bf{9}  & 7  & \bf{7}  & 7 & 8 & 8  & 8\\
-\hline
-\end{tabular}
-\end{table}
-
-%%==========================================================================================
-\begin{note}
-Now,
-I am gonna use a synthetic dataset to verify our method.
-
-The dataset we used in our experiment contains $10$ groups,
-each group consists of $10$ members,
-and each member has $8$ features: $F_1$ to $F_8$.
-
-Table $5$ shows the original data of one group,
-and the bold features represent the ground truth,
-The ground truth include trivial outlying feature \{$F_1$\},
-and non-trivial outlying subspace \{$F_2$, $F_4$\}.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Synthetic Dataset Results}
-
-\begin{table}[tb]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{The experiment result on synthetic dataset}
-
-\begin{tabular}{ c | c | c | c }
-\toprule
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-  Method     &  Truth Outlying Aspects    & Identified Aspects & Accuracy      \\
-\midrule
-  GOAM       &  $\{F_1\}$, $\{F_2F_4\}$   &  $\{F_1\}$, $\{F_2F_4\}$    & 100\%    \\
-
-Arithmetic Mean based OAM &  $\{F_1\}$, $\{F_2F_4\}$   &  $\{F_4\}$, $\{F_2\}$    &  0\% \\
-
-Median based OAM &  $\{F_1\}$, $\{F_2F_4\}$   &  $\{F_2\}$, $\{F_4\}$    &           0\% \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-%%==========================================================================================
-\begin{note}
-From table $6$,
-we can see that GOAM method can identify the trivial outlying features
-and non-trivial outlying subspaces accurately and
-it is obvious from the table that the accuracy of GOAM is the best,
-which is 100\%.
-
-This is because the outlying aspects mining method
-can't obtain the features of a group and the scoring function
-is based on point to point metric.
-Therefore,
-it is not suitable for group outlying aspects mining.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}{NBA Dataset}
-Data Collection
-\begin{description}[type=1]
-\item
-Source\\
-\qquad
-\emph{Yahoo Sports} website (\url{http://sports.yahoo.com.cn/nba})
-
-\item
-Data
-
-\begin{itemize}
- \item Extract NBA teams' data until March 30, 2018;
- \item 6 divisions;
- \item 12 features (eg: \emph{Point Scored}).
-\end{itemize}
-\end{description}
-
-%%==========================================================================================
-\begin{note}
-Next,
-I will illustrate it further by applying the GOAM algorithm to the NBA dataset.
-The data was collected from Yahoo Sports website.
-
-In our experiment,
-a web crawler was deployed to extract data
-for all NBA teams until March 30, 2018.
-The data includes all teams from the six divisions,
-and each player in the team has 12 features,
-such as point scored, field goal\dots
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{NBA Dataset}
-The detail features are as follows:
-
-\begin{table}[tb]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{Collected data of Brooklyn Nets Team}
-
-\begin{tabular}{p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}}
-\hline
-  Pts & FGA & FG\% & 3FA & 3PT\% & FTA & FT\% & Reb & Ass & To & Stl & Blk \\
-\hline
-  18   & 12    & 42 &2.00 & 50 & 7.00 & 100& 0& 4& 3& 0& 0 \\
-  15.7 & 14.07 & 41 &5.45 & 32 & 3.05 & 75 & 3.98& 5.1& 2.98& 0.69& 0.36\\
-  14.5 & 11.1  & 47 &0.82 & 26 & 4.87 & 78 & 6.82& 2.4& 1.74& 0.92& 0.66 \\
-  13.5 & 10.8  & 42 &5.37 & 37 & 3.38 & 77 & 6.66& 2& 1.38& 0.83& 0.42 \\
-  12.7 & 10.59 & 39 &5.36 & 33 & 3.37 & 82 & 3.24& 6.6& 1.56& 0.89& 0.31 \\
-  12.6 & 10.93 & 40 &6.94 & 37 & 1.70 & 84 & 4.27& 1.5& 1.06& 0.61& 0.44 \\
-  12.2 & 10.39 & 44 &3.42 & 35 & 2.70 & 72 & 3.79& 4.1& 2.15& 1.12& 0.32 \\
-  10.6 & 7.85  & 49 &4.51 & 41 & 1.35 & 83 & 3.34& 1.6& 1.15 & 0.45& 0.24 \\
-\hline
-\end{tabular}
-\end{table}
-
-%%==========================================================================================
-\begin{note}
-Table $7$ shows part of the collected data.
-From this table,
-we can see that the feature values are continuous.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{NBA Dataset}
-\begin{itemize}
-\item Data Preprocess
-\end{itemize}
-
-\begin{table}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{The bins that used to discrete data of each feature}
-
-\begin{tabular}{p{2.5cm}p{2cm}p{1.8cm}p{2cm}p{1.8cm}p{1.8cm}p{1.8cm}}
-\hline
-  Labels & Pts & FGA & FG\% & 3FA & 3PT\% & FTA  \\
-\hline
-  low &  [0,5]& [0,4] & [0,0.35] & [0,1.0] & [0,0.2] & [0,1.0] \\
-  medium& (5,10]& (4,7] & (0.35,0.45] & (1.0,2.5]& (0.2,0.3] & (1.0,1.5] \\
-  high &  (10,15] & (7,10] & (0.45,0.5] & (2.5,3.5]& (0.3,0.35]& (1.5,2.5] \\
-  very high&(15,$+\infty$]& (10,$+\infty$] & (0.5,1] & (3.5,$+\infty$] & (0.35,1] & (2.5,$+\infty$] \\
-\hline
- Labels & FT\% & Reb & Ass & To & Stl & Blk \\
-\hline
-  low   & [0,0.6] & [0,2.0] & [0,1.0] & [0,0.6] & [0,0.2] & [0,0.25] \\
-  medium& (0.6,0.65]& (2,5] & (1,2] & (0.6,0.9] & (0.2,0.5] & (0.25,0.5] \\
-  high  & (0.65,0.75] & (5,6] & (2,4] & (0.9,1.7] & (0.6,0.75] & (0.5,0.7] \\
-  very high& (0.75,1] & (6,$+\infty$] & (4,$+\infty$] & (1.7,$+\infty$] & (0.75,$+\infty$] & (0.7,$+\infty$]\\
-\hline
-\end{tabular}
-\end{table}
-
-%%==========================================================================================
-\begin{note}
-For those features with continuous values,
-we use the binning method to discretize them,
-the results are shown in table $8$.
-
-Once the data was prepared,
-we added three teams in the eastern division
-and three teams in the western division into the query group,
-the other teams together belonged to the contrast groups.
-\end{note}
-%%==========================================================================================
-
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{NBA Dataset Results}
-
+\begin{slide}[toc=,bm=]{Deakin University}
 \begin{table}[htbp]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{10pt}
-\centering
-\caption{The identified outlying aspects of groups}
-
-\begin{tabular}{ccc}
-\hline
-  Teams                   & Trivial Outlying Aspects  & NonTrivial Outlying Aspects    \\
-\hline
-  Cleveland Cavaliers     & \{3FA\}                   & \{FGA, FT\%\}, \{FGA, FG\%\} \\
-  Orlando Magic           & \{Stl\}                   & None                         \\
-  Milwaukee Bucks         & \{To\}, \{FTA\}           & \{FGA, FTA\}, \{3FA, FTA\}     \\
-  Golden State Warriors   & \{FG\%\}                  & \{FT\%, Blk\}, \{FGA, 3PT\%, FTA\}\\
-  Utah Jazz               & \{Blk\}                   & \{3FA, 3PT\%\}                    \\
-  New Orleans Pelicans    & \{FT\%\}, \{FTA\}         & \{FTA, Stl\}, \{FTA, To\}          \\
-\hline
-\end{tabular}
+  \setlength{\abovecaptionskip}{-21pt}
+  \setlength{\belowcaptionskip}{12pt}
+  \centering
+  \caption{Major Rankings of Deakin University}
+    \begin{tabular}{l|c|cccc}
+    \toprule
+      & \textbf{Benchmark} & \multicolumn{1}{l}{\textbf{2014-2015}} & \multicolumn{1}{l}{\textbf{2015-2016}} & \multicolumn{1}{l}{\textbf{2016-2017}} & \multicolumn{1}{l}{\textbf{2017-2018}} \\ \midrule
+    \multirow{2}[0]{*}{\textbf{ARWU}} & World & 401-500 & 301-400 & 201-300 & 201 \\
+      & National  & 19 &   &   & 10 \\
+      \midrule
+    \multirow{2}[0]{*}{\textbf{CWTS Leiden}} & World  & 284 & 325 & 314 & 226 \\
+      & National  & 11 & 17 & 17 & 11 \\
+      \midrule
+    \multirow{2}[0]{*}{\textbf{QS\#}} & World  & 360 & 324 & 355 & 293 \\
+      & National & 19 &   &   & 17 \\
+      \midrule
+    \multirow{2}[0]{*}{\textbf{THE} } & World  & 325 & 301-350 & 251-300 & 301 \\
+      & National  & 13 &   &   & 17 \\
+      \midrule
+    \multirow{2}[0]{*}{\textbf{THE<50}} & World  & 59 &   &   & 43 \\
+      & National  & 7 &   &   & 8 \\
+      \bottomrule
+    \end{tabular}
+  \label{tab:Deakin Ranking}
 \end{table}
+\centering
+\url{https://www.australianuniversities.com.au/rankings/}
+\end{slide}
+%%
+%%==========================================================================================
 
+%%==========================================================================================
+%%
+
+\begin{slide}{Director}
+  \twocolumn[lcolwidth=0.7\linewidth,
+rcolwidth=0.3\linewidth
+]{
+    \begin{itemize}
+      \item A/Prof. Gang Li
+      \begin{itemize}
+        \item \textcolor{orange}{Deakin University}
+          \begin{itemize}
+            \item \textit{University Thesis Examination} Committee
+            \item SEBE Faculty HDR Director
+            \item Director for
+                \begin{itemize}
+                  \item \small{S578/S678/S778/S779 (Master of Information Technology)}
+                \end{itemize}
+            \item Founding Director for
+                \begin{itemize}
+                  \item \small{S306 (Bachelor of Computer Science)}
+                  \item \small{S777 (Master of Data Science)}
+                \end{itemize}
+          \end{itemize}
+        \item \textcolor{orange}{IEEE Technical Committee}
+         \begin{itemize}
+           \item Task Force on EDM (VC)
+           \item Data Mining and Big Data Analytics (VC 2017)
+           \item Enterprise Information Systems
+           \item Enterprise Architecture and Engineering
+         \end{itemize}
+      \end{itemize}
+    \end{itemize}}
+    {\begin{flushleft}
+       \includegraphics[width=0.8\textwidth]{figures//li//2014gangli.eps}
+     \end{flushleft}
+    }
+\end{slide}
+%%
+%%===============================================================================
+
+
+%%==========================================================================================
+%%
+
+\section{Research @ TULIP}
+
+%%==========================================================================================
+%%
+\begin{slide}{Research Themes}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
+    child[concept color=orange!60] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Group Anomaly Detection}}
+    }
+     child[concept color= mynodecolor] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
+    }
+    child[concept color= mynodecolor] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
+    }
+   ;
+    \end{tikzpicture}
+\end{center}
 %%==========================================================================================
 \begin{note}
-We can see the identified group outlying aspects of each team from table $9$.
-It is very clear that the GOAM algorithm can identify the
-Trivial Outlying Aspects and Non-Trivial Outlying Aspects of each team.
+Behavior Informatics: Periodic Behavior Mining, Behavior Prediction\\
+Information Abuse Prevention: Data Compliance Checking, Privacy Preservation in Data Mining\\
+Business Intelligence Applications: Recommender System, Tourism/Hospitality Management
 \end{note}
 %%==========================================================================================
-
 \end{slide}
 %%
 %%==========================================================================================
 
 
-\section{Conclusion}
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Research Themes}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
+    child[concept color=mynodecolor] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Group Anomaly Detection}}
+    }
+     child[concept color=orange!60] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
+    }
+    child[concept color=mynodecolor] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
+    }
+   ;
+    \end{tikzpicture}
+\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Conclusion}
+\begin{slide}[toc=,bm=]{Research Themes}
+\begin{center}
+
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=10em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
+    child[concept color=mynodecolor] {
+      node[scale=0.6] {Behavior Informatics} [clockwise from=200]
+        child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
+        child { node[scale=0.6] (bp) {Group Anomaly Detection}}
+    }
+     child[concept color=mynodecolor] {
+      node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
+      child{node[concept,scale=0.6](dcc){Compliance Checking}}
+      child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
+    }
+    child[concept color=orange!60] {
+      node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+      child{node[concept,scale=0.6](rs){Recommender System} }
+      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
+    }
+   ;
+    \end{tikzpicture}
+\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}{Theme 1. Behavior Informatics}
+%Theme one -
 \begin{itemize}
 \item
-\smallskip
-Formalize the problem of \emph{Group Outlying Aspects Mining} by
-extending outlying aspects mining;
+People share \textcolor{blue!50}{news, interests}
+and \textcolor{blue!50}{ideas} in OSNs
 
+\begin{itemize}
 \item
-\smallskip
-Propose a novel method \textcolor{orange}{GOAM algorithm} to solve the
-\emph{Group Outlying Aspects Mining} problem;
-
-\item
-\smallskip
-Utilize the pruning strategies to reduce time complexity.
-
+though these platforms also spread
+\textcolor{orange}{email malware, rumours, gossips}
+\textcolor{orange}{and malicious links}, and may even leak our
+\textcolor{orange}{privacy}.
 \end{itemize}
 
-%%==========================================================================================
-\begin{note}
-In conclusion,
-we firstly formalized the problem of
-group outlying aspects mining,
+\item The popularity of OSNs has greatly increased in recent years
 
-Then proposed a novel method GOAM algorithm to address the problem of
-group outlying aspects mining,
-and the proposed method use pruning to reduce time complexity
-while identifying the suitable set of outlying features for the interested group.
+\begin{itemize}
+\item
+A large amount of Internet users also use OSN services
 
-Thank you and any question?
-\end{note}
+\item
+Australia has up to $11$ million Facebook users
+\end{itemize}
+
+
+\end{itemize}
+%
+%\twocolumn{
+%\begin{figure}[htbp]
+%  %  \centering
+%    \subfigure{
+%        \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_1.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_2.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_3.eps}
+%    }\\
+%    \subfigure{
+%        \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_4.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_5.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.28\textwidth]{figures//theme1//Theme1_6.eps}
+%    }
+%\end{figure}
+%}{
+%\begin{figure}[htbp]
+%    \includegraphics[width=0.7\textwidth]{figures//theme1//Theme1_7.eps}
+%\end{figure}
+%}
+%
+\end{slide}
+%%
 %%==========================================================================================
+
+
+%%==========================================================================================
+%%
+%\begin{slide}[toc=,bm=]{Theme 1. Behavior Informatics}
+%
+%\begin{itemize}
+%\item The popularity of OSNs has greatly increased in recent years
+%
+%\begin{itemize}
+%\item
+%A large amount of Internet users also use OSN services
+%
+%\item
+%Australia has up to $11$ million Facebook users
+%\end{itemize}
+%
+%\end{itemize}
+%
+%\begin{figure}[htbp]
+%    \centering
+%    \subfigure{
+%        \includegraphics[width=0.25\textwidth]{figures//theme1//Theme1_8.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.37\textwidth]{figures//theme1//Theme1_9.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_10.eps}
+%    }
+%\end{figure}
+%
+%\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (1) - Tourist Movement Analysis}
+
+\begin{itemize}
+\item
+There are many geotagged photos available.
+However
+
+\begin{itemize}
+\item
+Data can be noisy or misleading
+
+\item
+Photos are taken in transit rather than at the attractions
+
+\item
+Photos are static media; whereas travel behavior is dynamic
+\end{itemize}
+
+\end{itemize}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
+\end{figure}
+
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Vu, Huy Quan and Li, Gang and Law, Rob and Yip, Ben Haobin.
+%Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. 
+%Tourism Management, 2015.}
+%\end{thebibliography}
+\onslide*{1,-1}{
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLLY15J07}
+}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (1) - Tourist Movement Analysis}
+
+\begin{itemize}
+\item
+There are many geotagged photos available.
+However
+
+\begin{itemize}
+\item
+Data can be noisy or misleading
+
+\item
+Photos are taken in transit rather than at the attractions
+
+\item
+Photos are static media; whereas travel behavior is dynamic
+\end{itemize}
+
+\end{itemize}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
+\end{figure}
+
+\begin{center}
+   \onslide{1}{
+   \put(-200,90){
+   {\twotonebox{\huge \textcolor{orange}{?}}
+   {\large {How to mine these data for travel behaviour analysis?}}
+   }}}
+
+\end{center}
 
 \end{slide}
 %%
@@ -1689,32 +623,1220 @@ Thank you and any question?
 
 
 %%==========================================================================================
-% TODO: Contact Page
-\begin{wideslide}[toc=,bm=]{Contact Information}
-\centering
-\vspace{\stretch{1}}
+%%
+\begin{slide}[toc=,bm=]{Case Study (1) - Tourist Movement Analysis}
+
+\begin{itemize}
+  \item Tourist Traffic Flow in Hong Kong Metropolitan Area
+\end{itemize}
+
+%\hspace{10}
+\begin{figure}[htbp]
+    \subfigure[Asian Tourist]
+    {
+        \includegraphics[height=0.4\textwidth,width=0.34\textwidth]{figures//theme1//Theme1_12.eps}
+    }
+    \subfigure[Western Tourist]
+    {
+        \includegraphics[height=0.4\textwidth,width=0.34\textwidth]{figures//theme1//Theme1_13.eps}
+    }
+\end{figure}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (2) - Periodic Behavior Mining}
+
+\begin{itemize}
+\item
+Observed check-in data is usually a mixed event with different periodic behaviors
+
+\begin{itemize}
+\item
+What is periodic behavior?
+What is the period of that behavior?
+
+\item
+Predict the behavior of a person on a particular day
+\end{itemize}
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures//theme1//Theme1_18.eps}
+\end{figure}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{YYWZLL18C03}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (2) - Periodic Behavior Mining}
+
+\begin{itemize}
+\item
+Observed check-in data is usually a mixed event with different periodic behaviors
+
+\begin{itemize}
+\item
+What is periodic behavior?
+What is the period of that behavior?
+
+\item
+Predict the behavior of a person on a particular day
+\end{itemize}
+\end{itemize}
+
+\onslide*{2, 2-}{
+\begin{figure}[htbp]
+    \includegraphics[width=0.7\textwidth]{figures//theme1//pbm_1.eps}
+\end{figure}
+}
+
+\onslide*{3, 3-}{
+\begin{figure}[htbp]
+    \includegraphics[width=0.7\textwidth]{figures//theme1//pbm_2.eps}
+\end{figure}
+}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+
+%%==========================================================================================
+%%
+%\begin{slide}[toc=,bm=]{Case Study (2) - Periodic Behavior Mining}
+%
+%\begin{itemize}
+%\item
+%CP Decomposition
+%\end{itemize}
+%\vspace{0.5cm}
+%\twocolumn{
+%\begin{figure}[htbp]
+%    \includegraphics[width=0.8\textwidth]{figures//theme1//cpd_1.eps}
+%\end{figure}
+%}{
+%\begin{flushleft}
+%\large{
+%$y_{r_i, t_j, d_k} = \frac{Count(r_i, t_j, d_k)}{\sum_{q=1}^L Count(r_q, t_j, d_k)}$
+%}
+%\end{flushleft}
+%}
+%
+%\onslide*{2, 2-}{
+%%\begin{center}
+%\begin{figure}[htbp]
+%    \subfigure{
+%    \includegraphics[width=0.29\textwidth]{figures//theme1//pbm_6.eps}
+%    }
+%    \subfigure{
+%    \includegraphics[width=0.32\textwidth]{figures//theme1//cpd_2.eps}
+%    }
+%    \subfigure{
+%    \includegraphics[width=0.2\textwidth]{figures//theme1//pbm_7.eps}
+%    }
+%\end{figure}
+%%\end{center}
+%}
+%\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (2) - Periodic Behavior Mining}
+
+\begin{itemize}
+\item
+There are various applications of \textit{Periodic Behavior Mining}
+
+    \begin{itemize}
+    \item
+    What is the schedule of a person on a particular day or at a specified time?
+
+    \item
+    Where to find the person on a particular day or at a specified time?
+        \begin{itemize}
+        \item
+        Police applications
+
+        \item
+        Scheduled ``\textit{encountering}'' for matchmaking
+        \end{itemize}
+    \item
+    Timely Recommendation Systems
+        \begin{itemize}
+        \item
+        Recommend right before the time for you to stock rice, cooking oil, or ice cream!
+        \end{itemize}
+
+\end{itemize}
+\end{itemize}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+%\begin{slide}[toc=,bm=]{Case Study (3) - Face Age Recognition}
+%
+%\begin{figure}[htbp]
+%    \subfigure{
+%        \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_19.eps}
+%    }\\
+%    \subfigure{
+%        \includegraphics[width=0.3\textwidth]{figures//theme1//Theme1_20.eps}
+%    }
+%    \subfigure{
+%        \includegraphics[width=0.4\textwidth]{figures//theme1//Theme1_21.eps}
+%    }
+%\end{figure}
+%
+%\bibliographystyle{plain}
+%\nobibliography{tuliplab}
+%\footnotesize\bibentry{GZZLD06C04}
+%
+%\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (3) - Speech Based Emotion Detection}
+
+\begin{itemize}
+  \item Language-independent emotion detection
+
+  \begin{itemize}
+    \item Detect the emotion based on acoustic signals without semantic analysis
+
+  \end{itemize}
+\end{itemize}
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{figures//theme1//Theme1_22.eps}
+\end{figure}
+%
+\onslide{1}{
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Rong, Jia and Li, Gang and Chen, Yi-Ping Phoebe.
+%Acoustic feature selection for automatic emotion recognition from speech. 
+%Information Processing and Management, 2008.}
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{RLC09J02}}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (4) - K Complex Detection}
+\begin{itemize}
+\item Sleep Stage Identification
+\begin{itemize}
+\item
+\small{Rapid Eye Movement (REM) Sleep}
+\begin{itemize}
+\item
+\small{A normal stage of sleep characterized by the rapid movement of the eyes)}
+\item
+\small{$20\%-25\%$ of total sleep time in human adults, memorable dream}
+\end{itemize}
+\item<2->
+{Non-REM Sleep}
+\begin{itemize}
+\item<2->
+\small{\textbf{$N_1$}: slow eye movement, hypnic jerks at beginning, believe fully awake}
+\item<2->
+\small{\textbf{$N_2$}: non eye movement, rare dreaming, easily awaken}
+\item<2->
+\small{\textbf{$N_3$}: deep sleep, sometimes dreaming, but disconnected, less vivid}
+%\end{itemize}
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{figures//theme1//kcd.eps}
+\end{center}
+\end{itemize}
+
+\item<3->
+General sleep order in cycles of REM and NREM:
+$N_1 \rightarrow N_2 \rightarrow N_3 \rightarrow N_2 \rightarrow REM$
+\begin{itemize}
+\item<3->
+\small{Early in the night, a greater amount of deep sleep (N3)}
+\item<3->
+\small{Later in the night, REM sleep increases, and before natural awakening}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+%\onslide*{3,-3}{
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Vu, Huy Quan and Li, Gang and Sukhorukova.
+%K-complex Detection using a Hybrid-Synergic Machine Learning method. 
+%IEEE Transactions on Systems, Man, and Cybernetics,2012.}
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLSBLPAU12J03}
+%}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (5) - Trajectory Analysis}
+\begin{figure}[htbp]
+  \includegraphics[width=1.0\textwidth]{figures//theme1//dsa_3.eps}
+\end{figure}
+
+\onslide*{-1,1}{
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Wang, Xiaofeng and Li, Gang and Jiang, Guang and Shi, Zhongzhi.
+%Semantic trajectory-based event detection and event pattern mining. 
+%Knowledge and information systems, 2013.}
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{WLLS13J11}}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+
+\begin{slide}[toc=,bm=]{Case Study (5) - Trajectory Analysis}
+\begin{figure}[ht]
+  \includemovie[poster=figures//theme1//Theme1_23.eps,inline=false]{12cm}{10cm}{figures//theme1//vs.avi}
+\end{figure}
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}{Theme 2. Data Privacy}
+%Theme two -
+\begin{itemize}
+\item
+Information Abuse
+
+\begin{itemize}
+\item
+The compromise of information
+for which the data stakeholders are not willing to disclose
+
+\item
+It depends on the nature of the information,
+the involved internal or external users,
+and the ways in which the organization grants the access to
+or releases the information
+\end{itemize}
+\end{itemize}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+
+\begin{slide}[toc=,bm=]{Theme 2. Data Privacy}
+
 \twocolumn[
-lcolwidth=0.35\linewidth,
+lcolwidth=0.5\linewidth,
+rcolwidth=0.45\linewidth
+]
+{
+\begin{itemize}
+	\item
+	Every user is potentially an adversary
+	\begin{itemize}
+		\item
+		Once the data is released,
+		we cannot prevent any user from performing any type of analysis on it
+		\item
+		Worst case scenario
+		\begin{itemize}
+			\item
+			Must account for the disclosure risk from any type of analyses
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+}
+{	
+	%\begin{figure}	
+	\includegraphics[width=\linewidth]{./figures/theme2/adversary.eps}
+	%\end{figure}
+}
+	
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (1) - Is O.S.N. a Secure Place to Show off?}
+\begin{figure}[htbp]
+	\centering
+	\textbf{\large{\textcolor{orange}{Did Facebook photo trigger murder?}}}
+	\includegraphics[width=0.7\textwidth,height=7cm]{./figures/theme2/case3.eps}
+\end{figure}
+
+
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Tianqing Zhu, Gang Li, Wanlei Zhou, Ping Xiong, and Cao Yuan.
+%Deferentially Private Tagging Recommendation Based on Topic Model. 
+%The 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD),
+%May 2014, Tainan, Taiwan.}
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{ZLZXY14C04}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (2) - Privacy Breach}
+	%\includegraphics[width=\linewidth]{./figures/theme2/case1.jpg}
+\begin{table}
+	\fontsize{11pt}{11pt}\selectfont
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{12pt}
+	\centering
+	\caption{Privacy breach of Singapore residents traveling overseas}
+%	TABLE 6. Privacy breach of Singapore residents traveling overseas\protect\footnotemark[1].\\[15pt]
+	\begin{tabular}{c|c|l|l|c|c}	
+	\toprule
+	ID  	&  	\textbf{User(Gender)}		& 		\textbf{Visited Destination} 		& 		\textbf{Venue} 		& 	\textbf{Date} 		&	\textbf{Time}	\\
+	\midrule
+	%\rowcolor{orange}
+	$L_1$	&	$U_5$(M)-$U_6$(F)	&	Shanghai, China 	   &	UNCO Lounge		&	25-May-2015	&	20:17\\
+	%\rowcolor{orange}
+	$L_2$	&	$U_5$(M)-$U_6$(F)	&	Shanghai, China 	   &	T8 Restaurant and Bar		&	26-May-2015	&	17:35\\
+	$L_3$	&	$U_5$(M)-$U_6$(F)	&	Cannes, France 	       &	Villa Mystique Resort		&	25-Jun-2015	&	11:03\\	
+	%\rowcolor{orange}
+	$L_4$	&	$U_5$(M)-$U_6$(F)	&	Paris, France 		   &	Dersou Restaurant			&	27-Jun-2015	&	19:58\\
+	%\rowcolor{orange}
+	$L_5$	&	$U_5$(M)-$U_6$(F)	&	Paris, France 		   &	Ladure Pastry Shop			&	28-Jun-2015	&	14:48\\
+	$L_6$	&	$U_5$(M)-$U_6$(F)	&	London, United Kingdom &	L'ETO Caff			&	10-Oct-2015	&	11:01\\
+	$L_7$	&	$U_5$(M)-$U_6$(F)	&	Hong Kong		       &	The Ocean Club Bar			&	31-Oct-2015	&	18:47\\
+	$L_8$	&	$U_5$(M)-$U_6$(F)	&	Hanoi, Vietnam		   &	HOME Hanoi Restaurant			&	01-Jan-2016	&	19:04\\
+	%\rowcolor{orange}
+	$L_9$	&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	MGallery Hotel des Art		&	30-Jun-2016	&	19:54\\
+	%\rowcolor{orange}
+	$L_{10}$	&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	L'Usine: Cafe		&	01-Jul-2016	&	10:55\\
+	%\rowcolor{orange}
+	$L_{11}$	&	$U_5$(M)-$U_6$(F)	&	Ho Chi Minh, Vietnam   &	Social Club @ Hotel Des Arts		&	01-Jul-2016	&	17:04\\
+	\bottomrule
+	\end{tabular}	
+\end{table}
+
+\onslide{-1,1}{
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
+%Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
+%Journal of Travel Research, 2017.}
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{VLLZ17J05}}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\iffalse
+\begin{slide}[toc=,bm=]{Case Study (2) - Privacy Breach}
+
+%\includegraphics[width=\linewidth]{./figures/theme2/case1.jpg}
+\begin{table}
+	\fontsize{11pt}{11pt}\selectfont
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{12pt}
+	\centering
+	\caption{Privacy breach of Singapore residents traveling overseas}
+%	TABLE 6. Privacy breach of Singapore residents traveling overseas\protect\footnotemark[1].\\[15pt]
+	\begin{tabular}{c|c|l|l|c|c}	
+	\toprule
+	ID  	&  	\textbf{User(Gender)}		& 		\textbf{Visited Destination} 		& 		\textbf{Venue} 		& 	\textbf{Date} 		&	\textbf{Time}	\\
+	\midrule
+	\onslide*{2,5}{\textcolor{orange}{$L_1$}}\onslide*{-1,3-4}{{$L_1$}}	
+	&\onslide*{2,5}{\textcolor{orange}{$U_5$(M)-$U_6$(F)}}\onslide*{-1,3-4}{{$U_5$(M)-$U_6$(F)}}	
+	&\onslide*{2,5}{\textcolor{orange}{Shanghai, China}}\onslide*{-1,3-4}{{Shanghai, China}} 	
+	&\onslide*{2,5}{\textcolor{orange}{UNCO Lounge}}\onslide*{-1,3-4}{{UNCO Lounge}}				
+	&\onslide*{2,5}{\textcolor{orange}{25-May-2015}}\onslide*{-1,3-4}{{25-May-2015}}
+	&\onslide*{2,5}{\textcolor{orange}{20:17}}\onslide*{-1,3-4}{{20:17}}	\\
+			
+			
+	\onslide*{2,5}{\textcolor{orange}{$L_2$}}\onslide*{-1,3-4}{{$L_2$}}	
+	&\onslide*{2,5}{\textcolor{orange}{$U_5$(M)-$U_6$(F)}}\onslide*{-1,3-4}{{$U_5$(M)-$U_6$(F)}}	
+	&\onslide*{2,5}{\textcolor{orange}{Shanghai, China}}\onslide*{-1,3-4}{{Shanghai, China}} 	
+	&\onslide*{2,5}{\textcolor{orange}{T8 Restaurant and Bar}}\onslide*{-1,3-4}{{T8 Restaurant and Bar}}				
+	&\onslide*{2,5}{\textcolor{orange}{26-May-2015}}\onslide*{-1,3-4}{{26-May-2015}}
+	&\onslide*{2,5}{\textcolor{orange}{17:35}}\onslide*{-1,3-4}{{17:35}}	\\		
+	
+	$L_3$	&$U_5$(M)-$U_6$(F)	&Cannes, France 	       &Villa Mystique Resort		&25-Jun-2015	&11:03\\	
+	
+	\onslide*{3,5}{\textcolor{orange}{$L_4$}}\onslide*{-2,4}{{$L_4$}}	
+	&\onslide*{3,5}{\textcolor{orange}{$U_5$(M)-$U_6$(F)}}\onslide*{-2,4}{{$U_5$(M)-$U_6$(F)}}	
+	&\onslide*{3,5}{\textcolor{orange}{Paris, France }}\onslide*{-2,4}{{Paris, France}} 	
+	&\onslide*{3,5}{\textcolor{orange}{Dersou Restaurant}}\onslide*{-2,4}{{Dersou Restaurant}}				
+	&\onslide*{3,5}{\textcolor{orange}{27-Jun-2015}}\onslide*{-2,4}{{27-Jun-2015}}
+	&\onslide*{3,5}{\textcolor{orange}{19:58}}\onslide*{-2,4}{{19:58}}	\\	
+	
+	\onslide*{3,5}{\textcolor{orange}{$L_5$}}\onslide*{-2,4}{{$L_5$}}	
+	&\onslide*{3,5}{\textcolor{orange}{$U_5$(M)-$U_6$(F)}}\onslide*{-2,4}{{$U_5$(M)-$U_6$(F)}}	
+	&\onslide*{3,5}{\textcolor{orange}{Paris, France }}\onslide*{-2,4}{{Paris, France}} 	
+	&\onslide*{3,5}{\textcolor{orange}{Ladure Pastry Shop}}\onslide*{-2,4}{{Ladure Pastry Shop}}				
+	&\onslide*{3,5}{\textcolor{orange}{28-Jun-2015}}\onslide*{-2,4}{{28-Jun-2015}}
+	&\onslide*{3,5}{\textcolor{orange}{14:48}}\onslide*{-2,4}{{14:48}}	\\			
+	
+	
+	$L_6$	&$U_5$(M)-$U_6$(F)	&London, United Kingdom 	&L'ETO Caff			&10-Oct-2015	&11:01\\
+	$L_7$	&$U_5$(M)-$U_6$(F)	&Hong Kong		       		&The Ocean Club Bar			&31-Oct-2015	&18:47\\
+	$L_8$	&$U_5$(M)-$U_6$(F)	&Hanoi, Vietnam		   	&HOME Hanoi Restaurant			&01-Jan-2016	&19:04\\
+	
+	\onslide*{4,5}{\textcolor{orange}{$L_9$}}\onslide*{-3}{{$L_9$}}	
+	&\onslide*{4,5}{\textcolor{orange}{$U_5$(M)-$U_6$(F)}}\onslide*{-3}{{$U_5$(M)-$U_6$(F)}}	
+	&\onslide*{4,5}{\textcolor{orange}{Ho Chi Minh, Vietnam}}\onslide*{-3}{{Ho Chi Minh, Vietnam}} 	
+	&\onslide*{4,5}{\textcolor{orange}{MGallery Hotel des Art}}\onslide*{-3}{{MGallery Hotel des Art}}				
+	&\onslide*{4,5}{\textcolor{orange}{30-Jun-2016}}\onslide*{-3}{{30-Jun-2016}}
+	&\onslide*{4,5}{\textcolor{orange}{19:54}}\onslide*{-3}{{19:54}}	\\		
+	
+	
+	\onslide*{4,5}{\textcolor{orange}{$L_{10}$}}\onslide*{-3}{{$L_{10}$}}	
+	&\onslide*{4,5}{\textcolor{orange}{$U_5$(M)-$U_6$(F)}}\onslide*{-3}{{$U_5$(M)-$U_6$(F)}}	
+	&\onslide*{4,5}{\textcolor{orange}{Ho Chi Minh, Vietnam}}\onslide*{-3}{{Ho Chi Minh, Vietnam}} 	
+	&\onslide*{4,5}{\textcolor{orange}{L'Usine: Cafe}}\onslide*{-3}{{L'Usine: Cafe}}				
+	&\onslide*{4,5}{\textcolor{orange}{01-Jul-2016}}\onslide*{-3}{{01-Jul-2016}}
+	&\onslide*{4,5}{\textcolor{orange}{10:55}}\onslide*{-3}{{10:55}}	\\	
+	
+	\onslide*{4,5}{\textcolor{orange}{${L_{11}}$}}\onslide*{-3}{{$L_{11}$}}	
+	&\onslide*{4,5}{\textcolor{orange}{$U_5$(M)-$U_6$(F)}}\onslide*{-3}{{$U_5$(M)-$U_6$(F)}}	
+	&\onslide*{4,5}{\textcolor{orange}{Ho Chi Minh, Vietnam}}\onslide*{-3}{{Ho Chi Minh, Vietnam}} 	
+	&\onslide*{4,5}{\textcolor{orange}{Social Club @ Hotel Des Arts}}\onslide*{-3}{{Social Club @ Hotel Des Arts}}				
+	&\onslide*{4,5}{\textcolor{orange}{01-Jul-2016}}\onslide*{-3}{{01-Jul-2016}}
+	&\onslide*{4,5}{\textcolor{orange}{17:04}}\onslide*{-3}{{17:04}}	\\		
+	\bottomrule
+	\end{tabular}
+	
+\end{table}
+
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
+%Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
+%Journal of Travel Research, 2017.}
+%\end{thebibliography}
+
+%\bibliographystyle{plain}
+%\nobibliography{tuliplab}
+%\footnotesize\bibentry{VLLZ17J05}
+
+\end{slide}
+\fi
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (2) - Privacy Breach}
+% - Case 2: Privacy Breach
+%\includegraphics[width=\linewidth]{./figures/theme2/case2.jpg}
+
+\begin{table}
+	%\fontsize{11pt}{11pt}\selectfont
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{12pt}
+	\centering
+	\caption{Joint check-in record indicating sensitive contrast relationship}
+	%TABLE 8. Joint check-in record indicating sensitive contrast relationship\protect\footnotemark[1].\\[15pt]
+	\begin{tabular}{c|c|l|c|c}	
+\iffalse
+	\toprule	
+	ID  	&  	\textbf{User(Gender)}& 	\textbf{Venue} 		& 	\textbf{Date} 	&	\textbf{Time}	\\
+	\midrule
+	\rowcolor{orange}
+	$C_1$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	11-Sep-2015	    &	23:31\\
+	\rowcolor{orange}
+	$C_2$	&	$U_9$(M)-$U_{11}$(F)	 &	Zouk Night Club		&	18-Nov-2015	    &	23:50\\
+	$C_3$	&	$U_9$(M)-$U_{11}$(F)	 &	Club Luxi			&	17-Jan-2016	    &	00:30\\
+	$C_4$	&	$U_9$(M)-$U_{11}$(F)	 &	Club Hollywood		&	06-Feb-2016     &	04:34\\
+	$C_5$	&	$U_9$(M)-$U_{10}$(F)	 &	Wave House Sentosa	&	12-Mar-2016	    &	22:43\\
+	\rowcolor{orange}
+	$C_6$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	02-Jul-2016	    &	00:25\\
+	\rowcolor{orange}
+	$C_7$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	07-Aug-2016	    &	00:39\\
+	\bottomrule
+\fi
+	\toprule	
+	ID  	&  	\textbf{User(Gender)}& 	\textbf{Venue} 		& 	\textbf{Date} 	&	\textbf{Time}	\\
+	\midrule
+	
+	$C_1$	&	$U_9$(M)-$U_{10}$(F)	 &	Zouk Night Club		&	11-Sep-2015	    &	23:31\\	
+	
+	\onslide*{2}{\textcolor{orange}{$C_2$}}\onslide*{1}{{$C_2$}}	
+	&\onslide*{2}{\textcolor{orange}{$U_9$(M)-$U_{11}$(F)}}\onslide*{1}{{$U_9$(M)-$U_{11}$(F)}}	
+	&\onslide*{2}{\textcolor{orange}{Zouk Night Club}}\onslide*{1}{{Zouk Night Club}} 	
+	&\onslide*{2}{\textcolor{orange}{18-Nov-2015}}\onslide*{1}{{18-Nov-2015}}				
+	&\onslide*{2}{\textcolor{orange}{23:50}}\onslide*{1}{{23:50}}\\	
+	
+	\onslide*{2}{\textcolor{orange}{$C_3$}}\onslide*{1}{{$C_3$}}	
+	&\onslide*{2}{\textcolor{orange}{$U_9$(M)-$U_{11}$(F)}}\onslide*{1}{{$U_9$(M)-$U_{11}$(F)}}	
+	&\onslide*{2}{\textcolor{orange}{Club Luxi}}\onslide*{1}{{Club Luxi}} 	
+	&\onslide*{2}{\textcolor{orange}{17-Jan-2016}}\onslide*{1}{{17-Jan-2016}}				
+	&\onslide*{2}{\textcolor{orange}{00:30}}\onslide*{1}{{00:30}}\\	
+	
+	\onslide*{2}{\textcolor{orange}{$C_4$}}\onslide*{1}{{$C_4$}}	
+	&\onslide*{2}{\textcolor{orange}{$U_9$(M)-$U_{11}$(F)}}\onslide*{1}{{$U_9$(M)-$U_{11}$(F)}}	
+	&\onslide*{2}{\textcolor{orange}{Club Hollywood}}\onslide*{1}{{Club Hollywood}} 	
+	&\onslide*{2}{\textcolor{orange}{06-Feb-2016}}\onslide*{1}{{06-Feb-2016}}				
+	&\onslide*{2}{\textcolor{orange}{04:34}}\onslide*{1}{{04:34}}\\	
+	
+	$C_5$	&	$U_9$(M)-$U_{10}$(F)	 &Wave House Sentosa	&12-Mar-2016	    &22:43\\	
+	$C_6$	&	$U_9$(M)-$U_{10}$(F)	 &Zouk Night Club		&02-Jul-2016	    &	00:25\\
+	$C_7$	&	$U_9$(M)-$U_{10}$(F)	 &Zouk Night Club		&07-Aug-2016	    &	00:39\\
+\iffalse
+	\onslide*{3,4-}{\textcolor{orange}{$C_6$}}\onslide*{-2}{{$C_6$}}	
+	&\onslide*{3,4-}{\textcolor{orange}{$U_9$(M)-$U_{10}$(F)}}\onslide*{-2}{{$U_9$(M)-$U_{10}$(F)}}	
+	&\onslide*{3,4-}{\textcolor{orange}{Zouk Night Club}}\onslide*{-2}{{Zouk Night Club}} 	
+	&\onslide*{3,4-}{\textcolor{orange}{02-Jul-2016}}\onslide*{-2}{{02-Jul-2016}}				
+	&\onslide*{3,4-}{\textcolor{orange}{00:25}}\onslide*{-2}{{00:25}}\\	
+	
+	\onslide*{3,4}{\textcolor{orange}{$C_7$}}\onslide*{-2}{{$C_7$}}
+	&\onslide*{3,4}{\textcolor{orange}{$U_9$(M)-$U_{10}$(F)}}\onslide*{-2}{{$U_9$(M)-$U_{10}$(F)}}
+	&\onslide*{3,4}{\textcolor{orange}{Zouk Night Club}}\onslide*{-2}{{Zouk Night Club}} 	
+	&\onslide*{3,4}{\textcolor{orange}{07-Aug-2016}}\onslide*{-2}{{07-Aug-2016}}				
+	&\onslide*{3,4}{\textcolor{orange}{00:39}}\onslide*{-2}{{00:39}}\\	
+\fi
+	\bottomrule
+		
+	\end{tabular}
+\end{table}
+
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Huy Quan Vu, Gang Li, Rob Law, Yanchun Zhang.
+%Tourist Activity Analysis by Leveraging Mobile Social Media Data. 
+%Journal of Travel Research, 2017.}
+%\end{thebibliography}
+
+%\bibliographystyle{plain}
+%\nobibliography{tuliplab}
+%\footnotesize\bibentry{VLLZ17J05}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Differential Privacy}
+
+\twocolumn[
+%lcolwidth=0.3\textwidth,
+%rcolwidth=0.6\textwidth
+lcolwidth=0.3\linewidth,
 rcolwidth=0.65\linewidth
 ]
 {
-% \centerline{\includegraphics[scale=.2]{tulip-logo.eps}}
+\begin{figure}[hbtp]
+	%\raggedright
+	\includegraphics[scale=0.55]{./figures/theme2/reference.eps}
+\end{figure}
 }
 {
-\vspace{\stretch{1}}
-Miss \emph{Shaoni Wang}\\
-Xi'an Shiyou University, Xi'an, China
-\begin{description}
- \item[Email] \href{mailto:snwangxyz@gmail.com}
- {\textsc{\footnotesize{snwangxyz@gmail.com}}}
-
- \item[Lab] \href{http://www.tulip.org.au}
- {\textsc{\footnotesize{Team for Universal Learning and Intelligent Processing}}}
-\end{description}
+\begin{itemize}
+	\item
+	\textbf{\underline{Privacy Preserving in Data Releasing}}
+	\begin{itemize}
+		\item
+		T. Zhu, G. Li, W. Zhou, P.S. Yu.
+		\textit{Differential Privacy and Its Applications: Survey},
+		\textbf{\uline{IEEE Transactions on Data and Knowledge Engineering}}, 2017
+		\item
+		T. Zhu, G. Li, W. Zhou, P.S. Yu.
+		\textit{Differential Privacy and Its Applications}, Springer 2017
+		\item
+		T. Zhu, P. Xiong, G. Li, W. Zhou.
+		\textit{Correlated Differential Privacy: Hiding Information in Non-IID Dataset}.
+		\textbf{\uline{IEEE Transactions on Information Forensics \& Security}}, 2015, 10(2), 229-242
+	\end{itemize}
+\end{itemize}
 }
-\vspace{\stretch{1}}
-\end{wideslide}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+
+\begin{slide}{Theme 3. Business Intelligence}
+	
+	\begin{itemize}
+		\item Tourism Data Mining
+		
+		\begin{itemize}
+			\item Tourist Behavior Analysis
+			
+			\item Contrast Mining
+			
+			\begin{itemize}
+				
+				\item Outlying Aspects Mining
+				
+				\item Competitiveness Discovery
+				
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\item Recommendation System
+		\begin{itemize}
+			\item Group package recommendation
+			\item Heterogeneous Preferences
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+%\begin{slide}[toc=,bm=]{Case Study (1) - Market Segmentation Analysis}
+	%
+	%%\begin{figure}[htbp]
+	%%	\subfigure{
+	%%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_1.eps}
+	%%	}
+	%%	\subfigure{
+	%%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_2.eps}
+	%%	}
+	%%\end{figure}
+	%
+	%\twocolumn{
+	%	\begin{figure}
+	%%		\begin{overprint}
+	%		\onslide*{1, 1-}{
+	%			\put(-100,50){
+	%				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_1.eps}
+	%			}
+	%		}
+	%		\onslide*{3, 3-}{
+	%			\put(-100,50){
+	%				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_2.eps}
+	%			}
+	%%			\parbox[10,9]{5em}{Fully packaged}
+	%%			\parbox[-80,9]{5em}{Fully packaged}
+	%		}
+	%		\onslide*{5, 5-}{
+	%			\put(-100,50){
+	%				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_3.eps}
+	%			}		
+	%%			\parbox[30,0]{5em}{Partially packaged}
+	%%			\parbox[18,6]{5em}{Partially packaged}
+	%		}
+	%		\onslide*{9, 9-}{
+	%			\put(-100,50){
+	%				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_4.eps}
+	%			}
+	%%			\parbox[0,10]{5em}{old}
+	%%
+	%		}
+	%		\onslide*{11, 11-}{
+	%			\put(-100,50){
+	%				\includegraphics[width=0.9\textwidth]{figures//theme3//Theme3_1_1_5.eps}
+	%			}
+	%%			\parbox[10,10]{5em}{High income}
+	%%			\parbox[20,10]{5em}{High income}
+	%		}
+	%%		\end{overprint}
+	%	\end{figure}
+	%}
+	%{
+	%\centering
+	%	\begin{figure}
+	%%		\begin{overprint}
+	%		\onslide*{2, 2-}{
+	%			\put(-110,90){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_2.eps}
+	%			}
+	%		}
+	%		\onslide*{4, 4-}{
+	%			\put(-100,80){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_3.eps}
+	%			}
+	%		}
+	%		\onslide*{6, 6-}{
+	%			\put(-90,70){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_4.eps}
+	%			}
+	%		}
+	%		\onslide*{7, 7-}{
+	%			\put(-80,60){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_5.eps}
+	%			}
+	%		}
+	%		\onslide*{8, 8-}{
+	%			\put(-70,50){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_6.eps}
+	%			}
+	%		}
+	%		\onslide*{10, 10-}{
+	%			\put(-60,40){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_7.eps}
+	%			}
+	%		}
+	%		\onslide*{12, 12-}{
+	%			\put(-50,30){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_8.eps}
+	%			}
+	%		}
+	%		\onslide*{13, 13-}{
+	%			\put(-40,20){
+	%				\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_9.eps}
+	%			}
+	%		}
+	%		\onslide*{14, 14-}{
+	%			\put(-30,10){
+	%			\includegraphics[width=0.7\textwidth]{figures//theme3//Theme3_1_10.eps}
+	%				}	
+	%		}
+	%%		\end{overprint}
+	%	\end{figure}
+	%}
+	%\vspace*{-20pt}
+	%
+	%\bibliographystyle{plain}
+	%\nobibliography{tuliplab}
+	%\footnotesize\bibentry{LLW10J03}
+	%
+%\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (1) - Negative Association Rule Mining}
+	\selectcolormodel{rgb}
+	\usetikzlibrary{positioning}
+	\tikzstyle{block} = [rectangle, draw=orange, fill= orange!20, text width=7em, text centered, rounded corners, minimum height=4em,font=\small]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{note} = [rectangle, text width=10em, text centered, rounded corners, minimum height=0.5em,font=\footnotesize]
+	\vspace*{-20pt}
+	\begin{center}
+		\begin{tikzpicture}[node distance = 1cm and 1.5cm, auto]
+		\node[block](generateItem){Generating Targeted Item-set};
+		\node[block,above left=0.3cm and 1.5cm of generateItem ](initialTransData){Transcation Data};
+		\node[block,above= of generateItem](candiPosItem){Candidate Interesting \textbf{Positive} Item-set};
+		\node[block, below left=0.3cm and 1.5cm of generateItem](initialUserItem){User specified Target Item};
+		
+		
+		\node[block, below= of generateItem](candiNegItem){Candidate Interesting \textbf{Negative} Item-set};
+		\node[block, right= of candiNegItem](interNegItem){Interesting Negative Item-set};
+		\node[block, right= of interNegItem](negRule){Negative Rules};
+		
+		\node[block, right= of candiPosItem](interPosItem){Interesting Positive Item-set};
+		\node[block, right= of interPosItem](posRule){Positive Rules};
+		\node[block, below= of posRule](report){Reporting Rules};
+		
+		\path[line](initialTransData) -- (generateItem);
+		\path[line](initialUserItem) -- (generateItem);
+		\path[line](generateItem) -- (candiPosItem);
+		\path[line](candiPosItem) -- (interPosItem);
+		\path[line](interPosItem) -- (posRule);
+		\path[line](posRule) -- (report);
+		\path[line](generateItem) -- (candiNegItem);
+		\path[line](candiNegItem) -- (interNegItem);
+		\path[line](interNegItem) -- (negRule);
+		\path[line](negRule) -- (report);
+		
+		\begin{scope}[node distance = 0.2cm, auto]
+		\node[note, above= of candiPosItem](candiPosItemNote){$Sup(A\cup B)\geq min\_ sup$};
+		\node[note, above= of interPosItem](interPosItemNote){$lever(A\cup B)\geq <min\_ lever$};
+		\node[note, above= of posRule](posRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};
+		\node[note, below= of candiNegItem](candiNegItemNote){$Sup(A\cup B)<min\_ sup$};
+		\node[note, below= of interNegItem](interNegItemNote){$lever(A\cup \sim B)\geq <min\_ lever$};
+		\node[note, below= of negRule](negRuleNote){$confi(A\to \sim B)\geq <min\_ confi$};	
+		\end{scope}
+		
+		
+		\end{tikzpicture}
+	\end{center}
+	%\vspace*{-15pt}
+
+\onslide*{-1,1}{
+	
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Rong, Jia and Vu, Huy Quan and Law, Rob and Li, Gang.
+%A behavioral analysis of web sharers and browsers in Hong Kong using targeted association rule mining. 
+%Tourism Management, 2011.}
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{RVLL11J06}}
+	
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (2) - Contrast Mining}
+	\selectcolormodel{rgb}
+	\usetikzlibrary{positioning}
+	\tikzstyle{contrast} = [rectangle, draw=black,fill=blue!20, text width=2em, text centered,  minimum height=5em, minimum width=3em,font=\small]
+	\tikzstyle{block} = [rectangle, text width=2em, text centered, minimum width=3em, minimum height=1em, font=\small]
+	\tikzstyle{vecArrow} = [thick, fill=blue!10,
+	decoration={markings,mark=at position 1 with {\arrow[semithick]{open triangle 60}}},
+	double distance=1.4pt, shorten >= 5.5pt, preaction = {decorate},
+	postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
+	
+	
+	\begin{itemize}
+		\item Contrast Targeted Rules Algorithm (CTR)
+		
+		\vspace{1.5cm}	
+		
+		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
+			\begin{itemize}
+				\item 	
+				Detect the changes of rules strength between
+				differences year data set
+			\end{itemize}
+		}{
+			\begin{center}
+				\begin{tikzpicture}[node distance = 0.3cm, auto]
+				\onslide*{2,2-}{	
+					\node[contrast](contrast1){\\ \textbf{2015}};
+					\node[block, right= of contrast1](contrast){\footnotesize Contrast};
+					\node[contrast, right= of contrast](contrast2){\\ \textbf{2018}};
+				}
+				
+				\end{tikzpicture}
+			\end{center}	
+		}
+		
+		\vspace{1.5cm}
+		
+		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
+			\onslide*{3,3-}{
+				\begin{itemize}
+					
+					\item
+					Tracing  the trend for predicting
+					future potential
+					
+				\end{itemize}
+			}
+		}{
+			\begin{center}
+				\begin{tikzpicture}[node distance = 0.3cm, auto]
+				\onslide*{4,4-}{
+					\node[contrast](contrast3){\\ \textbf{2016}};
+					
+					\node[contrast, right= of contrast3](contrast4){\\ \textbf{2017}};
+					\node[contrast, right= of contrast4](contrast5){\\ \textbf{2018}};
+					\node[contrast, right= 1.5cm of contrast5](contrast6){\\ \textbf{2019}};
+					
+					\draw[vecArrow] (contrast5) to node[above] {Predict} (contrast6) ;
+					
+				}
+				
+				\end{tikzpicture}
+			\end{center}		
+		}
+		
+		
+	\end{itemize}
+	\vspace*{\fill}
+
+\onslide*{-1,1}{
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Rong, Jia and Vu, Huy Quan and Law, Rob and Li, Gang.
+%A behavioral analysis of web sharers and browsers in Hong Kong using targeted association rule mining. 
+%Tourism Management, 2011.}
+%\end{thebibliography}
+
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{RVLL11J06}}
+	
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (3) - PR Based Conditional Random Fields}
+	\begin{itemize}
+		\item \textbf{Heterogeneous Source}
+		
+		\vspace{0.5cm}
+		\twocolumn[lcolwidth=0.45\linewidth,rcolwidth=0.6\linewidth,colsep=0.001\linewidth]{
+			\begin{itemize}
+				\item Last decade has seen a growing trend towards creating and managing more profiles in \textit{Online Social Networks}
+			\end{itemize}
+		}{
+			\begin{figure}
+				\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_4_1.eps}
+			\end{figure}
+		}
+		\onslide*{2, 2-}{
+			\begin{itemize}
+				
+				\item A source can be heterogeneous to itself
+				
+			\end{itemize}
+		}
+		\vspace*{10pt}
+		
+		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
+			\begin{center}
+				\onslide*{3, 3-}{
+					\begin{large}
+						
+						\Large \textcolor{yellow}\faStar \textcolor{yellow}\faStar \textcolor{yellow}\faStar \textcolor{yellow}\faStar \textcolor{yellow}\faStar
+					\end{large} \\~\\
+					
+					10 years ago
+				}
+			\end{center}
+		}{
+		\begin{center}
+			\onslide*{4, 4-}{
+				\begin{large}
+					\Large  \faThumbsOUp ~ \faThumbsODown
+				\end{large} \\~\\
+				~Present
+			}
+		\end{center}
+		
+		}
+	\end{itemize}
+
+\onslide*{-1,1}{
+%\begin{thebibliography}{}
+%\bibitem{}
+%\small{Liu, Shaowu and Li, Gang and Tran, Truyen and and Jiang, Yuan.
+%Preference Relation-based Markov Random Fields. 
+%Machine Learning, 2016.}
+%\end{thebibliography}
+
+	
+\vspace*{\fill}
+\bibliographystyle{plain}
+\nobibliography{tuliplab}
+\footnotesize\bibentry{LLTJ16J02}}
+	
+	
+\end{slide}
+
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (3) - PR Based Conditional Random Fields}
+	
+	%			\begin{table}[h]
+	%		\fontsize{11pt}{11pt}\selectfont
+	%		\setlength{\abovecaptionskip}{0pt}
+	%		\setlength{\belowcaptionskip}{1pt}
+	%		\centering
+	%		\caption{the user-item rating matrix.}
+	%		\label{table:pr}
+	%		\begin{threeparttable}
+	%			\begin{tabular}{l|c|c|c|c}	
+	%				\toprule
+	%				\textbf{User$\backslash$Movie}  	&  	\textbf{Spider\-Man}		& 		\textbf{2012} 		& 		\textbf{The Godfather} 		& 	\textbf{The Social Network}\\
+	%				\midrule
+	%				Bob	&	3	&	2 	&	4	&	5	\\
+	%				Justin	&	?	&	5   &	2	&	?	\\
+	%				John	&	4	&	4 	&	2	&	1	\\
+	%				Larry	&	3	&	3 	&	4	&	2	\\
+	%				Cindy	&	4	&	3 	&	4	&	1	\\
+	%				Paul	&	2	&	3 	&	4	&	?	\\
+	%				David	&	3	&	?	&	4	&	1	\\
+	%				\bottomrule
+	%			\end{tabular}
+	%		\end{threeparttable}
+	%		
+	%	\end{table}
+	
+	\begin{itemize}
+		\item  \textbf{Heterogeneous Preferences}
+		
+		\begin{itemize}
+			\item \textbf{User-wise biases}
+			%	\setlength\itemsep{-0.5em}
+			\begin{itemize}
+				%	\setlength\itemsep{-0.3em}
+				\item Users give lower ratings when in bad mood
+				
+				\item Different scales, e.g., 4/5 star is ``OK'' for critics
+				
+				\item User interface design
+				
+			\end{itemize}
+			
+			\item \textbf{Item-wise biases}
+			
+			%	\setlength\itemsep{-0.5em}
+			\begin{itemize}
+				
+				\item The same item presented differently,
+				e.g., a movie in 3D, HD
+				
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	
+	
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (3) - PR Based Conditional Random Fields}
+	
+	\begin{figure}[htbp]
+		
+		%\captionsetup[subfigure]{labelformat=empty}
+		%	\subfigure[Graph of user \textit{u}]{
+		%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_5_1.eps}
+		%	}
+		%	\subfigure[Graph of user \textit{v}]{
+		%		\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_5_2.eps}
+		%	}
+		\includegraphics[width=0.8\textwidth]{figures//theme3//Theme3_5_3.eps}
+		
+	\end{figure}
+	
+	
+	
+\end{slide}
+
+%%
+%%==========================================================================================
+\section{Collaboration with Deakin}
+
+\begin{slide}{ARC Linkage Proje}
+\begin{itemize}
+  \item Australian Research Council
+   \begin{itemize}
+          \item Industry partner
+          \begin{itemize}
+                  \item Long Term collaboration
+                  \item Priority Research Areas
+                  \item With track records
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+\end{slide}
+
+\begin{slide}{SEBE Industry Engagement Scheme}
+\begin{itemize}
+  \item The SEBE Industry Engagement Scheme is suitable 
+        for projects of high strategic alignment.
+  \begin{itemize}
+    \item In the first instance preference will be given
+          for those applications where 
+          at least 50:50 matched funding from the 
+          industry partner is committed.
+    \item SEBE contributes \$5K-30K for each project
+  \end{itemize}
+\end{itemize}
+\end{slide}
+
+
+\begin{slide}{SEBE Industry Postdoctoral Research Fellowships}
+\begin{itemize}
+  \item A minimum cash contribution of \$57,500 per year is required 
+        from the industry partner.
+  \begin{itemize}
+    \item This is based on salary at Level A6-8 
+    (currently \$103K to \$110K annually; including 27.46\% on-costs) 
+    plus project costs.
+    \item SEBE’s benchmark target rate for a ``fully funded” scholarship is \$115,000 
+          cash per year for three years
+  \end{itemize}
+
+\end{itemize}
+\end{slide}
+
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
 
 \end{document}
-
 \endinput
+
+
+
+
+
