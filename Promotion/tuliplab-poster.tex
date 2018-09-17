@@ -70,6 +70,8 @@
   };
 }
 
+
+
 % aiming high
 \usepackage{smartdiagram}
 \usetikzlibrary{shapes.symbols}
@@ -83,6 +85,10 @@
 }
 
 \definecolor{mynodecolor}{RGB}{198,191,234}
+
+%\pgfdeclarelayer{backgroundlayer}
+%\pgfdeclarelayer{notelayer}
+
 %forest
 \usepackage{forest}
 \usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
@@ -139,6 +145,18 @@ Deakin University, Australia
 \begin{columns}
  % FIRST column
 \column{0.5}% Width set relative to text width
+
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+ %\block{Main Objectives}{
+%  	      	\begin{enumerate}
+%  	      	\item Formalise research problem by extending \emph{outlying aspects mining}
+%  	      	\item Proposed \emph{GOAM} algorithm is to solve research problem
+%  	      	\item Utilise pruning strategies to reduce time complexity
+%  	      	\end{enumerate}
+%%  	      \end{minipage}
+%}
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 \block{TULIP Academy}{
@@ -208,7 +226,7 @@ Deakin University, Australia
   \end{itemize}
 
 
-\item[Internal Services]
+\item[Internal Services ]
   \begin{itemize}
    \item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
    \item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
@@ -221,31 +239,31 @@ Deakin University, Australia
 
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Research mind map}{
+\block{Research @ TULIP}{
 
 \begin{minipage}{0.9\linewidth}
 \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,font=\sffamily\bfseries,
+  \path[mindmap,concept color=orange!50,font=\sffamily\bfseries,
     every node/.style={concept},
-    root/.style    = {concept color=black!40,
+    root/.style    = {concept color=orange!40,
       font=\Large\bfseries,text width=10em},
     level 1 concept/.append style={font=\bfseries,
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=8em,inner sep=0pt,level distance=6em},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=190]
-    child[concept color=mynodecolor] {
+    child[concept color=mynodecolor, text=black!90] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=mynodecolor] {
+     child[concept color=mynodecolor, text=black!90] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=mynodecolor] {
+    child[concept color=mynodecolor, text=black!90] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
       child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
@@ -257,39 +275,133 @@ Deakin University, Australia
 
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block{Traning Mind Map}{
+\block[titleleft]{Publications and Awards}
+{
+	%
+	%\begin{minipage}{\linewidth}
+	%	%\setlength{\abovecaptionskip}{-25pt}
+	%	%\setlength{\belowcaptionskip}{12pt}
+	%	%\caption{TULIP Lab Publications}
+	%	%\fontsize{13pt}{14pt}\selectfont
+	%  	\begin{tabular}{c|c c c|c c c}
+	%    		\toprule
+	%		\cmidrule{1-1}    \multirow{2}[4]{*}{Year} & \multicolumn{3}{c}{SCI/SSCI Journals} &\multicolumn{3}{c}{Referred Conferences} \\
+	%		\cmidrule{2-7}          & Q1 (71\%) & Q2 (18\%) & Q3 (11\%) & A (16\%) & B (9\%) & C (75\%) \\
+	% 		\midrule
+	%    2018  & 9     & 1     & 2     & 0     & 1     & 4 \\
+	%    2017  & 6     & 2     & 1     & 0     & 0     & 6 \\
+	%    2016  & 2     & 3     & 1     & 0     & 0     & 5 \\
+	%    2015  & 6     & 4     & 1     & 0     & 1     & 2 \\
+	%    2014  & 10    & 0     & 2     & 0     & 0     & 4 \\
+	%    2013  & 11    & 1     & 0     & 3     & 2     & 2 \\
+	%    2012  & 2     & 1     & 2     & 4     & 1     & 2 \\
+	%    2011  & 7     & 1     & 1     & 0     & 0     & 2 \\
+	%    2010  & 4     & 1     & 0     & 2     & 0     & 1 \\
+	%    2009  & 1     & 1     & 0     & 0     & 0     & 4 \\
+	%    2008  & 3     & 0     & 0     & 0     & 0     & 6 \\
+	%    2007  & 1     & 0     & 0     & 0     & 0     & 3 \\
+	%    2006  & 0     & 0     & 0     & 0     & 0     & 2 \\
+	%    		\bottomrule
+	%    	\end{tabular}
+	%\end{minipage}
+	
+	\begin{minipage}{0.6\linewidth}
+		%\selectcolormodel{rgb}
+		%\scalebox{0.5}
+		{
+			\begin{tikzpicture}
+			\begin{axis}[ylabel={number of papers},   x=1.45cm, y=0.6cm, xtick={2006,2008,2010,2012, 2014, 2016, 2018}, ytick={0,2,4,6,8,10,12,14},   x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
+			legend pos=north west, xmajorgrids=true, ymajorgrids=true, grid style=dashed, ]
+			\addplot[mark=*,color=blue!50]
+			coordinates {
+				(2006,0)(2007,1)(2008,3)(2009,2)(2010,5)(2011,9)
+				(2012,5)(2013,12)(2014,12)(2015,11)(2016,6)(2017,9)(2018,12)
+			};
+			\addlegendentry{\small{SCI/SSCI Journals}}
+			
+			\addplot[mark=square,color=orange]
+			coordinates {
+				(2006,2)(2007,3)(2008,6)(2009,4)(2010,3)(2011,2)(2012,7)
+				(2013,7)(2014,4)(2015,3)(2016,5)(2017,6)(2018,5)
+			};
+			\addlegendentry{\small{Referred Conferences}}
+			\end{axis}
+			\end{tikzpicture}		
+		}		
+	\end{minipage}
+	\begin{minipage}{0.32\linewidth}
+		\begin{tikzfigure}
+			\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018B.eps}
+			\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018A.eps}
+			\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016A.eps}
+			\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2012.eps}
+			\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2007.eps}
+			\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016B.eps}
+			\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2014.eps}
+		\end{tikzfigure}
+	\end{minipage}	
+	
+	\begin{minipage}{\linewidth}
+		%\begin{table}[htbp]
+		%  \centering
+		%  \caption{TULIP Lab Research Awards}
+		\begin{tabular}{ r | l | r  r }
+			\toprule
+			\multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
+			\midrule
+			\textbf{2018} & KSEM 2018 \textit{Best Paper} Award & Shaoni Wang &  \\
+			
+			\textbf{2017} & IFITT \textit{Journal Paper of The Year} Award (1st Prize) & Huy Quan Vu &  \\
+			
+			\textbf{2016} & IEEE TrustCom 2016 \textit{Best Student Paper} Award & Na Pang &  \\
+			
+			\textbf{2015} & IFITT \textit{Journal Paper of The Year} Award (3rd Prize) & Huy Quan Vu &  \\
+			
+			\textbf{2014} & PAKDD 2014 \textit{Best Student Paper} Award & Tianqing Zhu &  \\
+			
+			\textbf{2012} & ACM ASONAM 2012  \textit{Best Paper} Award & Yongli Ren &  \\
+			
+			\textbf{2007} & Springer 2007 \textit{Nightingale Prize} & Jingyu Hou &  \\
+			\bottomrule
+		\end{tabular}
+		%\end{table}
+	\end{minipage}
+}
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+\column{0.5}
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+\block{Training @ TULIP}{
 \begin{center}
 \scalebox{0.9}{
 \setlength{\abovecaptionskip}{-15pt}
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,font=\sffamily\bfseries,
+  \path[mindmap,concept color=mynodecolor,font=\sffamily\bfseries,
     every node/.style={concept},
-    root/.style    = {concept color=black!40,
+    root/.style    = {concept color=mynodecolor,
       font=\Large\bfseries,text width=9em},
     level 1 concept/.append style={font=\bfseries,
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt, level distance=6em},
   ]
   node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-    child[concept color=mynodecolor] {
+    child[concept color=orange!30,text=black!90] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
         child { node[scale=0.6] (goRefrences ){References Management}}
         child { node[scale=0.6] {\LaTeX}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=mynodecolor] {
+     child[concept color=orange!30,text=black!90] {
       node[concept,scale=0.6] {FLIP}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=mynodecolor] {
+    child[concept color=orange!30,text=black!90] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
@@ -317,57 +429,11 @@ Deakin University, Australia
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
 
-%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-
-%\note{Note with default behavior}
-
-%\note[targetoffsetx=12cm, targetoffsety=-1cm, angle=20, rotate=25]
-%{Note \\ offset and rotated}
-
- % First column - second block
-\column{0.5}
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block[titleleft]{Aim High}{
-	\begin{center}
-		\smartdiagramset{description title width=2cm,
-			set color list={blue!40,blue!30,blue!20},
-			description title text width=1.75cm,
-			descriptive items y sep=3.5cm,
-			description text width=12cm,
-			module minimum height=.4cm}
-		\smartdiagram[descriptive diagram]{
-			{\textbf{$\infty$}, \begin{enumerate}
-					\item Proactively meet with supervisor twice per week
-					\item Proactively present and criticize at \textit{TULIP Seminar}
-					\item FLIP (04-05) and FLIP (06-07) completion
-					\item Act as FLIP team leaders and update materials annually
-			\end{enumerate}},
-			{\textbf{Trainee}, \begin{enumerate}
-					\item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-					\item Feedback and suggestions on FLIP
-					\item Present at \textit{TULIP Seminar}
-			\end{enumerate}},
-			{\textbf{Flipper},\begin{enumerate}
-					\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-					\item Keep FLIP materials confidential without distribution
-					\item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-					\item Attend \textit{TULIP Seminar} with preparation and questions
-			\end{enumerate}},}
-		%\smartdiagram[descriptive diagram]{
-%			{Style,{Define shapes, colors, shading,
-%					and line styles for nodes and arrows}},
-%			{Position, {Place nodes using a matrix,
-%					relative or absolute positioning}},
-%			{Relation, Insert edges or arrows
-%				between selected nodes},
-%			{Label, Add labels on edges or arrows}}
-	\end{center}
-	
-}
-%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-% Second column - first block
-\block[titleleft]{Graduation Requirement}
+
+% Second column - second block
+\block[titleleft]{Minimum Requirements}
 {
 	\begin{description}
 		\item[Honors or Master Students] \hfill
@@ -402,140 +468,50 @@ Deakin University, Australia
 
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-% Second column - first block
 
-
+% Second column - thrid block
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block[titleleft]{Publications and Awards}
-{
-%
-%\begin{minipage}{\linewidth}
-%	%\setlength{\abovecaptionskip}{-25pt}
-%	%\setlength{\belowcaptionskip}{12pt}
-%	%\caption{TULIP Lab Publications}
-%	%\fontsize{13pt}{14pt}\selectfont
-%  	\begin{tabular}{c|c c c|c c c}
-%    		\toprule
-%		\cmidrule{1-1}    \multirow{2}[4]{*}{Year} & \multicolumn{3}{c}{SCI/SSCI Journals} &\multicolumn{3}{c}{Referred Conferences} \\
-%		\cmidrule{2-7}          & Q1 (71\%) & Q2 (18\%) & Q3 (11\%) & A (16\%) & B (9\%) & C (75\%) \\
-% 		\midrule
-%    2018  & 9     & 1     & 2     & 0     & 1     & 4 \\
-%    2017  & 6     & 2     & 1     & 0     & 0     & 6 \\
-%    2016  & 2     & 3     & 1     & 0     & 0     & 5 \\
-%    2015  & 6     & 4     & 1     & 0     & 1     & 2 \\
-%    2014  & 10    & 0     & 2     & 0     & 0     & 4 \\
-%    2013  & 11    & 1     & 0     & 3     & 2     & 2 \\
-%    2012  & 2     & 1     & 2     & 4     & 1     & 2 \\
-%    2011  & 7     & 1     & 1     & 0     & 0     & 2 \\
-%    2010  & 4     & 1     & 0     & 2     & 0     & 1 \\
-%    2009  & 1     & 1     & 0     & 0     & 0     & 4 \\
-%    2008  & 3     & 0     & 0     & 0     & 0     & 6 \\
-%    2007  & 1     & 0     & 0     & 0     & 0     & 3 \\
-%    2006  & 0     & 0     & 0     & 0     & 0     & 2 \\
-%    		\bottomrule
-%    	\end{tabular}
-%\end{minipage}
-
-\begin{minipage}{0.6\linewidth}
-	%\selectcolormodel{rgb}
-	%\scalebox{0.5}
-	{
-		\begin{tikzpicture}
-    			\begin{axis}[ylabel={number of papers},   x=1.45cm, y=0.6cm, xtick={2006,2008,2010,2012, 2014, 2016, 2018}, ytick={0,2,4,6,8,10,12,14},   x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
-		      			  legend pos=north west, xmajorgrids=true, ymajorgrids=true, grid style=dashed, ]
-    					\addplot[mark=*,color=blue!50]
-   	 				coordinates {
-   				 			(2006,0)(2007,1)(2008,3)(2009,2)(2010,5)(2011,9)
-   				 			(2012,5)(2013,12)(2014,12)(2015,11)(2016,6)(2017,9)(2018,12)
-  							  };
-  		 			 \addlegendentry{\small{SCI/SSCI Journals}}
-
-  					  \addplot[mark=square,color=orange]
-    					coordinates {
-  							  (2006,2)(2007,3)(2008,6)(2009,4)(2010,3)(2011,2)(2012,7)
-   							 (2013,7)(2014,4)(2015,3)(2016,5)(2017,6)(2018,5)
-   							 };
-   					 \addlegendentry{\small{Referred Conferences}}
-   			 \end{axis}
-    		\end{tikzpicture}		
-	}		
-\end{minipage}
-\begin{minipage}{0.32\linewidth}
-		\begin{tikzfigure}
-			\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018B.eps}
-			\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018A.eps}
-			\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016A.eps}
-			\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2012.eps}
-			\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2007.eps}
-			\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016B.eps}
-			\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2014.eps}
-		 \end{tikzfigure}
-		 \end{minipage}	
-
-\begin{minipage}{\linewidth}
-%\begin{table}[htbp]
-%  \centering
-%  \caption{TULIP Lab Research Awards}
-\begin{tabular}{ r | l | r  r }
-\toprule
-\multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
-\midrule
-\textbf{2018} & KSEM 2018 \textit{Best Paper} Award & Shaoni Wang &  \\
-
-\textbf{2017} & IFITT \textit{Journal Paper of The Year} Award (1st Prize) & Huy Quan Vu &  \\
-
-\textbf{2016} & IEEE TrustCom 2016 \textit{Best Student Paper} Award & Na Pang &  \\
-
-\textbf{2015} & IFITT \textit{Journal Paper of The Year} Award (3rd Prize) & Huy Quan Vu &  \\
-
-\textbf{2014} & PAKDD 2014 \textit{Best Student Paper} Award & Tianqing Zhu &  \\
-
-\textbf{2012} & ACM ASONAM 2012  \textit{Best Paper} Award & Yongli Ren &  \\
-
-\textbf{2007} & Springer 2007 \textit{Nightingale Prize} & Jingyu Hou &  \\
-\bottomrule
-\end{tabular}
-%\end{table}
-\end{minipage}
+\block[titleleft]{Aim High, Soar High \dots}{
+	\begin{center}
+		\smartdiagramset{description title width=5cm,
+			set color list={blue!60,blue!40,blue!20},
+			description title text width=4.5cm,
+			descriptive items y sep=5.5cm,
+			description text width=28cm,
+			module minimum height=.95cm}
+		\smartdiagram[descriptive diagram]{
+			{\textbf{$\infty$}, \begin{enumerate}
+					\item Proactively meet with supervisor twice per week
+					\item Proactively present and criticize at \textit{TULIP Seminar}
+					\item FLIP (04-05) and FLIP (06-07) completion
+					\item Act as FLIP team leaders and update materials annually
+			\end{enumerate}},
+			{\textbf{Trainee}, \begin{enumerate}
+					\item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+					\item Feedback and suggestions on FLIP
+					\item Present at \textit{TULIP Seminar}
+			\end{enumerate}},
+			{\textbf{Flipper},\begin{enumerate}
+					\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+					\item Keep FLIP materials confidential without distribution
+					\item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+					\item Attend \textit{TULIP Seminar} with preparation and questions
+			\end{enumerate}},}
+		%\smartdiagram[descriptive diagram]{
+		%			{Style,{Define shapes, colors, shading,
+		%					and line styles for nodes and arrows}},
+		%			{Position, {Place nodes using a matrix,
+		%					relative or absolute positioning}},
+		%			{Relation, Insert edges or arrows
+		%				between selected nodes},
+		%			{Label, Add labels on edges or arrows}}
+	\end{center}
+	
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
 
-% Second column - second block
-%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\block[titlewidthscale=1, bodywidthscale=1]
-{Training @ TULIP}
-{
-%\begin{center}
-%\selectcolormodel{rgb}
-%\smartdiagramset{description title width=2cm,
-%set color list={blue!40,blue!30,orange!40},
-%description title text width=1.75cm,
-%descriptive items y sep=3.5cm,
-%description text width=12cm,
-%module minimum height=.4cm}
-%
-%\smartdiagram[descriptive diagram]{
-%{\textbf{$\infty$}, \begin{enumerate}
-%         \item Proactively meet with supervisor twice per week
-%         \item Proactively present and criticize at \textit{TULIP Seminar}
-%         \item FLIP (04-05) and FLIP (06-07) completion
-%         \item Act as FLIP team leaders and update materials annually
-%         \end{enumerate}},
-%{\textbf{Trainee}, \begin{enumerate}
-%         \item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-%         \item Feedback and suggestions on FLIP
-%         \item Present at \textit{TULIP Seminar}
-%         \end{enumerate}},
-%{\textbf{Flipper},\begin{enumerate}
-%         \item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-%		 \item Keep FLIP materials confidential without distribution
-%         \item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-%         \item Attend \textit{TULIP Seminar} with preparation and questions
-%         \end{enumerate}},}
-%\end{center}
-}
-%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+
 
 
 % Bottomblock
