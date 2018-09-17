@@ -415,7 +415,7 @@ rcolwidth=0.3\linewidth
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,text=white,
+  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -424,7 +424,7 @@ rcolwidth=0.3\linewidth
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=7em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=180]
-    child[concept color=orange!70] {
+    child[concept color=orange!60] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
@@ -462,7 +462,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,text=white,
+  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -476,7 +476,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=orange!70] {
+     child[concept color=orange!60] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
@@ -502,7 +502,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,text=white,
+  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -521,7 +521,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=orange!70] {
+    child[concept color=orange!60] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
       child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
@@ -658,25 +658,56 @@ Photos are static media; whereas travel behavior is dynamic
     \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
 \end{figure}
 
-\begin{center}
-   \onslide{2}{
-   \put(-200,90){
-   {\twotonebox{\huge \textcolor{orange}{?}}
-   {\large {How to mine these data for travel behaviour analysis?}}
-   }}}
-\end{center}
-
-
 %\begin{thebibliography}{}
 %\bibitem{}
 %\small{Vu, Huy Quan and Li, Gang and Law, Rob and Yip, Ben Haobin.
 %Exploring the travel behaviors of inbound tourists to Hong Kong using Geotagged photos. 
 %Tourism Management, 2015.}
 %\end{thebibliography}
-
+\onslide*{1,-1}{
 \bibliographystyle{plain}
 \nobibliography{tuliplab}
 \footnotesize\bibentry{VLLY15J07}
+}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Case Study (1) - Tourist Movement Analysis}
+
+\begin{itemize}
+\item
+There are many geotagged photos available.
+However
+
+\begin{itemize}
+\item
+Data can be noisy or misleading
+
+\item
+Photos are taken in transit rather than at the attractions
+
+\item
+Photos are static media; whereas travel behavior is dynamic
+\end{itemize}
+
+\end{itemize}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
+\end{figure}
+
+\begin{center}
+   \onslide{1}{
+   \put(-200,90){
+   {\twotonebox{\huge \textcolor{orange}{?}}
+   {\large {How to mine these data for travel behaviour analysis?}}
+   }}}
+
+\end{center}
 
 \end{slide}
 %%
@@ -2048,7 +2079,7 @@ rcolwidth=0.65\linewidth
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!40,text=white,
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=9em},
@@ -2121,7 +2152,7 @@ Research Skills: Review Team, Reading Team
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!40,text=white,
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=9em},
@@ -2178,7 +2209,7 @@ Research Skills: Review Team, Reading Team
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!40,text=white,
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=9em},
