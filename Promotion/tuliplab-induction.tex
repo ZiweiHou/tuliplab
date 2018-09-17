@@ -144,7 +144,8 @@ basicstyle=\footnotesize\ttfamily}
 \usepackage[utf8]{inputenc}
 \usepackage{dtk-logos}
 \usepackage{tikz}
-\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,
+	petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
 % Information boxes
 \newcommand*{\info}[4][4]{%
@@ -1655,7 +1656,7 @@ rcolwidth=0.65\linewidth
 			\begin{itemize}
 				\item 	
 				Detect the changes of rules strength between
-				differences year data set
+				data sets corresponding to different years
 			\end{itemize}
 		}{
 			\begin{center}
@@ -1670,15 +1671,14 @@ rcolwidth=0.65\linewidth
 			\end{center}	
 		}
 		
-		\vspace{1.5cm}
+		\vspace{1cm}
 		
 		\twocolumn[lcolwidth=0.5\linewidth,rcolwidth=0.5\linewidth,colsep=0.001\linewidth]{
 			\onslide*{3,3-}{
 				\begin{itemize}
 					
 					\item
-					Trace the trend for predicting
-					future potential
+					Trace the trend to predict future potentials
 					
 				\end{itemize}
 			}
@@ -1687,7 +1687,6 @@ rcolwidth=0.65\linewidth
 				\begin{tikzpicture}[node distance = 0.3cm, auto]
 				\onslide*{4,4-}{
 					\node[contrast](contrast3){\\ \textbf{2016}};
-					
 					\node[contrast, right= of contrast3](contrast4){\\ \textbf{2017}};
 					\node[contrast, right= of contrast4](contrast5){\\ \textbf{2018}};
 					\node[contrast, right= 1.5cm of contrast5](contrast6){\\ \textbf{2019}};
@@ -1734,7 +1733,7 @@ rcolwidth=0.65\linewidth
 			\end{itemize}
 		}{
 			\begin{figure}
-				\includegraphics[width=0.4\textwidth]{figures//theme3//Theme3_4_1.eps}
+				\includegraphics[width=0.3\textwidth]{figures//theme3//Theme3_4_1.eps}
 			\end{figure}
 		}
 		\onslide*{2, 2-}{
@@ -1834,7 +1833,7 @@ rcolwidth=0.65\linewidth
 				%	\setlength\itemsep{-0.3em}
 				\item Users give lower ratings when in bad mood
 				
-				\item Different scales, e.g., 4/5 star is ``OK'' for critics
+				\item Different scales, e.g., $4/5$ star is ``\texttt{OK}'' for critics
 				
 				\item User interface design
 				
@@ -1998,12 +1997,12 @@ rcolwidth=0.65\linewidth
 
 \begin{figure}
 %		\begin{overprint}
-		\onslide*{1, 1-}{
+		\onslide*{1-}{
 			\put(-280,90){
 				\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018B.eps}
 			}
 		}
-		\onslide*{1, 1-}{
+		\onslide*{1-}{
 			\put(-100,90){
 				\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018A.eps}
 			}
@@ -2042,7 +2041,7 @@ rcolwidth=0.65\linewidth
 
 %%%==========================================================================================
 %%%
-\begin{slide}{Minimal Requirements}
+\begin{slide}{Minimum Requirements}
 \begin{description}
 \item[Honors or Master Students]
 %$Flipper \xrightarrow{\text{6 months}} Trainee \xrightarrow{\text{6 months}} \infty \xrightarrow{\text{2 years}} \cdots$
@@ -2071,7 +2070,7 @@ $\overbrace{\text{Flipper} \rightarrow \text{Trainee} \rightarrow}^{\text{1 year
 
 \item[Post-doctoral Research Fellows]
     \begin{itemize}
-    \item \textit{annually} $2$ \textcolor{orange}{CCF B} (or above) conference paper
+    \item \textit{annually} $2$ \textcolor{orange}{CCF B} (or above) conference papers
     \item \textit{annually} $4$ \textcolor{orange}{$Q_1$ journal} papers,
      with at least $1$ \textcolor{orange}{ACM/IEEE Transactions} paper
     \end{itemize}
