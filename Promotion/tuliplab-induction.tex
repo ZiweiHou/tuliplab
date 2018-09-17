@@ -415,7 +415,7 @@ rcolwidth=0.3\linewidth
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -462,7 +462,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -502,7 +502,7 @@ Business Intelligence Applications: Recommender System, Tourism/Hospitality Mana
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=black!50,font = \sffamily\bfseries,
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
     every node/.style={concept},
     root/.style    = {concept color=black!40,
       font=\Large\bfseries,text width=10em},
@@ -702,7 +702,7 @@ Photos are static media; whereas travel behavior is dynamic
         \includegraphics[height=0.20\textwidth,width=0.3\textwidth]{figures//theme1//Theme1_11.eps}
     }
     \subfigure{
-    \onslide{2}{
+    \onslide*{2,2-}{
 %   \put(-200,90){
     {\twotonebox{\huge \textcolor{orange}{?}}
     {\large {How to mine these data for travel behaviour analysis?}}
@@ -711,7 +711,7 @@ Photos are static media; whereas travel behavior is dynamic
    }}
 \end{figure}
 
-\onslide*{2,2-}{
+\onslide*{3,3-}{
 \bibliographystyle{plain}
 \nobibliography{tuliplab}
 \footnotesize\bibentry{VLLY15J07}
@@ -2176,7 +2176,7 @@ Research Skills: Review Team, Reading Team
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-    child[concept color=blue!40] {
+    child[concept color=mynodecolor] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
         child { node[scale=0.6] (goRefrences ){References Management}}
@@ -2190,7 +2190,7 @@ Research Skills: Review Team, Reading Team
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=blue!40] {
+    child[concept color=mynodecolor] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
@@ -2233,14 +2233,14 @@ Research Skills: Review Team, Reading Team
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
   ]
   node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-    child[concept color=blue!40] {
+    child[concept color=mynodecolor] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
         child { node[scale=0.6] (goRefrences ){References Management}}
         child { node[scale=0.6] {\LaTeX}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=blue!40] {
+     child[concept color=mynodecolor] {
       node[concept,scale=0.6] {FLIP}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
@@ -2333,7 +2333,7 @@ module minimum height=.4cm}
 \begin{center}
 \selectcolormodel{rgb}
 \smartdiagramset{description title width=2cm,
-set color list={blue!40,orange!70,blue!20},
+set color list={blue!40,orange!70,mynodecolor},
 description title text width=1.75cm,
 descriptive items y sep=3.5cm,
 description text width=12cm,
@@ -2370,7 +2370,7 @@ module minimum height=.4cm}
 \begin{center}
 \selectcolormodel{rgb}
 \smartdiagramset{description title width=2cm,
-set color list={orange!70,blue!30,blue!20},
+set color list={orange!70,blue!30,mynodecolor},
 description title text width=1.75cm,
 descriptive items y sep=3.5cm,
 description text width=12cm,
