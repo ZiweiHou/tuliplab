@@ -279,34 +279,34 @@ rcolwidth=0.3\linewidth
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Deakin University}
-\begin{table}[htbp]
-  \setlength{\abovecaptionskip}{-21pt}
-  \setlength{\belowcaptionskip}{12pt}
-  \centering
-  \caption{Major Rankings of Deakin University}
-    \begin{tabular}{l|c|cccc}
-    \toprule
-      & \textbf{Benchmark} & \multicolumn{1}{l}{\textbf{2014-2015}} & \multicolumn{1}{l}{\textbf{2015-2016}} & \multicolumn{1}{l}{\textbf{2016-2017}} & \multicolumn{1}{l}{\textbf{2017-2018}} \\ \midrule
-    \multirow{2}[0]{*}{\textbf{ARWU}} & World & 401-500 & 301-400 & 201-300 & 201 \\
-      & National  & 19 &   &   & 10 \\
-      \midrule
-    \multirow{2}[0]{*}{\textbf{CWTS Leiden}} & World  & 284 & 325 & 314 & 226 \\
-      & National  & 11 & 17 & 17 & 11 \\
-      \midrule
-    \multirow{2}[0]{*}{\textbf{QS\#}} & World  & 360 & 324 & 355 & 293 \\
-      & National & 19 &   &   & 17 \\
-      \midrule
-    \multirow{2}[0]{*}{\textbf{THE} } & World  & 325 & 301-350 & 251-300 & 301 \\
-      & National  & 13 &   &   & 17 \\
-      \midrule
-    \multirow{2}[0]{*}{\textbf{THE<50}} & World  & 59 &   &   & 43 \\
-      & National  & 7 &   &   & 8 \\
-      \bottomrule
-    \end{tabular}
-  \label{tab:Deakin Ranking}
-\end{table}
-\centering
-\url{https://www.australianuniversities.com.au/rankings/}
+	\begin{table}[htbp]
+		\setlength{\abovecaptionskip}{-21pt}
+		\setlength{\belowcaptionskip}{12pt}
+		\centering
+		\caption{Major Rankings of Deakin University}
+		\begin{tabular}{l|c|cccc}
+			\toprule
+			& \textbf{Benchmark} & \multicolumn{1}{l}{\textbf{2014-2015}} & \multicolumn{1}{l}{\textbf{2015-2016}} & \multicolumn{1}{l}{\textbf{2016-2017}} & \multicolumn{1}{l}{\textbf{2017-2018}} \\ \midrule
+			\multirow{2}[0]{*}{\textbf{ARWU}} & World & 301-400 & 201-300 & 201-300 & 201-300 \\
+			& National  & 12-19 & 9-14  & 11-14  & 10-15 \\
+			\midrule
+			\multirow{2}[0]{*}{\textbf{CWTS Leiden}} & World  & 284 & 325 & 314 & 226 \\
+			& National  & 11 & 17 & 17 & 11 \\
+			\midrule
+			\multirow{2}[0]{*}{\textbf{QS\#}} & World  & 360 & 324 & 355 & 293 \\
+			& National & 19 & 17 & 19  & 17 \\
+			\midrule
+			\multirow{2}[0]{*}{\textbf{THE} } & World  & 301-350 & 301-350 & 251-300 & 301-350 \\
+			& National  & 13-15 & 18-19  & 12-18  & 17-21 \\
+			\midrule
+			\multirow{2}[0]{*}{\textbf{THE<50}} & World  & 45 & 50 & 43  & 50 \\
+			& National  & 6 & 8  & 8  & 8 \\
+			\bottomrule
+		\end{tabular}
+		\label{tab:Deakin Ranking}
+	\end{table}
+	\centering
+	\url{https://www.australianuniversities.com.au/rankings/}
 \end{slide}
 %%
 %%==========================================================================================
@@ -1643,8 +1643,8 @@ rcolwidth=0.65\linewidth
 \begin{slide}[toc=,bm=]{Case Study (2) - Contrast Mining}
 	\selectcolormodel{rgb}
 	\usetikzlibrary{positioning}
-	\tikzstyle{contrast} = [rectangle, draw=black,fill=blue!20, text width=2em, text centered,  minimum height=5em, minimum width=3em,font=\small]
-	\tikzstyle{block} = [rectangle, text width=2em, text centered, minimum width=3em, minimum height=1em, font=\small]
+	\tikzstyle{contrast} = [rectangle, draw=black, fill=blue!20, text width=2em, text centered,  minimum height=5em, minimum width=3em,font=\small]
+	\tikzstyle{block} = [rectangle,draw=white, text width=3em, text centered, minimum width=3em, minimum height=5em, font=\small]
 	\tikzstyle{vecArrow} = [thick, fill=blue!10,
 	decoration={markings,mark=at position 1 with {\arrow[semithick]{open triangle 60}}},
 	double distance=1.4pt, shorten >= 5.5pt, preaction = {decorate},
@@ -1664,7 +1664,7 @@ rcolwidth=0.65\linewidth
 			\end{itemize}
 		}{
 			\begin{center}
-				\begin{tikzpicture}[node distance = 0.3cm, auto]
+				\begin{tikzpicture}[node distance = 0.3cm and 0.3cm, auto]
 				\onslide*{2,2-}{	
 					\node[contrast](contrast1){\\ \textbf{2015}};
 					\node[block, right= of contrast1](contrast){\footnotesize Contrast};
@@ -1697,7 +1697,7 @@ rcolwidth=0.65\linewidth
 					\node[contrast, right= of contrast4](contrast5){\\ \textbf{2018}};
 					\node[contrast, right= 1.5cm of contrast5](contrast6){\\ \textbf{2019}};
 					
-					\draw[vecArrow] (contrast5) to node[above] {Predict} (contrast6) ;
+					\draw[vecArrow] (contrast5) to node[above] {\footnotesize Predict} (contrast6) ;
 					
 				}
 				
