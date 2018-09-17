@@ -70,6 +70,20 @@
   };
 }
 
+
+
+% aiming high
+\usepackage{smartdiagram}
+\usetikzlibrary{shapes.symbols}
+
+\tikzset{description title/.append style={
+    signal,
+    signal to=north,
+    signal from=south,
+    yshift=0.5cm,
+  }
+}
+
 \definecolor{mynodecolor}{RGB}{198,191,234}
 
 %\pgfdeclarelayer{backgroundlayer}
@@ -114,9 +128,12 @@ Deakin University, Australia
 %\definebackgroundstyle{samplebackgroundstyle}{
 %\draw[inner sep=0pt, line width=0pt, color=red, fill=backgroundcolor!30!black]
 %(bottomleft) rectangle (topright);
-%}
+%}\pgfdeclarelayer{background}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{notelayer,backgroundlayer,background,main,foreground}
 %
-\colorlet{backgroundcolor}{blue!10}
+
 
 \begin{document}
 
@@ -196,13 +213,13 @@ Deakin University, Australia
   	
 \begin{description}
 \item[Official Websites]
-  \begin{itemize}  
+  \begin{itemize}
     \item \textcolor{orange}{\faHome:} \url{http://www.tulip.org.au}
     \item \textcolor{orange}{\faGithub:} \url{https://github.com/tulip-lab}
   \end{itemize}
 
 \item[Social Media]
-  \begin{itemize} 
+  \begin{itemize}
     \item \textcolor{orange}{\faTwitter:} \href{https://twitter.com/tulipacademy}{tulipacademy}
     \item \textcolor{orange}{\faWeibo:} \href{https://weibo.com/tulipacademy}{tulipacademy}
     \item \textcolor{orange}{\faRedditAlien:} \url{https://www.reddit.com/r/tulipacademy}
@@ -210,7 +227,7 @@ Deakin University, Australia
 
 
 \item[Internal Services]
-  \begin{itemize}  
+  \begin{itemize}
    \item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
    \item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
    \item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal)
@@ -331,36 +348,31 @@ Deakin University, Australia
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 \block[titleleft]{Aim High}{
 	\begin{center}
-%		
-%		\selectcolormodel{rgb}
-		
-%		\smartdiagramset{description title width=2cm,
-%			set color list={blue!40,blue!30,blue!20},
-%			description title text width=1.75cm,
-%			descriptive items y sep=3.5cm,
-%			description text width=12cm,
-%			module minimum height=.4cm}
-		
-		
-%		\smartdiagram[descriptive diagram]{
-%			{\textbf{$\infty$}, \begin{enumerate}
-%					\item Proactively meet with supervisor twice per week
-%					\item Proactively present and criticize at \textit{TULIP Seminar}
-%					\item FLIP (04-05) and FLIP (06-07) completion
-%					\item Act as FLIP team leaders and update materials annually
-%			\end{enumerate}},
-%			{\textbf{Trainee}, \begin{enumerate}
-%					\item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-%					\item Feedback and suggestions on FLIP
-%					\item Present at \textit{TULIP Seminar}
-%			\end{enumerate}},
-%			{\textbf{Flipper},\begin{enumerate}
-%					\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-%					\item Keep FLIP materials confidential without distribution
-%					\item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-%					\item Attend \textit{TULIP Seminar} with preparation and questions
-%			\end{enumerate}},}
-%		\smartdiagram[descriptive diagram]{
+		\smartdiagramset{description title width=2cm,
+			set color list={blue!40,blue!30,blue!20},
+			description title text width=1.75cm,
+			descriptive items y sep=3.5cm,
+			description text width=12cm,
+			module minimum height=.4cm}
+		\smartdiagram[descriptive diagram]{
+			{\textbf{$\infty$}, \begin{enumerate}
+					\item Proactively meet with supervisor twice per week
+					\item Proactively present and criticize at \textit{TULIP Seminar}
+					\item FLIP (04-05) and FLIP (06-07) completion
+					\item Act as FLIP team leaders and update materials annually
+			\end{enumerate}},
+			{\textbf{Trainee}, \begin{enumerate}
+					\item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+					\item Feedback and suggestions on FLIP
+					\item Present at \textit{TULIP Seminar}
+			\end{enumerate}},
+			{\textbf{Flipper},\begin{enumerate}
+					\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+					\item Keep FLIP materials confidential without distribution
+					\item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+					\item Attend \textit{TULIP Seminar} with preparation and questions
+			\end{enumerate}},}
+		%\smartdiagram[descriptive diagram]{
 %			{Style,{Define shapes, colors, shading,
 %					and line styles for nodes and arrows}},
 %			{Position, {Place nodes using a matrix,
@@ -376,28 +388,28 @@ Deakin University, Australia
 \block[titleleft]{Graduation Requirement}
 {
 	\begin{description}
-		\item[Honors or Master Students] \hfill 
+		\item[Honors or Master Students] \hfill
 		\begin{itemize}
 			\item $1$ \textcolor{orange}{CCF C} (or above) conference publication
 			\item $1$ \textcolor{orange}{$Q_1$ journal} paper
 		\end{itemize}
 		\begin{description}
 			\item[Deakin PhD Scholarship]  \hfill
-%			$\overbrace{\text{Flipper} \rightarrow \text{Trainee} \rightarrow}^{\text{1 year}} 
+%			$\overbrace{\text{Flipper} \rightarrow \text{Trainee} \rightarrow}^{\text{1 year}}
 %			\overbrace{\text{Infinity} \rightarrow \cdots \rightarrow }^{\text{2 years}} \infty$
 			\begin{itemize}
 				\item $2$ \textcolor{orange}{$Q_1$ journal} papers as the first author
 				\item \textit{IELTS} overall $6.5$ with no band below $6$
 			\end{itemize}
 		\end{description}
-	\item[PhD Students] \hfill 
+	\item[PhD Students] \hfill
 	 \begin{itemize}
 		\item $1$ research proposal
 		\item $2$ \textcolor{orange}{CCF B} (or above) conference papers
 		\item $1$ \textasciitilde{} $3$ \textcolor{orange}{ACM/IEEE Transactions},
 		with impact factors added up to $5$
 	\end{itemize}
-	\item[Post-doctoral Research Fellows] \hfill 
+	\item[Post-doctoral Research Fellows] \hfill
 	\begin{itemize}
 		\item \textit{annually} $1$ \textcolor{orange}{CCF B} (or above) conference paper
 		\item \textit{annually} $4$ \textcolor{orange}{$Q_1$ journal} papers,
