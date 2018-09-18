@@ -312,21 +312,25 @@
 		%\scalebox{0.5}
 		{
 			\begin{tikzpicture}
-			\begin{axis}[ylabel={number of papers},   x=1.45cm, y=0.6cm, xtick={2006,2008,2010,2012, 2014, 2016, 2018}, ytick={0,2,4,6,8,10,12,14},   x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
+			\begin{axis}[ylabel={\footnotesize{number of papers}},   
+            x=1.45cm, y=0.6cm, 
+            xtick={2006,2008,2010,2012, 2014, 2016, 2018}, 
+            ytick={0,2,4,6,8,10,12,14},   
+            x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
 			legend pos=north west, xmajorgrids=true, ymajorgrids=true, grid style=dashed, ]
 			\addplot[mark=*,color=blue!50]
 			coordinates {
 				(2006,0)(2007,1)(2008,3)(2009,2)(2010,5)(2011,9)
 				(2012,5)(2013,12)(2014,12)(2015,11)(2016,6)(2017,9)(2018,12)
 			};
-			\addlegendentry{\small{SCI/SSCI Journals}}
+			\addlegendentry{\footnotesize{SCI/SSCI Journals}}
 			
 			\addplot[mark=square,color=orange]
 			coordinates {
 				(2006,2)(2007,3)(2008,6)(2009,4)(2010,3)(2011,2)(2012,7)
 				(2013,7)(2014,4)(2015,3)(2016,5)(2017,6)(2018,5)
 			};
-			\addlegendentry{\small{Referred Conferences}}
+			\addlegendentry{\footnotesize{Referred Conferences}}
 			\end{axis}
 			\end{tikzpicture}		
 		}		
@@ -550,7 +554,8 @@
 %\colorlet{noteframecolor}{blue!20}
 \colorlet{notebgcolor}{blue!20}
 \colorlet{notefrcolor}{blue!20}
-\note[targetoffsetx=-13cm, targetoffsety=-78cm,rotate=0,angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
+\note[targetoffsetx=-13cm, targetoffsety=-20cm,rotate=0,
+angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
 {
 \begin{minipage}{0.3\linewidth}
 \centering
