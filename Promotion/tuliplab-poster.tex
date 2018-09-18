@@ -70,7 +70,7 @@
   };
 }
 
-
+\usepackage{enumitem}
 
 % aiming high
 \usepackage{smartdiagram}
@@ -173,68 +173,114 @@
                          inner color=col7in},
   oellip/.append style = { inner color = col8in, outer color = col8out,
                           font = \sffamily\bfseries\large, text centered}}
-\begin{forest}
-  for tree={
-      font=\sffamily\bfseries,
-      line width=1pt,
-      draw=linecol,
-      ellip,
-      align=center,
-      child anchor=north,
-      parent anchor=south,
-      drop shadow,
-      l sep+=12.5pt,
-      edge path={
-        \noexpand\path[color=linecol, rounded corners=5pt,
-          >={Stealth[length=11pt]}, line width=1pt, ->, \forestoption{edge}]
-          (!u.parent anchor) -- +(0,-5pt) -|
-          (.child anchor)\forestoption{edge label};
-        },
-      where level={3}{tier=tier3}{},
-      where level={0}{l sep-=5pt}{},
-      where level={1}{}{},
-  }
-    [TULIP Academy %inner color=col1in, outer color=col1out
-    [Visitor]
-    [Flipper
-    [Trainee
-        [[FLIP (00)]
-          [\dots]
-          [FLIP (05)]
-        ]
-    ]]
-    [TULIP Lab
-        [Australia]
-        [China]
-        [India]]
-    [Alumni] %inner color =col7in, outer color = col7out]
-    [Web Team] %, inner color=col2in, outer color=col2out]
-  ]
-\end{forest}
-  	
-\begin{description}
-\item[Official Websites]
-  \begin{itemize}
-    \item \textcolor{orange}{\faHome:} \url{http://www.tulip.org.au}
-    \item \textcolor{orange}{\faGithub:} \url{https://github.com/tulip-lab}
-  \end{itemize}
+%\begin{center}
+%	
+%\end{center}
+\begin{center}
+	\begin{forest}
+	  for tree={
+	      font=\sffamily\bfseries,
+	      line width=1pt,
+	%      draw=linecol,
+	      ellip,
+	      align=center,
+	      child anchor=north,
+	      parent anchor=south,
+	      drop shadow,
+	      l sep+=12.5pt,
+	      edge path={
+	        \noexpand\path[color=gray, rounded corners=5pt,
+	          >={Stealth[length=11pt]}, line width=1pt, ->, \forestoption{edge}]
+	          (!u.parent anchor) -- +(0,-5pt) -|
+	          (.child anchor)\forestoption{edge label};
+	        },
+	      where level={3}{tier=tier3}{},
+	      where level={0}{l sep-=5pt}{},
+	      where level={1}{}{},
+	  }
+	    [TULIP Academy %inner color=col1in, outer color=col1out
+	    [Visitor]
+	    [Flipper
+		    [Trainee
+		        [FLIP (00)]
+		        [\dots]
+		          [FLIP (05)] 
+		    ]
+	    ]
+	    [TULIP Lab
+	        [Australia]
+	        [China]
+	        [India]]
+	    [Alumni] %inner color =col7in, outer color = col7out]
+	    [Web Team] %, inner color=col2in, outer color=col2out]
+	  ]
+	\end{forest}
+	\\
+	\begin{description}
+		%\centering
+		\item[Official Websites] \hfill
+		\begin{itemize}
+			\item \textcolor{orange}{\faHome:} \url{http://www.tulip.org.au}
+			\item \textcolor{orange}{\faGithub:} \url{https://github.com/tulip-lab}
+		\end{itemize}
+		
+		\item[Social Media] \hfill
+		\begin{itemize}
+			\item \textcolor{orange}{\faTwitter:} \href{https://twitter.com/tulipacademy}{tulipacademy}
+			\item \textcolor{orange}{\faWeibo:} \href{https://weibo.com/tulipacademy}{tulipacademy}
+			\item \textcolor{orange}{\faRedditAlien:} \url{https://www.reddit.com/r/tulipacademy}
+		\end{itemize}
+		
+		
+		\item[Internal Services] \hfill
+		\begin{itemize}
+			\item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
+			\item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
+			\item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal)
+		\end{itemize}
+		
+	\end{description}
+\end{center}
 
-\item[Social Media]
-  \begin{itemize}
-    \item \textcolor{orange}{\faTwitter:} \href{https://twitter.com/tulipacademy}{tulipacademy}
-    \item \textcolor{orange}{\faWeibo:} \href{https://weibo.com/tulipacademy}{tulipacademy}
-    \item \textcolor{orange}{\faRedditAlien:} \url{https://www.reddit.com/r/tulipacademy}
-  \end{itemize}
 
 
-\item[Internal Services ]
-  \begin{itemize}
-   \item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
-   \item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
-   \item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal)
-  \end{itemize}
-
-\end{description}
+%\selectcolormodel{rgb}
+%\usetikzlibrary{positioning}
+%\tikzstyle{block} = [rectangle, text width=35cm, rounded corners, minimum height=9cm,font=\large,text depth=2cm,text height=1.5cm,text centered]
+%\begin{tikzpicture}[node distance = 1cm and 0.5cm, auto]
+%	\node[block,align=center](oweb){\textbf{Official Websites} \\
+%		\begin{itemize}
+%		   \item \textcolor{orange}{\faHome:} \url{http://www.tulip.org.au}
+%		   \item \textcolor{orange}{\faGithub:} \url{https://github.com/tulip-lab}
+%		\end{itemize}\\
+%		Social Media\\
+%			\begin{itemize}
+%		    \item \textcolor{orange}{\faTwitter:} \href{https://twitter.com/tulipacademy}{tulipacademy}
+%		    \item \textcolor{orange}{\faWeibo:} \href{https://weibo.com/tulipacademy}{tulipacademy}
+%		    \item \textcolor{orange}{\faRedditAlien:} \url{https://www.reddit.com/r/tulipacademy}
+%		 	\end{itemize}\\
+%		 Internal Services\\
+%			\begin{itemize}
+%				\item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
+%				\item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
+%				\item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal)
+%			\end{itemize}
+%	};
+%	\node[block, right  = of oweb,align=center](sm){\textbf{Social Media}\\
+%		\begin{itemize}
+%		    \item \textcolor{orange}{\faTwitter:} \href{https://twitter.com/tulipacademy}{tulipacademy}
+%		    \item \textcolor{orange}{\faWeibo:} \href{https://weibo.com/tulipacademy}{tulipacademy}
+%		    \item \textcolor{orange}{\faRedditAlien:} \url{https://www.reddit.com/r/tulipacademy}
+%		 \end{itemize}
+%	};
+%	\node[block, right= of sm,align=center](is){\textbf{Internal Services}\\
+%		\begin{itemize}
+%			\item \textcolor{orange}{\faBitbucket:} \url{https://bitbucket.org}
+%			\item \textcolor{orange}{\faCalendar:} \url{https://goo.gl/cWCWwC}
+%			\item \textcolor{orange}{\faCalendarCheckO:} \url{https://goo.gl/aC9VWW} (iCal)
+%		\end{itemize}
+%	};
+%\end{tikzpicture}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
@@ -245,31 +291,40 @@
 \begin{minipage}{0.9\linewidth}
 \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=orange!50,font=\sffamily\bfseries,
+  \path[mindmap,concept color=blue!40,font=\sffamily\bfseries\small,
     every node/.style={concept},
-    root/.style    = {concept color=orange!40,
+    root/.style    = {concept color=blue!40,
       font=\Large\bfseries,text width=10em},
     level 1 concept/.append style={font=\bfseries,
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,sibling angle=80,text width=8em,inner sep=0pt,level distance=6em},
   ]
   node[root,scale=0.6, text=white] {Research Themes} [clockwise from=190]
-    child[concept color=mynodecolor, text=black!90] {
+    child[concept color=blue!40, text=black!90] {
       node[scale=0.6] {Behavior Informatics} [clockwise from=200]
         child { node[scale=0.6] (pbm){Periodic Behavior Mining}}
         child { node[scale=0.6] (bp) {Group Anomaly Detection}}
     }
-     child[concept color=mynodecolor, text=black!90] {
+     child[concept color=blue!40, text=black!90] {
       node[concept,scale=0.6] {Data Privacy}[clockwise from=120]
       child{node[concept,scale=0.6](dcc){Compliance Checking}}
       child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
     }
-    child[concept color=mynodecolor, text=black!90] {
+    child[concept color=blue!40, text=black!90] {
       node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
       child{node[concept,scale=0.6](rs){Recommender System} }
-      child{node[concept,scale=0.6](t/hm){Tourism \& Hospitality Management}}
+      child{node[concept,scale=0.6](thm){Tourism \& Hospitality Management}}
     }
 ;
+   \info{rs.north}{above,anchor=west, yshift=1.8em, xshift=1.0em}{%
+	\item Group package recommendation
+	\item Heterogeneous Preferences
+}
+%\info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
+%	\item FLIP (06): Reading Team
+%	\item FLIP (07): Review Team
+%	\item FLIP (X): $\infty$
+%}
 \end{tikzpicture}
 
 \end{minipage}
@@ -383,30 +438,30 @@
 \selectcolormodel{rgb}
    \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white}]
-  \path[mindmap,concept color=mynodecolor,font=\sffamily\bfseries,
+  \path[mindmap,concept color=blue!40,font=\sffamily\bfseries,
     every node/.style={concept},
-    root/.style    = {concept color=mynodecolor,
+    root/.style    = {concept color=blue!40,
       font=\Large\bfseries,text width=9em},
     level 1 concept/.append style={font=\bfseries,
       sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
     level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt, level distance=6em},
   ]
   node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-    child[concept color=orange!30,text=black!90] {
+    child[concept color=blue!40,text=black!90] {
       node[scale=0.6] {Professional Skills} [clockwise from=290]
         child { node[scale=0.6] (goReview) {Time Management}}
         child { node[scale=0.6] (goRefrences ){References Management}}
         child { node[scale=0.6] {\LaTeX}}
         child { node[scale=0.6] (goVersionCon) {Version Control System}}
     }
-     child[concept color=orange!30,text=black!90] {
+     child[concept color=blue!40,text=black!90] {
       node[concept,scale=0.6] {FLIP}[clockwise from=160]
       child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
       child{node[concept,scale=0.6](Professional){Professional Knowledge}}
       child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
       child{node[concept,scale=0.6](Math){Mathmatics}}
     }
-    child[concept color=orange!30,text=black!90] {
+    child[concept color=blue!40,text=black!90] {
       node[concept,scale=0.6] {Research Skills}
         [clockwise from=60]
       child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
@@ -438,7 +493,7 @@
 \block[titleleft]{Aim High, Soar High \dots}{
 	\begin{center}
 		\smartdiagramset{description title width=5cm,
-			set color list={blue!60,blue!40,blue!20},
+			set color list={blue!40,blue!40,blue!40},
 			description title text width=4.5cm,
 			descriptive items y sep=5.5cm,
 			description text width=28cm,
@@ -569,7 +624,6 @@ angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
 \end{minipage}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-
 
 \end{document}
 
