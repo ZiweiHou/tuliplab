@@ -175,86 +175,78 @@
 					inner color=blue!30},
 				oellip/.append style = { inner color = blue!30, outer color = blue!30,
 					font = \sffamily\bfseries\small, text centered}}
-			%\begin{center}
-			%	
-			%\end{center}
-			
-
-			\begin{minipage}[l]{0.6\linewidth}
-%				\begin{center}
-				\vspace{-50pt}
-					\scalebox{0.7}[0.8]	{
-						\begin{forest}
-							for tree={
-								font=\sffamily\bfseries,
-								line width=1pt,
-								%      draw=linecol,
-								ellip,
-								align=center,
-								child anchor=north,
-								parent anchor=south,
-								drop shadow,
-								l sep+=12.5pt,
-								edge path={
-									\noexpand\path[color=gray, rounded corners=5pt,
-									>={Stealth[length=11pt]}, line width=1pt, ->, \forestoption{edge}]
-									(!u.parent anchor) -- +(0,-5pt) -|
-									(.child anchor)\forestoption{edge label};
-								},
-								where level={3}{tier=tier3}{},
-								where level={0}{l sep-=5pt}{},
-								where level={1}{}{},
-							}
-							[TULIP Academy %inner color=col1in, outer color=col1out
-								[Visitor]
-								[Flipper
-								[Trainee
-								[FLIP (00)]
-								[\dots]
-								[FLIP (05)] 	
-							]								
-							]
-							[TULIP Lab
-								[Australia]
-								[China]
-								[India]]
-								[Alumni] %inner color =col7in, outer color = col7out]
-								[Web Team] %, inner color=col2in, outer color=col2out]
-								]
-							\end{forest}							
+		\begin{minipage}[l]{0.35\linewidth}
+			\begin{center}
+				\begin{description}[font=\small]
+					%\centering
+					\item[Official Websites] \hfill
+					\begin{itemize}
+						\footnotesize \item \textcolor{orange}{\faHome:} http://www.tulip.org.au
+						\item \textcolor{orange}{\faGithub:} https://github.com/tulip-lab
+					\end{itemize}						
+					\item[Social Media] \hfill
+					\begin{itemize}
+						\footnotesize \item \textcolor{orange}{\faTwitter:} tulipacademy
+						\item \textcolor{orange}{\faWeibo:} tulipacademy
+						\item \textcolor{orange}{\faRedditAlien:} https://www.reddit.com/r/tulipacademy
+					\end{itemize}
+					
+					
+					\item[Internal Services] \hfill
+					\begin{itemize}
+						\footnotesize \item \textcolor{orange}{\faBitbucket:} https://bitbucket.org
+						\item \textcolor{orange}{\faCalendar:} https://goo.gl/cWCWwC
+						\item \textcolor{orange}{\faCalendarCheckO:} https://goo.gl/aC9VWW (iCal)
+					\end{itemize}
+					
+				\end{description}
+			\end{center}				
+		\end{minipage}
+		\hfill
+		\begin{minipage}[l]{0.65\linewidth}
+			\vspace{-50pt}
+			\scalebox{0.75}[0.85]	{
+				\begin{forest}
+					for tree={
+						font=\sffamily\bfseries,
+						line width=1pt,
+						%      draw=linecol,
+						ellip,
+						align=center,
+						child anchor=north,
+						parent anchor=south,
+						drop shadow,
+						l sep+=12.5pt,
+						edge path={
+							\noexpand\path[color=gray, rounded corners=5pt,
+							>={Stealth[length=11pt]}, line width=1pt, ->, \forestoption{edge}]
+							(!u.parent anchor) -- +(0,-5pt) -|
+							(.child anchor)\forestoption{edge label};
+						},
+						where level={3}{tier=tier3}{},
+						where level={0}{l sep-=5pt}{},
+						where level={1}{}{},
 					}
-%				\end{center}
-			\end{minipage}
-			\hfill
-				\begin{minipage}[l]{0.35\linewidth}
-						\begin{center}
-						\begin{description}[font=\small]
-							%\centering
-							\item[Official Websites] \hfill
-							\begin{itemize}
-								\footnotesize \item \textcolor{orange}{\faHome:} http://www.tulip.org.au
-								\item \textcolor{orange}{\faGithub:} https://github.com/tulip-lab
-							\end{itemize}						
-							\item[Social Media] \hfill
-							\begin{itemize}
-								\footnotesize \item \textcolor{orange}{\faTwitter:} tulipacademy
-								\item \textcolor{orange}{\faWeibo:} tulipacademy
-								\item \textcolor{orange}{\faRedditAlien:} https://www.reddit.com/r/tulipacademy
-							\end{itemize}
-							
-							
-							\item[Internal Services] \hfill
-							\begin{itemize}
-								\footnotesize \item \textcolor{orange}{\faBitbucket:} https://bitbucket.org
-								\item \textcolor{orange}{\faCalendar:} https://goo.gl/cWCWwC
-								\item \textcolor{orange}{\faCalendarCheckO:} https://goo.gl/aC9VWW (iCal)
-							\end{itemize}
-							
-						\end{description}
-					\end{center}				
-				\end{minipage}
-			
-				
+					[TULIP Academy %inner color=col1in, outer color=col1out
+					[Visitor]
+					[Flipper
+					[Trainee
+					[FLIP (00)]
+					[\dots]
+					[FLIP (05)] 	
+					]								
+					]
+					[TULIP Lab
+					[Australia]
+					[China]
+					[India]]
+					[Alumni] %inner color =col7in, outer color = col7out]
+					[Web Team] %, inner color=col2in, outer color=col2out]
+					]
+				\end{forest}							
+			}
+		
+		\end{minipage}				
 			
 		
 			
@@ -287,7 +279,7 @@
 						child{node[concept,scale=0.6](privacy){Information Abuse Prevention}}
 					}
 					child[concept color=blue!30, text=black!90] {
-						node[concept,scale=0.6] {Business Intelligence Application}[clockwise from=60]
+						node[concept,scale=0.6] {Business Intelligence}[clockwise from=60]
 						child{node[concept,scale=0.6](rs){Recommender System} }
 						child{node[concept,scale=0.6](thm){Tourism \& Hospitality Management}}
 					}
@@ -429,13 +421,11 @@
 		\column{0.5}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		\block{Training @ TULIP}{
-			\begin{minipage}[l]{0.45\textwidth}%
-					\scalebox{0.45}{
-%						\setlength{\abovecaptionskip}{-15pt}
-						\selectcolormodel{rgb}
-						\begin{tikzpicture}[ every annotation/.style = {draw,
-							fill = white}]
-						\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
+			\begin{minipage}[l]{0.6\linewidth}
+				\scalebox{0.6}{
+					\begin{tikzpicture}[ every annotation/.style = {draw,
+						fill = white}]
+						\path[mindmap,concept color=blue!30,font=\sffamily\bfseries, 
 						every node/.style={concept},
 						root/.style    = {concept color=blue!30,
 							font=\Large\bfseries,text width=9em},
@@ -444,77 +434,81 @@
 						level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt, level distance=6em},
 						]
 						node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
-						child[concept color=blue!30,text=black!90] {
-							node[scale=0.6] {Professional Skills} [clockwise from=290]
-							child { node[scale=0.6] (goReview) {Time Management}}
-							child { node[scale=0.6] (goRefrences ){References Management}}
-							child { node[scale=0.6] {\LaTeX}}
-							child { node[scale=0.6] (goVersionCon) {Version Control System}}
-						}
-						child[concept color=blue!30,text=black!90] {
-							node[concept,scale=0.6] {FLIP}[clockwise from=160]
-							child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
-							child{node[concept,scale=0.6](Professional){Professional Knowledge}}
-							child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
-							child{node[concept,scale=0.6](Math){Mathmatics}}
-						}
-						child[concept color=blue!30,text=black!90] {
-							node[concept,scale=0.6] {Research Skills}
-							[clockwise from=60]
-							child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
-							child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
-							child { node[concept,scale=0.6] (present){Writing}}
-							child { node[concept,scale=0.6] (write){Presenting}}
-						}
-						;
-						\info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
-							\item FLIP (00): Data Science
-							\item FLIP (01): Advanced Data Science
-							\item FLIP (02): Modern Data Science
-							\item FLIP (03): Deep Learning
-							\item FLIP (04): Learning Theory (I)
-							\item FLIP (05): Learning Theory (II)
-						}
-%						\info{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
-%							\item FLIP (06): Reading Team
-%							\item FLIP (07): Review Team
-%							\item FLIP (X): $\infty$
-%						}
-						\end{tikzpicture}}
-
-			\end{minipage}%
+					child[concept color=blue!30,text=black!90] {
+						node[scale=0.6] {Professional Skills} [clockwise from=290]
+						child { node[scale=0.6] (goReview) {Time Management}}
+						child { node[scale=0.6] (goRefrences ){References Management}}
+						child { node[scale=0.6] {\LaTeX}}
+						child { node[scale=0.6] (goVersionCon) {Version Control System}}
+					}
+					child[concept color=blue!30,text=black!90] {
+						node[concept,scale=0.6] {FLIP}[clockwise from=160]
+						child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+						child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+						child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+						child{node[concept,scale=0.6](Math){Mathmatics}}
+					}
+					child[concept color=blue!30,text=black!90] {
+						node[concept,scale=0.6] {Research Skills}
+						[clockwise from=60]
+						child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
+						child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+						child { node[concept,scale=0.6] (present){Writing}}
+						child { node[concept,scale=0.6] (write){Presenting}}
+					}
+					;
+					\info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
+						\item FLIP (00): Data Science
+						\item FLIP (01): Advanced Data Science
+						\item FLIP (02): Modern Data Science
+						\item FLIP (03): Deep Learning
+						\item FLIP (04): Learning Theory (I)
+						\item FLIP (05): Learning Theory (II)
+					}
+					\end{tikzpicture}
+				}
+			\end{minipage}
 			\hfill
-%			\begin{minipage}[t]{0.45\textwidth}%
-%
-%			\scalebox{0.45}{
-%			\smartdiagramset{description title width=5cm,
-%				set color list={blue!45,blue!30,blue!15},
-%				description title text width=4.5cm,
-%				descriptive items y sep=5.5cm,
-%				description text width=28cm,
-%				module minimum height=.95cm}
-%	
-%				\smartdiagram[descriptive diagram]{
-%					{\textbf{$\infty$}, \begin{enumerate}
-%							\item Proactively meet with supervisor twice per week
-%							\item Proactively present and criticize at \textit{TULIP Seminar}
-%							\item FLIP (04-05) and FLIP (06-07) completion
-%							\item Act as FLIP team leaders and update materials annually
-%					\end{enumerate}},
-%					{\textbf{Trainee}, \begin{enumerate}
-%							\item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-%							\item Feedback and suggestions on FLIP
-%							\item Present at \textit{TULIP Seminar}
-%					\end{enumerate}},
-%					{\textbf{Flipper},\begin{enumerate}
-%							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-%							\item Keep FLIP materials confidential without distribution
-%							\item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
-%							\item Attend \textit{TULIP Seminar} with preparation and questions
-%					\end{enumerate}},}
-%			}
-%	%	\end{center}
+%			\begin{minipage}[l]{0.35\linewidth}
+%				\begin{center}
+%					\begin{description}[font=\small]			
+%						\item [add text for research]
+%					\end{description}
+%				\end{center}				
 %			\end{minipage}
+			\hspace{-0.02\textwidth}
+			\begin{minipage}[l]{0.45\textwidth}
+
+			\scalebox{0.55}{
+				\centering
+				\smartdiagramset{description title width=5cm,
+				set color list={blue!45,blue!30,blue!15},
+				description title text width=4.5cm,
+				descriptive items y sep=6.5cm,
+				description text width=20cm,
+				module minimum height=5.2cm}
+	
+				\smartdiagram[descriptive diagram]{
+					{\textbf{$\infty$}, \begin{enumerate}
+							\item Proactively meet with supervisor twice per week
+							\item Proactively present and criticize at \textit{TULIP Seminar}
+							\item FLIP (04-05) and FLIP (06-07) completion
+							\item Act as FLIP team leaders and update materials annually
+					\end{enumerate}},
+					{\textbf{Trainee}, \begin{enumerate}
+							\item FLIP (02-03) with success on open Kaggle projects
+							\item Feedback and suggestions on FLIP
+							\item Present at \textit{TULIP Seminar} 
+					\end{enumerate}},
+					{\textbf{Flipper},\begin{enumerate}
+							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+							\item Keep FLIP materials confidential without distribution
+							\item FLIP (00-01) with success on open Kaggle projects
+							\item Attend \textit{TULIP Seminar} with preparation and questions
+					\end{enumerate}},}
+			}
+	%	\end{center}
+			\end{minipage}
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
@@ -526,9 +520,9 @@
 				\smartdiagramset{description title width=5cm,
 				set color list={blue!45,blue!30,blue!15},
 				description title text width=4.5cm,
-				descriptive items y sep=5.5cm,
-				description text width=28cm,
-				module minimum height=.95cm}
+				descriptive items y sep=6.5cm,
+				description text width=25cm,
+				module minimum height=5.2cm}
 			
 				\smartdiagram[descriptive diagram]{
 					{\textbf{$\infty$}, \begin{enumerate}
@@ -538,14 +532,14 @@
 							\item Act as FLIP team leaders and update materials annually
 					\end{enumerate}},
 					{\textbf{Trainee}, \begin{enumerate}
-							\item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+							\item FLIP (02-03) with success on open Kaggle projects
 							\item Feedback and suggestions on FLIP
 							\item Present at \textit{TULIP Seminar}
 					\end{enumerate}},
 					{\textbf{Flipper},\begin{enumerate}
 							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
 							\item Keep FLIP materials confidential without distribution
-							\item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+							\item FLIP (00-01) with success on open Kaggle projects
 							\item Attend \textit{TULIP Seminar} with preparation and questions
 					\end{enumerate}},}
 
@@ -562,37 +556,71 @@
 		% Second column - second block
 		\block[titleleft]{Minimum Requirements}
 		{
-			\vspace{-50pt}
-			\begin{description}
-				\item[Honors or Master Students] \hfill
-				\begin{itemize}
-					\item $1$ \textcolor{orange}{CCF C} (or above) conference publication
-					\item $1$ \textcolor{orange}{$Q_1$ journal} paper
-				\end{itemize}
-				\begin{description}
-					\item[Deakin PhD Scholarship]  \hfill
-					%			$\overbrace{\text{Flipper} \rightarrow \text{Trainee} \rightarrow}^{\text{1 year}}
-					%			\overbrace{\text{Infinity} \rightarrow \cdots \rightarrow }^{\text{2 years}} \infty$
-					\begin{itemize}
-						\item $2$ \textcolor{orange}{$Q_1$ journal} papers as the first author
-						\item \textit{IELTS} overall $6.5$ with no band below $6$
-					\end{itemize}
-				\end{description}
-				\item[PhD Students] \hfill
-				\begin{itemize}
-					\item $1$ research proposal
-					\item $2$ \textcolor{orange}{CCF B} (or above) conference papers
-					\item $2$ \textasciitilde{} $3$ \textcolor{orange}{ACM/IEEE Transactions},
-					with impact factors added up to $5$
-				\end{itemize}
-				\item[Post-doctoral Research Fellows] \hfill
-				\begin{itemize}
-					\item \textit{annually} $1$ \textcolor{orange}{CCF A} and $1$ \textcolor{orange}{CCF B} conference papers
-					\item \textit{annually} $4$ \textcolor{orange}{$Q_1$ journal} papers,
-					with at least $1$ \textcolor{orange}{ACM/IEEE Transactions} paper
-				\end{itemize}
+			
+			\begin{minipage}[l]{0.35\linewidth}
+				\scalebox{0.45}[0.65]{
+				\centering
+				\smartdiagramset{description title width=5cm,
+					set color list={blue!45,blue!30,blue!15},
+					description title text width=4.5cm,
+					descriptive items y sep=6.5cm,
+					description text width=20cm,
+					module minimum height=5.2cm}
 				
-			\end{description}
+				\smartdiagram[descriptive diagram]{
+					{\textbf{$\infty$}, \begin{enumerate}
+							\item Proactively meet with supervisor twice per week
+							\item Proactively present and criticize at \textit{TULIP Seminar}
+							\item FLIP (04-05) and FLIP (06-07) completion
+							\item Act as FLIP team leaders and update materials annually
+					\end{enumerate}},
+					{\textbf{Trainee}, \begin{enumerate}
+							\item FLIP (02-03) with success on open Kaggle projects
+							\item Feedback and suggestions on FLIP
+							\item Present at \textit{TULIP Seminar} 
+					\end{enumerate}},
+					{\textbf{Flipper},\begin{enumerate}
+							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+							\item Keep FLIP materials confidential without distribution
+							\item FLIP (00-01) with success on open Kaggle projects
+							\item Attend \textit{TULIP Seminar} with preparation and questions
+					\end{enumerate}},}
+			}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[l]{0.65\linewidth}
+				\vspace{-50pt}
+				\begin{description}[font=\small]
+					\item[Honors or Master Students] \hfill
+					\begin{itemize}
+						\footnotesize \item $1$ \textcolor{orange}{CCF C} (or above) conference publication
+						\item $1$ \textcolor{orange}{$Q_1$ journal} paper
+					\end{itemize}
+					\begin{description}[font=\small]
+						\item[Deakin PhD Scholarship]  \hfill
+						\begin{itemize}
+							\footnotesize \item $2$ \textcolor{orange}{$Q_1$ journal} papers as the first author
+							\item \textit{IELTS} overall $6.5$ with no band below $6$
+						\end{itemize}
+					\end{description}
+					\item[PhD Students] \hfill
+					\begin{itemize}
+						\footnotesize \item $1$ research proposal
+						\item $2$ \textcolor{orange}{CCF B} (or above) conference papers
+						\item $2$ \textasciitilde{} $3$ \textcolor{orange}{ACM/IEEE Transactions},
+						with impact factors added up to $5$
+					\end{itemize}
+					\item[Post-doctoral Research Fellows] \hfill
+					\begin{itemize}
+						\footnotesize \item \textit{annually} $1$ \textcolor{orange}{CCF A} and $1$ \textcolor{orange}{CCF B} conference papers
+						\item \textit{annually} $4$ \textcolor{orange}{$Q_1$ journal} papers,
+						with at least $1$ \textcolor{orange}{ACM/IEEE Transactions} paper
+					\end{itemize}
+					
+				\end{description}		
+			\end{minipage}
+
+
 			
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
