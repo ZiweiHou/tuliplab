@@ -204,10 +204,10 @@
 		\end{minipage}
 		\hfill
 		\begin{minipage}[l]{0.65\linewidth}
-			\scalebox{0.75}[0.85]	{
+			\scalebox{0.9}[1]	{
 				\begin{forest}
 					for tree={
-						font=\sffamily\bfseries,
+						font=\sffamily\bfseries\small,
 						line width=1pt,
 						%      draw=linecol,
 						ellip,
@@ -243,29 +243,33 @@
 					[Web Team] %, inner color=col2in, outer color=col2out]
 					]
 				\end{forest}							
-			}
-		
-		\end{minipage}				
-			
-		
-			
-			
-
+			}		
+		\end{minipage}							
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
 		
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		\block{Research @ TULIP}{
-			
+			\begin{minipage}[l]{0.35\linewidth}
+				\begin{center}
+					\begin{description}[font=\small]			
+						\item [add text for research] \hfill
+						\begin{itemize}
+							\item start here...
+						\end{itemize}
+					\end{description}
+				\end{center}				
+			\end{minipage}
+			\hfill
 			\begin{minipage}[l]{0.6\linewidth}
 				\scalebox{0.6}{
 				\begin{tikzpicture}[ every annotation/.style = {draw,
 				fill = white}]
 					\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
 					every node/.style={concept},root/.style    = {concept color=blue!30, font=\Large\bfseries,text width=13em}, 
-					level 1 concept/.append style={font=\bfseries, sibling angle=110,text width=10em,level distance=10em,inner sep=0pt}, 
-					level 2 concept/.append style={font=\sf,text width=8em, sibling angle=100, inner sep=0pt, level distance=8em},]
+					level 1 concept/.append style={font=\bfseries, sibling angle=110,text width=10em,level distance=9em,inner sep=0pt}, 
+					level 2 concept/.append style={font=\sf,text width=8em, sibling angle=100, inner sep=0pt, level distance=7em},]
 					node[root,scale=0.6, text=white] {Research Themes} [clockwise from=190]
 					child[concept color=blue!30, text=black!90] {
 						node[scale=0.6] {Behavior Informatics} [clockwise from=200]
@@ -283,22 +287,11 @@
 						child{node[concept,scale=0.6](thm){Tourism \& Hospitality Management}}
 					}
 					;
-%				\info{rs.north}{above,anchor=west, yshift=1.8em, xshift=1.0em}{%
-%					\item Group package recommendation
-%					\item Heterogeneous Preferences
-%				}
 
 				\end{tikzpicture}
 			}
 			\end{minipage}
-			\hfill
-			\begin{minipage}[l]{0.35\linewidth}
-				\begin{center}
-					\begin{description}[font=\small]			
-						\item [add text for research]
-					\end{description}
-				\end{center}				
-			\end{minipage}
+	
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
@@ -464,6 +457,9 @@
 						\item FLIP (03): Deep Learning
 						\item FLIP (04): Learning Theory (I)
 						\item FLIP (05): Learning Theory (II)
+						\item FLIP (06): Reading Team
+						\item FLIP (07): Review Team
+						\item FLIP (X): $\infty$
 					}
 					\end{tikzpicture}
 				}
@@ -514,39 +510,39 @@
 		
 		% Second column - thrid block
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-		\block[titleleft]{Aim High, Soar High \dots}{
-			\begin{center}
-			
-				\smartdiagramset{description title width=5cm,
-				set color list={blue!45,blue!30,blue!15},
-				description title text width=4.5cm,
-				descriptive items y sep=6.5cm,
-				description text width=25cm,
-				module minimum height=5.2cm}
-			
-				\smartdiagram[descriptive diagram]{
-					{\textbf{$\infty$}, \begin{enumerate}
-							\item Proactively meet with supervisor twice per week
-							\item Proactively present and criticize at \textit{TULIP Seminar}
-							\item FLIP (04-05) and FLIP (06-07) completion
-							\item Act as FLIP team leaders and update materials annually
-					\end{enumerate}},
-					{\textbf{Trainee}, \begin{enumerate}
-							\item FLIP (02-03) with success on open Kaggle projects
-							\item Feedback and suggestions on FLIP
-							\item Present at \textit{TULIP Seminar}
-					\end{enumerate}},
-					{\textbf{Flipper},\begin{enumerate}
-							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-							\item Keep FLIP materials confidential without distribution
-							\item FLIP (00-01) with success on open Kaggle projects
-							\item Attend \textit{TULIP Seminar} with preparation and questions
-					\end{enumerate}},}
-
-				\end{center}
-
-			
-		}
+%		\block[titleleft]{Aim High, Soar High \dots}{
+%			\begin{center}
+%			
+%				\smartdiagramset{description title width=5cm,
+%				set color list={blue!45,blue!30,blue!15},
+%				description title text width=4.5cm,
+%				descriptive items y sep=6.5cm,
+%				description text width=25cm,
+%				module minimum height=5.2cm}
+%			
+%				\smartdiagram[descriptive diagram]{
+%					{\textbf{$\infty$}, \begin{enumerate}
+%							\item Proactively meet with supervisor twice per week
+%							\item Proactively present and criticize at \textit{TULIP Seminar}
+%							\item FLIP (04-05) and FLIP (06-07) completion
+%							\item Act as FLIP team leaders and update materials annually
+%					\end{enumerate}},
+%					{\textbf{Trainee}, \begin{enumerate}
+%							\item FLIP (02-03) with success on open Kaggle projects
+%							\item Feedback and suggestions on FLIP
+%							\item Present at \textit{TULIP Seminar}
+%					\end{enumerate}},
+%					{\textbf{Flipper},\begin{enumerate}
+%							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+%							\item Keep FLIP materials confidential without distribution
+%							\item FLIP (00-01) with success on open Kaggle projects
+%							\item Attend \textit{TULIP Seminar} with preparation and questions
+%					\end{enumerate}},}
+%
+%				\end{center}
+%
+%			
+%		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
 		
@@ -557,38 +553,38 @@
 		\block[titleleft]{Minimum Requirements}
 		{
 			
-			\begin{minipage}[l]{0.45\linewidth}
-				\vspace{-35pt}
-				\scalebox{0.6}[0.75]{
-				\smartdiagramset{description title width=5cm,
-					set color list={blue!45,blue!30,blue!15},
-					description title text width=4.5cm,
-					descriptive items y sep=6.5cm,
-					description text width=20cm,
-					module minimum height=5.2cm}
-				
-				\smartdiagram[descriptive diagram]{
-					{\textbf{$\infty$}, \begin{enumerate}
-							\item Proactively meet with supervisor twice per week
-							\item Proactively present and criticize at \textit{TULIP Seminar}
-							\item FLIP (04-05) and FLIP (06-07) completion
-							\item Act as FLIP team leaders and update materials annually
-					\end{enumerate}},
-					{\textbf{Trainee}, \begin{enumerate}
-							\item FLIP (02-03) with success on open Kaggle projects
-							\item Feedback and suggestions on FLIP
-							\item Present at \textit{TULIP Seminar} 
-					\end{enumerate}},
-					{\textbf{Flipper},\begin{enumerate}
-							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-							\item Keep FLIP materials confidential without distribution
-							\item FLIP (00-01) with success on open Kaggle projects
-							\item Attend \textit{TULIP Seminar} with preparation and questions
-					\end{enumerate}},}
-			}
-			\end{minipage}
-			\hfill			
-			\begin{minipage}[l]{0.55\linewidth}
+%			\begin{minipage}[l]{0.45\linewidth}
+%				\vspace{-35pt}
+%				\scalebox{0.6}[0.75]{
+%				\smartdiagramset{description title width=5cm,
+%					set color list={blue!45,blue!30,blue!15},
+%					description title text width=4.5cm,
+%					descriptive items y sep=6.5cm,
+%					description text width=20cm,
+%					module minimum height=5.2cm}
+%				
+%				\smartdiagram[descriptive diagram]{
+%					{\textbf{$\infty$}, \begin{enumerate}
+%							\item Proactively meet with supervisor twice per week
+%							\item Proactively present and criticize at \textit{TULIP Seminar}
+%							\item FLIP (04-05) and FLIP (06-07) completion
+%							\item Act as FLIP team leaders and update materials annually
+%					\end{enumerate}},
+%					{\textbf{Trainee}, \begin{enumerate}
+%							\item FLIP (02-03) with success on open Kaggle projects
+%							\item Feedback and suggestions on FLIP
+%							\item Present at \textit{TULIP Seminar} 
+%					\end{enumerate}},
+%					{\textbf{Flipper},\begin{enumerate}
+%							\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+%							\item Keep FLIP materials confidential without distribution
+%							\item FLIP (00-01) with success on open Kaggle projects
+%							\item Attend \textit{TULIP Seminar} with preparation and questions
+%					\end{enumerate}},}
+%			}
+%			\end{minipage}
+%			\hfill			
+%			\begin{minipage}[l]{0.55\linewidth}
 				\vspace{-30pt}
 				\begin{description}[font=\small]
 					\item[Honors or Master Students] \hfill
@@ -618,7 +614,7 @@
 					\end{itemize}
 					
 				\end{description}		
-			\end{minipage}
+%			\end{minipage}
 
 
 			
