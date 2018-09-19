@@ -135,7 +135,7 @@
 %}\pgfdeclarelayer{background}
 \pgfdeclarelayer{background}
 \pgfdeclarelayer{foreground}
-\pgfsetlayers{notelayer,backgroundlayer,background,main,foreground}
+\pgfsetlayers{backgroundlayer,background,main,foreground,notelayer}
 %
 
 \colorlet{backgroundcolor}{blue!10}
@@ -258,14 +258,14 @@
 					\begin{description}[font=\small]			
 						\item[Behavior Informatics] \hfill
 						\begin{itemize}
-							\footnotesize \item Identify anomaly in group behavior, 
+							\footnotesize \item Identify anomaly in group behavior,
 							such as \textit{astroturfing}, \textit{cyber-bullying} etc.
 							\item Detect the periodical behavior from various check-in history
-							\item Design suitable strategy to implement intended effects 
+							\item Design suitable strategy to implement intended effects
 						\end{itemize}
 						\item[Data Privacy] \hfill
 						\begin{itemize}
-							\footnotesize \item Protect the individual private information 
+							\footnotesize \item Protect the individual private information
 							which may be disclosed from data analytics, data release etc.
 							\item Check the compliance of GDPR when accessing, releasing and transferring data
 							across the countries
@@ -285,8 +285,8 @@
 				\begin{tikzpicture}[ every annotation/.style = {draw,
 				fill = white}]
 					\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
-					every node/.style={concept},root/.style    = {concept color=blue!30, font=\Large\bfseries,text width=13em}, 
-					level 1 concept/.append style={font=\bfseries, sibling angle=110,text width=10em,level distance=9em,inner sep=0pt}, 
+					every node/.style={concept},root/.style    = {concept color=blue!30, font=\Large\bfseries,text width=13em},
+					level 1 concept/.append style={font=\bfseries, sibling angle=110,text width=10em,level distance=9em,inner sep=0pt},
 					level 2 concept/.append style={font=\sf,text width=8em, sibling angle=100, inner sep=0pt, level distance=7em},]
 					node[root,scale=0.6, text=white] {Research Themes} [clockwise from=190]
 					child[concept color=blue!30, text=black!90] {
@@ -324,10 +324,10 @@
 						\scalebox{1}
 						{
 							\begin{tikzpicture}
-							\begin{axis}[ylabel={{number of papers}},   
-							x=1.6cm, y=1.1cm, 
-							xtick={2006,2008,2010,2012, 2014, 2016, 2018}, 
-							ytick={0,2,4,6,8,10,12,14},   
+							\begin{axis}[ylabel={{number of papers}},
+							x=1.6cm, y=1.1cm,
+							xtick={2006,2008,2010,2012, 2014, 2016, 2018},
+							ytick={0,2,4,6,8,10,12,14},
 							x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
 							legend pos=north west, xmajorgrids=true, ymajorgrids=true, grid style=dashed, ]
 							\addplot[mark=*,color=blue!50]
@@ -436,7 +436,7 @@
 				\scalebox{0.8}{
 					\begin{tikzpicture}[ every annotation/.style = {draw,
 						fill = white}]
-						\path[mindmap,concept color=blue!30,font=\sffamily\bfseries, 
+						\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
 						every node/.style={concept},
 						root/.style    = {concept color=blue!30,
 							font=\Large\bfseries,text width=9em},
@@ -569,7 +569,7 @@
 						{\textbf{Trainee}, \begin{enumerate}
 								\item FLIP (02-03) with success on open Kaggle projects
 								\item Feedback and suggestions on FLIP
-								\item Present at \textit{TULIP Seminar} 
+								\item Present at \textit{TULIP Seminar}
 						\end{enumerate}},
 						{\textbf{Flipper},\begin{enumerate}
 								\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
