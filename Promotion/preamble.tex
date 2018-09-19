@@ -1,0 +1,199 @@
+%
+% ---------------------------------------------------------------
+% Copyright (C) 2012-2018 Gang Li
+% ---------------------------------------------------------------
+%
+% This work is the default powerdot-tuliplab style test file and may be
+% distributed and/or modified under the conditions of the LaTeX Project Public
+% License, either version 1.3 of this license or (at your option) any later
+% version. The latest version of this license is in
+% http://www.latex-project.org/lppl.txt and version 1.3 or later is part of all
+% distributions of LaTeX version 2003/12/01 or later.
+%
+% This work has the LPPL maintenance status "maintained".
+%
+% This Current Maintainer of this work is Gang Li.
+%
+%
+\usepackage{smartdiagram}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{boxedminipage}
+\usepackage{media9}
+\usepackage{rotate}
+\usepackage{calc}
+\usepackage[absolute]{textpos}
+\usepackage{psfrag,overpic}
+\usepackage{fouriernc}
+\usepackage{pstricks,pst-node,pst-text,pst-3d,pst-grad}
+\usepackage{moreverb,epsfig,subfigure}
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+\usepackage{pst-text}
+\usepackage{pst-node, pst-tree}
+\usepackage{booktabs}
+\usepackage{etex}
+\usepackage{breqn}
+\usepackage{multirow}
+\usepackage{gitinfo2}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{ulem}
+\usepackage{todonotes}
+\usepackage{tablefootnote}
+\usepackage{threeparttable}
+\usepackage[numbers]{natbib}
+\usepackage{bibentry}
+% \usepackage{pst-rel-points}
+\usepackage{pgfplots}
+\usepackage{verbatim}
+\usepackage{fontawesome}
+
+%\usepackage{graphicx}
+\usepackage{animate}
+
+\usepackage{listings}
+\lstset{frameround=fttt,
+frame=trBL,
+stringstyle=\ttfamily,
+backgroundcolor=\color{yellow!20},
+basicstyle=\footnotesize\ttfamily}
+\lstnewenvironment{code}{
+\lstset{frame=single,escapeinside=`',
+backgroundcolor=\color{yellow!20},
+basicstyle=\footnotesize\ttfamily}
+}{}
+
+
+\usepackage{hyperref}
+\hypersetup{ % TODO: PDF meta Data
+  pdftitle={TULIP Lab},
+  pdfauthor={Gang Li},
+  pdfpagemode={FullScreen},
+  pdfborder={0 0 0}
+}
+
+
+
+% \usepackage{auto-pst-pdf}
+% package to show source code
+
+%\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+\definecolor{antiquebrass}{rgb}{0.8, 0.58, 0.46}
+\newlength{\pixel}\setlength\pixel{0.000714285714\slidewidth}
+\setlength{\TPHorizModule}{\slidewidth}
+\setlength{\TPVertModule}{\slideheight}
+\newcommand\highlight[1]{\fbox{#1}}
+\newcommand\icite[1]{{\footnotesize [#1]}}
+
+\newcommand\twotonebox[2]{\fcolorbox{pdcolor2}{pdcolor2}
+{#1\vphantom{#2}}\fcolorbox{pdcolor2}{white}{#2\vphantom{#1}}}
+\newcommand\twotoneboxo[2]{\fcolorbox{pdcolor2}{pdcolor2}
+{#1}\fcolorbox{pdcolor2}{white}{#2}}
+\newcommand\vpspace[1]{\vphantom{\vspace{#1}}}
+\newcommand\hpspace[1]{\hphantom{\hspace{#1}}}
+\newcommand\COMMENT[1]{}
+
+\newcommand\placepos[3]{\hbox to\z@{\kern#1
+        \raisebox{-#2}[\z@][\z@]{#3}\hss}\ignorespaces}
+
+\renewcommand{\baselinestretch}{1.2}
+
+
+\newcommand{\draftnote}[3]{
+	\todo[author=#2,color=#1!30,size=\footnotesize]{\textsf{#3}}}
+% TODO: add yourself here:
+%
+\newcommand{\gangli}[1]{\draftnote{blue}{GLi:}{#1}}
+\newcommand{\shaoni}[1]{\draftnote{green}{sn:}{#1}}
+\newcommand{\mengren}[1]{\draftnote{orange}{MRen:}{#1}}
+\newcommand{\xinhan}[1]{\draftnote{red}{Xhan:}{#1}}
+\newcommand{\gliMarker}
+	{\todo[author=GLi,size=\tiny,inline,color=blue!40]
+	{Gang Li has worked up to here.}}
+\newcommand{\snMarker}
+	{\todo[author=Sn,size=\tiny,inline,color=green!40]
+	{Shaoni has worked up to here.}}
+\newcommand{\mrMarker}
+	{\todo[author=MRen,size=\tiny,inline,color=orange!40]
+	{Meng Ren has worked up to here.}}
+\newcommand{\xhMarker}
+	{\todo[author=XHan,size=\tiny,inline,color=red!40]
+	{XinHan has worked up to here.}}
+\newcommand{\zhMarker}
+{\todo[author=ZHou,size=\tiny,inline,color=purple!40]
+	{Ziwei Hou has worked up to here.}}
+
+\usepackage{geometry}
+\geometry{verbose,letterpaper}
+\usepackage{movie15}
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage{dtk-logos}
+\usepackage{tikz}
+\usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,
+	petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings}
+%\usepackage[hidelinks,pdfencoding=auto]{hyperref}
+% Information boxes
+\newcommand*{\info}[4][4]{%
+  \node [ annotation, #3, text width = 3.35cm,
+          inner sep = 0.3em ] at (#2) {%
+  \list{$\bullet$}{\topsep=-3pt\itemsep=0pt\parsep=1pt
+    \parskip=1pt\labelwidth=0pt\leftmargin=1pt
+    \itemindent=1pt\labelsep=1pt}%
+    #4
+  \endlist
+  };
+}
+
+\newcommand*{\infoo}[4][4]{%
+  \node [ annotation, #3, text width = 2.7cm,
+          inner sep = 0.3em ] at (#2) {%
+  \list{$\bullet$}{\topsep=-3pt\itemsep=0pt\parsep=1pt
+    \parskip=1pt\labelwidth=0pt\leftmargin=1pt
+    \itemindent=1pt\labelsep=1pt}%
+    #4
+  \endlist
+  };
+}
+
+% aiming high
+\usepackage{smartdiagram}
+\usetikzlibrary{shapes.symbols}
+
+\tikzset{description title/.append style={
+    signal,
+    signal to=north,
+    signal from=south,
+    yshift=0.5cm,
+  }
+}
+
+
+%forest
+\usepackage{forest}
+\usetikzlibrary{arrows.meta, shapes.geometric, calc, shadows}
+
+\colorlet{mygreen}{green!75!black}
+\colorlet{col1in}{red!30}
+\colorlet{col1out}{red!40}
+\colorlet{col2in}{mygreen!40}
+\colorlet{col2out}{mygreen!50}
+\colorlet{col3in}{blue!30}
+\colorlet{col3out}{blue!40}
+\colorlet{col4in}{mygreen!20}
+\colorlet{col4out}{mygreen!30}
+\colorlet{col5in}{blue!10}
+\colorlet{col5out}{blue!20}
+\colorlet{col6in}{blue!20}
+\colorlet{col6out}{blue!30}
+\colorlet{col7out}{orange}
+\colorlet{col7in}{orange!50}
+\colorlet{col8out}{orange!40}
+\colorlet{col8in}{orange!20}
+\colorlet{linecol}{blue!60}
+
+\definecolor{mynodecolor}{RGB}{198,191,234}
