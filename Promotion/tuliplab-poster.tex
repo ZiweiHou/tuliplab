@@ -58,7 +58,8 @@
 \usepackage{multirow}
 \usepackage{multicol}
 %\usepackage{outlines}
-
+\usepackage{float}
+\usepackage{subfigure}
 
 \usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings,positioning}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
@@ -314,7 +315,7 @@
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-		\block[titleleft]{Publications and Awards}
+		\block[titleleft]{Publications}
 		{
 			\begin{multicols}{2}
 				\scalebox{0.7}
@@ -324,10 +325,10 @@
 						\scalebox{1}
 						{
 							\begin{tikzpicture}
-							\begin{axis}[ylabel={{number of papers}},
-							x=1.6cm, y=1.1cm,
-							xtick={2006,2008,2010,2012, 2014, 2016, 2018},
-							ytick={0,2,4,6,8,10,12,14},
+							\begin{axis}[ylabel={{number of papers}},   
+							x=1.6cm, y=1.05cm, 
+							xtick={2006,2008,2010,2012, 2014, 2016, 2018}, 
+							ytick={0,2,4,6,8,10,12,14},   
 							x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
 							legend pos=north west, xmajorgrids=true, ymajorgrids=true, grid style=dashed, ]
 							\addplot[mark=*,color=blue!50]
@@ -380,55 +381,9 @@
 				}	
 				
 			\end{multicols}
-			
-			%\begin{multicols}{2}
-			%{
-			\scalebox{0.6}
-			{
-				\begin{minipage}{\linewidth}
-					%\begin{table}[htbp]
-					%  \centering
-					%  \caption{TULIP Lab Research Awards}
-					\begin{tabular}{ r | l | r  r }
-						\toprule
-						\multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
-						\midrule
-						\textbf{2018} & KSEM 2018 \textit{Best Paper} Award & Shaoni Wang &  \\
-						
-						\textbf{2017} & IFITT \textit{Journal Paper of The Year} Award (1st Prize) & Huy Quan Vu &  \\
-						
-						\textbf{2016} & IEEE TrustCom 2016 \textit{Best Student Paper} Award & Na Pang &  \\
-						
-						\textbf{2015} & IFITT \textit{Journal Paper of The Year} Award (3rd Prize) & Huy Quan Vu &  \\
-						
-						\textbf{2014} & PAKDD 2014 \textit{Best Student Paper} Award & Tianqing Zhu &  \\
-						
-						\textbf{2012} & ACM ASONAM 2012  \textit{Best Paper} Award & Yongli Ren &  \\
-						
-						\textbf{2007} & Springer 2007 \textit{Nightingale Prize} & Jingyu Hou &  \\
-						\bottomrule
-					\end{tabular}
-					%\end{table}
-				\end{minipage}
-			}
-			\scalebox{0.6}
-			{
-				\begin{minipage}{0.48\linewidth}
-					\begin{tikzfigure}
-						\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018B.eps}
-						\includegraphics[width=0.3\textwidth]{figures//awards//TULIPAwards2018A.eps}
-						\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016A.eps}
-						\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2012.eps}
-						\includegraphics[width=0.25\textwidth]{figures//awards//TULIPAwards2007.eps}
-						\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2016B.eps}
-						\includegraphics[width=0.35\textwidth]{figures//awards//TULIPAwards2014.eps}
-					\end{tikzfigure}
-				\end{minipage}	
-			}
-			
-			%\end{multicols}
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+		
 		\column{0.5}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		\block{Training @ TULIP}{
@@ -589,10 +544,94 @@
 
 			
 		}
+		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%		
+		
+		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%		
+		\block[titleleft]{Awards}
+		{
+			\scalebox{1}
+			{
+				\begin{minipage}{\linewidth}
+					%\begin{table}[htbp]
+					 \centering
+					%  \caption{TULIP Lab Research Awards}
+					\begin{tabular}{ r | l | r  r }
+						\toprule
+						\multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
+						\midrule
+						\textbf{2018} & KSEM 2018 \textit{Best Paper} Award & Shaoni Wang &  \\
+						
+						\textbf{2017} & IFITT \textit{Journal Paper of The Year} Award (1st Prize) & Huy Quan Vu &  \\
+						
+						\textbf{2016} & IEEE TrustCom 2016 \textit{Best Student Paper} Award & Na Pang &  \\
+						
+						\textbf{2015} & IFITT \textit{Journal Paper of The Year} Award (3rd Prize) & Huy Quan Vu &  \\
+						
+						\textbf{2014} & PAKDD 2014 \textit{Best Student Paper} Award & Tianqing Zhu &  \\
+						
+						\textbf{2012} & ACM ASONAM 2012  \textit{Best Paper} Award & Yongli Ren &  \\
+						
+						\textbf{2007} & Springer 2007 \textit{Nightingale Prize} & Jingyu Hou &  \\
+						\bottomrule
+					\end{tabular}
+					%\end{table}
+				\end{minipage}
+			}
+			
+			\vspace{0.9cm}
+		
+			\begin{minipage}{\linewidth}
+				\begin{multicols}{3}
+				\centering
+				\begin{minipage}{\linewidth}
+					\centering
+					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2018B.eps}
+				\end{minipage}
+				
+				\begin{minipage}{\linewidth}
+					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2018A.eps}
+				\end{minipage}	
+				
+				\begin{minipage}{\linewidth}
+					\includegraphics[width=\textwidth]{figures//awards//TULIPAwards2016A.eps}
+				\end{minipage}				
+				\end{multicols}
+			\end{minipage}
+			
+			\vspace{0.6cm}
+						
+			\begin{minipage}{\linewidth}
+				\begin{multicols}{3}
+				\centering
+				\begin{minipage}{\linewidth}
+					\centering
+					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2012.eps}
+				\end{minipage}
+				
+				\begin{minipage}{\linewidth}
+					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2007.eps}
+				\end{minipage}				
+				
+				\begin{minipage}{\linewidth}
+				\begin{figure}[H] 
+					\begin{minipage}{\linewidth}
+					\subfigure
+					{ 
+						\includegraphics[width=0.86\textwidth]{figures//awards//TULIPAwards2016B.eps}
+					}
+					\end{minipage}
+					\begin{minipage}{\linewidth}
+					\subfigure
+					{
+						\includegraphics[width=0.86\textwidth]{figures//awards//TULIPAwards2014.eps}
+					}
+					\end{minipage}
+				\end{figure}	
+				\end{minipage}	
+				\end{multicols}
+			\end{minipage}
+		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-		
-		
-		
 		
 		
 		% Bottomblock
