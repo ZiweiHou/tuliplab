@@ -322,22 +322,25 @@
 					\begin{minipage}{\linewidth}
 						%\selectcolormodel{rgb}
 						\centering
-						%\scalebox{1}
+						\scalebox{1}
 						{
 							\begin{tikzpicture}
-							\begin{axis}[x=2.3cm, y=1.05cm,
-							xtick={2006,2008,2010,2012, 2014, 2016, 2018}, 
-							ytick={0,2,4,6,8,10,12,14},   
+							\begin{axis}[ylabel={number of papers},
+                            ylabel near ticks = 1cm,
+							x=2.1cm, y=1.05cm,
+							xtick={2006,2008,2010,2012, 2014, 2016, 2018},
+							ytick={0,2,4,6,8,10,12,14},
 							x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
 							legend pos=north west, xmajorgrids=true, ymajorgrids=true, grid style=dashed, ]
-							\addplot[mark=*,draw=blue, ultra thick]
+                           % \draw[line width=16pt];
+							\addplot[mark=*,color=blue!50,line width=6pt]
 							coordinates {
 								(2006,0)(2007,1)(2008,3)(2009,2)(2010,5)(2011,9)
 								(2012,5)(2013,12)(2014,12)(2015,11)(2016,6)(2017,9)(2018,12)
 							};
 							\addlegendentry{\footnotesize{SCI/SSCI Journals}}
 							
-							\addplot[mark=square,draw=orange,ultra thick]
+							\addplot[mark=square,color=orange,line width=6pt]
 							coordinates {
 								(2006,2)(2007,3)(2008,6)(2009,4)(2010,3)(2011,2)(2012,7)
 								(2013,7)(2014,4)(2015,3)(2016,5)(2017,6)(2018,5)
@@ -448,19 +451,19 @@
 					\begin{description}[font=\small]			
 						\item[Flipper] \hfill
 						\begin{itemize}
-							\footnotesize 
+							\footnotesize
 							\item FLIP (00): Data Science
 							\item FLIP (01): Advanced Data Science
 						\end{itemize}
 						\item[Trainee] \hfill
 						\begin{itemize}
-							\footnotesize 
+							\footnotesize
 							\item FLIP (02): Modern Data Science
 							\item FLIP (03): Deep Learning
 						\end{itemize}
 						\item[$\infty$] \hfill
 						\begin{itemize}
-							\footnotesize 
+							\footnotesize
 							\item FLIP (04): Learning Theory (I)
 							\item FLIP (05): Learning Theory (II)
 							\item FLIP (06): Reading Team
@@ -556,12 +559,11 @@
 				\centering
 				\begin{minipage}{\linewidth}
 					\centering
-					%\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2018B.eps}
-					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2014.eps}
+					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2018B.eps}
 				\end{minipage}
 				
 				\begin{minipage}{\linewidth}
-					\includegraphics[width=0.85\textwidth]{figures//awards//TULIPAwards2018A.eps}
+					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2018A.eps}
 				\end{minipage}	
 				
 				\begin{minipage}{\linewidth}
@@ -585,17 +587,17 @@
 				\end{minipage}				
 				
 				\begin{minipage}{\linewidth}
-				\begin{figure}[H] 
+				\begin{figure}[H]
 					\begin{minipage}{\linewidth}
 					\subfigure
-					{ 
-						\includegraphics[width=0.84\textwidth]{figures//awards//TULIPAwards2016B.eps}
+					{
+						\includegraphics[width=0.86\textwidth]{figures//awards//TULIPAwards2016B.eps}
 					}
 					\end{minipage}
 					\begin{minipage}{\linewidth}
 					\subfigure
-					{						
-						\includegraphics[width=0.84\textwidth]{figures//awards//TULIPAwards2018B.eps}
+					{
+						\includegraphics[width=0.86\textwidth]{figures//awards//TULIPAwards2014.eps}
 					}
 					\end{minipage}
 				\end{figure}	
@@ -681,8 +683,8 @@
 		\end{minipage}
 		\begin{minipage}{0.7\linewidth}
 			{ \centering
-%				\large{\textcolor{blue!80}{Welcome to \emph{Team for Universal Learning and
-%							Intelligent Processing}!}}
+				\large{\textcolor{blue!80}{Welcome to \emph{Team for Universal Learning and
+							Intelligent Processing}!}}
 			}
 		\end{minipage}
 	}
