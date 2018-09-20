@@ -84,9 +84,9 @@
 
 \tikzset{description title/.append style={
 		signal,
-		signal to=north,
-		signal from=south,
-		yshift=0.5cm,
+		signal to=south,
+		signal from=north,
+		yshift=-0.5cm,
 	}
 }
 
@@ -283,7 +283,8 @@
 			\end{minipage}
 			\hfill
 			\begin{minipage}[l]{0.6\linewidth}
-				\scalebox{0.6}{
+				\centering
+				\scalebox{0.55}{
 				\begin{tikzpicture}[ every annotation/.style = {draw,
 				fill = white}]
 					\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
@@ -393,8 +394,8 @@
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		\block{Training @ TULIP}{
 			\begin{minipage}[l]{0.6\linewidth}
-				\centering
-				\scalebox{0.7}{
+				\vspace{-20pt}
+				\scalebox{0.6}{
 					\begin{tikzpicture}[ every annotation/.style = {draw,
 						fill = white}]
 						\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
@@ -444,8 +445,8 @@
 				}
 			\end{minipage}
 			\hfill
-			\hspace{-0.005\textwidth}
-			\begin{minipage}[l]{0.35\linewidth}
+			\hspace{-0.3\textwidth}
+			\begin{minipage}[l]{0.4\linewidth}
 				\vspace{-30pt}
 				\begin{center}
 					\begin{description}[font=\small]			
@@ -483,6 +484,38 @@
 		% Second column - second block
 		\block[titleleft]{Minimum Requirements}
 		{
+			\begin{minipage}[l]{0.55\linewidth}
+				\vspace{-20pt}
+				\scalebox{0.7}[0.75]{
+					\smartdiagramset{description title width=5cm,
+						set color list={blue!15,blue!30,blue!45},
+						description title text width=4.5cm,
+						descriptive items y sep=6.5cm,
+						description text width=20cm,
+						module minimum height=5.2cm}
+					
+					\smartdiagram[descriptive diagram]{
+						{\textbf{Flipper},\begin{enumerate}
+								\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+								\item Keep FLIP materials confidential without distribution
+								\item FLIP (00-01) with success on open Kaggle projects
+								\item Attend \textit{TULIP Seminar} with preparation and questions
+						\end{enumerate}},
+						{\textbf{Trainee}, \begin{enumerate}
+								\item FLIP (02-03) with success on open Kaggle projects
+								\item Feedback and suggestions on FLIP
+								\item Present at \textit{TULIP Seminar}
+						\end{enumerate}},
+						{\textbf{$\infty$}, \begin{enumerate}
+								\item Proactively meet with supervisor twice per week
+								\item Proactively present and criticize at \textit{TULIP Seminar}
+								\item FLIP (04-05) and FLIP (06-07) completion
+								\item Act as FLIP team leaders and update materials annually
+						\end{enumerate}},}
+				}
+			\end{minipage}
+		\hfill
+		\hspace{-0.005\textwidth}
 			\begin{minipage}[l]{0.45\linewidth}
 				\vspace{-30pt}
 				\begin{description}[font=\small]
@@ -514,38 +547,8 @@
 					
 				\end{description}		
 			\end{minipage}
-			\hfill
-			\hspace{0.005\textwidth}
-			\begin{minipage}[l]{0.55\linewidth}
-				\vspace{-20pt}
-				\scalebox{0.7}[0.75]{
-					\smartdiagramset{description title width=5cm,
-						set color list={blue!45,blue!30,blue!15},
-						description title text width=4.5cm,
-						descriptive items y sep=6.5cm,
-						description text width=20cm,
-						module minimum height=5.2cm}
-					
-					\smartdiagram[descriptive diagram]{
-						{\textbf{$\infty$}, \begin{enumerate}
-								\item Proactively meet with supervisor twice per week
-								\item Proactively present and criticize at \textit{TULIP Seminar}
-								\item FLIP (04-05) and FLIP (06-07) completion
-								\item Act as FLIP team leaders and update materials annually
-						\end{enumerate}},
-						{\textbf{Trainee}, \begin{enumerate}
-								\item FLIP (02-03) with success on open Kaggle projects
-								\item Feedback and suggestions on FLIP
-								\item Present at \textit{TULIP Seminar}
-						\end{enumerate}},
-						{\textbf{Flipper},\begin{enumerate}
-								\item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
-								\item Keep FLIP materials confidential without distribution
-								\item FLIP (00-01) with success on open Kaggle projects
-								\item Attend \textit{TULIP Seminar} with preparation and questions
-						\end{enumerate}},}
-				}
-			\end{minipage}
+			
+
 
 			
 		}
