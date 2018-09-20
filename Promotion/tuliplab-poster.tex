@@ -60,6 +60,7 @@
 %\usepackage{outlines}
 \usepackage{float}
 \usepackage{subfigure}
+\usepackage{tabularx}
 
 \usetikzlibrary{arrows,chains,mindmap,shadows,automata,patterns,petri,shapes.geometric,shapes.misc, spy, trees,decorations.markings,positioning}
 %\usepackage[hidelinks,pdfencoding=auto]{hyperref}
@@ -317,16 +318,15 @@
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		\block[titleleft]{Publications}
 		{
-			\begin{multicols}{2}
-				\scalebox{0.7}
-				{
+%			\begin{multicols}{2}
 					\begin{minipage}{\linewidth}
 						%\selectcolormodel{rgb}
+						\centering
 						\scalebox{1}
 						{
 							\begin{tikzpicture}
-							\begin{axis}[ylabel={{number of papers}},   
-							x=1.6cm, y=1.05cm, 
+							\begin{axis}[ylabel={number of papers},  
+							x=2.1cm, y=1.05cm, 
 							xtick={2006,2008,2010,2012, 2014, 2016, 2018}, 
 							ytick={0,2,4,6,8,10,12,14},   
 							x tick label style={rotate=75,anchor=east,/pgf/number format/1000 sep=},
@@ -348,15 +348,18 @@
 							\end{tikzpicture}		
 						}		
 					\end{minipage}
-				}
-				\vfill
-				\scalebox{0.6}
+				
+				\vspace{1cm}
+				
+				\scalebox{1}
 				{
 					\begin{minipage}{\linewidth}
-						%\setlength{\abovecaptionskip}{-25pt}
-						%\setlength{\belowcaptionskip}{12pt}
+						\setlength{\abovecaptionskip}{-25pt}
+						\setlength{\belowcaptionskip}{12pt}
 						%\caption{TULIP Lab Publications}
 						%\fontsize{13pt}{14pt}\selectfont
+						\centering
+						\setlength{\tabcolsep}{0.8cm}{
 						\begin{tabular}{c|c c c|c c c}
 							\toprule
 							\cmidrule{1-1}    \multirow{2}[4]{*}{Year} & \multicolumn{3}{c}{SCI/SSCI Journals} &\multicolumn{3}{c}{Referred Conferences} \\
@@ -376,11 +379,11 @@
 							2007  & 1     & 0     & 0     & 0     & 0     & 3 \\
 							2006  & 0     & 0     & 0     & 0     & 0     & 2 \\
 							\bottomrule
-						\end{tabular}
+						\end{tabular}}
 					\end{minipage}
 				}	
 				
-			\end{multicols}
+%			\end{multicols}
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
@@ -549,37 +552,6 @@
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%		
 		\block[titleleft]{Awards}
 		{
-			\scalebox{1}
-			{
-				\begin{minipage}{\linewidth}
-					%\begin{table}[htbp]
-					 \centering
-					%  \caption{TULIP Lab Research Awards}
-					\begin{tabular}{ r | l | r  r }
-						\toprule
-						\multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
-						\midrule
-						\textbf{2018} & KSEM 2018 \textit{Best Paper} Award & Shaoni Wang &  \\
-						
-						\textbf{2017} & IFITT \textit{Journal Paper of The Year} Award (1st Prize) & Huy Quan Vu &  \\
-						
-						\textbf{2016} & IEEE TrustCom 2016 \textit{Best Student Paper} Award & Na Pang &  \\
-						
-						\textbf{2015} & IFITT \textit{Journal Paper of The Year} Award (3rd Prize) & Huy Quan Vu &  \\
-						
-						\textbf{2014} & PAKDD 2014 \textit{Best Student Paper} Award & Tianqing Zhu &  \\
-						
-						\textbf{2012} & ACM ASONAM 2012  \textit{Best Paper} Award & Yongli Ren &  \\
-						
-						\textbf{2007} & Springer 2007 \textit{Nightingale Prize} & Jingyu Hou &  \\
-						\bottomrule
-					\end{tabular}
-					%\end{table}
-				\end{minipage}
-			}
-			
-			\vspace{0.9cm}
-		
 			\begin{minipage}{\linewidth}
 				\begin{multicols}{3}
 				\centering
@@ -630,6 +602,37 @@
 				\end{minipage}	
 				\end{multicols}
 			\end{minipage}
+			
+			\vspace{1.1cm}
+			
+			\scalebox{1}
+			{
+				\begin{minipage}{\linewidth}
+					%\begin{table}[htbp]
+					 \centering
+					%  \caption{TULIP Lab Research Awards}
+					\begin{tabular}{ r | l | r  r }
+						\toprule
+						\multicolumn{1}{ l |}{\textbf{Year}} & \textbf{Awards} & \textbf{Author} &  \\
+						\midrule
+						\textbf{2018} & KSEM 2018 \textit{Best Paper} Award & Shaoni Wang &  \\
+						
+						\textbf{2017} & IFITT \textit{Journal Paper of The Year} Award (1st Prize) & Huy Quan Vu &  \\
+						
+						\textbf{2016} & IEEE TrustCom 2016 \textit{Best Student Paper} Award & Na Pang &  \\
+						
+						\textbf{2015} & IFITT \textit{Journal Paper of The Year} Award (3rd Prize) & Huy Quan Vu &  \\
+						
+						\textbf{2014} & PAKDD 2014 \textit{Best Student Paper} Award & Tianqing Zhu &  \\
+						
+						\textbf{2012} & ACM ASONAM 2012  \textit{Best Paper} Award & Yongli Ren &  \\
+						
+						\textbf{2007} & Springer 2007 \textit{Nightingale Prize} & Jingyu Hou &  \\
+						\bottomrule
+					\end{tabular}
+					%\end{table}
+				\end{minipage}
+			}		
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
@@ -669,7 +672,7 @@
 	%\colorlet{noteframecolor}{blue!20}
 	\colorlet{notebgcolor}{blue!20}
 	\colorlet{notefrcolor}{blue!20}
-	\note[targetoffsetx=-13cm, targetoffsety=-20cm,rotate=0,
+	\note[targetoffsetx=-13cm, targetoffsety=-24cm,rotate=0,
 	angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
 	{
 		\begin{minipage}{0.3\linewidth}
