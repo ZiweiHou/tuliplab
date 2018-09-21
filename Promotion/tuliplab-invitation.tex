@@ -11,11 +11,17 @@
 left color=transparent!0,
 right color=transparent!100]
 \setlength\parindent{0pt}
+\usepackage{stackengine}
+\usepackage{graphicx}
+
 
 \begin{document}
 \begin{tikzpicture}[overlay,remember picture]
+    \def\stackalignment{r}
+    
   \node[anchor=east,inner sep=0pt] (pic) at (current page.east)
-    {\includegraphics[height=1\pdfpageheight]{figures//invitation//background-logo}};
+    { \bottominset{\includegraphics[height=3cm]{figures//invitation//register}}
+    {\includegraphics[height=1\pdfpageheight]{figures//invitation//background}}{70pt}{110pt}};
   \fill[white,path fading=fade right] (pic.north west) rectangle (pic.south east);
   \coordinate (pin) at (12,-2.5);
   %\filldraw[ultra thick,draw=red,fill=red!50] (pin) -- ++(70:.5) arc (-20:200:.18) -- cycle;
@@ -71,6 +77,7 @@ right color=transparent!100]
 \textbf{Secretary}: \textit{Y. Lei} (Text), \textit{X. Han} (Video)
 }
 \smallbreak
+
 \includegraphics[width=6.5cm]{logos/tulip-wordmark.eps}
 
 \end{document}
