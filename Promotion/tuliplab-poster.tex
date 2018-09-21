@@ -212,7 +212,7 @@
 			\scalebox{0.9}[1]	{
 				\begin{forest}
 					for tree={
-						font=\sffamily\bfseries\small,
+						font=\bfseries\small,
 						line width=1pt,
 						%      draw=linecol,
 						ellip,
@@ -220,10 +220,10 @@
 						child anchor=north,
 						parent anchor=south,
 						drop shadow,
-						l sep+=12.5pt,
+						l sep+=28pt,
 						edge path={
 							\noexpand\path[color=gray, rounded corners=5pt,
-							>={Stealth[length=11pt]}, line width=1pt, ->, \forestoption{edge}]
+							>={Stealth[length=16pt]}, line width=1pt, ->, \forestoption{edge}]
 							(!u.parent anchor) -- +(0,-5pt) -|
 							(.child anchor)\forestoption{edge label};
 						},
@@ -249,7 +249,8 @@
 					]
 				\end{forest}							
 			}		
-		\end{minipage}							
+		\end{minipage}	
+	\\						
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
@@ -285,7 +286,7 @@
 			\hfill
 			\begin{minipage}[l]{0.6\linewidth}
 				\centering
-				\scalebox{0.55}{
+				\scalebox{0.65}{
 				\begin{tikzpicture}[ every annotation/.style = {draw,
 				fill = white}]
 					\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
@@ -331,7 +332,7 @@
 					%\fontsize{13pt}{14pt}\selectfont
 					\centering
 					\small
-					\setlength{\tabcolsep}{0.8cm}{
+					\setlength{\tabcolsep}{1.2cm}{
 						\begin{tabular}{c|c c c|c c c}
 							\toprule
 							\cmidrule{1-1}    \multirow{2}[4]{*}{Year} & \multicolumn{3}{c}{SCI/SSCI Journals} &\multicolumn{3}{c}{Referred Conferences} \\
@@ -355,7 +356,7 @@
 				\end{minipage}
 			}	
 		\hfill
-			\vspace{1.4cm}
+			\vspace{2.3cm}
 					
 			\begin{minipage}{\linewidth}
 				%\selectcolormodel{rgb}
@@ -403,7 +404,7 @@
 		\block{Training @ TULIP}{
 			\begin{minipage}[l]{0.6\linewidth}
 				\vspace{-20pt}
-				\scalebox{0.6}{
+				\scalebox{0.7}{
 					\begin{tikzpicture}[ every annotation/.style = {draw,
 						fill = white}]
 						\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
@@ -453,7 +454,7 @@
 				}
 			\end{minipage}
 			\hfill
-			\hspace{-0.3\textwidth}
+			\hspace{0.01\textwidth}
 			\begin{minipage}[l]{0.4\linewidth}
 				\vspace{-30pt}
 				\begin{center}
@@ -551,6 +552,7 @@
 						\footnotesize \item \textit{annually} $1$ \textcolor{orange}{CCF A} and $1$ \textcolor{orange}{CCF B} conference papers
 						\item \textit{annually} $4$ \textcolor{orange}{$Q_1$ journal} papers,
 						with at least $1$ \textcolor{orange}{ACM/IEEE Transactions} paper
+						\item ARC-DP research proposal
 					\end{itemize}
 					
 				\end{description}		
@@ -570,7 +572,7 @@
 				\centering
 				\begin{minipage}{\linewidth}
 					\centering
-					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2018B.eps}
+					\includegraphics[width=1\textwidth]{figures//awards//TULIPAwards2014.eps}
 				\end{minipage}
 				
 				\begin{minipage}{\linewidth}
@@ -578,7 +580,7 @@
 				\end{minipage}	
 				\hspace{-5.6cm}
 				\begin{minipage}{\linewidth}
-					\includegraphics[width=\textwidth]{figures//awards//TULIPAwards2016A.eps}
+					\includegraphics[width=1\textwidth]{figures//awards//TULIPAwards2016A.eps}
 				\end{minipage}				
 				\end{multicols}
 			\end{minipage}
@@ -590,11 +592,11 @@
 				\centering
 				\begin{minipage}{\linewidth}
 					\centering
-					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2012.eps}
+					\includegraphics[width=1.03\textwidth]{figures//awards//TULIPAwards2012.eps}
 				\end{minipage}
 				
 				\begin{minipage}{\linewidth}
-					\includegraphics[width=0.9\textwidth]{figures//awards//TULIPAwards2007.eps}
+					\includegraphics[width=1.03\textwidth]{figures//awards//TULIPAwards2007.eps}
 				\end{minipage}				
 				
 				\begin{minipage}{\linewidth}
@@ -602,13 +604,14 @@
 					\begin{minipage}{\linewidth}
 					\subfigure
 					{
-						\includegraphics[width=0.86\textwidth]{figures//awards//TULIPAwards2016B.eps}
+						\includegraphics[width=0.96\textwidth]{figures//awards//TULIPAwards2016B.eps}
 					}
 					\end{minipage}
+				
 					\begin{minipage}{\linewidth}
 					\subfigure
 					{
-						\includegraphics[width=0.86\textwidth]{figures//awards//TULIPAwards2014.eps}
+						\includegraphics[width=0.96\textwidth]{figures//awards//TULIPAwards2018B.eps}
 					}
 					\end{minipage}
 				\end{figure}	
@@ -616,7 +619,7 @@
 				\end{multicols}
 			\end{minipage}
 			
-			\vspace{1.8cm}
+			\vspace{1.3cm}
 			
 			\scalebox{1}
 			{
@@ -625,7 +628,7 @@
 					 \centering
 					%  \caption{TULIP Lab Research Awards}
 					\small
-					\begin{tabular}{ >{\centering}p{0.1\linewidth}  | p{0.52\linewidth} | p{0.16\linewidth}   r }
+					\begin{tabular}{ >{\centering}p{0.12\linewidth}  | p{0.58\linewidth} | p{0.2\linewidth}   r }
 						\toprule
 						\multicolumn{1}{ c |}{\textbf{Year}} & \textbf{~~ Awards} & \textbf{~~~Author} &  \\
 						\midrule
@@ -684,14 +687,13 @@
 	%bodywidthscale=0.9, titlecenter]
 	
 	%\colorlet{noteframecolor}{blue!20}
-	\colorlet{notebgcolor}{blue!20}
-	\colorlet{notefrcolor}{blue!20}
-	\note[targetoffsetx=-13cm, targetoffsety=-24cm,rotate=0,
-	angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
+	\colorlet{notebgcolor}{blue!15}
+	\colorlet{notefrcolor}{blue!15}
+	\note[targetoffsetx=-13cm, targetoffsety=-24cm,rotate=0, angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
 	{
-		\begin{minipage}{0.3\linewidth}
-			\centering
-			\includegraphics[width=24cm]{logos/tulip-wordmark.eps}
+		\begin{minipage}{1\linewidth}
+
+			\includegraphics[width=45cm,height=5cm]{logos/tulip-wordmark.eps}
 		\end{minipage}
 %		\begin{minipage}{0.7\linewidth}
 %			{ \centering
