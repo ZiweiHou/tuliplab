@@ -169,7 +169,7 @@
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		\block{TULIP Academy}{
 			
-		\begin{minipage}{\linewidth}
+		\begin{minipage}{0.95\linewidth}
 			\small 
 			TULIP is a worldly academy on data science,
 			artificial intelligence, tourism and hospitality management. 
@@ -177,21 +177,20 @@
 			TULIP has started to take \textit{Honors} students, 
 			\textit{Master by Research} students, and \textit{Ph.D.} students. 			
 			Our research have been supported by \textit{ARC} (Australia), \textit{NSFC} (China), \textit{GRF} (Hong Kong),
-			\textit{CRGS}, \textit{FaST}, \textit{DU-UB},  and \textit{HKPU} grants.  
-			
+			\textit{CRGS}, \textit{FaST}, \textit{DU-UB},  and \textit{HKPU} grants. \newline \newline			
 		\end{minipage}	
-			\selectcolormodel{rgb}
-			\pgfkeys{/forest,
-				rect/.append style   = { rounded corners = 2pt,
-					inner color = blue!30, outer color = blue!30},
-				ellip/.append style  = { inner color = blue!30,
-					outer color = blue!30},
-				orect/.append style  = { font = \sffamily\bfseries\small,
-					text width = 325pt, text centered,
-					minimum height = 10pt, outer color = blue!30,
-					inner color=blue!30},
-				oellip/.append style = { inner color = blue!30, outer color = blue!30,
-					font = \sffamily\bfseries\small, text centered}}
+		\selectcolormodel{rgb}
+		\pgfkeys{/forest,
+			rect/.append style   = { rounded corners = 2pt,
+				inner color = blue!30, outer color = blue!30},
+			ellip/.append style  = { inner color = blue!30,
+				outer color = blue!30},
+			orect/.append style  = { font = \sffamily\bfseries\small,
+				text width = 325pt, text centered,
+				minimum height = 10pt, outer color = blue!30,
+				inner color=blue!30},
+			oellip/.append style = { inner color = blue!30, outer color = blue!30,
+				font = \sffamily\bfseries\small, text centered}}
 		\begin{minipage}[l]{0.35\linewidth}
 			\begin{center}
 
@@ -221,8 +220,9 @@
 			\end{center}				
 		\end{minipage}
 		\hfill
+		\hspace{0.01\textwidth}
 		\begin{minipage}[l]{0.65\linewidth}
-			\scalebox{0.9}[1]	{
+			\scalebox{0.9}[1]{
 				\begin{forest}
 					for tree={
 						font=\bfseries\small,
@@ -262,16 +262,17 @@
 					]
 				\end{forest}							
 			}		
-		\end{minipage}	
-	\\						
+		\end{minipage}							
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
 		
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-		\block{Research @ TULIP}{
-			\begin{minipage}[l]{0.35\linewidth}
-				\begin{center}
+		\block{Research @ TULIP}{			
+			\begin{minipage}[c]{0.35\linewidth}
+				\vspace{-1.5cm}
+				\centering
+%				\begin{center}
 					\begin{description}[font=\small]			
 						\item[Behavior Informatics] \hfill
 						\begin{itemize}
@@ -294,11 +295,12 @@
 							\item Recommendation System
 						\end{itemize}
 					\end{description}
-				\end{center}				
+%				\end{center}				
 			\end{minipage}
 			\hfill
-			\begin{minipage}[l]{0.6\linewidth}
-				\centering
+			\hspace{-0.4\textwidth}
+			\begin{minipage}[l]{0.62\linewidth}
+				\vspace{-1cm}
 				\scalebox{0.65}{
 				\begin{tikzpicture}[ every annotation/.style = {draw,
 				fill = white}]
@@ -323,11 +325,9 @@
 						child{node[concept,scale=0.6](thm){Tourism \& Hospitality Management}}
 					}
 					;
-
 				\end{tikzpicture}
 			}
-			\end{minipage}
-	
+			\end{minipage}	
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 		
@@ -369,11 +369,11 @@
 				\end{minipage}
 			}	
 			\hfill
-			\vspace{1.3cm}
+			\vspace{0.8cm}
 					
 			\begin{minipage}{\linewidth}
 				%\selectcolormodel{rgb}
-				\centering
+%				\centering
 				\scalebox{1.05}
 				{
 					\small
@@ -402,12 +402,7 @@
 					\end{axis}
 					\end{tikzpicture}		
 				}		
-			\end{minipage}
-					
-	
-				
-			
-				
+			\end{minipage}				
 %			\end{multicols}
 		}
 		%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
@@ -417,7 +412,7 @@
 		\block{Training @ TULIP}{
 			\begin{minipage}[l]{0.6\linewidth}
 				\vspace{-20pt}
-				\scalebox{0.7}{
+				\scalebox{0.75}{
 					\begin{tikzpicture}[ every annotation/.style = {draw,
 						fill = white}]
 						\path[mindmap,concept color=blue!30,font=\sffamily\bfseries,
@@ -440,7 +435,7 @@
 						node[concept,scale=0.6] {FLIP}[clockwise from=160]
 						child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
 						child{node[concept,scale=0.6](Professional){Professional Knowledge}}
-						child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+						child{node[concept,scale=0.6](Theo){Theoretical Knowledge}}
 						child{node[concept,scale=0.6](Math){Mathmatics}}
 					}
 					child[concept color=blue!30,text=black!90] {
@@ -467,7 +462,7 @@
 				}
 			\end{minipage}
 			\hfill
-			\hspace{0.01\textwidth}
+			\hspace{0.03\textwidth}
 			\begin{minipage}[l]{0.4\linewidth}
 				\vspace{-30pt}
 				\begin{center}
@@ -512,13 +507,13 @@
 					\smartdiagramset{description title width=5cm,
 						set color list={blue!15,blue!30,blue!45},
 						description title text width=4.5cm,
-						descriptive items y sep=6.5cm,
+						descriptive items y sep=7.3cm,
 						description text width=20cm,
 						module minimum height=5.2cm}
 					
 					\smartdiagram[descriptive diagram]{
 						{\textbf{Flipper},\begin{enumerate}
-								\item \LaTeX + \faGithub ~ \faBitbucket + Time management + PPR skill
+								\item \LaTeX ~ + ~ \faGithub ~ \faBitbucket ~ + Time management + PPR skill
 								\item Keep FLIP materials confidential without distribution
 								\item FLIP (00-01) with success on open Kaggle projects
 								\item Attend \textit{TULIP Seminar} with preparation and questions
@@ -562,10 +557,11 @@
 					\end{itemize}
 					\item[Post-doctoral Research Fellows] \hfill
 					\begin{itemize}
-						\footnotesize \item \textit{annually} $1$ \textcolor{orange}{CCF A} and $1$ \textcolor{orange}{CCF B} conference papers
+						\footnotesize \item 1 ARC-DP research proposal
+						\item \textit{annually} $1$ \textcolor{orange}{CCF A} and $1$ \textcolor{orange}{CCF B} conference papers
 						\item \textit{annually} $4$ \textcolor{orange}{$Q_1$ journal} papers,
 						with at least $1$ \textcolor{orange}{ACM/IEEE Transactions} paper
-						\item 1 ARC-DP research proposal
+						
 					\end{itemize}
 					
 				\end{description}		
