@@ -1,0 +1,298 @@
+\section{Training @ TULIP}
+
+%%==========================================================================================
+%%
+\begin{slide}{Roadmap}
+\twocolumn[
+lcolwidth=0.05\linewidth,
+rcolwidth=0.95\linewidth
+]
+{
+}
+{
+\setlength{\abovecaptionskip}{-3cm}
+\setlength{\belowcaptionskip}{3cm}
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!40,font=\sffamily\bfseries,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=9em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
+    child[concept color=orange!70] {
+      node[scale=0.6] {Professional Skills} [clockwise from=290]
+        child { node[scale=0.6] (goReview) {Time Management}}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] {\LaTeX}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=mynodecolor] {
+      node[concept,scale=0.6] {FLIP}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical Knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=mynodecolor] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
+      child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+      child { node[concept,scale=0.6] (present){Writing}}
+      child { node[concept,scale=0.6] (write){Presenting}}
+    }
+   ;
+    \end{tikzpicture}
+}
+%%==========================================================================================
+\begin{note}
+Professional knowledge: \LaTeX, Version Control Systems
+(SmartGit  GitHub Bitbucket), Plan \& Progress Review, References Management\\
+Foundational Knowledge: FLIP(00): Data Science,
+FLIP(01): Advanced Data Science,
+FLIP(02): Modern Data Science,
+FLIP(03): Deep Learning,
+FLIP(04): Learning Theory (I),
+FLIP(05): Learning Theory (II)\\
+Research Skills: Review Team, Reading Team
+\end{note}
+%%==========================================================================================
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Roadmap}
+\twocolumn[
+lcolwidth=0.05\linewidth,
+rcolwidth=0.95\linewidth
+]
+{
+}
+{
+%\setlength{\abovecaptionskip}{-15pt}
+%\setlength{\belowcaptionskip}{12pt}
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=9em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
+    child[concept color=mynodecolor] {
+      node[scale=0.6] {Professional Skills} [clockwise from=290]
+        child { node[scale=0.6] (goReview) {Time Management}}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] {\LaTeX}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=orange!70] {
+      node[concept,scale=0.6] {FLIP}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=mynodecolor] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
+      child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+      child { node[concept,scale=0.6] (present){Writing}}
+      child { node[concept,scale=0.6] (write){Presenting}}
+    }
+   ;
+    \info{Theo.north east}{above,anchor=west, yshift=-1.8em, xshift=1.0em}{%
+      \item FLIP (00): Data Science
+      \item FLIP (01): Advanced Data Science
+      \item FLIP (02): Modern Data Science
+      \item FLIP (03): Deep Learning
+      \item FLIP (04): Learning Theory (I)
+      \item FLIP (05): Learning Theory (II)
+    }
+    \end{tikzpicture}
+}
+
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Roadmap}
+\twocolumn[
+lcolwidth=0.05\linewidth,
+rcolwidth=0.95\linewidth
+]
+{
+}
+{
+%\setlength{\abovecaptionskip}{-15pt}
+%\setlength{\belowcaptionskip}{12pt}
+\selectcolormodel{rgb}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                     fill = white}]
+  \path[mindmap,concept color=black!40,font = \sffamily\bfseries,
+    every node/.style={concept},
+    root/.style    = {concept color=black!40,
+      font=\Large\bfseries,text width=9em},
+    level 1 concept/.append style={font=\bfseries,
+      sibling angle=100,text width=7.7em,level distance=8em,inner sep=0pt},
+    level 2 concept/.append style={font=\sf,text width=5em,inner sep=0pt},
+  ]
+  node[root,scale=0.6, text=white] {Research Training} [clockwise from=187]
+    child[concept color=mynodecolor] {
+      node[scale=0.6] {Professional Skills} [clockwise from=290]
+        child { node[scale=0.6] (goReview) {Time Management}}
+        child { node[scale=0.6] (goRefrences ){References Management}}
+        child { node[scale=0.6] {\LaTeX}}
+        child { node[scale=0.6] (goVersionCon) {Version Control System}}
+    }
+     child[concept color=mynodecolor] {
+      node[concept,scale=0.6] {FLIP}[clockwise from=160]
+      child{node[concept,scale=0.6](hand-on){Hand-on Skills}}
+      child{node[concept,scale=0.6](Professional){Professional Knowledge}}
+      child{node[concept,scale=0.6](Theo){Theoretical knowledge}}
+      child{node[concept,scale=0.6](Math){Mathmatics}}
+    }
+    child[concept color=orange!70] {
+      node[concept,scale=0.6] {Research Skills}
+        [clockwise from=60]
+      child { node[concept,scale=0.6] (TeXampleBlog){Reading}}
+      child { node[concept,scale=0.6] (Reviewteam){Reviewing}}
+      child { node[concept,scale=0.6] (present){Writing}}
+      child { node[concept,scale=0.6] (write){Presenting}}
+    }
+   ;
+    \infoo{Reviewteam.north east}{above,anchor=west,xshift=0.5em}{
+      \item FLIP (06): Reading Team
+      \item FLIP (07): Review Team
+      \item FLIP (X): $\infty$
+    }
+    \end{tikzpicture}
+}
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}{Aim High, Soar High \dots}
+
+\begin{center}
+\selectcolormodel{rgb}
+\smartdiagramset{description title width=2cm,
+set color list={blue!40,blue!30,orange!70},
+description title text width=1.75cm,
+descriptive items y sep=3.5cm,
+description text width=12cm,
+module minimum height=.4cm}
+
+
+\smartdiagram[descriptive diagram]{
+{\textbf{$\infty$}, \begin{enumerate}
+         \item Proactively meet with supervisor twice per week
+         \item Proactively present and criticize at \textit{TULIP Seminar}
+         \item FLIP (04-05) and FLIP (06-07) completion
+         \item Act as FLIP team leaders and update materials annually
+         \end{enumerate}},
+{\textbf{Trainee}, \begin{enumerate}
+         \item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+         \item Feedback and suggestions on FLIP
+         \item Present at \textit{TULIP Seminar}
+         \end{enumerate}},
+{\textbf{Flipper},\begin{enumerate}
+         \item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+		 \item Keep FLIP materials confidential without distribution
+         \item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+         \item Attend \textit{TULIP Seminar} with preparation and questions
+         \end{enumerate}},}
+\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Aim High, Soar High \dots}
+\begin{center}
+\selectcolormodel{rgb}
+\smartdiagramset{description title width=2cm,
+set color list={blue!40,orange!70,mynodecolor},
+description title text width=1.75cm,
+descriptive items y sep=3.5cm,
+description text width=12cm,
+module minimum height=.4cm}
+
+\smartdiagram[descriptive diagram]{
+{\textbf{$\infty$}, \begin{enumerate}
+         \item Proactively meet with supervisor twice per week
+         \item Proactively present and criticize at \textit{TULIP Seminar}
+         \item FLIP (04-05) and FLIP (06-07) completion
+         \item Act as FLIP team leaders and update materials annually
+         \end{enumerate}},
+{\textbf{Trainee}, \begin{enumerate}
+         \item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+         \item Feedback and suggestions on FLIP
+         \item Present at \textit{TULIP Seminar}
+         \end{enumerate}},
+{\textbf{Flipper},\begin{enumerate}
+         \item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+		 \item Keep FLIP materials confidential without distribution
+         \item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+         \item Attend \textit{TULIP Seminar} with preparation and questions
+         \end{enumerate}},}
+\end{center}
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Aim High, Soar High \dots}
+\begin{center}
+\selectcolormodel{rgb}
+\smartdiagramset{description title width=2cm,
+set color list={orange!70,blue!30,mynodecolor},
+description title text width=1.75cm,
+descriptive items y sep=3.5cm,
+description text width=12cm,
+module minimum height=.4cm}
+
+\smartdiagram[descriptive diagram]{
+{\textbf{$\infty$}, \begin{enumerate}
+         \item Proactively meet with supervisor twice per week
+         \item Proactively present and criticize at \textit{TULIP Seminar}
+         \item FLIP (04-05) and FLIP (06-07) completion
+         \item Act as FLIP team leaders and update materials annually
+         \end{enumerate}},
+{\textbf{Trainee}, \begin{enumerate}
+         \item FLIP (02-03) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+         \item Feedback and suggestions on FLIP
+         \item Present at \textit{TULIP Seminar}
+         \end{enumerate}},
+{\textbf{Flipper},\begin{enumerate}
+         \item \LaTeX + \faGithub \faBitbucket + Time management + PPR skill
+		 \item Keep FLIP materials confidential without distribution
+         \item FLIP (00-01) with success on open \href{https://www.kaggle.com}{Kaggle} projects
+         \item Attend \textit{TULIP Seminar} with preparation and questions
+         \end{enumerate}},}
+\end{center}
+
+\end{slide}

@@ -1,0 +1,57 @@
+\documentclass[
+ size=14pt,
+ paper=smartboard,  % a4paper, smartboard, screen
+ mode=present, 		% present, handout, print
+ display=slides, 	% slidesnotes, notes, slides
+ style=tuliplab,  	% TULIP Lab style
+ pauseslide,
+ fleqn,leqno]{powerdot}{}
+
+ %=================================================================
+\input{mod-preamble}
+%=================================================================
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% title
+% TODO: Customize to your Own Title, Name, Address
+%
+\title{Recent Research Work in TULIP Lab}
+\author{
+Gang Li
+\\
+\\School of Information Technology
+\\Deakin University, Australia
+}
+\date{\gitCommitterDate}
+
+
+% Customize the setting of slides
+\pdsetup{
+% TODO: Customize tlhe left footer, and right footer
+rf=\href{http://www.tulip.org.au}{
+Last Changed by: \textsc{\gitCommitterName}\ \gitVtagn-\gitAbbrevHash\ (\gitAuthorDate)
+},
+cf={TULIP Academy},
+}
+
+\begin{document}
+
+\maketitle
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Overview}
+\tableofcontents[content=currentsection,type=1]
+\end{slide}
+%%
+%%==========================================================================================
+
+\input{mod-academy}
+\input{mod-research}
+\input{mod-industry}
+\input{mod-contact}
+
+\end{document}
+
+\endinput

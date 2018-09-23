@@ -1,0 +1,83 @@
+\documentclass{article}
+\pagestyle{empty}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{geometry,fontspec,tikz}
+\geometry{a6paper,landscape,hmargin={.5cm,.5cm},vmargin={.2cm,.2cm}}
+\setmainfont[Ligatures=TeX]{Adobe Garamond Pro}
+\usetikzlibrary{fadings}
+\tikzfading[name=fade right,
+left color=transparent!0,
+right color=transparent!100]
+\setlength\parindent{0pt}
+\usepackage{stackengine}
+\usepackage{graphicx}
+
+
+\begin{document}
+\begin{tikzpicture}[overlay,remember picture]
+    \def\stackalignment{r}
+    
+  \node[anchor=east,inner sep=0pt] (pic) at (current page.east)
+    { \bottominset{\includegraphics[height=3cm]{figures//invitation//register}}
+    {\includegraphics[height=1\pdfpageheight]{figures//invitation//background}}{70pt}{110pt}};
+  \fill[white,path fading=fade right] (pic.north west) rectangle (pic.south east);
+  \coordinate (pin) at (12,-2.5);
+  %\filldraw[ultra thick,draw=red,fill=red!50] (pin) -- ++(70:.5) arc (-20:200:.18) -- cycle;
+  %\filldraw[ultra thick,draw=red,fill=red!50] (pin) -- ++(70:.5) arc (-20:200:.18) -- cycle;
+  %\path (pin) -- ++(0,.5) node[draw,fill,red,circle,inner sep=1pt] {};
+\end{tikzpicture}%
+
+\obeylines%
+\vspace{.8cm}
+{\addfontfeatures{Scale=3,LetterSpace=10} INVITATION}
+\medbreak
+\textit{%
+%  Dear Academy members,
+  You are invited to attend \href{http://www.tulip.org.au}{TULIP Academy} $2018$ induction.
+}
+
+%\vfill
+%\vspace{2pt}
+
+{\addfontfeatures{Scale=1.4,LetterSpace=3}\scshape }
+
+\textbf{Time}:  \textit{18:00-21:30, 23/09/2018} \\ % 18\kern.5pt:\kern.5pt00
+\textbf{Venue}: \textit{Room 605, Experiment Building $3$, XSYU, Xi'an, China}
+\textbf{Online}: ``\textit{\texttt{TULIP Seminar}}''
+\textbf{Working Language}: \textit{Mandarin}
+
+{\addfontfeatures{Scale=1.4,LetterSpace=3}\scshape  Schedule}
+\textit{%
+\footnotesize{
+  18\kern.5pt:\kern.5pt00 $-$ 18\kern.5pt:\kern.5pt10 : Welcome Address (J. Kong)
+  18\kern.5pt:\kern.5pt10 $-$ 19\kern.5pt:\kern.5pt00 : TULIP Academy Introduction (G. Li)
+  19\kern.5pt:\kern.5pt00 $-$ 19\kern.5pt:\kern.5pt10 : To the Undergraduates (H.Wang)
+  19\kern.5pt:\kern.5pt10 $-$ 19\kern.5pt:\kern.5pt30 : New Members Self-Introduction
+  19\kern.5pt:\kern.5pt30 $-$ 20\kern.5pt:\kern.5pt00 : How to Spend Your Postgraduate Time (H. Xia)
+  20\kern.5pt:\kern.5pt00 $-$ 20\kern.5pt:\kern.5pt30 : My Research Trip (S. Wang)
+  20\kern.5pt:\kern.5pt30 $-$ 20\kern.5pt:\kern.5pt50 : Plan of Year $1$ (X. Cheng and Y. Lei)
+  20\kern.5pt:\kern.5pt50 $-$ 21\kern.5pt:\kern.5pt20 : Q $\&$ A Session
+  21\kern.5pt:\kern.5pt20 $-$ 21\kern.5pt:\kern.5pt30 : Closing Address (J. Kong)}
+}
+
+%\begin{flushright}
+%\begin{tikzpicture}
+%  \includegraphics[.8\textwidth]{figures//invitation//FLIP2018}
+%\end{tikzpicture}
+%\end{flushright}
+
+\smallbreak
+{\addfontfeatures{Scale=1.0,LetterSpace=3}\scshape }
+%
+\smallbreak
+\footnotesize{
+\textbf{Master of Ceremonies}: \textit{M. Ren}
+\textbf{Secretary}: \textit{Y. Lei} (Text), \textit{X. Han} (Video)
+}
+\smallbreak
+
+\includegraphics[width=6.5cm]{logos/tulip-wordmark.eps}
+
+\end{document}
